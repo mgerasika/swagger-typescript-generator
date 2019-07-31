@@ -1,6 +1,6 @@
 {
   "name": "swagger-typescript-generator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "First description",
   "main": "index.js",
   "dependencies": {
@@ -24,9 +24,9 @@
     "url": "git+https://github.com/mgerasika/swagger-typescript-generator.git"
   },
   "keywords": [
-    "typescript",
-    "swagger",
-    "codegen"
+    "none1",
+    "none2",
+    "none3"
   ],
   "author": "Mykhaylo Gerasika",
   "license": "MIT",
