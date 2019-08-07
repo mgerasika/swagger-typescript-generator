@@ -1,7 +1,7 @@
 {
   "name": "swagger-typescript-generator",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.1.2",
+  "react-dom": "^16.8.6",
   "dependencies": {
     "@types/jest": "24.0.16",
     "@types/node": "12.6.8",
@@ -26,6 +26,10 @@
   "eslintConfig": {
     "extends": "react-app"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mgerasika/swagger-typescript-generator.git"
+  },
   "browserslist": {
     "production": [
       ">0.2%",
@@ -37,5 +41,16 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "keywords": [
+    "none1",
+    "none2",
+    "none3"
+  ],
+  "author": "Mykhaylo Gerasika",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mgerasika/swagger-typescript-generator/issues"
+  },
+  "homepage": "https://github.com/mgerasika/swagger-typescript-generator#readme"
 }
