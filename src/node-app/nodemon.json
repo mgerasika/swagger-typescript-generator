@@ -1,0 +1,6 @@
+{
+  "verbose": true,
+  "ext": "tsx",
+  "ignore": ["node_modules/*"],
+  "delay": "250"
+}

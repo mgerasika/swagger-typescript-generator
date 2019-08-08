@@ -5,7 +5,7 @@ interface IProps {
     swaggerMethod: SwaggerMethod;
 }
 
-export const GenerateMethodArguments: React.FC<IProps> = (props) => {
+export const MethodArguments: React.FC<IProps> = (props) => {
     const result = props.swaggerMethod.parameters.map((parameter: SwaggerMethodParameter, index: number) => {
         const isLastArgument = index !== props.swaggerMethod.parameters.length - 1;
         const separator = isLastArgument ? ',' : ''

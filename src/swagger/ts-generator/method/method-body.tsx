@@ -5,7 +5,7 @@ interface IProps {
     swaggerMethod: SwaggerMethod;
 }
 
-export const GenerateMethodBody: React.FC<IProps> = (props) => {
+export const MethodBody: React.FC<IProps> = (props) => {
     const getHttpBodyArguments = () => {
         const bodyParameters = props.swaggerMethod.parameters
             .filter((parameter: SwaggerMethodParameter) => parameter.isBodyParameter)

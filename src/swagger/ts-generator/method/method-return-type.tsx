@@ -5,7 +5,7 @@ interface IProps {
     swaggerMethod: SwaggerMethod;
 }
 
-export const GenerateMethodReturnType: React.FC<IProps> = (props) => {
+export const MethodReturnType: React.FC<IProps> = (props) => {
     if (props.swaggerMethod.responseIsVoid) {
         return (<>{'AxiosPromise<void>'}</>);
     }

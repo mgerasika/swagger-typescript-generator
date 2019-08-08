@@ -1,18 +1,17 @@
 import React, {ReactNode} from 'react';
 import Diff from "./diff";
-import {GenerateClass} from "../ts-generator/class/generate-class";
+import {ClassDefinition} from "../ts-generator/class/class-definition";
 import {SwaggerClass} from "../model/swagger-class";
 
 interface IProps {
-    paths: SwaggerClass[];
-    children?: ReactNode;
+    classes: SwaggerClass[];
 }
 
 const ApiClasses: React.FC<IProps> = (props) => {
-    const renderCodegen = (path: SwaggerClass) => {
-        return (<GenerateClass swaggerClass={path}></GenerateClass>)
+    const renderCodegen = (swaggerClass: SwaggerClass) => {
+        return (<ClassDefinition swaggerClass={swaggerClass}></ClassDefinition>)
     };
-    const result = props.paths.map((def: SwaggerClass) => {
+    const result = props.classes.map((def: SwaggerClass) => {
         return <Diff key={def.name} obj1={def.source} obj2={def} obj3={renderCodegen(def)}/>
     })
 

@@ -5,7 +5,7 @@ interface IProps {
     definition: SwaggerDefinition;
 }
 
-export const GenerateDefinition: React.FC<IProps> = (props) => {
+export const ModelDefinition: React.FC<IProps> = (props) => {
     const fields = props.definition.properties.map((parameter: SwaggerDefinitionProperty) => {
         return (<span key={parameter.name}>{'\t'}{parameter.name}:{parameter.type}{'\n'}</span>)
     })

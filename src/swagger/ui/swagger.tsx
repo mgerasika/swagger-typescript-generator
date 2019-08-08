@@ -51,7 +51,7 @@ const Swagger: React.FC<IProps> = (props) => {
                 </div>
 
                 <hr/>
-                <ApiClasses paths={root.classes}/>
+                <ApiClasses classes={root.classes}/>
 
                 <hr/>
                 <Definitions definitions={root.definitions}/>

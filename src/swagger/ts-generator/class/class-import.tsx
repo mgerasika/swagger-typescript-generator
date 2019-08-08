@@ -7,7 +7,7 @@ interface IAdapterProps {
     swaggerClass: SwaggerClass;
 }
 
-export const GenerateClassImportAdapter: React.FC<IAdapterProps> = (props) => {
+export const ClassImportAdapter: React.FC<IAdapterProps> = (props) => {
     const imports = ['import axios, {AxiosError, AxiosPromise} from \'axios\';'];
     const getProps = (): IProps => {
         return {

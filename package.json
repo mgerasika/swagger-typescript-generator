@@ -3,10 +3,6 @@
   "version": "0.1.2",
   "react-dom": "^16.8.6",
   "dependencies": {
-    "@types/jest": "24.0.16",
-    "@types/node": "12.6.8",
-    "@types/react": "16.8.23",
-    "@types/react-dom": "16.8.5",
     "axios": "^0.19.0",
     "bootstrap": "^4.3.1",
     "react": "^16.8.6",
@@ -14,11 +10,29 @@
     "react-scripts": "^3.0.1",
     "react-use-states": "^1.0.6",
     "reflect-metadata": "^0.1.13",
+    "ts-node": "^8.3.0",
     "typescript": "^3.5.3",
     "typescript-actions": "^1.0.10"
   },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.3.4",
+    "@babel/node": "^7.4.5",
+    "@babel/plugin-proposal-class-properties": "^7.3.4",
+    "@babel/plugin-proposal-decorators": "^7.1.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.3.4",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/preset-env": "^7.3.4",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/preset-typescript": "^7.3.3",
+    "@types/jest": "24.0.16",
+    "@types/node": "12.6.8",
+    "@types/react": "16.8.23",
+    "@types/react-dom": "16.8.5"
+  },
   "scripts": {
     "start": "react-scripts start",
+    "start:node-app": "cd src/node-app && npm run start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

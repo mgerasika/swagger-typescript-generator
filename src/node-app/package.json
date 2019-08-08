@@ -1,0 +1,9 @@
+{
+  "name": "node-app",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "nodemon --exec ts-node src/index.tsx",
+    "start2": "nodemon --exec babel-node src/index.tsx"
+  }
+}

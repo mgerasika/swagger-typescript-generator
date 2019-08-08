@@ -1,6 +1,6 @@
 import React from "react";
 import {SwaggerClass} from "../../model/swagger-class";
-import {GenerateClassImportAdapter} from "./class-import";
+import {ClassImportAdapter} from "./class-import";
 import {ClassFields} from "./class-fields";
 import {ClassConstructor} from "./class-constructor";
 import {ClassMethods} from "./class-methods";
@@ -10,10 +10,10 @@ interface IProps {
     swaggerClass: SwaggerClass;
 }
 
-export const GenerateClass: React.FC<IProps> = (props) => {
+export const ClassDefinition: React.FC<IProps> = (props) => {
     return (
         <>
-            <GenerateClassImportAdapter swaggerClass={props.swaggerClass}/>
+            <ClassImportAdapter swaggerClass={props.swaggerClass}/>
             <ClassName swaggerClass={props.swaggerClass}/>
             {'{\n'}
             <ClassFields swaggerClass={props.swaggerClass}/>
