@@ -1,8 +1,9 @@
 {
   "name": "swagger-typescript-generator",
-  "version": "0.1.2",
+  "version": "0.1.6",
   "react-dom": "^16.8.6",
   "dependencies": {
+    "@types/cli-color": "^0.3.29",
     "axios": "^0.19.0",
     "bootstrap": "^4.3.1",
     "react": "^16.8.6",
@@ -28,14 +29,17 @@
     "@types/jest": "24.0.16",
     "@types/node": "12.6.8",
     "@types/react": "16.8.23",
-    "@types/react-dom": "16.8.5"
+    "@types/react-dom": "16.8.5",
+    "react-jsdom": "^3.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "start:node-app": "cd src/node-app && npm run start",
-    "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "build": "npm run start:tsc && npm run git-version && npm publish",
+    "start:tsc": "tsc",
+    "git-version": "npm --no-git-tag-version version patch"
   },
   "eslintConfig": {
     "extends": "react-app"
