@@ -7,7 +7,7 @@ import * as path from 'path';
 import {SwaggerDoc} from "../../swagger/model/swagger-doc";
 import {SwaggerClass} from "../../swagger/model/swagger-class";
 import {SwaggerDefinition} from "../../swagger/model/swagger-definition";
-import {file} from "@babel/types";
+import {logService} from "./log-service";
 
 export class SwaggerGenerator {
     private _config: ISwaggerConfig;
@@ -17,11 +17,21 @@ export class SwaggerGenerator {
     }
 
     generate() {
-        // const res = renderToString('hello2' as any);
-        // console.log(res)
-        //
-        // this.test();
-        this.generateInternal();
+        const swaggerDoc: SwaggerDoc = new SwaggerDoc(this._config.swaggerInputJson);
+        swaggerDoc.definitions.forEach((swaggerDefinition: SwaggerDefinition) => {
+            const filePath = `${this._config.modelFilesOutDir}/${swaggerDefinition.name}.ts`;
+            this.writeToFile(filePath, 'definition content');
+
+            logService.log(filePath);
+        });
+
+        swaggerDoc.classes.forEach((swaggerClass: SwaggerClass) => {
+            const filePath = `${this._config.apiFilesOutDir}/${swaggerClass.name}.ts`;
+            this.writeToFile(filePath, 'api content');
+
+
+            logService.log(filePath);
+        })
     }
 
     private createDirectory(dir: string) {
@@ -38,24 +48,8 @@ export class SwaggerGenerator {
         }, first);
     }
 
-    private generateInternal() {
-        const swaggerDoc: SwaggerDoc = new SwaggerDoc(this._config.swaggerInputJson);
-        swaggerDoc.definitions.forEach((swaggerDefinition: SwaggerDefinition) => {
-            const filePath = `${this._config.modelFilesOutDir}/${swaggerDefinition.name}.ts`;
-            this.writeToFile(filePath, 'definition content');
-            console.log(filePath);
-        });
-
-        swaggerDoc.classes.forEach((swaggerClass: SwaggerClass) => {
-            const filePath = `${this._config.apiFilesOutDir}/${swaggerClass.name}.ts`;
-            this.writeToFile(filePath, 'api content');
-            console.log(filePath);
-        })
-    }
-
     private writeToFile(fullPath: string, content: string) {
         fs.writeFile(fullPath, content, (err: any) => {
         });
     }
 }
-
