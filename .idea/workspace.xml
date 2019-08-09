@@ -2,17 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bbb1a1f8-a948-4b7c-9768-589d5df58b7d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/node-app/.esdoc.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/node-app/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/node-app/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/node-app/.idea/node-app.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/node-app/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/node-app/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/node-app/src/log-service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/node-app/webpack.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/node-app/dist/node/src/test.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/node-app/dist/node/src/test.js.map" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/node-app/dist/node/src/test2.js" beforeDir="false" />
@@ -33,10 +22,7 @@
       <change beforePath="$PROJECT_DIR$/src/node-app/gen/api/apiUserid.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/node-app/gen/model/IRole.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/node-app/gen/model/IUser.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/node-app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/node-app/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/node-app/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/node-app/src/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/node-app/src/swagger-generator.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/node-app/src/swagger-generator.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/node-app/node_modules/.cache/@babel/register/.babel.7.4.3.development.json" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/node_modules/" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -53,8 +39,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tsconfig.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="28" column="10" lean-forward="true" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="10" />
+            <state relative-caret-position="425">
+              <caret line="25" column="3" selection-start-line="25" selection-start-column="3" selection-end-line="25" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -197,11 +183,6 @@
             <path>
               <item name="swagger-typescript-generator" type="b2602c69:ProjectViewProjectNode" />
               <item name="swagger-typescript-generator" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="swagger-typescript-generator" type="b2602c69:ProjectViewProjectNode" />
-              <item name="swagger-typescript-generator" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -209,6 +190,13 @@
               <item name="swagger-typescript-generator" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="node-app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="swagger-typescript-generator" type="b2602c69:ProjectViewProjectNode" />
+              <item name="swagger-typescript-generator" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="node-app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -289,18 +277,17 @@
       <workItem from="1565258069030" duration="548000" />
       <workItem from="1565258727984" duration="242000" />
       <workItem from="1565336429618" duration="1509000" />
-      <workItem from="1565353019140" duration="679000" />
+      <workItem from="1565353019140" duration="1133000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="71036000" />
+    <option name="totallyTimeSpent" value="71490000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24973656" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24973656" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -315,7 +302,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="TypeScript" order="9" weight="0.32843137" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.3392157" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.3392157" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -628,8 +615,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tsconfig.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="10" lean-forward="true" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="10" />
+        <state relative-caret-position="425">
+          <caret line="25" column="3" selection-start-line="25" selection-start-column="3" selection-end-line="25" selection-end-column="3" />
         </state>
       </provider>
     </entry>
