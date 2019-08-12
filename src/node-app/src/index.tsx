@@ -35,7 +35,7 @@ const ReactJSDOM = require('react-jsdom');
 class Hi extends React.Component {
     render() {
         return (
-            'hi2'
+            '3hi2'
         );
     }
 }

@@ -1,4 +1,4 @@
-import clc from "cli-color";
+const clc = require("cli-color");
 
 class LogService {
     public log(msg: string) {
@@ -10,4 +10,3 @@ class LogService {
     }
 }
 export const logService = new LogService();
-
