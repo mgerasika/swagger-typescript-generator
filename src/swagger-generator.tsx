@@ -1,6 +1,6 @@
 import {ISwaggerConfig} from './swagger-config';
 import * as fs from 'fs';
-import {SwaggerClass, SwaggerDefinition, SwaggerDoc} from 'react-app/src/swagger/model';
+import {SwaggerClass, SwaggerDefinition, SwaggerDoc} from './react-app/src/swagger/model';
 
 // import {logService} from "./log-service";
 

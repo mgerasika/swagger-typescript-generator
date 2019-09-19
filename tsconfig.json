@@ -5,6 +5,7 @@
     "outDir": "dist",
     "jsx": "preserve",
     "sourceMap": true,
+    "declaration": true,
     "esModuleInterop": true
   },
   "include": [

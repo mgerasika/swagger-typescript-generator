@@ -2,285 +2,331 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ce26be8b-bbf5-4618-81ac-984eef411fea" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/node-app.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/demo.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/demo.jsx.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/hi.jsx.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/log-service.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/react-app/src/App.jsx.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/react-app/src/demo/custom-plugins.jsx.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/react-app/src/demo/index.jsx.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/react-app/src/demo/swagger-demo.jsx.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/react-app/src/hi2.jsx.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/react-app/src/index.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/react-app/src/index.jsx.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/react-app/src/serviceWorker.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/common/index.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/common/request-service.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/common/swagger-context.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/common/swagger-plugins.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/common/use-plugin.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/index.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/model/index.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/model/swagger-class.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/model/swagger-common.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/model/swagger-definition.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/model/swagger-doc.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/model/swagger-method.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/ts-generator/class/class-constructor.jsx.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/ts-generator/class/class-definition.jsx.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/ts-generator/class/class-fields.jsx.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/ts-generator/class/class-import.jsx.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/ts-generator/class/class-methods.jsx.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/ts-generator/class/class-name.jsx.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/ts-generator/class/index.jsx.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/ts-generator/default-plugins.jsx.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/ts-generator/definitions/index.jsx.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/ts-generator/definitions/model-definition.jsx.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/ts-generator/index.jsx.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/ts-generator/method/index.jsx.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/ts-generator/method/method-arguments.jsx.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/ts-generator/method/method-body.jsx.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/ts-generator/method/method-definition.jsx.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/ts-generator/method/method-return-type.jsx.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/ui/api-classes.jsx.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/ui/definitions.jsx.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/ui/diff.jsx.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/ui/index.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/ui/swagger.jsx.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/swagger-config.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/swagger-generator.jsx.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lerna.json" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/react-app/.gitignore" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/react-app/.idea/.gitignore" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/react-app/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/react-app/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/react-app/.idea/modules.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/react-app/.idea/react-app.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/react-app/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/react-app/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/react-app/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/react-app/src/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/react-app/tsconfig.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/App.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/App.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/src/App.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/App.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/App.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/App.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/src/App.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/App.jsx.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/custom-plugins.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/demo/custom-plugins.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/src/demo/custom-plugins.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/demo/custom-plugins.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/demo/custom-plugins.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/custom-plugins.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/demo/custom-plugins.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/src/demo/custom-plugins.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/demo/custom-plugins.jsx.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/demo/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/src/demo/index.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/demo/index.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/demo/index.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/index.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/demo/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/src/demo/index.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/demo/index.jsx.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/swagger-demo.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/demo/swagger-demo.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/src/demo/swagger-demo.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/demo/swagger-demo.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/demo/swagger-demo.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/demo/swagger-demo.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/demo/swagger-demo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/src/demo/swagger-demo.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/demo/swagger-demo.jsx.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/hi2.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/hi2.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/hi2.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/src/hi2.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/hi2.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/src/hi2.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/hi2.jsx.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/index.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/src/index.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/index.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/index.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/index.jsx.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/index.jsx.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.jsx.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/node-app/index.d.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/node-app/index.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/node-app/index.js.map" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/node-app/src/demo.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/node-app/src/demo.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/node-app/src/demo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/dist/demo.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/node-app/src/demo.jsx.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/node-app/src/hi.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/node-app/src/hi.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/node-app/src/hi.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/hi.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/node-app/src/hi.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/dist/hi.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/node-app/src/hi.jsx.map" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/node-app/src/index.d.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/node-app/src/index.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/node-app/src/index.js.map" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/node-app/src/index.jsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/node-app/src/index.jsx.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/node-app/src/log-service.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/node-app/src/log-service.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/node-app/src/log-service.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/log-service.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/node-app/src/log-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/log-service.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/node-app/src/log-service.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/node-app/src/swagger-config.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/node-app/src/swagger-config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/node-app/src/swagger-config.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/swagger-config.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/node-app/src/swagger-config.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/swagger-config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/node-app/src/swagger-config.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/node-app/src/swagger-generator.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/node-app/src/swagger-generator.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/swagger-generator.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/node-app/src/swagger-generator.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/node-app/src/swagger-generator.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/node-app/src/swagger-generator.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/node-app/src/swagger-generator.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/dist/swagger-generator.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/node-app/src/swagger-generator.jsx.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/serviceWorker.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/serviceWorker.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/serviceWorker.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/src/serviceWorker.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/serviceWorker.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/src/serviceWorker.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/serviceWorker.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/swagger/common/index.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/swagger/common/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/common/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/common/index.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/common/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/common/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/swagger/common/index.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/swagger/common/request-service.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/swagger/common/request-service.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/common/request-service.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/common/request-service.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/common/request-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/common/request-service.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/swagger/common/request-service.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/swagger/common/swagger-context.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/swagger/common/swagger-context.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/common/swagger-context.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/common/swagger-context.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/common/swagger-context.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/common/swagger-context.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/swagger/common/swagger-context.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/swagger/common/swagger-plugins.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/swagger/common/swagger-plugins.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/common/swagger-plugins.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/common/swagger-plugins.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/common/swagger-plugins.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/common/swagger-plugins.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/swagger/common/swagger-plugins.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/swagger/common/use-plugin.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/swagger/common/use-plugin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/common/use-plugin.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/common/use-plugin.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/common/use-plugin.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/common/use-plugin.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/swagger/common/use-plugin.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/swagger/index.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/swagger/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/index.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/swagger/index.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/swagger/model/index.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/swagger/model/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/model/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/model/index.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/model/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/model/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/swagger/model/index.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/swagger/model/swagger-class.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/swagger/model/swagger-class.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/model/swagger-class.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/model/swagger-class.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/model/swagger-class.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/model/swagger-class.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/swagger/model/swagger-class.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/swagger/model/swagger-common.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/swagger/model/swagger-common.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/model/swagger-common.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/model/swagger-common.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/model/swagger-common.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/model/swagger-common.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/swagger/model/swagger-common.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/swagger/model/swagger-definition.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/swagger/model/swagger-definition.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/model/swagger-definition.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/model/swagger-definition.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/model/swagger-definition.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/model/swagger-definition.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/swagger/model/swagger-definition.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/swagger/model/swagger-doc.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/swagger/model/swagger-doc.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/model/swagger-doc.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/model/swagger-doc.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/model/swagger-doc.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/model/swagger-doc.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/swagger/model/swagger-doc.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/swagger/model/swagger-method.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/swagger/model/swagger-method.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/model/swagger-method.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/model/swagger-method.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/model/swagger-method.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/model/swagger-method.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/swagger/model/swagger-method.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/class/class-constructor.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/class/class-constructor.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/ts-generator/class/class-constructor.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/class/class-constructor.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/class/class-constructor.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/class/class-constructor.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/class/class-constructor.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/ts-generator/class/class-constructor.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/class/class-constructor.jsx.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/class/class-definition.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/class/class-definition.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/ts-generator/class/class-definition.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/class/class-definition.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/class/class-definition.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/class/class-definition.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/class/class-definition.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/ts-generator/class/class-definition.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/class/class-definition.jsx.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/class/class-fields.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/class/class-fields.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/ts-generator/class/class-fields.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/class/class-fields.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/class/class-fields.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/class/class-fields.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/class/class-fields.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/ts-generator/class/class-fields.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/class/class-fields.jsx.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/class/class-import.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/class/class-import.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/ts-generator/class/class-import.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/class/class-import.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/class/class-import.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/class/class-import.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/class/class-import.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/ts-generator/class/class-import.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/class/class-import.jsx.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/class/class-methods.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/class/class-methods.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/ts-generator/class/class-methods.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/class/class-methods.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/class/class-methods.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/class/class-methods.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/class/class-methods.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/ts-generator/class/class-methods.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/class/class-methods.jsx.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/class/class-name.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/class/class-name.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/ts-generator/class/class-name.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/class/class-name.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/class/class-name.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/class/class-name.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/class/class-name.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/ts-generator/class/class-name.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/class/class-name.jsx.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/class/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/class/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/ts-generator/class/index.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/class/index.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/class/index.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/class/index.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/class/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/ts-generator/class/index.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/class/index.jsx.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/default-plugins.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/default-plugins.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/ts-generator/default-plugins.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/default-plugins.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/default-plugins.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/default-plugins.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/default-plugins.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/ts-generator/default-plugins.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/default-plugins.jsx.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/definitions/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/definitions/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/ts-generator/definitions/index.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/definitions/index.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/definitions/index.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/definitions/index.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/definitions/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/ts-generator/definitions/index.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/definitions/index.jsx.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/definitions/model-definition.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/definitions/model-definition.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/ts-generator/definitions/model-definition.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/definitions/model-definition.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/definitions/model-definition.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/definitions/model-definition.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/definitions/model-definition.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/ts-generator/definitions/model-definition.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/definitions/model-definition.jsx.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/ts-generator/index.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/index.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/index.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/index.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/ts-generator/index.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/index.jsx.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/method/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/method/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/ts-generator/method/index.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/method/index.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/method/index.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/method/index.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/method/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/ts-generator/method/index.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/method/index.jsx.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/method/method-arguments.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/method/method-arguments.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/ts-generator/method/method-arguments.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/method/method-arguments.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/method/method-arguments.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/method/method-arguments.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/method/method-arguments.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/ts-generator/method/method-arguments.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/method/method-arguments.jsx.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/method/method-body.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/method/method-body.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/ts-generator/method/method-body.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/method/method-body.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/method/method-body.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/method/method-body.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/method/method-body.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/ts-generator/method/method-body.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/method/method-body.jsx.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/method/method-definition.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/method/method-definition.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/ts-generator/method/method-definition.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/method/method-definition.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/method/method-definition.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/method/method-definition.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/method/method-definition.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/ts-generator/method/method-definition.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/method/method-definition.jsx.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/method/method-return-type.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/method/method-return-type.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/ts-generator/method/method-return-type.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/method/method-return-type.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/method/method-return-type.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/method/method-return-type.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/method/method-return-type.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/ts-generator/method/method-return-type.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/method/method-return-type.jsx.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/swagger/ui/api-classes.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ui/api-classes.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/ui/api-classes.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/swagger/ui/api-classes.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/swagger/ui/api-classes.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/swagger/ui/api-classes.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ui/api-classes.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/ui/api-classes.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/swagger/ui/api-classes.jsx.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/swagger/ui/definitions.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ui/definitions.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/ui/definitions.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/swagger/ui/definitions.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/swagger/ui/definitions.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/swagger/ui/definitions.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ui/definitions.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/ui/definitions.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/swagger/ui/definitions.jsx.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/swagger/ui/diff.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ui/diff.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/ui/diff.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/swagger/ui/diff.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/swagger/ui/diff.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/swagger/ui/diff.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ui/diff.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/ui/diff.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/swagger/ui/diff.jsx.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/swagger/ui/index.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/swagger/ui/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ui/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/ui/index.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ui/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/ui/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/swagger/ui/index.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/swagger/ui/swagger.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ui/swagger.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/ui/swagger.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/swagger/ui/swagger.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/swagger/ui/swagger.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/swagger/ui/swagger.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ui/swagger.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/src/swagger/ui/swagger.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/swagger/ui/swagger.jsx.map" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/manifest.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/demo/custom-plugins.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/demo/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/demo/swagger-demo.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hi2.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/public/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/public/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/demo/custom-plugins.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/demo/custom-plugins.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/demo/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/demo/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/demo/swagger-demo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/demo/swagger-demo.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hi2.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/hi2.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/node-app/.babelrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logo.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/logo.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/node-app/.babelrc" beforeDir="false" afterPath="$PROJECT_DIR$/.babelrc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/node-app/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/node-app/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/node-app/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/node-app/.idea/node-app.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/node-app/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/node-app/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/node-app/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/node-app/.idea/node-app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/node-app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/node-app/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/node-app/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/node-app/index.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/node-app/loaders/file-loaders.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/node-app/loaders/js-loaders.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/node-app/nodemon.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/node-app/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/node-app/loaders/file-loaders.js" beforeDir="false" afterPath="$PROJECT_DIR$/loaders/file-loaders.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/node-app/loaders/js-loaders.js" beforeDir="false" afterPath="$PROJECT_DIR$/loaders/js-loaders.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/node-app/nodemon.json" beforeDir="false" afterPath="$PROJECT_DIR$/nodemon.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/node-app/package-lock.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/node-app/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/node-app/src/demo.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/node-app/src/hi.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/node-app/src/demo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/demo.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/node-app/src/hi.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/hi.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/node-app/src/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/node-app/src/log-service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/node-app/src/swagger-config.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/node-app/src/swagger-generator.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/node-app/src/log-service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/log-service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/node-app/src/swagger-config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/swagger-config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/node-app/src/swagger-generator.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/swagger-generator.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/node-app/tsconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/node-app/webpack.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app-env.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/serviceWorker.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/swagger/common/index.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/swagger/common/request-service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/swagger/common/swagger-context.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/swagger/common/swagger-plugins.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/swagger/common/use-plugin.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/swagger/index.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/swagger/model/index.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/swagger/model/swagger-class.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/swagger/model/swagger-common.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/swagger/model/swagger-definition.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/swagger/model/swagger-doc.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/swagger/model/swagger-method.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/swagger/ts-generator/class/class-constructor.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/swagger/ts-generator/class/class-definition.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/swagger/ts-generator/class/class-fields.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/swagger/ts-generator/class/class-import.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/swagger/ts-generator/class/class-methods.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/swagger/ts-generator/class/class-name.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/swagger/ts-generator/class/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/swagger/ts-generator/default-plugins.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/swagger/ts-generator/definitions/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/swagger/ts-generator/definitions/model-definition.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/swagger/ts-generator/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/swagger/ts-generator/method/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/swagger/ts-generator/method/method-arguments.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/swagger/ts-generator/method/method-body.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/swagger/ts-generator/method/method-definition.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/swagger/ts-generator/method/method-return-type.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/swagger/ui/api-classes.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/swagger/ui/definitions.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/swagger/ui/diff.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/swagger/ui/index.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/swagger/ui/swagger.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/node-app/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app-env.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/react-app-env.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/serviceWorker.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/serviceWorker.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/swagger/common/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/common/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/swagger/common/request-service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/common/request-service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/swagger/common/swagger-context.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/common/swagger-context.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/swagger/common/swagger-plugins.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/common/swagger-plugins.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/swagger/common/use-plugin.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/common/use-plugin.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/swagger/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/swagger/model/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/model/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/swagger/model/swagger-class.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/model/swagger-class.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/swagger/model/swagger-common.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/model/swagger-common.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/swagger/model/swagger-definition.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/model/swagger-definition.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/swagger/model/swagger-doc.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/model/swagger-doc.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/swagger/model/swagger-method.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/model/swagger-method.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/swagger/ts-generator/class/class-constructor.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/ts-generator/class/class-constructor.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/swagger/ts-generator/class/class-definition.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/ts-generator/class/class-definition.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/swagger/ts-generator/class/class-fields.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/ts-generator/class/class-fields.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/swagger/ts-generator/class/class-import.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/ts-generator/class/class-import.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/swagger/ts-generator/class/class-methods.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/ts-generator/class/class-methods.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/swagger/ts-generator/class/class-name.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/ts-generator/class/class-name.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/swagger/ts-generator/class/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/ts-generator/class/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/swagger/ts-generator/default-plugins.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/ts-generator/default-plugins.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/swagger/ts-generator/definitions/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/ts-generator/definitions/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/swagger/ts-generator/definitions/model-definition.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/ts-generator/definitions/model-definition.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/swagger/ts-generator/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/ts-generator/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/swagger/ts-generator/method/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/ts-generator/method/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/swagger/ts-generator/method/method-arguments.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/ts-generator/method/method-arguments.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/swagger/ts-generator/method/method-body.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/ts-generator/method/method-body.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/swagger/ts-generator/method/method-definition.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/ts-generator/method/method-definition.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/swagger/ts-generator/method/method-return-type.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/ts-generator/method/method-return-type.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/swagger/ui/api-classes.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/ui/api-classes.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/swagger/ui/definitions.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/ui/definitions.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/swagger/ui/diff.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/ui/diff.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/swagger/ui/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/ui/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/swagger/ui/swagger.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/ui/swagger.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -292,6 +338,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="PackageJsonUpdateNotifier">
+    <dismissed value="$PROJECT_DIR$/package.json" />
+  </component>
   <component name="ProjectId" id="1R0F5lRPwf8IxKQgGJBPuVGEBbD" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -301,7 +350,7 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../fn-fe" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/react-app" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -350,7 +399,7 @@
       <workItem from="1565585505532" duration="654000" />
       <workItem from="1568795927411" duration="1126000" />
       <workItem from="1568875300607" duration="375000" />
-      <workItem from="1568875787627" duration="1119000" />
+      <workItem from="1568875787627" duration="4336000" />
     </task>
     <servers />
   </component>

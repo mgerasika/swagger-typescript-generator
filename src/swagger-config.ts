@@ -1,5 +1,5 @@
 import {createContext} from "react";
-import {ISwaggerPlugin} from "react-app/src/swagger/common/swagger-plugins";
+import {ISwaggerPlugin} from './react-app/src/swagger/common';
 
 export interface ISwaggerConfig {
     plugins: ISwaggerPlugin[];
