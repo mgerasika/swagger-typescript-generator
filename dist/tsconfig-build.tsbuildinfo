@@ -1,0 +1,2984 @@
+{
+  "program": {
+    "fileInfos": {
+      "../node_modules/typescript/lib/lib.es5.d.ts": {
+        "version": "ff5688d6b2fcfef06842a395d7ff4d5730d45b724d4c48913118c889829052a1",
+        "signature": "ff5688d6b2fcfef06842a395d7ff4d5730d45b724d4c48913118c889829052a1"
+      },
+      "../node_modules/typescript/lib/lib.es2015.d.ts": {
+        "version": "7994d44005046d1413ea31d046577cdda33b8b2470f30281fd9c8b3c99fe2d96",
+        "signature": "7994d44005046d1413ea31d046577cdda33b8b2470f30281fd9c8b3c99fe2d96"
+      },
+      "../node_modules/typescript/lib/lib.es2016.d.ts": {
+        "version": "5f217838d25704474d9ef93774f04164889169ca31475fe423a9de6758f058d1",
+        "signature": "5f217838d25704474d9ef93774f04164889169ca31475fe423a9de6758f058d1"
+      },
+      "../node_modules/typescript/lib/lib.es2017.d.ts": {
+        "version": "459097c7bdd88fc5731367e56591e4f465f2c9de81a35427a7bd473165c34743",
+        "signature": "459097c7bdd88fc5731367e56591e4f465f2c9de81a35427a7bd473165c34743"
+      },
+      "../node_modules/typescript/lib/lib.es2018.d.ts": {
+        "version": "9c67dcc7ca897b61f58d57d487bc9f07950546e5ac8701cbc41a8a4fec48b091",
+        "signature": "9c67dcc7ca897b61f58d57d487bc9f07950546e5ac8701cbc41a8a4fec48b091"
+      },
+      "../node_modules/typescript/lib/lib.dom.d.ts": {
+        "version": "2d53f3741e5a4f78a90f623387d71a1cc809bb258f10cdaec034b67cbf71022f",
+        "signature": "2d53f3741e5a4f78a90f623387d71a1cc809bb258f10cdaec034b67cbf71022f"
+      },
+      "../node_modules/typescript/lib/lib.es2015.core.d.ts": {
+        "version": "4ab19088d508f9e62bfc61c157e8a65b2afaefa251ecca315e7d20b5b97b256f",
+        "signature": "4ab19088d508f9e62bfc61c157e8a65b2afaefa251ecca315e7d20b5b97b256f"
+      },
+      "../node_modules/typescript/lib/lib.es2015.collection.d.ts": {
+        "version": "dd94d8ef48c562389eb58af8df3a3a34d11367f7c818192aa5f16470d469e3f0",
+        "signature": "dd94d8ef48c562389eb58af8df3a3a34d11367f7c818192aa5f16470d469e3f0"
+      },
+      "../node_modules/typescript/lib/lib.es2015.generator.d.ts": {
+        "version": "765e0e9c9d74cf4d031ca8b0bdb269a853e7d81eda6354c8510218d03db12122",
+        "signature": "765e0e9c9d74cf4d031ca8b0bdb269a853e7d81eda6354c8510218d03db12122"
+      },
+      "../node_modules/typescript/lib/lib.es2015.iterable.d.ts": {
+        "version": "285958e7699f1babd76d595830207f18d719662a0c30fac7baca7df7162a9210",
+        "signature": "285958e7699f1babd76d595830207f18d719662a0c30fac7baca7df7162a9210"
+      },
+      "../node_modules/typescript/lib/lib.es2015.promise.d.ts": {
+        "version": "e6b8ff2798f8ebd7a1c7afd8671f2cb67ee1901c422f5964d74b0b34c6574ea2",
+        "signature": "e6b8ff2798f8ebd7a1c7afd8671f2cb67ee1901c422f5964d74b0b34c6574ea2"
+      },
+      "../node_modules/typescript/lib/lib.es2015.proxy.d.ts": {
+        "version": "5e72f949a89717db444e3bd9433468890068bb21a5638d8ab15a1359e05e54fe",
+        "signature": "5e72f949a89717db444e3bd9433468890068bb21a5638d8ab15a1359e05e54fe"
+      },
+      "../node_modules/typescript/lib/lib.es2015.reflect.d.ts": {
+        "version": "f5b242136ae9bfb1cc99a5971cccc44e99947ae6b5ef6fd8aa54b5ade553b976",
+        "signature": "f5b242136ae9bfb1cc99a5971cccc44e99947ae6b5ef6fd8aa54b5ade553b976"
+      },
+      "../node_modules/typescript/lib/lib.es2015.symbol.d.ts": {
+        "version": "9ae2860252d6b5f16e2026d8a2c2069db7b2a3295e98b6031d01337b96437230",
+        "signature": "9ae2860252d6b5f16e2026d8a2c2069db7b2a3295e98b6031d01337b96437230"
+      },
+      "../node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts": {
+        "version": "3e0a459888f32b42138d5a39f706ff2d55d500ab1031e0988b5568b0f67c2303",
+        "signature": "3e0a459888f32b42138d5a39f706ff2d55d500ab1031e0988b5568b0f67c2303"
+      },
+      "../node_modules/typescript/lib/lib.es2016.array.include.d.ts": {
+        "version": "3f96f1e570aedbd97bf818c246727151e873125d0512e4ae904330286c721bc0",
+        "signature": "3f96f1e570aedbd97bf818c246727151e873125d0512e4ae904330286c721bc0"
+      },
+      "../node_modules/typescript/lib/lib.es2017.object.d.ts": {
+        "version": "ff8ad203e83338289b0f5defc1a5b5c253fb7d251b464db497383f915a0df3f4",
+        "signature": "ff8ad203e83338289b0f5defc1a5b5c253fb7d251b464db497383f915a0df3f4"
+      },
+      "../node_modules/typescript/lib/lib.es2017.sharedmemory.d.ts": {
+        "version": "b8667586a618c5cf64523d4e500ae39e781428abfb28f3de441fc66b56144b6f",
+        "signature": "b8667586a618c5cf64523d4e500ae39e781428abfb28f3de441fc66b56144b6f"
+      },
+      "../node_modules/typescript/lib/lib.es2017.string.d.ts": {
+        "version": "21df2e0059f14dcb4c3a0e125859f6b6ff01332ee24b0065a741d121250bc71c",
+        "signature": "21df2e0059f14dcb4c3a0e125859f6b6ff01332ee24b0065a741d121250bc71c"
+      },
+      "../node_modules/typescript/lib/lib.es2017.intl.d.ts": {
+        "version": "c1759cb171c7619af0d2234f2f8fb2a871ee88e956e2ed91bb61778e41f272c6",
+        "signature": "c1759cb171c7619af0d2234f2f8fb2a871ee88e956e2ed91bb61778e41f272c6"
+      },
+      "../node_modules/typescript/lib/lib.es2017.typedarrays.d.ts": {
+        "version": "28569d59e07d4378cb3d54979c4c60f9f06305c9bb6999ffe6cab758957adc46",
+        "signature": "28569d59e07d4378cb3d54979c4c60f9f06305c9bb6999ffe6cab758957adc46"
+      },
+      "../node_modules/typescript/lib/lib.es2018.asyncgenerator.d.ts": {
+        "version": "93c0c9ae60e46e4d1389dd33936bbfa24d9c66ef83a1569fcbb67a46432405e0",
+        "signature": "93c0c9ae60e46e4d1389dd33936bbfa24d9c66ef83a1569fcbb67a46432405e0"
+      },
+      "../node_modules/typescript/lib/lib.es2018.asynciterable.d.ts": {
+        "version": "16c06e535d8e03be7c35735f9ce92c9e591cfea50cdcd0ac1353a0b85c60ab10",
+        "signature": "16c06e535d8e03be7c35735f9ce92c9e591cfea50cdcd0ac1353a0b85c60ab10"
+      },
+      "../node_modules/typescript/lib/lib.es2018.intl.d.ts": {
+        "version": "1b820b57379c726f94af50cd60053674af53ff9d079c1563cc70071e8b757dd0",
+        "signature": "1b820b57379c726f94af50cd60053674af53ff9d079c1563cc70071e8b757dd0"
+      },
+      "../node_modules/typescript/lib/lib.es2018.promise.d.ts": {
+        "version": "efe049114bad1035b0aa9a4a0359f50ab776e3897c411521e51d3013079cbd62",
+        "signature": "efe049114bad1035b0aa9a4a0359f50ab776e3897c411521e51d3013079cbd62"
+      },
+      "../node_modules/typescript/lib/lib.es2018.regexp.d.ts": {
+        "version": "e7780d04cd4120ee554c665829db2bbdd6b947cbaa3c150b7d9ea74df3beb2e8",
+        "signature": "e7780d04cd4120ee554c665829db2bbdd6b947cbaa3c150b7d9ea74df3beb2e8"
+      },
+      "../node_modules/typescript/lib/lib.esnext.intl.d.ts": {
+        "version": "f6e0c89daaf72eac38dfb1d5ef0972183f7f26a68da15bfe5bcb7cfccf0c7db8",
+        "signature": "f6e0c89daaf72eac38dfb1d5ef0972183f7f26a68da15bfe5bcb7cfccf0c7db8"
+      },
+      "../node_modules/typescript/lib/lib.esnext.bigint.d.ts": {
+        "version": "63b66918290d794f73832a6d0325be5026236674fe8c0cb0b68d162000d7bbe8",
+        "signature": "63b66918290d794f73832a6d0325be5026236674fe8c0cb0b68d162000d7bbe8"
+      },
+      "../node_modules/@types/react/global.d.ts": {
+        "version": "68188f9f0950ca019af3f061cb494751a2798648586207cbf2089dccd68b663c",
+        "signature": "68188f9f0950ca019af3f061cb494751a2798648586207cbf2089dccd68b663c"
+      },
+      "../node_modules/csstype/index.d.ts": {
+        "version": "599c67cf56a35a8a7bee5bcd877dece4cb71553efb763ebf1050c6987acfaefc",
+        "signature": "599c67cf56a35a8a7bee5bcd877dece4cb71553efb763ebf1050c6987acfaefc"
+      },
+      "../node_modules/@types/prop-types/index.d.ts": {
+        "version": "0d6e7a44a6b86683505d6aba8ce4d8b0566c6414300e40e015cafe97538b5106",
+        "signature": "0d6e7a44a6b86683505d6aba8ce4d8b0566c6414300e40e015cafe97538b5106"
+      },
+      "../node_modules/@types/react/index.d.ts": {
+        "version": "ca7fd0b19265fdc74c5ffdc43c0e30d69a246b300b45da34834d7f37bc52caef",
+        "signature": "ca7fd0b19265fdc74c5ffdc43c0e30d69a246b300b45da34834d7f37bc52caef"
+      },
+      "../node_modules/@types/cli-color/index.d.ts": {
+        "version": "c33d1976c390b9be3c4f88ba953426bcb7ea5c672a77db5e7a858e6a12f007ac",
+        "signature": "c33d1976c390b9be3c4f88ba953426bcb7ea5c672a77db5e7a858e6a12f007ac"
+      },
+      "../src/common/log-service.ts": {
+        "version": "d88925f309c0d5e56d10a20bb78c81eed412aab527fd247094aba9b6de7b6b3a",
+        "signature": "c6f0532310aaffb34cc5665c3f0a6ca7b7795a0ed21a32089b923032db268938"
+      },
+      "../src/react-app/node_modules/axios/index.d.ts": {
+        "version": "9b3812f5ae5c9c8c9daf7107e1041f4ad9d19aebd12b738a81f22a1ac1f5e371",
+        "signature": "9b3812f5ae5c9c8c9daf7107e1041f4ad9d19aebd12b738a81f22a1ac1f5e371"
+      },
+      "../src/react-app/src/swagger/common/request-service.ts": {
+        "version": "c120758b3ec82307b09fbe4f8201d65fb83aa143b4066fdc7aed4c54170ad5a3",
+        "signature": "b47e132954a0428478c500714375af7ed13cb84be3364dad93705dcc484306b0"
+      },
+      "../src/react-app/node_modules/@types/react/index.d.ts": {
+        "version": "ca7fd0b19265fdc74c5ffdc43c0e30d69a246b300b45da34834d7f37bc52caef",
+        "signature": "ca7fd0b19265fdc74c5ffdc43c0e30d69a246b300b45da34834d7f37bc52caef"
+      },
+      "../src/react-app/src/swagger/common/swagger-plugins.ts": {
+        "version": "3ea2735230b07fc0ac4bd84e9aa9ce0221075b95306bc3f1bc90277679d87dab",
+        "signature": "8760458c796f405f90db9d3870d7e1b9caca3fbe7221f674a9c15f6f1e0ff403"
+      },
+      "../src/react-app/src/swagger/common/swagger-context.ts": {
+        "version": "ab50f7f6644e7604193aaa35bf57fc06ce40b6f4448d352a06920608237bf62c",
+        "signature": "85304f945927b042d9337e444d05115d5758a57bde1b713b893ae5fb188b991e"
+      },
+      "../src/react-app/src/swagger/model/swagger-common.ts": {
+        "version": "590d6af51f0ba3ddfef537a03f61979a3944bdf1202d3e0eb0685e28caef4f75",
+        "signature": "ac67ab7a3d1e2f60240838263e36e9b456f2c06299148ea7bf7c71864cf48d70"
+      },
+      "../src/react-app/src/swagger/model/swagger-method.ts": {
+        "version": "93ffdd42d879b4e74d0f2ad19d490d98db1473f74a38c021132c7d3ad21452c3",
+        "signature": "28f41a44398f126f0acea228bc3bd010413b2997fb4586c23dcda9cf24807c3e"
+      },
+      "../src/react-app/src/swagger/model/swagger-definition.ts": {
+        "version": "df5792ceec63a990e0a930ebd39fbca1ac8698dfa536d3be89d3dec0915a1f41",
+        "signature": "dd10e1ce132da70e1c152029cbe3973b1c978158a9d0b02b92f9238a8be24417"
+      },
+      "../src/react-app/src/swagger/model/swagger-doc.ts": {
+        "version": "6c4fbe7bdfba32429b7faf6e6fb2aeee276d03e61265975b1fb4e6e1cb6fa385",
+        "signature": "2bdcd402e7ef1760a188e797db9fe2dbfeae63b43ed19a5850621914598e6b2e"
+      },
+      "../src/react-app/src/swagger/utils.ts": {
+        "version": "e2c975f749a9cb7e987c2d873326684f1b1ba3b858089bbda37407bf3bbfce52",
+        "signature": "c6e4d6856b89c230035c720b1c1e871c9bda129a58bddaf8ab09ba9eb8b89220"
+      },
+      "../src/react-app/src/swagger/model/swagger-class.ts": {
+        "version": "ca16905988fdf8add7d4cf06d0fef04888066c7a65848a04f73e29ffebc1a2e6",
+        "signature": "710f35695e12a00e4a364f867eaba8979cdce49032d4959e3cafae9fdc4af746"
+      },
+      "../src/react-app/src/swagger/ts-generator/class/class-import.tsx": {
+        "version": "7f92d362b1cee46fa29be052f370ff38255a2650a1a2651db84d277a491e7b18",
+        "signature": "1fd0235866d701fa970e90a2653bec06fc9766001e7e0d0cb2ce54705b6c2680"
+      },
+      "../src/react-app/src/swagger/ts-generator/default-plugins.tsx": {
+        "version": "0883e25512ab141b440fb21b08b8c46f04a4fa28c3d68a3aec38a7c46298e2f5",
+        "signature": "dfd4ab215b6a934408d98c518d8e925e0182f698926f6ec110dca30d4375a6bd"
+      },
+      "../src/react-app/src/swagger/common/use-plugin.ts": {
+        "version": "e40222cd92752b7f0fea4f31aa10bc8d7e4ecfadbf79e9ac31cd61873c54aa40",
+        "signature": "953f3e669b90492875b0f3960b0321554de88d0da29f2a0db7c7354baa73cffd"
+      },
+      "../src/react-app/src/swagger/common/index.ts": {
+        "version": "f22b437aa37371bfa55b913e5f42b020016546e58af7a36fd25d2941c5f67201",
+        "signature": "f22b437aa37371bfa55b913e5f42b020016546e58af7a36fd25d2941c5f67201"
+      },
+      "../src/common/swagger-config.ts": {
+        "version": "e5a6248347f222dc79fe97224c21878db6048604dab3bd0931a1495dc2519128",
+        "signature": "0068f4ccfc69b56d584c9a75d14418360c211be318cde78187479b4c4c6dd42e"
+      },
+      "../src/react-app/dist/swagger/model/swagger-method.d.ts": {
+        "version": "28f41a44398f126f0acea228bc3bd010413b2997fb4586c23dcda9cf24807c3e",
+        "signature": "28f41a44398f126f0acea228bc3bd010413b2997fb4586c23dcda9cf24807c3e"
+      },
+      "../src/react-app/dist/swagger/model/swagger-definition.d.ts": {
+        "version": "dd10e1ce132da70e1c152029cbe3973b1c978158a9d0b02b92f9238a8be24417",
+        "signature": "dd10e1ce132da70e1c152029cbe3973b1c978158a9d0b02b92f9238a8be24417"
+      },
+      "../src/react-app/dist/swagger/model/swagger-doc.d.ts": {
+        "version": "2bdcd402e7ef1760a188e797db9fe2dbfeae63b43ed19a5850621914598e6b2e",
+        "signature": "2bdcd402e7ef1760a188e797db9fe2dbfeae63b43ed19a5850621914598e6b2e"
+      },
+      "../src/react-app/dist/swagger/model/swagger-class.d.ts": {
+        "version": "710f35695e12a00e4a364f867eaba8979cdce49032d4959e3cafae9fdc4af746",
+        "signature": "710f35695e12a00e4a364f867eaba8979cdce49032d4959e3cafae9fdc4af746"
+      },
+      "../src/react-app/dist/swagger/model/swagger-common.d.ts": {
+        "version": "ac67ab7a3d1e2f60240838263e36e9b456f2c06299148ea7bf7c71864cf48d70",
+        "signature": "ac67ab7a3d1e2f60240838263e36e9b456f2c06299148ea7bf7c71864cf48d70"
+      },
+      "../src/react-app/dist/swagger/model/index.d.ts": {
+        "version": "9de52bd92d81e17c2ea725ca8e5bcce0c7628c347ca8200853dd4be67a67ac9f",
+        "signature": "9de52bd92d81e17c2ea725ca8e5bcce0c7628c347ca8200853dd4be67a67ac9f"
+      },
+      "../node_modules/@types/react-dom/server/index.d.ts": {
+        "version": "fc5599af843c3dd98b14a8de822baf26043ef95f60dd311b118343a66c5ccb00",
+        "signature": "fc5599af843c3dd98b14a8de822baf26043ef95f60dd311b118343a66c5ccb00"
+      },
+      "../src/react-app/src/swagger/model/index.ts": {
+        "version": "9de52bd92d81e17c2ea725ca8e5bcce0c7628c347ca8200853dd4be67a67ac9f",
+        "signature": "9de52bd92d81e17c2ea725ca8e5bcce0c7628c347ca8200853dd4be67a67ac9f"
+      },
+      "../src/common/utils.ts": {
+        "version": "02d4475ae0eef617fe7d17f761e87f39e47239195b96135d4047415a2e40f502",
+        "signature": "713e9019f722036c5b13798237deec5827735af3016cda7f1a87e4f0b54834ca"
+      },
+      "../src/common/swagger-generator.tsx": {
+        "version": "3466ea069b44ce1ece7691dbe798d35b3bea04ae4ffbab2c0788fd7072adea06",
+        "signature": "0ee948180461aefa872f55761c71803c707823e8ec4115cafe11f31bb5a43b71"
+      },
+      "../src/react-app/dist/swagger/common/request-service.d.ts": {
+        "version": "b47e132954a0428478c500714375af7ed13cb84be3364dad93705dcc484306b0",
+        "signature": "b47e132954a0428478c500714375af7ed13cb84be3364dad93705dcc484306b0"
+      },
+      "../src/react-app/dist/swagger/common/swagger-plugins.d.ts": {
+        "version": "8760458c796f405f90db9d3870d7e1b9caca3fbe7221f674a9c15f6f1e0ff403",
+        "signature": "8760458c796f405f90db9d3870d7e1b9caca3fbe7221f674a9c15f6f1e0ff403"
+      },
+      "../src/react-app/dist/swagger/common/swagger-context.d.ts": {
+        "version": "85304f945927b042d9337e444d05115d5758a57bde1b713b893ae5fb188b991e",
+        "signature": "85304f945927b042d9337e444d05115d5758a57bde1b713b893ae5fb188b991e"
+      },
+      "../src/react-app/dist/swagger/common/use-plugin.d.ts": {
+        "version": "953f3e669b90492875b0f3960b0321554de88d0da29f2a0db7c7354baa73cffd",
+        "signature": "953f3e669b90492875b0f3960b0321554de88d0da29f2a0db7c7354baa73cffd"
+      },
+      "../src/react-app/dist/swagger/common/index.d.ts": {
+        "version": "f22b437aa37371bfa55b913e5f42b020016546e58af7a36fd25d2941c5f67201",
+        "signature": "f22b437aa37371bfa55b913e5f42b020016546e58af7a36fd25d2941c5f67201"
+      },
+      "../src/react-app/dist/swagger/ts-generator/class/class-constructor.d.ts": {
+        "version": "92a78d427e2f79a66b7b72a16bf8cdcd968552be3cb4d75490c87845841ae5e1",
+        "signature": "92a78d427e2f79a66b7b72a16bf8cdcd968552be3cb4d75490c87845841ae5e1"
+      },
+      "../src/react-app/dist/swagger/ts-generator/class/class-definition.d.ts": {
+        "version": "d1475c0494b92f569336a404f401ac2f7c11b25f5646b8924830f21a0d162648",
+        "signature": "d1475c0494b92f569336a404f401ac2f7c11b25f5646b8924830f21a0d162648"
+      },
+      "../src/react-app/dist/swagger/ts-generator/class/class-fields.d.ts": {
+        "version": "e65a46c35cdfe09d680e9f4458f63525de3fb19651fa86c872daab1b8b30ec95",
+        "signature": "e65a46c35cdfe09d680e9f4458f63525de3fb19651fa86c872daab1b8b30ec95"
+      },
+      "../src/react-app/dist/swagger/ts-generator/class/class-import.d.ts": {
+        "version": "1fd0235866d701fa970e90a2653bec06fc9766001e7e0d0cb2ce54705b6c2680",
+        "signature": "1fd0235866d701fa970e90a2653bec06fc9766001e7e0d0cb2ce54705b6c2680"
+      },
+      "../src/react-app/dist/swagger/ts-generator/class/class-methods.d.ts": {
+        "version": "6102c52fbfca819a9c9c3307fd0e6ef2314f10043d07d4ac478a9c983fd93d09",
+        "signature": "6102c52fbfca819a9c9c3307fd0e6ef2314f10043d07d4ac478a9c983fd93d09"
+      },
+      "../src/react-app/dist/swagger/ts-generator/class/class-name.d.ts": {
+        "version": "08807a8b3f114717eecaccacab37b0ff6ceaf450e2fcd73600c7f1dcc9a687e7",
+        "signature": "08807a8b3f114717eecaccacab37b0ff6ceaf450e2fcd73600c7f1dcc9a687e7"
+      },
+      "../src/react-app/dist/swagger/ts-generator/class/index.d.ts": {
+        "version": "a7e9591f5ce849300fd9aeb8b74edbcde76463e4f4dcdaea34c55c85a4a66e53",
+        "signature": "a7e9591f5ce849300fd9aeb8b74edbcde76463e4f4dcdaea34c55c85a4a66e53"
+      },
+      "../src/react-app/dist/swagger/ts-generator/definitions/model-definition.d.ts": {
+        "version": "3628d3222fcaed4ec5e700cf73f781e6e35ad0e39a0c8bdcbecdb72f8562f3ed",
+        "signature": "3628d3222fcaed4ec5e700cf73f781e6e35ad0e39a0c8bdcbecdb72f8562f3ed"
+      },
+      "../src/react-app/dist/swagger/ts-generator/definitions/index.d.ts": {
+        "version": "a5e5b460c531b53e7ca65192669b69c3afcb20dd208ce2e7637662d6aa6d9e90",
+        "signature": "a5e5b460c531b53e7ca65192669b69c3afcb20dd208ce2e7637662d6aa6d9e90"
+      },
+      "../src/react-app/dist/swagger/ts-generator/method/method-arguments.d.ts": {
+        "version": "8c5fe67721868ef23eb4fce6ddac6459e730048382d757608eb92d0112ee2cea",
+        "signature": "8c5fe67721868ef23eb4fce6ddac6459e730048382d757608eb92d0112ee2cea"
+      },
+      "../src/react-app/dist/swagger/ts-generator/method/method-body.d.ts": {
+        "version": "31f607fc7dbca4f7f74e8c707a6308841e36b55acb0d40708bd9478e8a8e70ad",
+        "signature": "31f607fc7dbca4f7f74e8c707a6308841e36b55acb0d40708bd9478e8a8e70ad"
+      },
+      "../src/react-app/dist/swagger/ts-generator/method/method-definition.d.ts": {
+        "version": "8e93683694f9309a04688a3bc7315dcecaa92d0de8405d3335859fc244ee4190",
+        "signature": "8e93683694f9309a04688a3bc7315dcecaa92d0de8405d3335859fc244ee4190"
+      },
+      "../src/react-app/dist/swagger/ts-generator/method/method-return-type.d.ts": {
+        "version": "668e339c6fafa9cec02e20a456396b0388e1c7ec8b43b1190bf9743705f181f8",
+        "signature": "668e339c6fafa9cec02e20a456396b0388e1c7ec8b43b1190bf9743705f181f8"
+      },
+      "../src/react-app/dist/swagger/ts-generator/method/index.d.ts": {
+        "version": "ed04c443fb0482acc62651348ea8f2b51b1536b6d94c05342d37e09963f6c5be",
+        "signature": "ed04c443fb0482acc62651348ea8f2b51b1536b6d94c05342d37e09963f6c5be"
+      },
+      "../src/react-app/dist/swagger/ts-generator/default-plugins.d.ts": {
+        "version": "dfd4ab215b6a934408d98c518d8e925e0182f698926f6ec110dca30d4375a6bd",
+        "signature": "dfd4ab215b6a934408d98c518d8e925e0182f698926f6ec110dca30d4375a6bd"
+      },
+      "../src/react-app/dist/swagger/ts-generator/index.d.ts": {
+        "version": "dc931cca2c0ec9d29dc539ef61a0800e3a20865245c51757ca939a37d6a6730c",
+        "signature": "dc931cca2c0ec9d29dc539ef61a0800e3a20865245c51757ca939a37d6a6730c"
+      },
+      "../src/react-app/dist/swagger/ui/api-classes.d.ts": {
+        "version": "52c6d4a1a1836c9d2645b613347e0b71a4aed840feb9e174633fd84bd7c31ffd",
+        "signature": "52c6d4a1a1836c9d2645b613347e0b71a4aed840feb9e174633fd84bd7c31ffd"
+      },
+      "../src/react-app/dist/swagger/ui/definitions.d.ts": {
+        "version": "5356207ef74321793264508d7efb374062c8bef92918ab9d46d5b1a651ef4ae6",
+        "signature": "5356207ef74321793264508d7efb374062c8bef92918ab9d46d5b1a651ef4ae6"
+      },
+      "../src/react-app/dist/swagger/ui/diff.d.ts": {
+        "version": "ad533fb388b45e79469af1a7cfdea59adf727b894620bce48239941f6ff91098",
+        "signature": "ad533fb388b45e79469af1a7cfdea59adf727b894620bce48239941f6ff91098"
+      },
+      "../src/react-app/dist/swagger/ui/swagger.d.ts": {
+        "version": "3282377a503d85ee93a608d28fea2eec97784ba7f2b47f17f0dcb1067273421f",
+        "signature": "3282377a503d85ee93a608d28fea2eec97784ba7f2b47f17f0dcb1067273421f"
+      },
+      "../src/react-app/dist/swagger/ui/index.d.ts": {
+        "version": "ecb2a0680ea45f1a8948a805269d95d7257f925bfdf5757637be0ebe9f4168e3",
+        "signature": "ecb2a0680ea45f1a8948a805269d95d7257f925bfdf5757637be0ebe9f4168e3"
+      },
+      "../src/react-app/dist/swagger/utils.d.ts": {
+        "version": "c6e4d6856b89c230035c720b1c1e871c9bda129a58bddaf8ab09ba9eb8b89220",
+        "signature": "c6e4d6856b89c230035c720b1c1e871c9bda129a58bddaf8ab09ba9eb8b89220"
+      },
+      "../src/react-app/dist/swagger/index.d.ts": {
+        "version": "726781ad3e502d508fe05b1f7f0c3be5681ea24f82896fb0e2ef1fb36733d44c",
+        "signature": "726781ad3e502d508fe05b1f7f0c3be5681ea24f82896fb0e2ef1fb36733d44c"
+      },
+      "../src/react-app/dist/demo/custom-plugins.d.ts": {
+        "version": "0d63a86a459eca6aba5bbfd1c8d6f127b2fa650de0f5e350053227eac104c340",
+        "signature": "0d63a86a459eca6aba5bbfd1c8d6f127b2fa650de0f5e350053227eac104c340"
+      },
+      "../src/react-app/dist/demo/swagger-demo.d.ts": {
+        "version": "93caaf4a97892781226b78bb39fd84dfecb48416051b76d8df5b0b90f41ca1b9",
+        "signature": "93caaf4a97892781226b78bb39fd84dfecb48416051b76d8df5b0b90f41ca1b9"
+      },
+      "../src/react-app/dist/demo/index.d.ts": {
+        "version": "8af3692750d0419bf6c4f50f114b3c4d4998a4c75f504f447dd8b8bdb8d4b80c",
+        "signature": "8af3692750d0419bf6c4f50f114b3c4d4998a4c75f504f447dd8b8bdb8d4b80c"
+      },
+      "../src/react-app/dist/main.d.ts": {
+        "version": "d695b78271fcf307118ee7fe914e3184397b97122d93874ffdb8d7f3926a394b",
+        "signature": "d695b78271fcf307118ee7fe914e3184397b97122d93874ffdb8d7f3926a394b"
+      },
+      "../src/index.ts": {
+        "version": "a470bf0bb01b791dc04b53eeed4dee40caf362b0d0421a36ac74a83e6f45c512",
+        "signature": "df594e7e4e3e826c495218ecdb014cd1bb64e065aa34865486ea4084f65ad4e8"
+      },
+      "../node_modules/axios/index.d.ts": {
+        "version": "9b3812f5ae5c9c8c9daf7107e1041f4ad9d19aebd12b738a81f22a1ac1f5e371",
+        "signature": "9b3812f5ae5c9c8c9daf7107e1041f4ad9d19aebd12b738a81f22a1ac1f5e371"
+      },
+      "../src/common/demo.tsx": {
+        "version": "3501392d6ee04821745485b94437e2f7c3e628313099fdc7f30d2e3f6ac97677",
+        "signature": "f761c91419d0a89422a0004ef1a92929dd4d2d5e5c16758654d8b0467d1998c6"
+      },
+      "../src/react-app/dist/app.d.ts": {
+        "version": "e10d8e654c486e531699fd6cfe45b8992659b564d767e24a0a52000723dd8c27",
+        "signature": "e10d8e654c486e531699fd6cfe45b8992659b564d767e24a0a52000723dd8c27"
+      },
+      "../src/react-app/dist/index.d.ts": {
+        "version": "7d799a0b775410455047bc9fb59ae98982f23f35301ab515dc75e3ec80d0de92",
+        "signature": "7d799a0b775410455047bc9fb59ae98982f23f35301ab515dc75e3ec80d0de92"
+      },
+      "../src/react-app/dist/serviceworker.d.ts": {
+        "version": "2226d1051c05054c4678fa1657a0b6d50c000d32587ea72b5103a6d5a47d24bf",
+        "signature": "2226d1051c05054c4678fa1657a0b6d50c000d32587ea72b5103a6d5a47d24bf"
+      },
+      "../src/react-app/src/swagger/ui/diff.tsx": {
+        "version": "07dba7f4be12071da43dbe86ebb862bb855d7f128a4d4e8899579a0d4a9b5f3e",
+        "signature": "ad533fb388b45e79469af1a7cfdea59adf727b894620bce48239941f6ff91098"
+      },
+      "../src/react-app/src/swagger/ts-generator/definitions/model-definition.tsx": {
+        "version": "8146e63c37f6a8bf782cd3946859c60268758530e3baa65afee631976d20504d",
+        "signature": "3628d3222fcaed4ec5e700cf73f781e6e35ad0e39a0c8bdcbecdb72f8562f3ed"
+      },
+      "../src/react-app/src/swagger/ui/definitions.tsx": {
+        "version": "302a46de00f2cfb59cec4e4b890a4c04c603cc67ef65280089fe2c58c72821a0",
+        "signature": "5356207ef74321793264508d7efb374062c8bef92918ab9d46d5b1a651ef4ae6"
+      },
+      "../src/react-app/src/swagger/ts-generator/class/class-fields.tsx": {
+        "version": "86772d411156077395fdf6162fe7f620387a62fa2d129488d6bf6fdcade2549c",
+        "signature": "e65a46c35cdfe09d680e9f4458f63525de3fb19651fa86c872daab1b8b30ec95"
+      },
+      "../src/react-app/src/swagger/ts-generator/class/class-constructor.tsx": {
+        "version": "985f78e4359afb6bc6574e6147da2b3c2bf557a5fd8ff8bd574f30a82aedfac2",
+        "signature": "92a78d427e2f79a66b7b72a16bf8cdcd968552be3cb4d75490c87845841ae5e1"
+      },
+      "../src/react-app/src/swagger/ts-generator/method/method-return-type.tsx": {
+        "version": "c5c35ede78f880edb4aa2202cc8c155cf12bf533b8399e90a48d4f81ece6a7fb",
+        "signature": "668e339c6fafa9cec02e20a456396b0388e1c7ec8b43b1190bf9743705f181f8"
+      },
+      "../src/react-app/src/swagger/ts-generator/method/method-arguments.tsx": {
+        "version": "4cc192d9c99824f08ccaa6266290c7ed32d9d46acb5761f959bbe249960350a4",
+        "signature": "8c5fe67721868ef23eb4fce6ddac6459e730048382d757608eb92d0112ee2cea"
+      },
+      "../src/react-app/src/swagger/ts-generator/method/method-body.tsx": {
+        "version": "067869c354b595016fa70e6334bcef769a37b4b376b812de738c1128bacaa7b5",
+        "signature": "31f607fc7dbca4f7f74e8c707a6308841e36b55acb0d40708bd9478e8a8e70ad"
+      },
+      "../src/react-app/src/swagger/ts-generator/method/method-definition.tsx": {
+        "version": "87ec672147f826761731356562bed300dd94f90689687bd23e08710d2641d06e",
+        "signature": "8e93683694f9309a04688a3bc7315dcecaa92d0de8405d3335859fc244ee4190"
+      },
+      "../src/react-app/src/swagger/ts-generator/class/class-methods.tsx": {
+        "version": "2657e5ecfb9f9aabfdd329c95e6dcd68508f6324dc1687d52ed7cfc6fa31abc7",
+        "signature": "6102c52fbfca819a9c9c3307fd0e6ef2314f10043d07d4ac478a9c983fd93d09"
+      },
+      "../src/react-app/src/swagger/ts-generator/class/class-name.tsx": {
+        "version": "f4aa3a00b918d47052ce084dfa2645b79da23ac4a272126f18d3d4e5b02dc041",
+        "signature": "08807a8b3f114717eecaccacab37b0ff6ceaf450e2fcd73600c7f1dcc9a687e7"
+      },
+      "../src/react-app/src/swagger/ts-generator/class/class-definition.tsx": {
+        "version": "a1087fb14725528ac29d236f7e44ac04c007949052896b078e208c6b876f3a2f",
+        "signature": "d1475c0494b92f569336a404f401ac2f7c11b25f5646b8924830f21a0d162648"
+      },
+      "../src/react-app/src/swagger/ui/api-classes.tsx": {
+        "version": "ac4fd1c010bda53928090fb561082beae8dfe48c23632a0553dd6e2733335f80",
+        "signature": "52c6d4a1a1836c9d2645b613347e0b71a4aed840feb9e174633fd84bd7c31ffd"
+      },
+      "../src/react-app/src/swagger/ui/swagger.tsx": {
+        "version": "75a9548fd4dd1175b0dc8dd3f477c00a60dcd21b205c8045fc9f3b28ca756cd6",
+        "signature": "3282377a503d85ee93a608d28fea2eec97784ba7f2b47f17f0dcb1067273421f"
+      },
+      "../src/react-app/src/demo/custom-plugins.tsx": {
+        "version": "c84fa106fb3cf15f3a655ec834190ceaec976288227101ae4f53c47cee22e46c",
+        "signature": "0d63a86a459eca6aba5bbfd1c8d6f127b2fa650de0f5e350053227eac104c340"
+      },
+      "../src/react-app/src/demo/swagger-demo.tsx": {
+        "version": "48104b07be73d93ed190152a24172af640cb1c65ff95b2f116f769e81ca6c9c6",
+        "signature": "93caaf4a97892781226b78bb39fd84dfecb48416051b76d8df5b0b90f41ca1b9"
+      },
+      "../src/react-app/src/app.tsx": {
+        "version": "5fcc1bad95974003a74021f1772381fd60f0317a7caa56039ac91fb9b4b22a21",
+        "signature": "e10d8e654c486e531699fd6cfe45b8992659b564d767e24a0a52000723dd8c27"
+      },
+      "../src/react-app/node_modules/@types/react-dom/index.d.ts": {
+        "version": "5fe76ea99187e695f2e7ee00ddb0c9db41b217397ade188b8a137504728f687f",
+        "signature": "5fe76ea99187e695f2e7ee00ddb0c9db41b217397ade188b8a137504728f687f"
+      },
+      "../src/react-app/src/serviceworker.ts": {
+        "version": "edc616ec644fe319955cd212d95156fd617f42d8d1a18ea18789c40e97abb96f",
+        "signature": "2226d1051c05054c4678fa1657a0b6d50c000d32587ea72b5103a6d5a47d24bf"
+      },
+      "../src/react-app/src/index.tsx": {
+        "version": "1946c74ec3f70e3e0c00bc52a3c507525a3f27ca4960f22f39ccc7b1319e4f15",
+        "signature": "7d799a0b775410455047bc9fb59ae98982f23f35301ab515dc75e3ec80d0de92"
+      },
+      "../src/react-app/src/swagger/ts-generator/class/index.tsx": {
+        "version": "a7e9591f5ce849300fd9aeb8b74edbcde76463e4f4dcdaea34c55c85a4a66e53",
+        "signature": "a7e9591f5ce849300fd9aeb8b74edbcde76463e4f4dcdaea34c55c85a4a66e53"
+      },
+      "../src/react-app/src/swagger/ts-generator/definitions/index.tsx": {
+        "version": "a5e5b460c531b53e7ca65192669b69c3afcb20dd208ce2e7637662d6aa6d9e90",
+        "signature": "a5e5b460c531b53e7ca65192669b69c3afcb20dd208ce2e7637662d6aa6d9e90"
+      },
+      "../src/react-app/src/swagger/ts-generator/method/index.tsx": {
+        "version": "ed04c443fb0482acc62651348ea8f2b51b1536b6d94c05342d37e09963f6c5be",
+        "signature": "ed04c443fb0482acc62651348ea8f2b51b1536b6d94c05342d37e09963f6c5be"
+      },
+      "../src/react-app/src/swagger/ts-generator/index.tsx": {
+        "version": "781a032231f6c0c0d757bde042ceff16c1d73022131ec9b7f9c203ecc57692ba",
+        "signature": "dc931cca2c0ec9d29dc539ef61a0800e3a20865245c51757ca939a37d6a6730c"
+      },
+      "../src/react-app/src/swagger/ui/index.ts": {
+        "version": "ecb2a0680ea45f1a8948a805269d95d7257f925bfdf5757637be0ebe9f4168e3",
+        "signature": "ecb2a0680ea45f1a8948a805269d95d7257f925bfdf5757637be0ebe9f4168e3"
+      },
+      "../src/react-app/src/swagger/index.ts": {
+        "version": "6407bc286992353d11fd27f73a049c695223f0fe90ae71bb486fdd4e054bfd38",
+        "signature": "726781ad3e502d508fe05b1f7f0c3be5681ea24f82896fb0e2ef1fb36733d44c"
+      },
+      "../src/react-app/src/demo/index.tsx": {
+        "version": "8af3692750d0419bf6c4f50f114b3c4d4998a4c75f504f447dd8b8bdb8d4b80c",
+        "signature": "8af3692750d0419bf6c4f50f114b3c4d4998a4c75f504f447dd8b8bdb8d4b80c"
+      },
+      "../src/react-app/src/main.ts": {
+        "version": "e14ebb985c680fc0c4940efe66e66619e13baa3e9696684521ef3d98e1282219",
+        "signature": "d695b78271fcf307118ee7fe914e3184397b97122d93874ffdb8d7f3926a394b"
+      },
+      "../node_modules/@types/node/globals.d.ts": {
+        "version": "e4461b72726848da76a31153b6b01af5e0be3b08dbfa2ec5741ad302eb20f2ed",
+        "signature": "e4461b72726848da76a31153b6b01af5e0be3b08dbfa2ec5741ad302eb20f2ed"
+      },
+      "../node_modules/@types/node/assert.d.ts": {
+        "version": "58a52f282f1dad18179023804c1f3a7536bf875748a0a314abd43f60fd5b244f",
+        "signature": "58a52f282f1dad18179023804c1f3a7536bf875748a0a314abd43f60fd5b244f"
+      },
+      "../node_modules/@types/node/async_hooks.d.ts": {
+        "version": "1305b079a057355f496bdde048716189178877a6b4fe0e9267a46af67f8c7561",
+        "signature": "1305b079a057355f496bdde048716189178877a6b4fe0e9267a46af67f8c7561"
+      },
+      "../node_modules/@types/node/buffer.d.ts": {
+        "version": "61215c1a376bbe8f51cab4cc4ddbf3746387015113c37a84d981d4738c21b878",
+        "signature": "61215c1a376bbe8f51cab4cc4ddbf3746387015113c37a84d981d4738c21b878"
+      },
+      "../node_modules/@types/events/index.d.ts": {
+        "version": "400db42c3a46984118bff14260d60cec580057dc1ab4c2d7310beb643e4f5935",
+        "signature": "400db42c3a46984118bff14260d60cec580057dc1ab4c2d7310beb643e4f5935"
+      },
+      "../node_modules/@types/node/child_process.d.ts": {
+        "version": "fbf717914b6e7d87d969b13c646b5d15dca61c9b89ea48e97a1513809445b003",
+        "signature": "fbf717914b6e7d87d969b13c646b5d15dca61c9b89ea48e97a1513809445b003"
+      },
+      "../node_modules/@types/node/cluster.d.ts": {
+        "version": "ce629710e5e58724902b753212e97861fd73e2aa09f5d88cb6d55dc763cf8c8a",
+        "signature": "ce629710e5e58724902b753212e97861fd73e2aa09f5d88cb6d55dc763cf8c8a"
+      },
+      "../node_modules/@types/node/console.d.ts": {
+        "version": "525c8fc510d9632d2a0a9de2d41c3ac1cdd79ff44d3b45c6d81cacabb683528d",
+        "signature": "525c8fc510d9632d2a0a9de2d41c3ac1cdd79ff44d3b45c6d81cacabb683528d"
+      },
+      "../node_modules/@types/node/constants.d.ts": {
+        "version": "8ce9418c78d3c1fb703ddbe38c936d34a989ba278666979826590dfa0772a424",
+        "signature": "8ce9418c78d3c1fb703ddbe38c936d34a989ba278666979826590dfa0772a424"
+      },
+      "../node_modules/@types/node/crypto.d.ts": {
+        "version": "ab2319db789867778ccd5f2b5e6cd559e716d1cd3726b0e03724af463eddf78b",
+        "signature": "ab2319db789867778ccd5f2b5e6cd559e716d1cd3726b0e03724af463eddf78b"
+      },
+      "../node_modules/@types/node/dgram.d.ts": {
+        "version": "7954df44c35d39b851b996fdc1af0a252e4e23f862abfef388a058203bb94c30",
+        "signature": "7954df44c35d39b851b996fdc1af0a252e4e23f862abfef388a058203bb94c30"
+      },
+      "../node_modules/@types/node/dns.d.ts": {
+        "version": "ef226a42de7022eacdfa0f15aabf73b46c47af93044c8ebfab8aa8e3cf6c330c",
+        "signature": "ef226a42de7022eacdfa0f15aabf73b46c47af93044c8ebfab8aa8e3cf6c330c"
+      },
+      "../node_modules/@types/node/domain.d.ts": {
+        "version": "d5b7c8819ce1bd31a45f7675309e145ec28e3aa1b60a8e0637fd0e8916255baa",
+        "signature": "d5b7c8819ce1bd31a45f7675309e145ec28e3aa1b60a8e0637fd0e8916255baa"
+      },
+      "../node_modules/@types/node/events.d.ts": {
+        "version": "0be551fde848d5adde38731272ee980bda2bde0f8bf2a76ce99e01b86985546c",
+        "signature": "0be551fde848d5adde38731272ee980bda2bde0f8bf2a76ce99e01b86985546c"
+      },
+      "../node_modules/@types/node/fs.d.ts": {
+        "version": "6bd120d96313412155ae7d4766d586a38576a058b3e269be2152db7030fbc882",
+        "signature": "6bd120d96313412155ae7d4766d586a38576a058b3e269be2152db7030fbc882"
+      },
+      "../node_modules/@types/node/http.d.ts": {
+        "version": "db6de49919cf11a300f9203371d8e251d58558c509b3b92cee3badadfdb34d36",
+        "signature": "db6de49919cf11a300f9203371d8e251d58558c509b3b92cee3badadfdb34d36"
+      },
+      "../node_modules/@types/node/http2.d.ts": {
+        "version": "745494f14a9e133beee622ca51cdc59c8896ff77c9f3cd017a4ce735b30dac2d",
+        "signature": "745494f14a9e133beee622ca51cdc59c8896ff77c9f3cd017a4ce735b30dac2d"
+      },
+      "../node_modules/@types/node/https.d.ts": {
+        "version": "dacbe08610729f6343ea9880ea8e737c6d7a6efa4a318d8f6acaf85db4aceed6",
+        "signature": "dacbe08610729f6343ea9880ea8e737c6d7a6efa4a318d8f6acaf85db4aceed6"
+      },
+      "../node_modules/@types/node/inspector.d.ts": {
+        "version": "4218ced3933a31eed1278d350dd63c5900df0f0904f57d61c054d7a4b83dbe4c",
+        "signature": "4218ced3933a31eed1278d350dd63c5900df0f0904f57d61c054d7a4b83dbe4c"
+      },
+      "../node_modules/@types/node/module.d.ts": {
+        "version": "03394bf8deb8781b490ae9266a843fbdf00647947d79e25fcbf1d89a9e9c8a66",
+        "signature": "03394bf8deb8781b490ae9266a843fbdf00647947d79e25fcbf1d89a9e9c8a66"
+      },
+      "../node_modules/@types/node/net.d.ts": {
+        "version": "1224b49e2c8f3b4ed618969d2989412d1282536d2a6a31c30c84d5da01d8b8e4",
+        "signature": "1224b49e2c8f3b4ed618969d2989412d1282536d2a6a31c30c84d5da01d8b8e4"
+      },
+      "../node_modules/@types/node/os.d.ts": {
+        "version": "1a6016bd905855b2b45881e9edbd7ab8c7175f8bcbb711ff06989c4bcdc75486",
+        "signature": "1a6016bd905855b2b45881e9edbd7ab8c7175f8bcbb711ff06989c4bcdc75486"
+      },
+      "../node_modules/@types/node/path.d.ts": {
+        "version": "5fb30076f0e0e5744db8993648bfb67aadd895f439edad5cce039127a87a8a36",
+        "signature": "5fb30076f0e0e5744db8993648bfb67aadd895f439edad5cce039127a87a8a36"
+      },
+      "../node_modules/@types/node/perf_hooks.d.ts": {
+        "version": "27ef4001526ee9d8afa57687a60bb3b59c52b32d29db0a2260094ab64726164f",
+        "signature": "27ef4001526ee9d8afa57687a60bb3b59c52b32d29db0a2260094ab64726164f"
+      },
+      "../node_modules/@types/node/process.d.ts": {
+        "version": "3a8848a9c307429b861402cc69bc472ffe0c05b86474fc158723169161e16389",
+        "signature": "3a8848a9c307429b861402cc69bc472ffe0c05b86474fc158723169161e16389"
+      },
+      "../node_modules/@types/node/punycode.d.ts": {
+        "version": "30ec6f9c683b988c3cfaa0c4690692049c4e7ed7dc6f6e94f56194c06b86f5e1",
+        "signature": "30ec6f9c683b988c3cfaa0c4690692049c4e7ed7dc6f6e94f56194c06b86f5e1"
+      },
+      "../node_modules/@types/node/querystring.d.ts": {
+        "version": "e0070c45bf15b872f58eee948f71ad6f4f424f36330b2477753fc1aed3ece36e",
+        "signature": "e0070c45bf15b872f58eee948f71ad6f4f424f36330b2477753fc1aed3ece36e"
+      },
+      "../node_modules/@types/node/readline.d.ts": {
+        "version": "b0bc3b2fd4113d182da1af2442ac532b987401579b291669859b60a261b7ee24",
+        "signature": "b0bc3b2fd4113d182da1af2442ac532b987401579b291669859b60a261b7ee24"
+      },
+      "../node_modules/@types/node/repl.d.ts": {
+        "version": "65dbe15ed8a8ed5d4707a63868178dc38111cfc06de28a2e50713ca017a9c157",
+        "signature": "65dbe15ed8a8ed5d4707a63868178dc38111cfc06de28a2e50713ca017a9c157"
+      },
+      "../node_modules/@types/node/stream.d.ts": {
+        "version": "2350c09d0121a0b22c386a7bb8436d521b444c6b4b3e6ee37197d08a23f3b9dd",
+        "signature": "2350c09d0121a0b22c386a7bb8436d521b444c6b4b3e6ee37197d08a23f3b9dd"
+      },
+      "../node_modules/@types/node/string_decoder.d.ts": {
+        "version": "7e62aac2cc9c0710d772047ad89e8d7117f52592c791eb995ce1f865fedab432",
+        "signature": "7e62aac2cc9c0710d772047ad89e8d7117f52592c791eb995ce1f865fedab432"
+      },
+      "../node_modules/@types/node/timers.d.ts": {
+        "version": "b40652bf8ce4a18133b31349086523b219724dca8df3448c1a0742528e7ad5b9",
+        "signature": "b40652bf8ce4a18133b31349086523b219724dca8df3448c1a0742528e7ad5b9"
+      },
+      "../node_modules/@types/node/tls.d.ts": {
+        "version": "af5f07deb33b2fb92ef67ea5ebb69670b81c74908b646e7cd4361a331d2a558a",
+        "signature": "af5f07deb33b2fb92ef67ea5ebb69670b81c74908b646e7cd4361a331d2a558a"
+      },
+      "../node_modules/@types/node/trace_events.d.ts": {
+        "version": "978aecd2e6bc2ac094e9a35eda98ff8586713857b3655e7c98ca5ed8f7d50662",
+        "signature": "978aecd2e6bc2ac094e9a35eda98ff8586713857b3655e7c98ca5ed8f7d50662"
+      },
+      "../node_modules/@types/node/tty.d.ts": {
+        "version": "08261bfa763b8cd7fa74c06debf70ee22268c299a18e5dc7c48736bc352be007",
+        "signature": "08261bfa763b8cd7fa74c06debf70ee22268c299a18e5dc7c48736bc352be007"
+      },
+      "../node_modules/@types/node/url.d.ts": {
+        "version": "1e3da92862604b1f7a32265169f9aa712c4567742d42597704e04ae3e07019e7",
+        "signature": "1e3da92862604b1f7a32265169f9aa712c4567742d42597704e04ae3e07019e7"
+      },
+      "../node_modules/@types/node/util.d.ts": {
+        "version": "0f6382d5032e45eec50b8f6c1e18c77544bc4db2ef8f854d196b254ec16add12",
+        "signature": "0f6382d5032e45eec50b8f6c1e18c77544bc4db2ef8f854d196b254ec16add12"
+      },
+      "../node_modules/@types/node/v8.d.ts": {
+        "version": "e98d697adf809fc14dc88ed4e00e4f0e0e381ca23d6d9320cf01af87e801f725",
+        "signature": "e98d697adf809fc14dc88ed4e00e4f0e0e381ca23d6d9320cf01af87e801f725"
+      },
+      "../node_modules/@types/node/vm.d.ts": {
+        "version": "ad20b1311e55187f8eeefdd282a02dbc70e5ac0cf8ab4cabae99c142b32cc562",
+        "signature": "ad20b1311e55187f8eeefdd282a02dbc70e5ac0cf8ab4cabae99c142b32cc562"
+      },
+      "../node_modules/@types/node/worker_threads.d.ts": {
+        "version": "7780573ed8387aaadcc61d87f3d60d77dabf1e060da252dc72ab1d73401988bb",
+        "signature": "7780573ed8387aaadcc61d87f3d60d77dabf1e060da252dc72ab1d73401988bb"
+      },
+      "../node_modules/@types/node/zlib.d.ts": {
+        "version": "2ffd50644d73fc1fa59c69d48859b6c843d3604609d7353725b6d2b001f05a2b",
+        "signature": "2ffd50644d73fc1fa59c69d48859b6c843d3604609d7353725b6d2b001f05a2b"
+      },
+      "../node_modules/@types/node/base.d.ts": {
+        "version": "6622f76993bdfeaacb947ba7c4cf26f2e5c5194194d02d792c3cba4174cd8fce",
+        "signature": "6622f76993bdfeaacb947ba7c4cf26f2e5c5194194d02d792c3cba4174cd8fce"
+      },
+      "../node_modules/@types/node/ts3.2/util.d.ts": {
+        "version": "4f54f0a9dd3b644c99ec32b32f8804d5978bc854799b228ae9c467bf3c84c64c",
+        "signature": "4f54f0a9dd3b644c99ec32b32f8804d5978bc854799b228ae9c467bf3c84c64c"
+      },
+      "../node_modules/@types/node/ts3.2/globals.d.ts": {
+        "version": "4926e99d2ad39c0bbd36f2d37cc8f52756bc7a5661ad7b12815df871a4b07ba1",
+        "signature": "4926e99d2ad39c0bbd36f2d37cc8f52756bc7a5661ad7b12815df871a4b07ba1"
+      },
+      "../node_modules/@types/node/ts3.2/index.d.ts": {
+        "version": "765fc34423b93c2ab763670d8d11d99e5f47387c13c161d6f1640dd6d91b7d1c",
+        "signature": "765fc34423b93c2ab763670d8d11d99e5f47387c13c161d6f1640dd6d91b7d1c"
+      },
+      "../node_modules/@types/react-dom/index.d.ts": {
+        "version": "5fe76ea99187e695f2e7ee00ddb0c9db41b217397ade188b8a137504728f687f",
+        "signature": "5fe76ea99187e695f2e7ee00ddb0c9db41b217397ade188b8a137504728f687f"
+      },
+      "../src/react-app/node_modules/react-scripts/lib/react-app.d.ts": {
+        "version": "139039cf80290c070be217de6830aae522e1f26b10ced2a3bf81e836191bb6a0",
+        "signature": "139039cf80290c070be217de6830aae522e1f26b10ced2a3bf81e836191bb6a0"
+      },
+      "../src/react-app/src/react-app-env.d.ts": {
+        "version": "ba027b6f18800b0303aa700e73d8cbffeefd5df864df6be460f5bad437fdc61c",
+        "signature": "ba027b6f18800b0303aa700e73d8cbffeefd5df864df6be460f5bad437fdc61c"
+      },
+      "../node_modules/@types/connect/index.d.ts": {
+        "version": "c3be42b83b5f57ae2f65280fa395f6d31f61304ac1a29b7b406b6a0e71da8c82",
+        "signature": "c3be42b83b5f57ae2f65280fa395f6d31f61304ac1a29b7b406b6a0e71da8c82"
+      },
+      "../node_modules/@types/body-parser/index.d.ts": {
+        "version": "599abfa56230d73afc30a3bde749c2efd90acb58301b446835d5e235b35e2768",
+        "signature": "599abfa56230d73afc30a3bde749c2efd90acb58301b446835d5e235b35e2768"
+      },
+      "../node_modules/@types/range-parser/index.d.ts": {
+        "version": "4e88b833be14c7f384e0dcd57bb30acd799e8e34d212635d693e41a75a71164b",
+        "signature": "4e88b833be14c7f384e0dcd57bb30acd799e8e34d212635d693e41a75a71164b"
+      },
+      "../node_modules/@types/express-serve-static-core/index.d.ts": {
+        "version": "d73f61d755e6f17b9dc315cbd8e6522a47c2153a07b67fd8295ef48b40ad6344",
+        "signature": "d73f61d755e6f17b9dc315cbd8e6522a47c2153a07b67fd8295ef48b40ad6344"
+      },
+      "../node_modules/@types/mime/index.d.ts": {
+        "version": "be27a64e821a3e5af838650e4aa25805c60f057d0c37a9762c378d19d364b3e6",
+        "signature": "be27a64e821a3e5af838650e4aa25805c60f057d0c37a9762c378d19d364b3e6"
+      },
+      "../node_modules/@types/serve-static/index.d.ts": {
+        "version": "cdbae5083ef8f786069519405ca1f1e2ce72b9efebdf5e1931584fba747f3bc0",
+        "signature": "cdbae5083ef8f786069519405ca1f1e2ce72b9efebdf5e1931584fba747f3bc0"
+      },
+      "../node_modules/@types/express/index.d.ts": {
+        "version": "1f92cdebe2b1e0e6309ccdb6e8700cfd2d3e7131c7842f91b38ed1e4ff2a7090",
+        "signature": "1f92cdebe2b1e0e6309ccdb6e8700cfd2d3e7131c7842f91b38ed1e4ff2a7090"
+      },
+      "../node_modules/@types/cors/index.d.ts": {
+        "version": "67a79af60f6e0f8eac8156364361915047de18fe367d7e0dd78a91add9f11bad",
+        "signature": "67a79af60f6e0f8eac8156364361915047de18fe367d7e0dd78a91add9f11bad"
+      },
+      "../node_modules/@types/minimatch/index.d.ts": {
+        "version": "1d1e6bd176eee5970968423d7e215bfd66828b6db8d54d17afec05a831322633",
+        "signature": "1d1e6bd176eee5970968423d7e215bfd66828b6db8d54d17afec05a831322633"
+      },
+      "../node_modules/@types/glob/index.d.ts": {
+        "version": "d852d6282c8dc8156d26d6bda83ab4bde51fee05ba2fe0ecdc165ddda009d3ee",
+        "signature": "d852d6282c8dc8156d26d6bda83ab4bde51fee05ba2fe0ecdc165ddda009d3ee"
+      },
+      "../node_modules/@types/morgan/index.d.ts": {
+        "version": "caf53e071bb7f68cebd6a1d8d63a8c6e8a4472da65ee7620014f58f7dc984d42",
+        "signature": "caf53e071bb7f68cebd6a1d8d63a8c6e8a4472da65ee7620014f58f7dc984d42"
+      },
+      "../node_modules/@types/swagger-ui-express/index.d.ts": {
+        "version": "2105e938d796237ebe848b4b79b19feedab956074529fd074db4fcee7b15a0fb",
+        "signature": "2105e938d796237ebe848b4b79b19feedab956074529fd074db4fcee7b15a0fb"
+      }
+    },
+    "options": {
+      "target": 1,
+      "module": 1,
+      "declaration": true,
+      "outDir": "./",
+      "strict": true,
+      "emitDecoratorMetadata": true,
+      "experimentalDecorators": true,
+      "sourceMap": true,
+      "moduleResolution": 2,
+      "composite": true,
+      "lib": [
+        "lib.es2015.d.ts",
+        "lib.dom.d.ts"
+      ],
+      "jsx": 1,
+      "esModuleInterop": true,
+      "allowSyntheticDefaultImports": true,
+      "resolveJsonModule": true,
+      "forceConsistentCasingInFileNames": true,
+      "skipLibCheck": true,
+      "project": "../tsconfig-build.json",
+      "configFilePath": "../tsconfig-build.json"
+    },
+    "referencedMap": {
+      "../node_modules/typescript/lib/lib.es5.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/typescript/lib/lib.es2015.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/typescript/lib/lib.es2016.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/typescript/lib/lib.es2017.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/typescript/lib/lib.es2018.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/typescript/lib/lib.dom.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/typescript/lib/lib.es2015.core.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/typescript/lib/lib.es2015.collection.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/typescript/lib/lib.es2015.generator.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/typescript/lib/lib.es2015.iterable.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/typescript/lib/lib.es2015.promise.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/typescript/lib/lib.es2015.proxy.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/typescript/lib/lib.es2015.reflect.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/typescript/lib/lib.es2015.symbol.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/typescript/lib/lib.es2016.array.include.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/typescript/lib/lib.es2017.object.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/typescript/lib/lib.es2017.sharedmemory.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/typescript/lib/lib.es2017.string.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/typescript/lib/lib.es2017.intl.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/typescript/lib/lib.es2017.typedarrays.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/typescript/lib/lib.es2018.asyncgenerator.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/typescript/lib/lib.es2018.asynciterable.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/typescript/lib/lib.es2018.intl.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/typescript/lib/lib.es2018.promise.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/typescript/lib/lib.es2018.regexp.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/typescript/lib/lib.esnext.intl.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/typescript/lib/lib.esnext.bigint.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/react/global.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/csstype/index.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/prop-types/index.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/react/index.d.ts": [
+        "../node_modules/csstype/index.d.ts",
+        "../node_modules/@types/prop-types/index.d.ts",
+        "../node_modules/@types/react/global.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/cli-color/index.d.ts": [
+        "../node_modules/@types/cli-color/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/common/log-service.ts": [
+        "../node_modules/@types/cli-color/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/node_modules/axios/index.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/src/swagger/common/request-service.ts": [
+        "../src/react-app/node_modules/axios/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/node_modules/@types/react/index.d.ts": [
+        "../node_modules/csstype/index.d.ts",
+        "../node_modules/@types/prop-types/index.d.ts",
+        "../src/react-app/node_modules/@types/react/global.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/src/swagger/common/swagger-plugins.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/src/swagger/common/swagger-context.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../src/react-app/src/swagger/common/swagger-plugins.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/src/swagger/model/swagger-common.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/src/swagger/model/swagger-method.ts": [
+        "../src/react-app/src/swagger/model/swagger-common.ts",
+        "../src/react-app/src/swagger/model/swagger-class.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/src/swagger/model/swagger-definition.ts": [
+        "../src/react-app/src/swagger/model/swagger-common.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/src/swagger/model/swagger-doc.ts": [
+        "../src/react-app/src/swagger/model/swagger-definition.ts",
+        "../src/react-app/src/swagger/model/swagger-class.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/src/swagger/utils.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/src/swagger/model/swagger-class.ts": [
+        "../src/react-app/src/swagger/model/swagger-common.ts",
+        "../src/react-app/src/swagger/model/swagger-method.ts",
+        "../src/react-app/src/swagger/model/swagger-doc.ts",
+        "../src/react-app/src/swagger/utils.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/src/swagger/ts-generator/class/class-import.tsx": [
+        "../node_modules/@types/react/index.d.ts",
+        "../src/react-app/src/swagger/model/swagger-class.ts",
+        "../src/react-app/src/swagger/common/swagger-plugins.ts",
+        "../src/react-app/src/swagger/common/use-plugin.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/src/swagger/ts-generator/default-plugins.tsx": [
+        "../src/react-app/src/swagger/common/swagger-plugins.ts",
+        "../src/react-app/src/swagger/ts-generator/class/class-import.tsx",
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/src/swagger/common/use-plugin.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../src/react-app/src/swagger/common/swagger-plugins.ts",
+        "../src/react-app/src/swagger/common/swagger-context.ts",
+        "../src/react-app/src/swagger/ts-generator/default-plugins.tsx",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/src/swagger/common/index.ts": [
+        "../src/react-app/src/swagger/common/request-service.ts",
+        "../src/react-app/src/swagger/common/swagger-context.ts",
+        "../src/react-app/src/swagger/common/swagger-plugins.ts",
+        "../src/react-app/src/swagger/common/use-plugin.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/common/swagger-config.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../src/react-app/src/swagger/common/index.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/dist/swagger/model/swagger-method.d.ts": [
+        "../src/react-app/dist/swagger/model/swagger-class.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/dist/swagger/model/swagger-definition.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/dist/swagger/model/swagger-doc.d.ts": [
+        "../src/react-app/dist/swagger/model/swagger-definition.d.ts",
+        "../src/react-app/dist/swagger/model/swagger-class.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/dist/swagger/model/swagger-class.d.ts": [
+        "../src/react-app/dist/swagger/model/swagger-method.d.ts",
+        "../src/react-app/dist/swagger/model/swagger-doc.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/dist/swagger/model/swagger-common.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/dist/swagger/model/index.d.ts": [
+        "../src/react-app/dist/swagger/model/swagger-class.d.ts",
+        "../src/react-app/dist/swagger/model/swagger-common.d.ts",
+        "../src/react-app/dist/swagger/model/swagger-definition.d.ts",
+        "../src/react-app/dist/swagger/model/swagger-doc.d.ts",
+        "../src/react-app/dist/swagger/model/swagger-method.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/react-dom/server/index.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/src/swagger/model/index.ts": [
+        "../src/react-app/src/swagger/model/swagger-class.ts",
+        "../src/react-app/src/swagger/model/swagger-common.ts",
+        "../src/react-app/src/swagger/model/swagger-definition.ts",
+        "../src/react-app/src/swagger/model/swagger-doc.ts",
+        "../src/react-app/src/swagger/model/swagger-method.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/common/utils.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/common/swagger-generator.tsx": [
+        "../src/common/swagger-config.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../src/react-app/dist/swagger/model/index.d.ts",
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@types/react-dom/server/index.d.ts",
+        "../src/react-app/src/swagger/model/index.ts",
+        "../src/common/utils.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/dist/swagger/common/request-service.d.ts": [
+        "../src/react-app/node_modules/axios/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/dist/swagger/common/swagger-plugins.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/dist/swagger/common/swagger-context.d.ts": [
+        "../src/react-app/dist/swagger/common/swagger-plugins.d.ts",
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/dist/swagger/common/use-plugin.d.ts": [
+        "../src/react-app/dist/swagger/common/swagger-plugins.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/dist/swagger/common/index.d.ts": [
+        "../src/react-app/dist/swagger/common/request-service.d.ts",
+        "../src/react-app/dist/swagger/common/swagger-context.d.ts",
+        "../src/react-app/dist/swagger/common/swagger-plugins.d.ts",
+        "../src/react-app/dist/swagger/common/use-plugin.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/dist/swagger/ts-generator/class/class-constructor.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../src/react-app/dist/swagger/model/swagger-class.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/dist/swagger/ts-generator/class/class-definition.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../src/react-app/dist/swagger/model/swagger-class.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/dist/swagger/ts-generator/class/class-fields.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../src/react-app/dist/swagger/model/swagger-class.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/dist/swagger/ts-generator/class/class-import.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../src/react-app/dist/swagger/model/swagger-class.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/dist/swagger/ts-generator/class/class-methods.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../src/react-app/dist/swagger/model/swagger-class.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/dist/swagger/ts-generator/class/class-name.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../src/react-app/dist/swagger/model/swagger-class.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/dist/swagger/ts-generator/class/index.d.ts": [
+        "../src/react-app/dist/swagger/ts-generator/class/class-constructor.d.ts",
+        "../src/react-app/dist/swagger/ts-generator/class/class-definition.d.ts",
+        "../src/react-app/dist/swagger/ts-generator/class/class-fields.d.ts",
+        "../src/react-app/dist/swagger/ts-generator/class/class-import.d.ts",
+        "../src/react-app/dist/swagger/ts-generator/class/class-methods.d.ts",
+        "../src/react-app/dist/swagger/ts-generator/class/class-name.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/dist/swagger/ts-generator/definitions/model-definition.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../src/react-app/dist/swagger/model/swagger-definition.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/dist/swagger/ts-generator/definitions/index.d.ts": [
+        "../src/react-app/dist/swagger/ts-generator/definitions/model-definition.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/dist/swagger/ts-generator/method/method-arguments.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../src/react-app/dist/swagger/model/swagger-method.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/dist/swagger/ts-generator/method/method-body.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../src/react-app/dist/swagger/model/swagger-method.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/dist/swagger/ts-generator/method/method-definition.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../src/react-app/dist/swagger/model/swagger-method.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/dist/swagger/ts-generator/method/method-return-type.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../src/react-app/dist/swagger/model/swagger-method.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/dist/swagger/ts-generator/method/index.d.ts": [
+        "../src/react-app/dist/swagger/ts-generator/method/method-arguments.d.ts",
+        "../src/react-app/dist/swagger/ts-generator/method/method-body.d.ts",
+        "../src/react-app/dist/swagger/ts-generator/method/method-definition.d.ts",
+        "../src/react-app/dist/swagger/ts-generator/method/method-return-type.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/dist/swagger/ts-generator/default-plugins.d.ts": [
+        "../src/react-app/dist/swagger/common/swagger-plugins.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/dist/swagger/ts-generator/index.d.ts": [
+        "../src/react-app/dist/swagger/ts-generator/class/index.d.ts",
+        "../src/react-app/dist/swagger/ts-generator/definitions/index.d.ts",
+        "../src/react-app/dist/swagger/ts-generator/method/index.d.ts",
+        "../src/react-app/dist/swagger/ts-generator/default-plugins.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/dist/swagger/ui/api-classes.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../src/react-app/dist/swagger/model/swagger-class.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/dist/swagger/ui/definitions.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../src/react-app/dist/swagger/model/swagger-definition.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/dist/swagger/ui/diff.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/dist/swagger/ui/swagger.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../src/react-app/dist/swagger/common/swagger-plugins.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/dist/swagger/ui/index.d.ts": [
+        "../src/react-app/dist/swagger/ui/api-classes.d.ts",
+        "../src/react-app/dist/swagger/ui/definitions.d.ts",
+        "../src/react-app/dist/swagger/ui/diff.d.ts",
+        "../src/react-app/dist/swagger/ui/swagger.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/dist/swagger/utils.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/dist/swagger/index.d.ts": [
+        "../src/react-app/dist/swagger/common/index.d.ts",
+        "../src/react-app/dist/swagger/model/index.d.ts",
+        "../src/react-app/dist/swagger/ts-generator/index.d.ts",
+        "../src/react-app/dist/swagger/ui/index.d.ts",
+        "../src/react-app/dist/swagger/utils.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/dist/demo/custom-plugins.d.ts": [
+        "../src/react-app/dist/swagger/common/swagger-plugins.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/dist/demo/swagger-demo.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/dist/demo/index.d.ts": [
+        "../src/react-app/dist/demo/custom-plugins.d.ts",
+        "../src/react-app/dist/demo/swagger-demo.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/dist/main.d.ts": [
+        "../src/react-app/dist/swagger/index.d.ts",
+        "../src/react-app/dist/demo/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/index.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../src/common/log-service.ts",
+        "../src/common/swagger-config.ts",
+        "../src/common/swagger-generator.tsx",
+        "../src/common/utils.ts",
+        "../src/react-app/dist/main.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/axios/index.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/common/demo.tsx": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@types/react-dom/server/index.d.ts",
+        "../src/react-app/node_modules/axios/index.d.ts",
+        "../src/common/swagger-config.ts",
+        "../src/common/swagger-generator.tsx",
+        "../node_modules/@types/node/path.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/dist/app.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/dist/index.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/dist/serviceworker.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/src/swagger/ui/diff.tsx": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/src/swagger/ts-generator/definitions/model-definition.tsx": [
+        "../node_modules/@types/react/index.d.ts",
+        "../src/react-app/src/swagger/model/swagger-definition.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/src/swagger/ui/definitions.tsx": [
+        "../node_modules/@types/react/index.d.ts",
+        "../src/react-app/src/swagger/ui/diff.tsx",
+        "../src/react-app/src/swagger/model/swagger-definition.ts",
+        "../src/react-app/src/swagger/ts-generator/definitions/model-definition.tsx",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/src/swagger/ts-generator/class/class-fields.tsx": [
+        "../node_modules/@types/react/index.d.ts",
+        "../src/react-app/src/swagger/model/swagger-class.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/src/swagger/ts-generator/class/class-constructor.tsx": [
+        "../node_modules/@types/react/index.d.ts",
+        "../src/react-app/src/swagger/model/swagger-class.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/src/swagger/ts-generator/method/method-return-type.tsx": [
+        "../node_modules/@types/react/index.d.ts",
+        "../src/react-app/src/swagger/model/swagger-method.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/src/swagger/ts-generator/method/method-arguments.tsx": [
+        "../node_modules/@types/react/index.d.ts",
+        "../src/react-app/src/swagger/model/swagger-method.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/src/swagger/ts-generator/method/method-body.tsx": [
+        "../node_modules/@types/react/index.d.ts",
+        "../src/react-app/src/swagger/model/swagger-method.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/src/swagger/ts-generator/method/method-definition.tsx": [
+        "../node_modules/@types/react/index.d.ts",
+        "../src/react-app/src/swagger/model/swagger-method.ts",
+        "../src/react-app/src/swagger/ts-generator/method/method-return-type.tsx",
+        "../src/react-app/src/swagger/ts-generator/method/method-arguments.tsx",
+        "../src/react-app/src/swagger/ts-generator/method/method-body.tsx",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/src/swagger/ts-generator/class/class-methods.tsx": [
+        "../node_modules/@types/react/index.d.ts",
+        "../src/react-app/src/swagger/ts-generator/method/method-definition.tsx",
+        "../src/react-app/src/swagger/model/swagger-method.ts",
+        "../src/react-app/src/swagger/model/swagger-class.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/src/swagger/ts-generator/class/class-name.tsx": [
+        "../node_modules/@types/react/index.d.ts",
+        "../src/react-app/src/swagger/model/swagger-class.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/src/swagger/ts-generator/class/class-definition.tsx": [
+        "../node_modules/@types/react/index.d.ts",
+        "../src/react-app/src/swagger/model/swagger-class.ts",
+        "../src/react-app/src/swagger/ts-generator/class/class-import.tsx",
+        "../src/react-app/src/swagger/ts-generator/class/class-fields.tsx",
+        "../src/react-app/src/swagger/ts-generator/class/class-constructor.tsx",
+        "../src/react-app/src/swagger/ts-generator/class/class-methods.tsx",
+        "../src/react-app/src/swagger/ts-generator/class/class-name.tsx",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/src/swagger/ui/api-classes.tsx": [
+        "../node_modules/@types/react/index.d.ts",
+        "../src/react-app/src/swagger/ui/diff.tsx",
+        "../src/react-app/src/swagger/ts-generator/class/class-definition.tsx",
+        "../src/react-app/src/swagger/model/swagger-class.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/src/swagger/ui/swagger.tsx": [
+        "../node_modules/@types/react/index.d.ts",
+        "../src/react-app/src/swagger/ui/definitions.tsx",
+        "../src/react-app/src/swagger/ui/api-classes.tsx",
+        "../src/react-app/src/swagger/model/swagger-doc.ts",
+        "../src/react-app/src/swagger/common/swagger-plugins.ts",
+        "../src/react-app/src/swagger/common/swagger-context.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/src/demo/custom-plugins.tsx": [
+        "../node_modules/@types/react/index.d.ts",
+        "../src/react-app/src/swagger/ts-generator/class/class-import.tsx",
+        "../src/react-app/src/swagger/common/swagger-plugins.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/src/demo/swagger-demo.tsx": [
+        "../node_modules/@types/react/index.d.ts",
+        "../src/react-app/src/swagger/ui/swagger.tsx",
+        "../src/react-app/src/demo/custom-plugins.tsx",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/src/app.tsx": [
+        "../node_modules/@types/react/index.d.ts",
+        "../src/react-app/src/demo/swagger-demo.tsx",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/node_modules/@types/react-dom/index.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/src/serviceworker.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/src/index.tsx": [
+        "../node_modules/@types/react/index.d.ts",
+        "../src/react-app/node_modules/@types/react-dom/index.d.ts",
+        "../src/react-app/src/serviceworker.ts",
+        "../src/react-app/src/app.tsx",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/src/swagger/ts-generator/class/index.tsx": [
+        "../src/react-app/src/swagger/ts-generator/class/class-constructor.tsx",
+        "../src/react-app/src/swagger/ts-generator/class/class-definition.tsx",
+        "../src/react-app/src/swagger/ts-generator/class/class-fields.tsx",
+        "../src/react-app/src/swagger/ts-generator/class/class-import.tsx",
+        "../src/react-app/src/swagger/ts-generator/class/class-methods.tsx",
+        "../src/react-app/src/swagger/ts-generator/class/class-name.tsx",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/src/swagger/ts-generator/definitions/index.tsx": [
+        "../src/react-app/src/swagger/ts-generator/definitions/model-definition.tsx",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/src/swagger/ts-generator/method/index.tsx": [
+        "../src/react-app/src/swagger/ts-generator/method/method-arguments.tsx",
+        "../src/react-app/src/swagger/ts-generator/method/method-body.tsx",
+        "../src/react-app/src/swagger/ts-generator/method/method-definition.tsx",
+        "../src/react-app/src/swagger/ts-generator/method/method-return-type.tsx",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/src/swagger/ts-generator/index.tsx": [
+        "../src/react-app/src/swagger/ts-generator/class/index.tsx",
+        "../src/react-app/src/swagger/ts-generator/definitions/index.tsx",
+        "../src/react-app/src/swagger/ts-generator/method/index.tsx",
+        "../src/react-app/src/swagger/ts-generator/default-plugins.tsx",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/src/swagger/ui/index.ts": [
+        "../src/react-app/src/swagger/ui/api-classes.tsx",
+        "../src/react-app/src/swagger/ui/definitions.tsx",
+        "../src/react-app/src/swagger/ui/diff.tsx",
+        "../src/react-app/src/swagger/ui/swagger.tsx",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/src/swagger/index.ts": [
+        "../src/react-app/src/swagger/common/index.ts",
+        "../src/react-app/src/swagger/model/index.ts",
+        "../src/react-app/src/swagger/ts-generator/index.tsx",
+        "../src/react-app/src/swagger/ui/index.ts",
+        "../src/react-app/src/swagger/utils.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/src/demo/index.tsx": [
+        "../src/react-app/src/demo/custom-plugins.tsx",
+        "../src/react-app/src/demo/swagger-demo.tsx",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/src/main.ts": [
+        "../src/react-app/src/swagger/index.ts",
+        "../src/react-app/src/demo/index.tsx",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/node/globals.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/node/assert.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/node/async_hooks.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/node/buffer.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/events/index.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/node/child_process.d.ts": [
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/@types/node/net.d.ts",
+        "../node_modules/@types/node/stream.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/node/cluster.d.ts": [
+        "../node_modules/@types/node/child_process.d.ts",
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/@types/node/net.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/node/console.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/node/constants.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/node/crypto.d.ts": [
+        "../node_modules/@types/node/stream.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/node/dgram.d.ts": [
+        "../node_modules/@types/node/net.d.ts",
+        "../node_modules/@types/node/dns.d.ts",
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/node/dns.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/node/domain.d.ts": [
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/node/events.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/node/fs.d.ts": [
+        "../node_modules/@types/node/stream.d.ts",
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/@types/node/url.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/node/http.d.ts": [
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/@types/node/stream.d.ts",
+        "../node_modules/@types/node/url.d.ts",
+        "../node_modules/@types/node/net.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/node/http2.d.ts": [
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/net.d.ts",
+        "../node_modules/@types/node/stream.d.ts",
+        "../node_modules/@types/node/tls.d.ts",
+        "../node_modules/@types/node/url.d.ts",
+        "../node_modules/@types/node/http.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/node/https.d.ts": [
+        "../node_modules/@types/node/tls.d.ts",
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/@types/node/http.d.ts",
+        "../node_modules/@types/node/url.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/node/inspector.d.ts": [
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/node/module.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/node/net.d.ts": [
+        "../node_modules/@types/node/stream.d.ts",
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/@types/node/dns.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/node/os.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/node/path.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/node/perf_hooks.d.ts": [
+        "../node_modules/@types/node/async_hooks.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/node/process.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/node/punycode.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/node/querystring.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/node/readline.d.ts": [
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/@types/node/stream.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/node/repl.d.ts": [
+        "../node_modules/@types/node/readline.d.ts",
+        "../node_modules/@types/node/vm.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/node/stream.d.ts": [
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/node/string_decoder.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/node/timers.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/node/tls.d.ts": [
+        "../node_modules/@types/node/crypto.d.ts",
+        "../node_modules/@types/node/dns.d.ts",
+        "../node_modules/@types/node/net.d.ts",
+        "../node_modules/@types/node/stream.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/node/trace_events.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/node/tty.d.ts": [
+        "../node_modules/@types/node/net.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/node/url.d.ts": [
+        "../node_modules/@types/node/querystring.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/node/util.d.ts": [
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/node/v8.d.ts": [
+        "../node_modules/@types/node/stream.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/node/vm.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/node/worker_threads.d.ts": [
+        "../node_modules/@types/node/vm.d.ts",
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/@types/node/stream.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/node/zlib.d.ts": [
+        "../node_modules/@types/node/stream.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/node/base.d.ts": [
+        "../node_modules/@types/node/globals.d.ts",
+        "../node_modules/@types/node/assert.d.ts",
+        "../node_modules/@types/node/async_hooks.d.ts",
+        "../node_modules/@types/node/buffer.d.ts",
+        "../node_modules/@types/node/child_process.d.ts",
+        "../node_modules/@types/node/cluster.d.ts",
+        "../node_modules/@types/node/console.d.ts",
+        "../node_modules/@types/node/constants.d.ts",
+        "../node_modules/@types/node/crypto.d.ts",
+        "../node_modules/@types/node/dgram.d.ts",
+        "../node_modules/@types/node/dns.d.ts",
+        "../node_modules/@types/node/domain.d.ts",
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/http.d.ts",
+        "../node_modules/@types/node/http2.d.ts",
+        "../node_modules/@types/node/https.d.ts",
+        "../node_modules/@types/node/inspector.d.ts",
+        "../node_modules/@types/node/module.d.ts",
+        "../node_modules/@types/node/net.d.ts",
+        "../node_modules/@types/node/os.d.ts",
+        "../node_modules/@types/node/path.d.ts",
+        "../node_modules/@types/node/perf_hooks.d.ts",
+        "../node_modules/@types/node/process.d.ts",
+        "../node_modules/@types/node/punycode.d.ts",
+        "../node_modules/@types/node/querystring.d.ts",
+        "../node_modules/@types/node/readline.d.ts",
+        "../node_modules/@types/node/repl.d.ts",
+        "../node_modules/@types/node/stream.d.ts",
+        "../node_modules/@types/node/string_decoder.d.ts",
+        "../node_modules/@types/node/timers.d.ts",
+        "../node_modules/@types/node/tls.d.ts",
+        "../node_modules/@types/node/trace_events.d.ts",
+        "../node_modules/@types/node/tty.d.ts",
+        "../node_modules/@types/node/url.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/v8.d.ts",
+        "../node_modules/@types/node/vm.d.ts",
+        "../node_modules/@types/node/worker_threads.d.ts",
+        "../node_modules/@types/node/zlib.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/node/ts3.2/util.d.ts": [
+        "../node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/@types/node/ts3.2/globals.d.ts": [
+        "../node_modules/@types/node/globals.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/node/ts3.2/index.d.ts": [
+        "../node_modules/@types/node/base.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/ts3.2/globals.d.ts",
+        "../node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/@types/react-dom/index.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/node_modules/react-scripts/lib/react-app.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts",
+        "../node_modules/@types/react-dom/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/src/react-app-env.d.ts": [
+        "../src/react-app/node_modules/react-scripts/lib/react-app.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/connect/index.d.ts": [
+        "../node_modules/@types/node/http.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/body-parser/index.d.ts": [
+        "../node_modules/@types/connect/index.d.ts",
+        "../node_modules/@types/node/http.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/range-parser/index.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/express-serve-static-core/index.d.ts": [
+        "../node_modules/@types/node/http.d.ts",
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/@types/range-parser/index.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/mime/index.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/serve-static/index.d.ts": [
+        "../node_modules/@types/express-serve-static-core/index.d.ts",
+        "../node_modules/@types/mime/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/express/index.d.ts": [
+        "../node_modules/@types/body-parser/index.d.ts",
+        "../node_modules/@types/serve-static/index.d.ts",
+        "../node_modules/@types/express-serve-static-core/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/cors/index.d.ts": [
+        "../node_modules/@types/express/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/minimatch/index.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/glob/index.d.ts": [
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/@types/minimatch/index.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/morgan/index.d.ts": [
+        "../node_modules/@types/express/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/swagger-ui-express/index.d.ts": [
+        "../node_modules/@types/express/index.d.ts",
+        "../node_modules/@types/serve-static/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ]
+    },
+    "exportedModulesMap": {
+      "../node_modules/typescript/lib/lib.es5.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/typescript/lib/lib.es2015.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/typescript/lib/lib.es2016.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/typescript/lib/lib.es2017.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/typescript/lib/lib.es2018.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/typescript/lib/lib.dom.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/typescript/lib/lib.es2015.core.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/typescript/lib/lib.es2015.collection.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/typescript/lib/lib.es2015.generator.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/typescript/lib/lib.es2015.iterable.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/typescript/lib/lib.es2015.promise.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/typescript/lib/lib.es2015.proxy.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/typescript/lib/lib.es2015.reflect.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/typescript/lib/lib.es2015.symbol.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/typescript/lib/lib.es2016.array.include.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/typescript/lib/lib.es2017.object.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/typescript/lib/lib.es2017.sharedmemory.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/typescript/lib/lib.es2017.string.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/typescript/lib/lib.es2017.intl.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/typescript/lib/lib.es2017.typedarrays.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/typescript/lib/lib.es2018.asyncgenerator.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/typescript/lib/lib.es2018.asynciterable.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/typescript/lib/lib.es2018.intl.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/typescript/lib/lib.es2018.promise.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/typescript/lib/lib.es2018.regexp.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/typescript/lib/lib.esnext.intl.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/typescript/lib/lib.esnext.bigint.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/react/global.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/csstype/index.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/prop-types/index.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/react/index.d.ts": [
+        "../node_modules/csstype/index.d.ts",
+        "../node_modules/@types/prop-types/index.d.ts",
+        "../node_modules/@types/react/global.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/cli-color/index.d.ts": [
+        "../node_modules/@types/cli-color/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/node_modules/axios/index.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/src/swagger/common/request-service.ts": [
+        "../src/react-app/node_modules/axios/index.d.ts"
+      ],
+      "../src/react-app/node_modules/@types/react/index.d.ts": [
+        "../node_modules/csstype/index.d.ts",
+        "../node_modules/@types/prop-types/index.d.ts",
+        "../src/react-app/node_modules/@types/react/global.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/src/swagger/common/swagger-plugins.ts": [
+        "../node_modules/@types/react/index.d.ts"
+      ],
+      "../src/react-app/src/swagger/common/swagger-context.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../src/react-app/src/swagger/common/swagger-plugins.ts"
+      ],
+      "../src/react-app/src/swagger/model/swagger-method.ts": [
+        "../src/react-app/src/swagger/model/swagger-class.ts"
+      ],
+      "../src/react-app/src/swagger/model/swagger-doc.ts": [
+        "../src/react-app/src/swagger/model/swagger-definition.ts",
+        "../src/react-app/src/swagger/model/swagger-class.ts"
+      ],
+      "../src/react-app/src/swagger/model/swagger-class.ts": [
+        "../src/react-app/src/swagger/model/swagger-doc.ts",
+        "../src/react-app/src/swagger/model/swagger-method.ts"
+      ],
+      "../src/react-app/src/swagger/ts-generator/class/class-import.tsx": [
+        "../node_modules/@types/react/index.d.ts",
+        "../src/react-app/src/swagger/model/swagger-class.ts"
+      ],
+      "../src/react-app/src/swagger/ts-generator/default-plugins.tsx": [
+        "../src/react-app/src/swagger/common/swagger-plugins.ts"
+      ],
+      "../src/react-app/src/swagger/common/use-plugin.ts": [
+        "../src/react-app/src/swagger/common/swagger-plugins.ts"
+      ],
+      "../src/react-app/src/swagger/common/index.ts": [
+        "../src/react-app/src/swagger/common/request-service.ts",
+        "../src/react-app/src/swagger/common/swagger-context.ts",
+        "../src/react-app/src/swagger/common/swagger-plugins.ts",
+        "../src/react-app/src/swagger/common/use-plugin.ts"
+      ],
+      "../src/common/swagger-config.ts": [
+        "../src/react-app/src/swagger/common/index.ts"
+      ],
+      "../src/react-app/dist/swagger/model/swagger-method.d.ts": [
+        "../src/react-app/dist/swagger/model/swagger-class.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/dist/swagger/model/swagger-definition.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/dist/swagger/model/swagger-doc.d.ts": [
+        "../src/react-app/dist/swagger/model/swagger-definition.d.ts",
+        "../src/react-app/dist/swagger/model/swagger-class.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/dist/swagger/model/swagger-class.d.ts": [
+        "../src/react-app/dist/swagger/model/swagger-method.d.ts",
+        "../src/react-app/dist/swagger/model/swagger-doc.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/dist/swagger/model/swagger-common.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/dist/swagger/model/index.d.ts": [
+        "../src/react-app/dist/swagger/model/swagger-class.d.ts",
+        "../src/react-app/dist/swagger/model/swagger-common.d.ts",
+        "../src/react-app/dist/swagger/model/swagger-definition.d.ts",
+        "../src/react-app/dist/swagger/model/swagger-doc.d.ts",
+        "../src/react-app/dist/swagger/model/swagger-method.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/react-dom/server/index.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/src/swagger/model/index.ts": [
+        "../src/react-app/src/swagger/model/swagger-class.ts",
+        "../src/react-app/src/swagger/model/swagger-common.ts",
+        "../src/react-app/src/swagger/model/swagger-definition.ts",
+        "../src/react-app/src/swagger/model/swagger-doc.ts",
+        "../src/react-app/src/swagger/model/swagger-method.ts"
+      ],
+      "../src/common/swagger-generator.tsx": [
+        "../node_modules/@types/react/index.d.ts",
+        "../src/common/swagger-config.ts",
+        "../src/react-app/dist/swagger/model/index.d.ts"
+      ],
+      "../src/react-app/dist/swagger/common/request-service.d.ts": [
+        "../src/react-app/node_modules/axios/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/dist/swagger/common/swagger-plugins.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/dist/swagger/common/swagger-context.d.ts": [
+        "../src/react-app/dist/swagger/common/swagger-plugins.d.ts",
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/dist/swagger/common/use-plugin.d.ts": [
+        "../src/react-app/dist/swagger/common/swagger-plugins.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/dist/swagger/common/index.d.ts": [
+        "../src/react-app/dist/swagger/common/request-service.d.ts",
+        "../src/react-app/dist/swagger/common/swagger-context.d.ts",
+        "../src/react-app/dist/swagger/common/swagger-plugins.d.ts",
+        "../src/react-app/dist/swagger/common/use-plugin.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/dist/swagger/ts-generator/class/class-constructor.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../src/react-app/dist/swagger/model/swagger-class.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/dist/swagger/ts-generator/class/class-definition.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../src/react-app/dist/swagger/model/swagger-class.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/dist/swagger/ts-generator/class/class-fields.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../src/react-app/dist/swagger/model/swagger-class.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/dist/swagger/ts-generator/class/class-import.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../src/react-app/dist/swagger/model/swagger-class.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/dist/swagger/ts-generator/class/class-methods.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../src/react-app/dist/swagger/model/swagger-class.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/dist/swagger/ts-generator/class/class-name.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../src/react-app/dist/swagger/model/swagger-class.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/dist/swagger/ts-generator/class/index.d.ts": [
+        "../src/react-app/dist/swagger/ts-generator/class/class-constructor.d.ts",
+        "../src/react-app/dist/swagger/ts-generator/class/class-definition.d.ts",
+        "../src/react-app/dist/swagger/ts-generator/class/class-fields.d.ts",
+        "../src/react-app/dist/swagger/ts-generator/class/class-import.d.ts",
+        "../src/react-app/dist/swagger/ts-generator/class/class-methods.d.ts",
+        "../src/react-app/dist/swagger/ts-generator/class/class-name.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/dist/swagger/ts-generator/definitions/model-definition.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../src/react-app/dist/swagger/model/swagger-definition.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/dist/swagger/ts-generator/definitions/index.d.ts": [
+        "../src/react-app/dist/swagger/ts-generator/definitions/model-definition.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/dist/swagger/ts-generator/method/method-arguments.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../src/react-app/dist/swagger/model/swagger-method.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/dist/swagger/ts-generator/method/method-body.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../src/react-app/dist/swagger/model/swagger-method.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/dist/swagger/ts-generator/method/method-definition.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../src/react-app/dist/swagger/model/swagger-method.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/dist/swagger/ts-generator/method/method-return-type.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../src/react-app/dist/swagger/model/swagger-method.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/dist/swagger/ts-generator/method/index.d.ts": [
+        "../src/react-app/dist/swagger/ts-generator/method/method-arguments.d.ts",
+        "../src/react-app/dist/swagger/ts-generator/method/method-body.d.ts",
+        "../src/react-app/dist/swagger/ts-generator/method/method-definition.d.ts",
+        "../src/react-app/dist/swagger/ts-generator/method/method-return-type.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/dist/swagger/ts-generator/default-plugins.d.ts": [
+        "../src/react-app/dist/swagger/common/swagger-plugins.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/dist/swagger/ts-generator/index.d.ts": [
+        "../src/react-app/dist/swagger/ts-generator/class/index.d.ts",
+        "../src/react-app/dist/swagger/ts-generator/definitions/index.d.ts",
+        "../src/react-app/dist/swagger/ts-generator/method/index.d.ts",
+        "../src/react-app/dist/swagger/ts-generator/default-plugins.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/dist/swagger/ui/api-classes.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../src/react-app/dist/swagger/model/swagger-class.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/dist/swagger/ui/definitions.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../src/react-app/dist/swagger/model/swagger-definition.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/dist/swagger/ui/diff.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/dist/swagger/ui/swagger.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../src/react-app/dist/swagger/common/swagger-plugins.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/dist/swagger/ui/index.d.ts": [
+        "../src/react-app/dist/swagger/ui/api-classes.d.ts",
+        "../src/react-app/dist/swagger/ui/definitions.d.ts",
+        "../src/react-app/dist/swagger/ui/diff.d.ts",
+        "../src/react-app/dist/swagger/ui/swagger.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/dist/swagger/utils.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/dist/swagger/index.d.ts": [
+        "../src/react-app/dist/swagger/common/index.d.ts",
+        "../src/react-app/dist/swagger/model/index.d.ts",
+        "../src/react-app/dist/swagger/ts-generator/index.d.ts",
+        "../src/react-app/dist/swagger/ui/index.d.ts",
+        "../src/react-app/dist/swagger/utils.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/dist/demo/custom-plugins.d.ts": [
+        "../src/react-app/dist/swagger/common/swagger-plugins.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/dist/demo/swagger-demo.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/dist/demo/index.d.ts": [
+        "../src/react-app/dist/demo/custom-plugins.d.ts",
+        "../src/react-app/dist/demo/swagger-demo.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/dist/main.d.ts": [
+        "../src/react-app/dist/swagger/index.d.ts",
+        "../src/react-app/dist/demo/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/index.ts": [
+        "../src/common/log-service.ts",
+        "../src/common/swagger-config.ts",
+        "../src/common/swagger-generator.tsx",
+        "../src/common/utils.ts",
+        "../src/react-app/dist/main.d.ts"
+      ],
+      "../node_modules/axios/index.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/dist/app.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/dist/index.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/dist/serviceworker.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/src/swagger/ui/diff.tsx": [
+        "../node_modules/@types/react/index.d.ts"
+      ],
+      "../src/react-app/src/swagger/ts-generator/definitions/model-definition.tsx": [
+        "../node_modules/@types/react/index.d.ts",
+        "../src/react-app/src/swagger/model/swagger-definition.ts"
+      ],
+      "../src/react-app/src/swagger/ui/definitions.tsx": [
+        "../node_modules/@types/react/index.d.ts",
+        "../src/react-app/src/swagger/model/swagger-definition.ts"
+      ],
+      "../src/react-app/src/swagger/ts-generator/class/class-fields.tsx": [
+        "../node_modules/@types/react/index.d.ts",
+        "../src/react-app/src/swagger/model/swagger-class.ts"
+      ],
+      "../src/react-app/src/swagger/ts-generator/class/class-constructor.tsx": [
+        "../node_modules/@types/react/index.d.ts",
+        "../src/react-app/src/swagger/model/swagger-class.ts"
+      ],
+      "../src/react-app/src/swagger/ts-generator/method/method-return-type.tsx": [
+        "../node_modules/@types/react/index.d.ts",
+        "../src/react-app/src/swagger/model/swagger-method.ts"
+      ],
+      "../src/react-app/src/swagger/ts-generator/method/method-arguments.tsx": [
+        "../node_modules/@types/react/index.d.ts",
+        "../src/react-app/src/swagger/model/swagger-method.ts"
+      ],
+      "../src/react-app/src/swagger/ts-generator/method/method-body.tsx": [
+        "../node_modules/@types/react/index.d.ts",
+        "../src/react-app/src/swagger/model/swagger-method.ts"
+      ],
+      "../src/react-app/src/swagger/ts-generator/method/method-definition.tsx": [
+        "../node_modules/@types/react/index.d.ts",
+        "../src/react-app/src/swagger/model/swagger-method.ts"
+      ],
+      "../src/react-app/src/swagger/ts-generator/class/class-methods.tsx": [
+        "../node_modules/@types/react/index.d.ts",
+        "../src/react-app/src/swagger/model/swagger-class.ts"
+      ],
+      "../src/react-app/src/swagger/ts-generator/class/class-name.tsx": [
+        "../node_modules/@types/react/index.d.ts",
+        "../src/react-app/src/swagger/model/swagger-class.ts"
+      ],
+      "../src/react-app/src/swagger/ts-generator/class/class-definition.tsx": [
+        "../node_modules/@types/react/index.d.ts",
+        "../src/react-app/src/swagger/model/swagger-class.ts"
+      ],
+      "../src/react-app/src/swagger/ui/api-classes.tsx": [
+        "../node_modules/@types/react/index.d.ts",
+        "../src/react-app/src/swagger/model/swagger-class.ts"
+      ],
+      "../src/react-app/src/swagger/ui/swagger.tsx": [
+        "../node_modules/@types/react/index.d.ts",
+        "../src/react-app/src/swagger/common/swagger-plugins.ts"
+      ],
+      "../src/react-app/src/demo/custom-plugins.tsx": [
+        "../src/react-app/src/swagger/common/swagger-plugins.ts"
+      ],
+      "../src/react-app/src/demo/swagger-demo.tsx": [
+        "../node_modules/@types/react/index.d.ts"
+      ],
+      "../src/react-app/src/app.tsx": [
+        "../node_modules/@types/react/index.d.ts"
+      ],
+      "../src/react-app/node_modules/@types/react-dom/index.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/src/swagger/ts-generator/class/index.tsx": [
+        "../src/react-app/src/swagger/ts-generator/class/class-constructor.tsx",
+        "../src/react-app/src/swagger/ts-generator/class/class-definition.tsx",
+        "../src/react-app/src/swagger/ts-generator/class/class-fields.tsx",
+        "../src/react-app/src/swagger/ts-generator/class/class-import.tsx",
+        "../src/react-app/src/swagger/ts-generator/class/class-methods.tsx",
+        "../src/react-app/src/swagger/ts-generator/class/class-name.tsx"
+      ],
+      "../src/react-app/src/swagger/ts-generator/definitions/index.tsx": [
+        "../src/react-app/src/swagger/ts-generator/definitions/model-definition.tsx"
+      ],
+      "../src/react-app/src/swagger/ts-generator/method/index.tsx": [
+        "../src/react-app/src/swagger/ts-generator/method/method-arguments.tsx",
+        "../src/react-app/src/swagger/ts-generator/method/method-body.tsx",
+        "../src/react-app/src/swagger/ts-generator/method/method-definition.tsx",
+        "../src/react-app/src/swagger/ts-generator/method/method-return-type.tsx"
+      ],
+      "../src/react-app/src/swagger/ts-generator/index.tsx": [
+        "../src/react-app/src/swagger/ts-generator/class/index.tsx",
+        "../src/react-app/src/swagger/ts-generator/definitions/index.tsx",
+        "../src/react-app/src/swagger/ts-generator/method/index.tsx",
+        "../src/react-app/src/swagger/ts-generator/default-plugins.tsx"
+      ],
+      "../src/react-app/src/swagger/ui/index.ts": [
+        "../src/react-app/src/swagger/ui/api-classes.tsx",
+        "../src/react-app/src/swagger/ui/definitions.tsx",
+        "../src/react-app/src/swagger/ui/diff.tsx",
+        "../src/react-app/src/swagger/ui/swagger.tsx"
+      ],
+      "../src/react-app/src/swagger/index.ts": [
+        "../src/react-app/src/swagger/common/index.ts",
+        "../src/react-app/src/swagger/model/index.ts",
+        "../src/react-app/src/swagger/ts-generator/index.tsx",
+        "../src/react-app/src/swagger/ui/index.ts",
+        "../src/react-app/src/swagger/utils.ts"
+      ],
+      "../src/react-app/src/demo/index.tsx": [
+        "../src/react-app/src/demo/custom-plugins.tsx",
+        "../src/react-app/src/demo/swagger-demo.tsx"
+      ],
+      "../src/react-app/src/main.ts": [
+        "../src/react-app/src/swagger/index.ts",
+        "../src/react-app/src/demo/index.tsx"
+      ],
+      "../node_modules/@types/node/globals.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/node/assert.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/node/async_hooks.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/node/buffer.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/events/index.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/node/child_process.d.ts": [
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/@types/node/net.d.ts",
+        "../node_modules/@types/node/stream.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/node/cluster.d.ts": [
+        "../node_modules/@types/node/child_process.d.ts",
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/@types/node/net.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/node/console.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/node/constants.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/node/crypto.d.ts": [
+        "../node_modules/@types/node/stream.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/node/dgram.d.ts": [
+        "../node_modules/@types/node/net.d.ts",
+        "../node_modules/@types/node/dns.d.ts",
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/node/dns.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/node/domain.d.ts": [
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/node/events.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/node/fs.d.ts": [
+        "../node_modules/@types/node/stream.d.ts",
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/@types/node/url.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/node/http.d.ts": [
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/@types/node/stream.d.ts",
+        "../node_modules/@types/node/url.d.ts",
+        "../node_modules/@types/node/net.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/node/http2.d.ts": [
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/net.d.ts",
+        "../node_modules/@types/node/stream.d.ts",
+        "../node_modules/@types/node/tls.d.ts",
+        "../node_modules/@types/node/url.d.ts",
+        "../node_modules/@types/node/http.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/node/https.d.ts": [
+        "../node_modules/@types/node/tls.d.ts",
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/@types/node/http.d.ts",
+        "../node_modules/@types/node/url.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/node/inspector.d.ts": [
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/node/module.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/node/net.d.ts": [
+        "../node_modules/@types/node/stream.d.ts",
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/@types/node/dns.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/node/os.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/node/path.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/node/perf_hooks.d.ts": [
+        "../node_modules/@types/node/async_hooks.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/node/process.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/node/punycode.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/node/querystring.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/node/readline.d.ts": [
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/@types/node/stream.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/node/repl.d.ts": [
+        "../node_modules/@types/node/readline.d.ts",
+        "../node_modules/@types/node/vm.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/node/stream.d.ts": [
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/node/string_decoder.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/node/timers.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/node/tls.d.ts": [
+        "../node_modules/@types/node/crypto.d.ts",
+        "../node_modules/@types/node/dns.d.ts",
+        "../node_modules/@types/node/net.d.ts",
+        "../node_modules/@types/node/stream.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/node/trace_events.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/node/tty.d.ts": [
+        "../node_modules/@types/node/net.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/node/url.d.ts": [
+        "../node_modules/@types/node/querystring.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/node/util.d.ts": [
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/node/v8.d.ts": [
+        "../node_modules/@types/node/stream.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/node/vm.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/node/worker_threads.d.ts": [
+        "../node_modules/@types/node/vm.d.ts",
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/@types/node/stream.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/node/zlib.d.ts": [
+        "../node_modules/@types/node/stream.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/node/base.d.ts": [
+        "../node_modules/@types/node/globals.d.ts",
+        "../node_modules/@types/node/assert.d.ts",
+        "../node_modules/@types/node/async_hooks.d.ts",
+        "../node_modules/@types/node/buffer.d.ts",
+        "../node_modules/@types/node/child_process.d.ts",
+        "../node_modules/@types/node/cluster.d.ts",
+        "../node_modules/@types/node/console.d.ts",
+        "../node_modules/@types/node/constants.d.ts",
+        "../node_modules/@types/node/crypto.d.ts",
+        "../node_modules/@types/node/dgram.d.ts",
+        "../node_modules/@types/node/dns.d.ts",
+        "../node_modules/@types/node/domain.d.ts",
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/http.d.ts",
+        "../node_modules/@types/node/http2.d.ts",
+        "../node_modules/@types/node/https.d.ts",
+        "../node_modules/@types/node/inspector.d.ts",
+        "../node_modules/@types/node/module.d.ts",
+        "../node_modules/@types/node/net.d.ts",
+        "../node_modules/@types/node/os.d.ts",
+        "../node_modules/@types/node/path.d.ts",
+        "../node_modules/@types/node/perf_hooks.d.ts",
+        "../node_modules/@types/node/process.d.ts",
+        "../node_modules/@types/node/punycode.d.ts",
+        "../node_modules/@types/node/querystring.d.ts",
+        "../node_modules/@types/node/readline.d.ts",
+        "../node_modules/@types/node/repl.d.ts",
+        "../node_modules/@types/node/stream.d.ts",
+        "../node_modules/@types/node/string_decoder.d.ts",
+        "../node_modules/@types/node/timers.d.ts",
+        "../node_modules/@types/node/tls.d.ts",
+        "../node_modules/@types/node/trace_events.d.ts",
+        "../node_modules/@types/node/tty.d.ts",
+        "../node_modules/@types/node/url.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/v8.d.ts",
+        "../node_modules/@types/node/vm.d.ts",
+        "../node_modules/@types/node/worker_threads.d.ts",
+        "../node_modules/@types/node/zlib.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/node/ts3.2/util.d.ts": [
+        "../node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/@types/node/ts3.2/globals.d.ts": [
+        "../node_modules/@types/node/globals.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/node/ts3.2/index.d.ts": [
+        "../node_modules/@types/node/base.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/ts3.2/globals.d.ts",
+        "../node_modules/@types/node/util.d.ts"
+      ],
+      "../node_modules/@types/react-dom/index.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/node_modules/react-scripts/lib/react-app.d.ts": [
+        "../node_modules/@types/react/index.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts",
+        "../node_modules/@types/react-dom/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/react-app/src/react-app-env.d.ts": [
+        "../src/react-app/node_modules/react-scripts/lib/react-app.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/connect/index.d.ts": [
+        "../node_modules/@types/node/http.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/body-parser/index.d.ts": [
+        "../node_modules/@types/connect/index.d.ts",
+        "../node_modules/@types/node/http.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/range-parser/index.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/express-serve-static-core/index.d.ts": [
+        "../node_modules/@types/node/http.d.ts",
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/@types/range-parser/index.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/mime/index.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/serve-static/index.d.ts": [
+        "../node_modules/@types/express-serve-static-core/index.d.ts",
+        "../node_modules/@types/mime/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/express/index.d.ts": [
+        "../node_modules/@types/body-parser/index.d.ts",
+        "../node_modules/@types/serve-static/index.d.ts",
+        "../node_modules/@types/express-serve-static-core/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/cors/index.d.ts": [
+        "../node_modules/@types/express/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/minimatch/index.d.ts": [
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/glob/index.d.ts": [
+        "../node_modules/@types/node/events.d.ts",
+        "../node_modules/@types/minimatch/index.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/morgan/index.d.ts": [
+        "../node_modules/@types/express/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@types/swagger-ui-express/index.d.ts": [
+        "../node_modules/@types/express/index.d.ts",
+        "../node_modules/@types/serve-static/index.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ]
+    },
+    "semanticDiagnosticsPerFile": [
+      "../node_modules/typescript/lib/lib.es5.d.ts",
+      "../node_modules/typescript/lib/lib.es2015.d.ts",
+      "../node_modules/typescript/lib/lib.es2016.d.ts",
+      "../node_modules/typescript/lib/lib.es2017.d.ts",
+      "../node_modules/typescript/lib/lib.es2018.d.ts",
+      "../node_modules/typescript/lib/lib.dom.d.ts",
+      "../node_modules/typescript/lib/lib.es2015.core.d.ts",
+      "../node_modules/typescript/lib/lib.es2015.collection.d.ts",
+      "../node_modules/typescript/lib/lib.es2015.generator.d.ts",
+      "../node_modules/typescript/lib/lib.es2015.iterable.d.ts",
+      "../node_modules/typescript/lib/lib.es2015.promise.d.ts",
+      "../node_modules/typescript/lib/lib.es2015.proxy.d.ts",
+      "../node_modules/typescript/lib/lib.es2015.reflect.d.ts",
+      "../node_modules/typescript/lib/lib.es2015.symbol.d.ts",
+      "../node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts",
+      "../node_modules/typescript/lib/lib.es2016.array.include.d.ts",
+      "../node_modules/typescript/lib/lib.es2017.object.d.ts",
+      "../node_modules/typescript/lib/lib.es2017.sharedmemory.d.ts",
+      "../node_modules/typescript/lib/lib.es2017.string.d.ts",
+      "../node_modules/typescript/lib/lib.es2017.intl.d.ts",
+      "../node_modules/typescript/lib/lib.es2017.typedarrays.d.ts",
+      "../node_modules/typescript/lib/lib.es2018.asyncgenerator.d.ts",
+      "../node_modules/typescript/lib/lib.es2018.asynciterable.d.ts",
+      "../node_modules/typescript/lib/lib.es2018.intl.d.ts",
+      "../node_modules/typescript/lib/lib.es2018.promise.d.ts",
+      "../node_modules/typescript/lib/lib.es2018.regexp.d.ts",
+      "../node_modules/typescript/lib/lib.esnext.intl.d.ts",
+      "../node_modules/typescript/lib/lib.esnext.bigint.d.ts",
+      "../node_modules/@types/react/global.d.ts",
+      "../node_modules/csstype/index.d.ts",
+      "../node_modules/@types/prop-types/index.d.ts",
+      "../node_modules/@types/react/index.d.ts",
+      "../node_modules/@types/cli-color/index.d.ts",
+      "../src/common/log-service.ts",
+      "../src/react-app/node_modules/axios/index.d.ts",
+      "../src/react-app/src/swagger/common/request-service.ts",
+      "../src/react-app/node_modules/@types/react/index.d.ts",
+      "../src/react-app/src/swagger/common/swagger-plugins.ts",
+      "../src/react-app/src/swagger/common/swagger-context.ts",
+      "../src/react-app/src/swagger/model/swagger-common.ts",
+      "../src/react-app/src/swagger/model/swagger-method.ts",
+      "../src/react-app/src/swagger/model/swagger-definition.ts",
+      "../src/react-app/src/swagger/model/swagger-doc.ts",
+      "../src/react-app/src/swagger/utils.ts",
+      "../src/react-app/src/swagger/model/swagger-class.ts",
+      "../src/react-app/src/swagger/ts-generator/class/class-import.tsx",
+      "../src/react-app/src/swagger/ts-generator/default-plugins.tsx",
+      "../src/react-app/src/swagger/common/use-plugin.ts",
+      "../src/react-app/src/swagger/common/index.ts",
+      "../src/common/swagger-config.ts",
+      "../src/react-app/dist/swagger/model/swagger-method.d.ts",
+      "../src/react-app/dist/swagger/model/swagger-definition.d.ts",
+      "../src/react-app/dist/swagger/model/swagger-doc.d.ts",
+      "../src/react-app/dist/swagger/model/swagger-class.d.ts",
+      "../src/react-app/dist/swagger/model/swagger-common.d.ts",
+      "../src/react-app/dist/swagger/model/index.d.ts",
+      "../node_modules/@types/react-dom/server/index.d.ts",
+      "../src/react-app/src/swagger/model/index.ts",
+      "../src/common/utils.ts",
+      "../src/common/swagger-generator.tsx",
+      "../src/react-app/dist/swagger/common/request-service.d.ts",
+      "../src/react-app/dist/swagger/common/swagger-plugins.d.ts",
+      "../src/react-app/dist/swagger/common/swagger-context.d.ts",
+      "../src/react-app/dist/swagger/common/use-plugin.d.ts",
+      "../src/react-app/dist/swagger/common/index.d.ts",
+      "../src/react-app/dist/swagger/ts-generator/class/class-constructor.d.ts",
+      "../src/react-app/dist/swagger/ts-generator/class/class-definition.d.ts",
+      "../src/react-app/dist/swagger/ts-generator/class/class-fields.d.ts",
+      "../src/react-app/dist/swagger/ts-generator/class/class-import.d.ts",
+      "../src/react-app/dist/swagger/ts-generator/class/class-methods.d.ts",
+      "../src/react-app/dist/swagger/ts-generator/class/class-name.d.ts",
+      "../src/react-app/dist/swagger/ts-generator/class/index.d.ts",
+      "../src/react-app/dist/swagger/ts-generator/definitions/model-definition.d.ts",
+      "../src/react-app/dist/swagger/ts-generator/definitions/index.d.ts",
+      "../src/react-app/dist/swagger/ts-generator/method/method-arguments.d.ts",
+      "../src/react-app/dist/swagger/ts-generator/method/method-body.d.ts",
+      "../src/react-app/dist/swagger/ts-generator/method/method-definition.d.ts",
+      "../src/react-app/dist/swagger/ts-generator/method/method-return-type.d.ts",
+      "../src/react-app/dist/swagger/ts-generator/method/index.d.ts",
+      "../src/react-app/dist/swagger/ts-generator/default-plugins.d.ts",
+      "../src/react-app/dist/swagger/ts-generator/index.d.ts",
+      "../src/react-app/dist/swagger/ui/api-classes.d.ts",
+      "../src/react-app/dist/swagger/ui/definitions.d.ts",
+      "../src/react-app/dist/swagger/ui/diff.d.ts",
+      "../src/react-app/dist/swagger/ui/swagger.d.ts",
+      "../src/react-app/dist/swagger/ui/index.d.ts",
+      "../src/react-app/dist/swagger/utils.d.ts",
+      "../src/react-app/dist/swagger/index.d.ts",
+      "../src/react-app/dist/demo/custom-plugins.d.ts",
+      "../src/react-app/dist/demo/swagger-demo.d.ts",
+      "../src/react-app/dist/demo/index.d.ts",
+      "../src/react-app/dist/main.d.ts",
+      "../node_modules/axios/index.d.ts",
+      "../src/common/demo.tsx",
+      "../src/react-app/dist/app.d.ts",
+      "../src/react-app/dist/index.d.ts",
+      "../src/react-app/dist/serviceworker.d.ts",
+      "../src/react-app/src/swagger/ui/diff.tsx",
+      "../src/react-app/src/swagger/ts-generator/definitions/model-definition.tsx",
+      "../src/react-app/src/swagger/ui/definitions.tsx",
+      "../src/react-app/src/swagger/ts-generator/class/class-fields.tsx",
+      "../src/react-app/src/swagger/ts-generator/class/class-constructor.tsx",
+      "../src/react-app/src/swagger/ts-generator/method/method-return-type.tsx",
+      "../src/react-app/src/swagger/ts-generator/method/method-arguments.tsx",
+      "../src/react-app/src/swagger/ts-generator/method/method-body.tsx",
+      "../src/react-app/src/swagger/ts-generator/method/method-definition.tsx",
+      "../src/react-app/src/swagger/ts-generator/class/class-methods.tsx",
+      "../src/react-app/src/swagger/ts-generator/class/class-name.tsx",
+      "../src/react-app/src/swagger/ts-generator/class/class-definition.tsx",
+      "../src/react-app/src/swagger/ui/api-classes.tsx",
+      "../src/react-app/src/swagger/ui/swagger.tsx",
+      "../src/react-app/src/demo/custom-plugins.tsx",
+      "../src/react-app/src/demo/swagger-demo.tsx",
+      "../src/react-app/src/app.tsx",
+      "../src/react-app/node_modules/@types/react-dom/index.d.ts",
+      "../src/react-app/src/serviceworker.ts",
+      "../src/react-app/src/index.tsx",
+      "../src/react-app/src/swagger/ts-generator/class/index.tsx",
+      "../src/react-app/src/swagger/ts-generator/definitions/index.tsx",
+      "../src/react-app/src/swagger/ts-generator/method/index.tsx",
+      "../src/react-app/src/swagger/ts-generator/index.tsx",
+      "../src/react-app/src/swagger/ui/index.ts",
+      "../src/react-app/src/swagger/index.ts",
+      "../src/react-app/src/demo/index.tsx",
+      "../src/react-app/src/main.ts",
+      "../node_modules/@types/node/globals.d.ts",
+      "../node_modules/@types/node/assert.d.ts",
+      "../node_modules/@types/node/async_hooks.d.ts",
+      "../node_modules/@types/node/buffer.d.ts",
+      "../node_modules/@types/events/index.d.ts",
+      "../node_modules/@types/node/child_process.d.ts",
+      "../node_modules/@types/node/cluster.d.ts",
+      "../node_modules/@types/node/console.d.ts",
+      "../node_modules/@types/node/constants.d.ts",
+      "../node_modules/@types/node/crypto.d.ts",
+      "../node_modules/@types/node/dgram.d.ts",
+      "../node_modules/@types/node/dns.d.ts",
+      "../node_modules/@types/node/domain.d.ts",
+      "../node_modules/@types/node/events.d.ts",
+      "../node_modules/@types/node/fs.d.ts",
+      "../node_modules/@types/node/http.d.ts",
+      "../node_modules/@types/node/http2.d.ts",
+      "../node_modules/@types/node/https.d.ts",
+      "../node_modules/@types/node/inspector.d.ts",
+      "../node_modules/@types/node/module.d.ts",
+      "../node_modules/@types/node/net.d.ts",
+      "../node_modules/@types/node/os.d.ts",
+      "../node_modules/@types/node/path.d.ts",
+      "../node_modules/@types/node/perf_hooks.d.ts",
+      "../node_modules/@types/node/process.d.ts",
+      "../node_modules/@types/node/punycode.d.ts",
+      "../node_modules/@types/node/querystring.d.ts",
+      "../node_modules/@types/node/readline.d.ts",
+      "../node_modules/@types/node/repl.d.ts",
+      "../node_modules/@types/node/stream.d.ts",
+      "../node_modules/@types/node/string_decoder.d.ts",
+      "../node_modules/@types/node/timers.d.ts",
+      "../node_modules/@types/node/tls.d.ts",
+      "../node_modules/@types/node/trace_events.d.ts",
+      "../node_modules/@types/node/tty.d.ts",
+      "../node_modules/@types/node/url.d.ts",
+      "../node_modules/@types/node/util.d.ts",
+      "../node_modules/@types/node/v8.d.ts",
+      "../node_modules/@types/node/vm.d.ts",
+      "../node_modules/@types/node/worker_threads.d.ts",
+      "../node_modules/@types/node/zlib.d.ts",
+      "../node_modules/@types/node/base.d.ts",
+      "../node_modules/@types/node/ts3.2/util.d.ts",
+      "../node_modules/@types/node/ts3.2/globals.d.ts",
+      "../node_modules/@types/node/ts3.2/index.d.ts",
+      "../node_modules/@types/react-dom/index.d.ts",
+      "../src/react-app/node_modules/react-scripts/lib/react-app.d.ts",
+      "../src/react-app/src/react-app-env.d.ts",
+      "../node_modules/@types/connect/index.d.ts",
+      "../node_modules/@types/body-parser/index.d.ts",
+      "../node_modules/@types/range-parser/index.d.ts",
+      "../node_modules/@types/express-serve-static-core/index.d.ts",
+      "../node_modules/@types/mime/index.d.ts",
+      "../node_modules/@types/serve-static/index.d.ts",
+      "../node_modules/@types/express/index.d.ts",
+      "../node_modules/@types/cors/index.d.ts",
+      "../node_modules/@types/minimatch/index.d.ts",
+      "../node_modules/@types/glob/index.d.ts",
+      "../node_modules/@types/morgan/index.d.ts",
+      "../node_modules/@types/swagger-ui-express/index.d.ts",
+      "../src/index.ts"
+    ]
+  },
+  "version": "3.6.3"
+}

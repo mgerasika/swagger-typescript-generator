@@ -1,5 +1,5 @@
-import React from "react";
-import {SwaggerDefinition, SwaggerDefinitionProperty} from "../../model/swagger-definition";
+import React from 'react';
+import {SwaggerDefinition, SwaggerDefinitionProperty} from '../../model/swagger-definition';
 
 interface IProps {
     definition: SwaggerDefinition;
@@ -7,15 +7,15 @@ interface IProps {
 
 export const ModelDefinition: React.FC<IProps> = (props) => {
     const fields = props.definition.properties.map((parameter: SwaggerDefinitionProperty) => {
-        return (<span key={parameter.name}>{'\t'}{parameter.name}:{parameter.type}{'\n'}</span>)
-    })
+        return (<span key={parameter.name}>{'\t'}{parameter.name}:{parameter.type}{'\n'}</span>);
+    });
     return (
         <>
             export interface {props.definition.name}
-            {'{'} {fields}
+            {'{'} {'\n'}{fields}
             {'}'}
         </>
     );
-}
+};
 
 

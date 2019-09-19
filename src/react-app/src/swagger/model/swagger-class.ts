@@ -1,6 +1,7 @@
 import {parentSymbol, sourceSymbol} from "./swagger-common";
 import {SwaggerMethod} from "./swagger-method";
 import {SwaggerDoc} from "./swagger-doc";
+import {capitalize} from '../utils';
 
 export class SwaggerClass {
     public get source() {
@@ -28,7 +29,7 @@ export class SwaggerClass {
         this.source = source;
 
         // eslint-disable-next-line
-        this.name = name.replace(/[\{\}\/]/g,'');
+        this.name = name.replace(/[\{\}]/g,'').split('/').map(s=>capitalize(s)).join('');
         this.url = name;
 
         this.methods = Object.keys(source).reduce((accum2: any, key2) => {
