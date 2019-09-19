@@ -3,8 +3,12 @@
     "target": "es6",
     "module": "commonjs",
     "outDir": "dist",
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "esModuleInterop": true
   },
+  "include": [
+    "src/**/*"
+  ],
   "exclude": [
     "node_modules"
   ]

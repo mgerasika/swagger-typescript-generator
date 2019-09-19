@@ -1,5 +1,5 @@
 import React, {ReactNode} from 'react';
-import Diff from "./diff";
+import {Diff} from "./diff";
 import {SwaggerDefinition} from "../model/swagger-definition";
 import {ModelDefinition} from '../ts-generator/definitions/model-definition';
 
@@ -7,7 +7,7 @@ interface IProps {
     definitions: SwaggerDefinition[];
 }
 
-const Definitions: React.FC<IProps> = (props) => {
+export const Definitions: React.FC<IProps> = (props) => {
     const renderCodegen = (def: SwaggerDefinition) => {
         return (<ModelDefinition definition={def}></ModelDefinition>)
     };
@@ -22,7 +22,4 @@ const Definitions: React.FC<IProps> = (props) => {
         </>
     );
 }
-
-export default Definitions;
-
 

@@ -4,10 +4,14 @@ import axios from 'axios';
 import * as path from "path";
 import * as React from "react";
 import {renderToString} from "react-dom/server";
-
+import {HiComponent} from './hi';
 const ReactJSDOM = require('react-jsdom');
+export * from './log-service';
+export * from './swagger-config';
+export * from './swagger-generator';
+export * from './hi';
 
-// const url = "http://192.168.1.72:84/swagger/docs/v1";
+// const url = "http://192.168.235.1:84/swagger/docs/v1";
 //
 // axios.get(url)
 //     .then(response => {
@@ -30,16 +34,7 @@ const ReactJSDOM = require('react-jsdom');
 //     const swaggerGenerator = new SwaggerGenerator(config);
 //     swaggerGenerator.generate();
 // }
-//const elem = ReactJSDOM.render(<div>hi</div>);
 
-class Hi extends React.Component {
-    render() {
-        return (
-            '3hi2'
-        );
-    }
-}
-
-const body = renderToString(React.createElement(Hi));
+const body = renderToString(React.createElement(HiComponent));
 console.log(body)
 

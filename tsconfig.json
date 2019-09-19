@@ -7,7 +7,6 @@
     ],
     "outDir": "./dist",
     "allowJs": true,
-    "declaration": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,

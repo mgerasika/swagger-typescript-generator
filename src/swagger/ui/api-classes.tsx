@@ -1,5 +1,5 @@
 import React, {ReactNode} from 'react';
-import Diff from "./diff";
+import {Diff} from "./diff";
 import {ClassDefinition} from "../ts-generator/class/class-definition";
 import {SwaggerClass} from "../model/swagger-class";
 
@@ -7,7 +7,7 @@ interface IProps {
     classes: SwaggerClass[];
 }
 
-const ApiClasses: React.FC<IProps> = (props) => {
+export const ApiClasses: React.FC<IProps> = (props) => {
     const renderCodegen = (swaggerClass: SwaggerClass) => {
         return (<ClassDefinition swaggerClass={swaggerClass}></ClassDefinition>)
     };
@@ -22,7 +22,4 @@ const ApiClasses: React.FC<IProps> = (props) => {
         </>
     );
 }
-
-export default ApiClasses;
-
 

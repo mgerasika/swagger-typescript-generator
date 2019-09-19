@@ -6,7 +6,7 @@ interface IProps {
     obj3: ReactNode;
 }
 
-const Diff: React.FC<IProps> = (props) => {
+export const Diff: React.FC<IProps> = (props) => {
     return (
         <>
             <div className={'d-flex w-100'}>
@@ -30,7 +30,4 @@ const Diff: React.FC<IProps> = (props) => {
         </>
     );
 }
-
-export default Diff;
-
 

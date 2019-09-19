@@ -2,137 +2,178 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bbb1a1f8-a948-4b7c-9768-589d5df58b7d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/demo/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/node-app/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/swagger/common/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/swagger/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/swagger/model/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/swagger/ts-generator/class/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/swagger/ts-generator/definitions/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/swagger/ts-generator/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/swagger/ts-generator/method/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/swagger/ui/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tsconfig-build.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/hi2.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/node-app/loaders/file-loaders.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/node-app/loaders/js-loaders.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/node-app/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/node-app/src/demo.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/node-app/src/hi.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/App.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/App.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/App.jsx.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/demo/custom-plugins.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/demo/custom-plugins.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/demo/custom-plugins.jsx.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/demo/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/demo/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/demo/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/demo/index.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/demo/swagger-demo.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/demo/swagger-demo.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/demo/swagger-demo.jsx.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/index.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/index.jsx.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/main.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/main.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/node-app/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/node-app/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/node-app/index.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/node-app/src/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/node-app/src/index.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/node-app/src/index.jsx.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/node-app/src/log-service.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/node-app/src/log-service.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/node-app/src/log-service.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/node-app/src/swagger-config.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/node-app/src/swagger-config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/node-app/src/swagger-config.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/node-app/src/swagger-generator.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/node-app/src/swagger-generator.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/node-app/src/swagger-generator.jsx.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/node-app/webpack.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/serviceWorker.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/serviceWorker.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/serviceWorker.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/common/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/common/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/common/index.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/common/request-service.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/common/request-service.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/common/request-service.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/common/swagger-context.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/common/swagger-context.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/common/swagger-context.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/common/swagger-plugins.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/common/swagger-plugins.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/common/swagger-plugins.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/common/use-plugin.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/common/use-plugin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/common/use-plugin.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/index.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/index.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/index.jsx.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/model/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/model/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/model/index.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/model/swagger-class.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/model/swagger-class.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/model/swagger-class.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/model/swagger-common.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/model/swagger-common.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/model/swagger-common.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/model/swagger-definition.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/model/swagger-definition.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/model/swagger-definition.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/model/swagger-doc.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/model/swagger-doc.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/model/swagger-doc.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/model/swagger-method.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/model/swagger-method.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/model/swagger-method.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/class/class-constructor.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/class/class-constructor.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/class/class-constructor.jsx.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/class/class-definition.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/class/class-definition.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/class/class-definition.jsx.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/class/class-fields.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/class/class-fields.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/class/class-fields.jsx.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/class/class-import.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/class/class-import.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/class/class-import.jsx.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/class/class-methods.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/class/class-methods.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/class/class-methods.jsx.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/class/class-name.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/class/class-name.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/class/class-name.jsx.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/class/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/class/index.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/class/index.jsx.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/default-plugins.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/default-plugins.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/default-plugins.jsx.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/definitions/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/definitions/index.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/definitions/index.jsx.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/definitions/model-definition.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/definitions/model-definition.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/definitions/model-definition.jsx.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/index.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/index.jsx.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/method/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/method/index.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/method/index.jsx.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/method/method-arguments.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/method/method-arguments.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/method/method-arguments.jsx.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/method/method-body.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/method/method-body.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/method/method-body.jsx.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/method/method-definition.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/method/method-definition.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/method/method-definition.jsx.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/method/method-return-type.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/method/method-return-type.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ts-generator/method/method-return-type.jsx.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ui/api-classes.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ui/api-classes.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ui/api-classes.jsx.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ui/definitions.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ui/definitions.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ui/definitions.jsx.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ui/diff.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ui/diff.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ui/diff.jsx.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ui/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ui/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ui/index.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ui/swagger.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ui/swagger.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/swagger/ui/swagger.jsx.map" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/demo/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/demo/swagger-demo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/demo/swagger-demo.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/node-app/.babelrc" beforeDir="false" afterPath="$PROJECT_DIR$/src/node-app/.babelrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/node-app/.esdoc.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/node-app/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/node-app/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/node-app/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/node-app/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/node-app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/node-app/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/node-app/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/node-app/src/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/node-app/src/log-service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/node-app/src/log-service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/node-app/src/swagger-generator.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/node-app/src/swagger-generator.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/node-app/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/node-app/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/node-app/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/node-app/webpack.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/swagger/ui/api-classes.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/swagger/ui/api-classes.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/swagger/ui/definitions.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/swagger/ui/definitions.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/swagger/ui/diff.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/swagger/ui/diff.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/swagger/ui/swagger.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/swagger/ui/swagger.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig-build.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig-build.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
     </list>
-    <ignored path="$PROJECT_DIR$/node_modules/" />
-    <ignored path="$PROJECT_DIR$/.tmp/" />
-    <ignored path="$PROJECT_DIR$/temp/" />
-    <ignored path="$PROJECT_DIR$/tmp/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tsconfig.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="24" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tsconfig-build.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="27" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="20" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/index.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="53" selection-start-line="10" selection-start-column="53" selection-end-line="10" selection-end-column="53" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="21" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/demo/swagger-demo.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="17" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="17" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/App.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" selection-start-line="14" selection-end-line="14" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/demo/custom-plugins.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" selection-start-line="1" selection-end-line="2" selection-end-column="82" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/swagger/index.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" selection-start-line="5" selection-end-line="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/demo/index.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="31" selection-start-line="1" selection-start-column="31" selection-end-line="1" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -141,156 +182,18 @@
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>repla</find>
-      <find>SymbolComponent</find>
-      <find>LineBrakeFn</find>
-      <find>{LineBrakeFn()}</find>
-      <find>SymbolFn</find>
-      <find>TabsFn</find>
-      <find>my-react-app</find>
-    </findStrings>
-    <replaceStrings>
-      <replace>{'\n'}</replace>
-    </replaceStrings>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/src/swagger/ts-generator/method/generate-method.tsx" />
-        <option value="$PROJECT_DIR$/src/swagger/ts-generator/method/method-definition.tsx" />
-        <option value="$PROJECT_DIR$/src/swagger/ts-generator/method/generate-method-arguments.tsx" />
-        <option value="$PROJECT_DIR$/src/swagger/ts-generator/method/method-arguments.tsx" />
-        <option value="$PROJECT_DIR$/src/swagger/ts-generator/method/generate-method-return-type.tsx" />
-        <option value="$PROJECT_DIR$/src/swagger/ts-generator/method/method-return-type.tsx" />
-        <option value="$PROJECT_DIR$/src/swagger/ts-generator/definitions/generate-definitions.tsx" />
-        <option value="$PROJECT_DIR$/src/swagger/ui/definitions.tsx" />
-        <option value="$PROJECT_DIR$/src/swagger/ts-generator/class/class-name.tsx" />
-        <option value="$PROJECT_DIR$/src/swagger/model/swagger-doc.ts" />
-        <option value="$PROJECT_DIR$/src/swagger/common/swagger-config.ts" />
-        <option value="$PROJECT_DIR$/test.tsx" />
-        <option value="$PROJECT_DIR$/test2.tsx" />
-        <option value="$PROJECT_DIR$/node/test.tsx" />
-        <option value="$PROJECT_DIR$/node/test2.js" />
-        <option value="$PROJECT_DIR$/node/test2.tsx" />
-        <option value="$PROJECT_DIR$/web/tsconfig.json" />
-        <option value="$PROJECT_DIR$/node/tsconfig.json" />
-        <option value="$PROJECT_DIR$/node/src/test.tsx" />
-        <option value="$PROJECT_DIR$/index.tsx" />
-        <option value="$PROJECT_DIR$/web/src/App.tsx" />
-        <option value="$PROJECT_DIR$/src/index.js" />
-        <option value="$PROJECT_DIR$/src/index.tsx" />
-        <option value="$PROJECT_DIR$/src/node/package.json" />
-        <option value="$PROJECT_DIR$/src/swagger/common/swagger-generator.ts" />
-        <option value="$PROJECT_DIR$/src/node-app/src/swagger-config.ts" />
-        <option value="$PROJECT_DIR$/src/node-app/src/swagger-generator.ts" />
-        <option value="$PROJECT_DIR$/src/node-app/tsconfig.json" />
-        <option value="$PROJECT_DIR$/src/serviceWorker.ts" />
-        <option value="$PROJECT_DIR$/src/node-app/nodemon.json" />
-        <option value="$PROJECT_DIR$/src/node-app/gen/api/apiRoles.ts" />
-        <option value="$PROJECT_DIR$/src/node-app/src/swagger-generator.tsx" />
-        <option value="$PROJECT_DIR$/src/node-app/package.json" />
-        <option value="$PROJECT_DIR$/src/node-app/src/index.tsx" />
-        <option value="$PROJECT_DIR$/src/node-app/webpack.config.js" />
-        <option value="$PROJECT_DIR$/src/node-app/src/log-service.ts" />
-        <option value="$PROJECT_DIR$/src/index.ts" />
-        <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/src/swagger/common/index.ts" />
-        <option value="$PROJECT_DIR$/src/swagger/model/index.ts" />
-        <option value="$PROJECT_DIR$/src/swagger/ts-generator/class/index.tsx" />
-        <option value="$PROJECT_DIR$/src/swagger/ts-generator/definitions/index.tsx" />
-        <option value="$PROJECT_DIR$/src/swagger/ts-generator/method/index.tsx" />
-        <option value="$PROJECT_DIR$/src/swagger/ts-generator/index.tsx" />
-        <option value="$PROJECT_DIR$/src/swagger/index.tsx" />
-        <option value="$PROJECT_DIR$/src/swagger/ui/index.ts" />
-        <option value="$PROJECT_DIR$/src/node-app/index.ts" />
-        <option value="$PROJECT_DIR$/tsconfig.json" />
-        <option value="$PROJECT_DIR$/tsconfig-build.json" />
-        <option value="$PROJECT_DIR$/src/demo/index.ts" />
-        <option value="$PROJECT_DIR$/src/main.ts" />
-      </list>
-    </option>
   </component>
   <component name="PackageJsonUpdateNotifier">
     <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="-9" />
-    <option name="y" value="62" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
-  </component>
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="Scope">
-        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
-          <expand>
-            <path>
-              <item name="swagger-typescript-generator" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="D:\git\swagger-typescript-generator" type="442cc68d:ScopeViewTreeModel$RootNode" />
-            </path>
-            <path>
-              <item name="swagger-typescript-generator" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="D:\git\swagger-typescript-generator" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="swagger-typescript-generator" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="D:\git\swagger-typescript-generator" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="node-app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="swagger-typescript-generator" type="b2602c69:ProjectViewProjectNode" />
-              <item name="swagger-typescript-generator" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="swagger-typescript-generator" type="b2602c69:ProjectViewProjectNode" />
-              <item name="swagger-typescript-generator" type="462c0819:PsiDirectoryNode" />
-              <item name="dist" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="swagger-typescript-generator" type="b2602c69:ProjectViewProjectNode" />
-              <item name="swagger-typescript-generator" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="swagger-typescript-generator" type="b2602c69:ProjectViewProjectNode" />
-              <item name="swagger-typescript-generator" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="demo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="swagger-typescript-generator" type="b2602c69:ProjectViewProjectNode" />
-              <item name="swagger-typescript-generator" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="swagger" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
-  </component>
+  <component name="ProjectId" id="1R0E9ku8cKaqkbV6IiJm7nCqI8a" />
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/demo" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/node-app" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -304,11 +207,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\git\swagger-typescript-generator\src\demo" />
       <recent name="D:\git\swagger-typescript-generator\src\node-app" />
+      <recent name="D:\git\swagger-typescript-generator\src" />
+      <recent name="D:\git\swagger-typescript-generator\src\node-app\src" />
+      <recent name="D:\git\swagger-typescript-generator\src\demo" />
       <recent name="D:\git\swagger-typescript-generator\src\swagger\ui" />
-      <recent name="D:\git\swagger-typescript-generator\src\swagger" />
-      <recent name="D:\git\swagger-typescript-generator\src\swagger\ts-generator" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\git\swagger-typescript-generator\src\node-app\src" />
@@ -360,57 +263,16 @@
       <workItem from="1565258727984" duration="242000" />
       <workItem from="1565336429618" duration="1509000" />
       <workItem from="1565353019140" duration="1225000" />
-      <workItem from="1565585547468" duration="4557000" />
+      <workItem from="1565585547468" duration="5133000" />
+      <workItem from="1565590937602" duration="4350000" />
+      <workItem from="1565595530654" duration="394000" />
+      <workItem from="1565595952838" duration="955000" />
+      <workItem from="1565681234322" duration="803000" />
+      <workItem from="1568795467409" duration="517000" />
+      <workItem from="1568797072283" duration="2259000" />
+      <workItem from="1568872897355" duration="1314000" />
     </task>
     <servers />
-  </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="76139000" />
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1176" extended-state="7" />
-    <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24973656" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="npm" order="2" side_tool="true" />
-      <window_info id="Favorites" order="3" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.4119403" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32941177" />
-      <window_info anchor="bottom" id="TypeScript" order="9" weight="0.32843137" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.28039217" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-    </layout>
-    <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24973656" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="npm" order="2" side_tool="true" />
-      <window_info id="Favorites" order="3" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.4119403" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="TypeScript" order="9" weight="0.32935324" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.21372549" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -421,287 +283,17 @@
       </list>
     </option>
   </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/node_modules/@types/node/fs.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3009">
-          <caret column="15" selection-start-column="15" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/node-app/src/filename.txt" />
-    <entry file="file://$PROJECT_DIR$/src/node-app/src/foo.txt" />
-    <entry file="file://$PROJECT_DIR$/src/node-app/foo.txt" />
-    <entry file="file://$PROJECT_DIR$/src/node-app/.babelrc">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/node-app/gen/model/IRole.ts" />
-    <entry file="file://$PROJECT_DIR$/src/node-app/gen/model/IUser.ts" />
-    <entry file="file://$PROJECT_DIR$/src/node-app/src/test2.ts" />
-    <entry file="file://$PROJECT_DIR$/src/node-app/nodemon.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/node-app/gen/api/apiRoles.ts" />
-    <entry file="file://$PROJECT_DIR$/src/node-app/gen/api/apiRolesid.ts" />
-    <entry file="file://$PROJECT_DIR$/src/node-app/gen/api/apiUser.ts" />
-    <entry file="file://$PROJECT_DIR$/src/node-app/gen/api/apiUserid.ts" />
-    <entry file="file://$PROJECT_DIR$/src/node-app/package-lock.json" />
-    <entry file="file://$PROJECT_DIR$/package-lock.json" />
-    <entry file="file://$PROJECT_DIR$/src/node-app/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/node-app/webpack.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="39" column="48" selection-start-line="39" selection-start-column="48" selection-end-line="39" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/node-app/src/log-service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/node-app/tsconfig.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="3" selection-start-line="7" selection-start-column="2" selection-end-line="9" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/index.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/logo.svg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/index.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/node-app/src/swagger-config.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/node-app/src/swagger-generator.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="11" column="29" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/node-app/src/index.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" selection-start-line="31" selection-end-line="37" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#48#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/swagger/common/swagger-plugins.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="31" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/swagger/common/request-service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="50" selection-start-line="26" selection-start-column="50" selection-end-line="26" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/swagger/model/swagger-method.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#71#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/swagger/common/index.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" selection-start-line="3" selection-end-line="3" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/swagger/ts-generator/class/class-name.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/swagger/ts-generator/definitions/index.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="33" selection-start-column="33" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/swagger/ts-generator/method/index.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="35" selection-start-line="3" selection-start-column="35" selection-end-line="3" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/swagger/ts-generator/class/index.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/swagger/ts-generator/default-plugins.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#74#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/swagger/ts-generator/index.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/swagger/model/index.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/swagger/ui/index.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="24" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/node-app/index.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="38" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/App.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/main.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="20" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tsconfig.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="24" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tsconfig-build.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="27" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/demo/custom-plugins.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" selection-start-line="1" selection-end-line="2" selection-end-column="82" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/swagger/index.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/demo/index.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="31" selection-start-line="1" selection-start-column="31" selection-end-line="1" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="53" selection-start-line="10" selection-start-column="53" selection-end-line="10" selection-end-column="53" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="21" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/demo/swagger-demo.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="17" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

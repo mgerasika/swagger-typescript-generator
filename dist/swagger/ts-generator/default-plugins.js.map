@@ -1,0 +1,1 @@
+{"version":3,"file":"default-plugins.js","sourceRoot":"","sources":["../../../src/swagger/ts-generator/default-plugins.tsx"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;AAAA,6DAA0E;AAC1E,qDAAiD;AACjD,2CAA+B;AAElB,QAAA,cAAc,GAAqB;IAC5C;QACI,UAAU,EAAE,iCAAe,CAAC,WAAW;QACvC,WAAW,EAAE,UAAC,KAAU;YACpB,OAAO,CAAC,oBAAC,0BAAW,eAAK,KAAK,EAAG,CAAC,CAAA;QACtC,CAAC;KACJ;CACJ,CAAC"}

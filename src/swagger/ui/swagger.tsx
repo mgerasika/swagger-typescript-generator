@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
-import Definitions from "./definitions";
-import ApiClasses from "./api-classes";
+import {Definitions} from "./definitions";
+import {ApiClasses} from "./api-classes";
 import {SwaggerDoc} from "../model/swagger-doc";
 import {ISwaggerPlugin} from "../common/swagger-plugins";
 import {ISwaggerContextProps, SwaggerContext} from "../common/swagger-context";
@@ -11,8 +11,8 @@ interface IProps {
     plugins: ISwaggerPlugin[];
 }
 
-const Swagger: React.FC<IProps> = (props) => {
-    const [url, setUrl] = useState("http://192.168.1.72:84/swagger/docs/v1");
+export const Swagger: React.FC<IProps> = (props) => {
+    const [url, setUrl] = useState("http://192.168.235.1:84/swagger/docs/v1");
     const [root, setRoot] = useState<SwaggerDoc>();
 
     const loadSwagger = () => {
@@ -80,7 +80,4 @@ const Swagger: React.FC<IProps> = (props) => {
         </div>
     )
 }
-
-export default Swagger;
-
 

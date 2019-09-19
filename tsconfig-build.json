@@ -14,12 +14,11 @@
       "dom"
     ],
     "jsx": "preserve",
-    "esModuleInterop": true
-//    "skipLibCheck": true,
-//    "esModuleInterop": true,
-//    "allowSyntheticDefaultImports": true,
-//    "forceConsistentCasingInFileNames": true,
-//    "resolveJsonModule": true
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true
   },
   "include": [
     "src/**/*"

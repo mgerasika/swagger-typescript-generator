@@ -4,10 +4,10 @@ import {element} from "prop-types";
 import {renderToString} from "react-dom/server";
 import * as fs from 'fs';
 import * as path from 'path';
-import {SwaggerDoc} from "../../swagger/model/swagger-doc";
 import {SwaggerClass} from "../../swagger/model/swagger-class";
 import {SwaggerDefinition} from "../../swagger/model/swagger-definition";
 import {logService} from "./log-service";
+import {SwaggerDoc} from '../../swagger/model';
 
 export class SwaggerGenerator {
     private _config: ISwaggerConfig;
@@ -50,6 +50,7 @@ export class SwaggerGenerator {
 
     private writeToFile(fullPath: string, content: string) {
         fs.writeFile(fullPath, content, (err: any) => {
+            //convert here
         });
     }
 }
