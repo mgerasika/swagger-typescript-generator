@@ -9,4 +9,4 @@ __export(require("./class-fields"));
 __export(require("./class-import"));
 __export(require("./class-methods"));
 __export(require("./class-name"));
-//# sourceMappingURL=index.jsx.map
+//# sourceMappingURL=index.js.map

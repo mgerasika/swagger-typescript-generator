@@ -7,4 +7,4 @@ __export(require("./method-arguments"));
 __export(require("./method-body"));
 __export(require("./method-definition"));
 __export(require("./method-return-type"));
-//# sourceMappingURL=index.jsx.map
+//# sourceMappingURL=index.js.map

@@ -7,4 +7,4 @@ __export(require("./class/index"));
 __export(require("./definitions/index"));
 __export(require("./method/index"));
 __export(require("./default-plugins"));
-//# sourceMappingURL=index.jsx.map
+//# sourceMappingURL=index.js.map

@@ -4,4 +4,4 @@ function __export(m) {
 }
 Object.defineProperty(exports, "__esModule", { value: true });
 __export(require("./model-definition"));
-//# sourceMappingURL=index.jsx.map
+//# sourceMappingURL=index.js.map
