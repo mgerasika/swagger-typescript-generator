@@ -8,7 +8,8 @@ interface IProps {
 
 export const AllApiClassesExportComponent: React.FC<IProps> = (props) => {
     const exports = props.classes.map((def: SwaggerClass) => {
-        return (<span key={def.name}>export * from './{def.fileName}'{'\n'}</span>);
+        const name = def.fileName.split('.');
+        return (<span key={def.name}>export * from './{name[0]}'{'\n'}</span>);
     });
     return (
         <>

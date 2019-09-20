@@ -1,5 +1,6 @@
 import {getJsType, parentSymbol, sourceSymbol} from "./swagger-common";
 import {SwaggerClass} from "./swagger-class";
+import {lowerlize} from '../utils';
 
 export class SwaggerMethod {
     public get source() {
@@ -32,7 +33,7 @@ export class SwaggerMethod {
         this.parent = parent;
         this.source = source;
 
-        this.name = this.source.operationId;
+        this.name = lowerlize(this.source.operationId);
         this.httpMethod = httpMethod;
         [this.tags] = this.source.tags;
 

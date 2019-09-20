@@ -14,12 +14,17 @@ var swagger_doc_1 = require("../swagger/model/swagger-doc");
 var swagger_context_1 = require("../swagger/common/swagger-context");
 var axios = require('axios');
 exports.SwaggerRootComponent = function (props) {
-    var _a = react_1.useState("http://192.168.235.1:84/swagger/docs/v1"), url = _a[0], setUrl = _a[1];
+    var _a = react_1.useState('http://192.168.235.1:84/swagger/docs/v1'), url = _a[0], setUrl = _a[1];
     var _b = react_1.useState(), root = _b[0], setRoot = _b[1];
     var loadSwagger = function () {
         axios.get(url, { headers: { 'Access-Control-Allow-Origin': 'http://localhost:3000/' } })
             .then(function (response) {
-            setRoot(new swagger_doc_1.SwaggerDoc(response.data));
+            var config = {
+                source: response.data,
+                apiFolderPath: '../gen/api',
+                modelFolderPath: '../gen/model'
+            };
+            setRoot(new swagger_doc_1.SwaggerDoc(config));
         })
             .catch(function (error) {
             console.log(error);

@@ -7,7 +7,8 @@ interface IProps {
 
 export const AllModelsExportComponent: React.FC<IProps> = (props) => {
     const exports = props.definitions.map((def: SwaggerDefinition) => {
-        return (<span key={def.name}>export * from './{def.fileName}'{'\n'}</span>);
+        const name = def.fileName.split('.');
+        return (<span key={def.name}>export * from './{name[0]}'{'\n'}</span>);
     });
     return (
         <>

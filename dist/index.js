@@ -5,5 +5,5 @@ function __export(m) {
 Object.defineProperty(exports, "__esModule", { value: true });
 __export(require("./common/log-service"));
 __export(require("./common/swagger-generator"));
-__export(require("./react-app/dist/main"));
+__export(require("./react-app/src/main"));
 //# sourceMappingURL=index.js.map

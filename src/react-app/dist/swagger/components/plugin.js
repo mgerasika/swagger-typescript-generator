@@ -24,7 +24,7 @@ exports.defaultPlugin = {
     apiClassImport: function (props) {
         var imports = [
             'import axios, {AxiosError, AxiosPromise} from \'axios\'',
-            'import {IRequestService, requestService} from \'../../react-app/dist/swagger\''
+            'import {IRequestService, requestService} from \'swagger-typescript-generator/dist\''
         ];
         return (React.createElement(api_class_import_1.ApiClassImportComponent, __assign({}, props, { imports: imports })));
     }

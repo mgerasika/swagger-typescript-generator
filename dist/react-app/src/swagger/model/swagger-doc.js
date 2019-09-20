@@ -2,25 +2,26 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var swagger_definition_1 = require("./swagger-definition");
 var swagger_class_1 = require("./swagger-class");
-var sourceSymbol = Symbol("source");
+var sourceSymbol = Symbol('source');
 var SwaggerDoc = /** @class */ (function () {
-    function SwaggerDoc(source) {
+    function SwaggerDoc(config) {
         var _this = this;
         this.definitions = [];
         this.classes = [];
-        this.source = source;
-        this.definitions = Object.keys(this.source.definitions).reduce(function (accum, key) {
-            var obj = _this.source.definitions[key];
+        this.config = config;
+        var source = config.source;
+        this.definitions = Object.keys(source.definitions).reduce(function (accum, key) {
+            var obj = source.definitions[key];
             accum.push(new swagger_definition_1.SwaggerDefinition(key, obj));
             return accum;
         }, []);
-        this.classes = Object.keys(this.source.paths).reduce(function (accum, key) {
-            var obj = _this.source.paths[key];
+        this.classes = Object.keys(source.paths).reduce(function (accum, key) {
+            var obj = source.paths[key];
             accum.push(new swagger_class_1.SwaggerClass(_this, key, obj));
             return accum;
         }, []);
     }
-    Object.defineProperty(SwaggerDoc.prototype, "source", {
+    Object.defineProperty(SwaggerDoc.prototype, "config", {
         get: function () {
             return this[sourceSymbol];
         },

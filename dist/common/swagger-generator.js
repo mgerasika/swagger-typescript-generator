@@ -18,7 +18,12 @@ var SwaggerGenerator = /** @class */ (function () {
     }
     SwaggerGenerator.prototype.generate = function () {
         var _this = this;
-        var swaggerDoc = new model_1.SwaggerDoc(this._config.swaggerInputJson);
+        var swaggerConfig = {
+            source: this._config.swaggerInputJson,
+            apiFolderPath: '../api',
+            modelFolderPath: '../model'
+        };
+        var swaggerDoc = new model_1.SwaggerDoc(swaggerConfig);
         swaggerDoc.definitions.forEach(function (swaggerDefinition) {
             var filePath = _this._config.modelFilesOutDir + "/" + swaggerDefinition.fileName;
             var html = server_1.renderToString(React.createElement(swagger_1.ModelDefinitionComponent, { definition: swaggerDefinition }));
@@ -31,6 +36,18 @@ var SwaggerGenerator = /** @class */ (function () {
             var text = swagger_1.html2text(html);
             _this.writeToFile(filePath, text);
         });
+        {
+            var html = server_1.renderToString(React.createElement(swagger_1.AllApiClassesExportComponent, { classes: swaggerDoc.classes }));
+            var text = swagger_1.html2text(html);
+            var filePath = this._config.apiFilesOutDir + "/index.ts";
+            this.writeToFile(filePath, text);
+        }
+        {
+            var html = server_1.renderToString(React.createElement(swagger_1.AllModelsExportComponent, { definitions: swaggerDoc.definitions }));
+            var text = swagger_1.html2text(html);
+            var filePath = this._config.modelFilesOutDir + "/index.ts";
+            this.writeToFile(filePath, text);
+        }
     };
     SwaggerGenerator.prototype.createDirectory = function (dir) {
         var modelDirs = dir.split('/');

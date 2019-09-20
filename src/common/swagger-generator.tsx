@@ -4,9 +4,11 @@ import {SwaggerClass, SwaggerDefinition, SwaggerDoc} from '../react-app/dist/swa
 import * as React from 'react';
 import {renderToString} from 'react-dom/server';
 import {
+    AllApiClassesExportComponent,
+    AllModelsExportComponent,
     ApiClassDefinitionComponent,
     html2text,
-    IRequestService,
+    ISwaggerDocConfig,
     ModelDefinitionComponent
 } from '../react-app/dist/swagger';
 
@@ -18,11 +20,16 @@ export class SwaggerGenerator {
     private _config: ISwaggerConfig;
 
     constructor(config: ISwaggerConfig) {
-          this._config = config;
+        this._config = config;
     }
 
     generate() {
-        const swaggerDoc: SwaggerDoc = new SwaggerDoc(this._config.swaggerInputJson);
+        const swaggerConfig: ISwaggerDocConfig = {
+            source: this._config.swaggerInputJson,
+            apiFolderPath: '../api',
+            modelFolderPath: '../model'
+        };
+        const swaggerDoc: SwaggerDoc = new SwaggerDoc(swaggerConfig);
         swaggerDoc.definitions.forEach((swaggerDefinition: SwaggerDefinition) => {
             const filePath = `${this._config.modelFilesOutDir}/${swaggerDefinition.fileName}`;
             const html = renderToString(<ModelDefinitionComponent definition={swaggerDefinition}/>);
@@ -36,6 +43,20 @@ export class SwaggerGenerator {
             const text = html2text(html);
             this.writeToFile(filePath, text);
         });
+
+        {
+            const html = renderToString(<AllApiClassesExportComponent classes={swaggerDoc.classes}/>);
+            const text = html2text(html);
+            const filePath = `${this._config.apiFilesOutDir}/index.ts`;
+            this.writeToFile(filePath, text);
+        }
+
+         {
+            const html = renderToString(<AllModelsExportComponent definitions={swaggerDoc.definitions}/>);
+            const text = html2text(html);
+            const filePath = `${this._config.modelFilesOutDir}/index.ts`;
+            this.writeToFile(filePath, text);
+        }
     }
 
     private createDirectory(dir: string) {

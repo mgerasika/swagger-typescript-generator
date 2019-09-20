@@ -1,34 +1,41 @@
-import {SwaggerDefinition} from "./swagger-definition";
-import {SwaggerClass} from "./swagger-class";
+import {SwaggerDefinition} from './swagger-definition';
+import {SwaggerClass} from './swagger-class';
 
-const sourceSymbol = Symbol("source");
+const sourceSymbol = Symbol('source');
+
+export interface ISwaggerDocConfig {
+    source: any;
+    apiFolderPath: string;
+    modelFolderPath: string;
+}
 
 export class SwaggerDoc {
-    public get source() {
-        return (this as any)[sourceSymbol];
-    }
-
-    public set source(val) {
-        (this as any)[sourceSymbol] = val;
-    }
-
     public definitions: SwaggerDefinition[] = [];
     public classes: SwaggerClass[] = [];
 
-    public constructor(source: any) {
-        this.source = source;
+    public constructor(config: ISwaggerDocConfig) {
+        this.config = config;
 
-        this.definitions = Object.keys(this.source.definitions).reduce((accum: SwaggerDefinition[], key) => {
-            const obj = this.source.definitions[key];
+        const {source} = config;
+        this.definitions = Object.keys(source.definitions).reduce((accum: SwaggerDefinition[], key) => {
+            const obj = source.definitions[key];
             accum.push(new SwaggerDefinition(key, obj));
             return accum;
         }, []);
 
 
-        this.classes = Object.keys(this.source.paths).reduce((accum: SwaggerClass[], key) => {
-            const obj = this.source.paths[key];
+        this.classes = Object.keys(source.paths).reduce((accum: SwaggerClass[], key) => {
+            const obj = source.paths[key];
             accum.push(new SwaggerClass(this, key, obj));
             return accum;
         }, []);
+    }
+
+    public get config(): ISwaggerDocConfig {
+        return (this as any)[sourceSymbol];
+    }
+
+    public set config(val: ISwaggerDocConfig) {
+        (this as any)[sourceSymbol] = val;
     }
 }

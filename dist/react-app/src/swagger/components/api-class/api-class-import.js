@@ -11,8 +11,21 @@ exports.ApiClassImportComponent = function (props) {
             ";",
             '\n'));
     });
+    var responseTypes = props.swaggerClass.methods.map(function (method) {
+        return method.responseType;
+    }).filter(function (filter) { return filter; });
     return (react_1.default.createElement(react_1.default.Fragment, null,
         result,
-        '\n'));
+        react_1.default.createElement("div", null,
+            "import ",
+            '{',
+            " ",
+            responseTypes.join(','),
+            " ",
+            '}',
+            " from '",
+            props.swaggerClass.parent.config.modelFolderPath,
+            "';"),
+        '\n\n'));
 };
 //# sourceMappingURL=api-class-import.js.map

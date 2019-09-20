@@ -6,9 +6,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 exports.AllModelsExportComponent = function (props) {
     var exports = props.definitions.map(function (def) {
+        var name = def.fileName.split('.');
         return (react_1.default.createElement("span", { key: def.name },
             "export * from './",
-            def.fileName,
+            name[0],
             "'",
             '\n'));
     });

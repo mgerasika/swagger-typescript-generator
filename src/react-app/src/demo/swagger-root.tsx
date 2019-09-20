@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
-import {ApiModelDefinitionsComponent} from "./api-model-definitions";
-import {ApiClassesComponent} from "./api-classes";
-import {SwaggerDoc} from "../swagger/model/swagger-doc";
-import {ISwaggerContextProps, SwaggerContext} from "../swagger/common/swagger-context";
+import {ApiModelDefinitionsComponent} from './api-model-definitions';
+import {ApiClassesComponent} from './api-classes';
+import {ISwaggerDocConfig, SwaggerDoc} from '../swagger/model/swagger-doc';
+import {ISwaggerContextProps, SwaggerContext} from '../swagger/common/swagger-context';
 import {ISwaggerPlugin} from '../swagger/components/plugin';
 
 const axios = require('axios');
@@ -12,27 +12,32 @@ interface IProps {
 }
 
 export const SwaggerRootComponent: React.FC<IProps> = (props) => {
-    const [url, setUrl] = useState("http://192.168.235.1:84/swagger/docs/v1");
+    const [url, setUrl] = useState('http://192.168.235.1:84/swagger/docs/v1');
     const [root, setRoot] = useState<SwaggerDoc>();
 
     const loadSwagger = () => {
         axios.get(url, {headers: {'Access-Control-Allow-Origin': 'http://localhost:3000/'}})
             .then((response: any) => {
-                setRoot(new SwaggerDoc(response.data));
+                const config: ISwaggerDocConfig = {
+                    source: response.data,
+                    apiFolderPath: '../gen/api',
+                    modelFolderPath: '../gen/model'
+                };
+                setRoot(new SwaggerDoc(config));
             })
             .catch((error: string) => {
                 console.log(error);
             });
-    }
+    };
     const onExploreClick = () => {
         loadSwagger();
-    }
+    };
 
     useEffect(() => {
         if (!root) {
             loadSwagger();
         }
-    })
+    });
 
     const renderSwagger = () => {
         return root && root.definitions ? (
@@ -57,13 +62,13 @@ export const SwaggerRootComponent: React.FC<IProps> = (props) => {
                 <ApiModelDefinitionsComponent definitions={root.definitions}/>
             </>
         ) : null;
-    }
+    };
 
     const getContextValue = (): ISwaggerContextProps => {
         return {
             plugin: props.plugins
-        }
-    }
+        };
+    };
 
     return (
         <div className={'p-2'}>
@@ -78,6 +83,6 @@ export const SwaggerRootComponent: React.FC<IProps> = (props) => {
                 {renderSwagger()}
             </SwaggerContext.Provider>
         </div>
-    )
-}
+    );
+};
 

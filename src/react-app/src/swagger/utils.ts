@@ -3,6 +3,11 @@ export const capitalize = (s: string) => {
     return s.charAt(0).toUpperCase() + s.slice(1);
 };
 
+export const lowerlize = (s: string) => {
+    if (typeof s !== 'string') return '';
+    return s.charAt(0).toLowerCase() + s.slice(1);
+};
+
 export const html2text = (html: string) => {
     let result = html.replace(/<(?:.|\n)*?>/gm, '');
     result = result.replace(/&lt;/gm, '<');

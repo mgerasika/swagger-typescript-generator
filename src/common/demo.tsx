@@ -21,7 +21,7 @@ const generate = (json: any) => {
     const config: ISwaggerConfig = {
         apiFilesOutDir: `${parentDir}/gen/api`,
         modelFilesOutDir: `${parentDir}/gen/model`,
-        plugins: defaultPlugin,
+        plugins: defaultPlugin as any,
         swaggerInputJson: json
     };
     const swaggerGenerator = new SwaggerGenerator(config);

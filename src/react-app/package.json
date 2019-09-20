@@ -12,6 +12,7 @@
     "react-scripts": "^3.0.1",
     "react-use-states": "^1.0.6",
     "reflect-metadata": "^0.1.13",
+    "swagger-typescript-generator": "^1.1.2",
     "ts-node": "^8.3.0",
     "typescript": "^3.5.3",
     "typescript-actions": "^1.0.10"

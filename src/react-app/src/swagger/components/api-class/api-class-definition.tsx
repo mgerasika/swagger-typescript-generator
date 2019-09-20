@@ -6,6 +6,7 @@ import {ApiClassMethodsComponent} from './api-class-methods';
 import {ApiClassNameComponent} from './api-class-name';
 import {defaultPlugin} from '../plugin';
 import {SwaggerContext} from '../../common';
+import {lowerlize} from '../../utils';
 
 interface IProps {
     swaggerClass: SwaggerClass;
@@ -25,8 +26,8 @@ export const ApiClassDefinitionComponent: React.FC<IProps> = (props) => {
             <ApiClassFieldsComponent swaggerClass={props.swaggerClass}/>
             <ApiClassConstructorComponent swaggerClass={props.swaggerClass}/>
             <ApiClassMethodsComponent swaggerClass={props.swaggerClass}/>
-            {'}'}
-            export const {props.swaggerClass} = new {props.swaggerClass}(requestService)
+            {'}\n'}
+            <span>export const {lowerlize(props.swaggerClass.name)} = new {props.swaggerClass.name}{'('}requestService{');\n'}</span>
         </>
     );
 };

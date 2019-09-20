@@ -5,6 +5,11 @@ exports.capitalize = function (s) {
         return '';
     return s.charAt(0).toUpperCase() + s.slice(1);
 };
+exports.lowerlize = function (s) {
+    if (typeof s !== 'string')
+        return '';
+    return s.charAt(0).toLowerCase() + s.slice(1);
+};
 exports.html2text = function (html) {
     var result = html.replace(/<(?:.|\n)*?>/gm, '');
     result = result.replace(/&lt;/gm, '<');

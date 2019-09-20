@@ -9,6 +9,7 @@ var api_class_constructor_1 = require("./api-class-constructor");
 var api_class_methods_1 = require("./api-class-methods");
 var api_class_name_1 = require("./api-class-name");
 var plugin_1 = require("../plugin");
+var utils_1 = require("../../utils");
 exports.ApiClassDefinitionComponent = function (props) {
     // const pluginContext = useContext(SwaggerContext);
     // const plugin = pluginContext.plugin;
@@ -20,11 +21,14 @@ exports.ApiClassDefinitionComponent = function (props) {
         react_1.default.createElement(api_class_fields_1.ApiClassFieldsComponent, { swaggerClass: props.swaggerClass }),
         react_1.default.createElement(api_class_constructor_1.ApiClassConstructorComponent, { swaggerClass: props.swaggerClass }),
         react_1.default.createElement(api_class_methods_1.ApiClassMethodsComponent, { swaggerClass: props.swaggerClass }),
-        '}',
-        "export const ",
-        props.swaggerClass,
-        " = new ",
-        props.swaggerClass,
-        "(requestService)"));
+        '}\n',
+        react_1.default.createElement("span", null,
+            "export const ",
+            utils_1.lowerlize(props.swaggerClass.name),
+            " = new ",
+            props.swaggerClass.name,
+            '(',
+            "requestService",
+            ');\n')));
 };
 //# sourceMappingURL=api-class-definition.js.map
