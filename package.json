@@ -1,6 +1,6 @@
 {
   "name": "swagger-typescript-generator",
-  "version": "1.0.0",
+  "version": "1.1.2",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -19,7 +19,6 @@
     "express": "^4.17.1",
     "lerna": "^3.16.4",
     "morgan": "^1.9.1",
-    "my-app": "1.0.0",
     "path": "^0.12.7",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
