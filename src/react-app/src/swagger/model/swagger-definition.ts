@@ -1,4 +1,5 @@
 import {getJsType, sourceSymbol} from "./swagger-common";
+import {makeFileName} from '../utils';
 
 export class SwaggerDefinition {
     public get source() {
@@ -11,12 +12,14 @@ export class SwaggerDefinition {
 
     public type: string = '';
     public name: string = '';
+    public fileName:string = "";
     public properties: SwaggerDefinitionProperty[] = [];
 
     public constructor(name: string, source: any) {
         this.source = source;
 
         this.name = `I${name}`;
+        this.fileName = makeFileName(name);
         this.type = getJsType(source.type);
 
         this.properties = Object.keys(source.properties).reduce((accum2: any, key2) => {

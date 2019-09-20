@@ -1,8 +1,8 @@
 import {createContext} from "react";
-import {ISwaggerPlugin} from "./swagger-plugins";
+import {defaultPlugin, ISwaggerPlugin} from '../components/plugin';
 
 export interface ISwaggerContextProps {
-    plugins: ISwaggerPlugin[];
+    plugin: ISwaggerPlugin;
 }
 
-export const SwaggerContext = createContext<ISwaggerContextProps>({plugins: []});
+export const SwaggerContext = createContext<ISwaggerContextProps>({plugin: defaultPlugin});

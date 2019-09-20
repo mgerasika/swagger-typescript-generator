@@ -12,24 +12,10 @@ export interface IRequestService {
 
     put(url: string, options: IOptions): AxiosPromise;
 
-    remove(url: string, options?: IOptions): AxiosPromise;
+    delete(url: string, options?: IOptions): AxiosPromise;
 }
 
-class LoginApi {
-    public requestService: IRequestService = {} as IRequestService;
-
-    login(email: string, password: string): AxiosPromise<any> {
-        return this.requestService.post('urlManager.config.login.path', {
-                body: JSON.stringify({email, password: btoa(password)})
-            })
-            .then(response => response.data)
-            .catch((error: AxiosError) => {
-                return Promise.reject({...error});
-            });
-    }
-}
-
-export class RequestService implements IRequestService {
+class RequestService implements IRequestService {
     get(url: string): AxiosPromise {
         return axios
             .get(url, {
@@ -56,7 +42,7 @@ export class RequestService implements IRequestService {
         });
     }
 
-    remove(url: string, options?: IOptions): AxiosPromise {
+    delete(url: string, options?: IOptions): AxiosPromise {
         return axios
             .delete(url, {
                 ...options,
@@ -73,5 +59,5 @@ export class RequestService implements IRequestService {
             response
         });
     }
-
 }
+export const requestService = new RequestService();

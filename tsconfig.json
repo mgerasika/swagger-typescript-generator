@@ -8,7 +8,9 @@
     "declaration": true,
     "esModuleInterop": true,
     "baseUrl": ".",
-    "composite": true
+    "composite": true,
+    "moduleResolution": "node",
+    "strict": true
   },
   "include": [
     "src/**/*"

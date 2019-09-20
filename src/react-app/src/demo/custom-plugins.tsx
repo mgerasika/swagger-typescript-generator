@@ -1,24 +1,14 @@
 import React from 'react';
-import {ClassImport} from "../swagger/ts-generator/class/class-import";
-import {ESwaggerPlugins, ISwaggerPlugin} from "../swagger/common/swagger-plugins";
+import {ApiClassImportComponent, IApiClassImportAdapterProps} from '../swagger/components';
+import {defaultPlugin, ISwaggerPlugin} from '../swagger/components/plugin';
 
-const ClassImportPlugin: React.FC = (props: any) => {
-    const getProps = (): any => {
-        return {...props, imports: [...props.imports, 'hello world!']};
-    }
-    return (
-        <>
-            <ClassImport swaggerClass={props.swaggerClass} {...getProps()}  />
-        </>
-    );
-}
-
-export const customPlugins: ISwaggerPlugin[] = [
-    {
-        pluginName: ESwaggerPlugins.ClassImport,
-        componentFn: (props) => {
-            return (<ClassImportPlugin {...props}/>)
-        }
-    }
-];
+export const customPlugins: ISwaggerPlugin = {
+    ...defaultPlugin,
+    // apiClassImport: (props: IApiClassImportAdapterProps) => {
+    //     const imports = ['hi'];
+    //     return <>
+    //         <ApiClassImportComponent swaggerClass={props.swaggerClass} imports={imports}/>
+    //     </>;
+    // }
+};
 

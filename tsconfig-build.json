@@ -9,12 +9,11 @@
     "experimentalDecorators": true,
     "sourceMap": true,
     "moduleResolution": "node",
-    "composite": true,
     "lib": [
       "es2015",
       "dom"
     ],
-    "jsx": "preserve",
+    "jsx": "react",
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,

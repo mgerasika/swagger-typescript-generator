@@ -13,7 +13,7 @@
       "es2015",
       "dom"
     ],
-    "jsx": "preserve",
+    "jsx": "react",
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,

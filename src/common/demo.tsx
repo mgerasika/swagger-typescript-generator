@@ -3,6 +3,7 @@ import axios from 'axios';
 import {ISwaggerConfig} from './swagger-config';
 import {SwaggerGenerator} from './swagger-generator';
 import * as path from 'path';
+import {defaultPlugin} from '../react-app/dist/swagger/components';
 
 const url = 'http://192.168.235.1:84/swagger/docs/v1';
 axios.get(url)
@@ -20,7 +21,7 @@ const generate = (json: any) => {
     const config: ISwaggerConfig = {
         apiFilesOutDir: `${parentDir}/gen/api`,
         modelFilesOutDir: `${parentDir}/gen/model`,
-        plugins: [],
+        plugins: defaultPlugin,
         swaggerInputJson: json
     };
     const swaggerGenerator = new SwaggerGenerator(config);

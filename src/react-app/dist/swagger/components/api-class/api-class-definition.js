@@ -1,0 +1,30 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var react_1 = __importDefault(require("react"));
+var api_class_fields_1 = require("./api-class-fields");
+var api_class_constructor_1 = require("./api-class-constructor");
+var api_class_methods_1 = require("./api-class-methods");
+var api_class_name_1 = require("./api-class-name");
+var plugin_1 = require("../plugin");
+exports.ApiClassDefinitionComponent = function (props) {
+    // const pluginContext = useContext(SwaggerContext);
+    // const plugin = pluginContext.plugin;
+    var swaggerClass = props.swaggerClass;
+    return (react_1.default.createElement(react_1.default.Fragment, null,
+        plugin_1.defaultPlugin.apiClassImport({ swaggerClass: swaggerClass }),
+        react_1.default.createElement(api_class_name_1.ApiClassNameComponent, { swaggerClass: props.swaggerClass }),
+        '{\n',
+        react_1.default.createElement(api_class_fields_1.ApiClassFieldsComponent, { swaggerClass: props.swaggerClass }),
+        react_1.default.createElement(api_class_constructor_1.ApiClassConstructorComponent, { swaggerClass: props.swaggerClass }),
+        react_1.default.createElement(api_class_methods_1.ApiClassMethodsComponent, { swaggerClass: props.swaggerClass }),
+        '}',
+        "export const ",
+        props.swaggerClass,
+        " = new ",
+        props.swaggerClass,
+        "(requestService)"));
+};
+//# sourceMappingURL=api-class-definition.js.map
