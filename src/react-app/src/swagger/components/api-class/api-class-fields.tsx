@@ -7,6 +7,6 @@ interface IProps {
 
 export const ApiClassFieldsComponent: React.FC<IProps> = (props) => {
     return <>
-        {'\t'}public requestService:IRequestService; {'\n'}
+        {'\t'}public _requestService:IRequestService; {'\n'}
     </>
 }

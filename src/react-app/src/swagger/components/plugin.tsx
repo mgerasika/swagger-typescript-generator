@@ -9,8 +9,8 @@ export interface ISwaggerPlugin {
 export const defaultPlugin: ISwaggerPlugin = {
     apiClassImport: (props: IApiClassImportAdapterProps) => {
         const imports = [
-            'import axios, {AxiosError, AxiosPromise} from \'axios\'',
-            'import {IRequestService, requestService} from \'swagger-typescript-generator/dist\''];
+            'import {AxiosPromise} from \'axios\'',
+            'import {IRequestService, requestService} from \'swagger-typescript-generator\''];
 
         return (<ApiClassImportComponent {...props} imports={imports}/>);
     }

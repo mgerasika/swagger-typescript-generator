@@ -9,5 +9,6 @@ export const ApiMethodReturnTypeComponent: React.FC<IProps> = (props) => {
     if (props.swaggerMethod.responseIsVoid) {
         return (<>{'AxiosPromise<void>'}</>);
     }
-    return (<>{`AxiosPromise<${props.swaggerMethod.responseType}>`}</>);
+    const arraySymbol = props.swaggerMethod.responseIsArray ? '[]' : '';
+    return (<>{`AxiosPromise<${props.swaggerMethod.responseType}${arraySymbol}>`}</>);
 }

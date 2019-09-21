@@ -26,7 +26,7 @@ export const SwaggerRootComponent: React.FC<IProps> = (props) => {
                 setRoot(new SwaggerDoc(config));
             })
             .catch((error: string) => {
-                console.log(error);
+                console.log('load swagger error ' + error);
             });
     };
     const onExploreClick = () => {

@@ -11,7 +11,7 @@ axios.get(url)
         generate(response.data);
     })
     .catch(error => {
-        console.log(error);
+        console.log('axios ' + error);
     });
 
 const generate = (json: any) => {

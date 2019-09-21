@@ -33,7 +33,7 @@ exports.ApiMethodBodyComponent = function (props) {
         ";",
         '\n',
         '\t\t',
-        "return this.requestService.",
+        "return this._requestService.",
         props.swaggerMethod.httpMethod,
         ".apply(this.requestService,params);",
         '\n'));

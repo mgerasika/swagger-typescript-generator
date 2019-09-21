@@ -94,6 +94,9 @@ export class SwaggerMethodParameter {
         if (source['schema']) {
             this.isJsType = false;
             this.type = getJsType(source['schema'].$ref);
+            if(!this.type) {
+                this.type = getJsType(source['schema'].type)
+            }
         } else {
             this.type = getJsType(source.type);
             this.isJsType = true;

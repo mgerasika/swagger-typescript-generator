@@ -10,7 +10,7 @@ exports.ApiClassConstructorComponent = function (props) {
         "public constructor(requestService:IRequestService) ",
         '{\n',
         '\t\t',
-        "this.requestService = requestService; ",
+        "this._requestService = requestService; ",
         '\n',
         '\t}\n');
 };

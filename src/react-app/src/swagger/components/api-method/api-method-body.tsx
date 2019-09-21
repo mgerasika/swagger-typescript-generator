@@ -28,6 +28,6 @@ export const ApiMethodBodyComponent: React.FC<IProps> = (props) => {
     return (<>
         {'\t\t'}const url = `{getMethodUrl()}`;{'\n'}
         {'\t\t'}const params = {getParams()};{'\n'}
-        {'\t\t'}return this.requestService.{props.swaggerMethod.httpMethod}.apply(this.requestService,params);{'\n'}
+        {'\t\t'}return this._requestService.{props.swaggerMethod.httpMethod}.apply(this._requestService,params);{'\n'}
     </>);
 }
