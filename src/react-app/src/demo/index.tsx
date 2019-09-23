@@ -11,7 +11,7 @@ export * from './swagger-root';
 export const SwaggerDemoComponent: React.FC = () => {
     return (
         <div>
-            <SwaggerRootComponent plugins={customPlugins}/>
+            <SwaggerRootComponent plugin={customPlugins}/>
         </div>
     );
 }

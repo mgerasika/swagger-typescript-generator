@@ -2,107 +2,259 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ce26be8b-bbf5-4618-81ac-984eef411fea" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/dist/gen/api/index.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/gen/api/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/gen/api/index.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/gen/api/roles-id.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/gen/api/roles-id.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/gen/api/roles-id.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/gen/api/roles.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/gen/api/roles.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/gen/api/roles.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/gen/api/user-id.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/gen/api/user-id.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/gen/api/user.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/gen/api/user.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/gen/model/index.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/gen/model/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/gen/model/index.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/gen/model/role.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/gen/model/role.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/gen/model/role.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/gen/model/user.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/gen/model/user.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/gen/model/user.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/typescript-compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/react-app/dist/swagger/components/api-class/api-class-constructor.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/dist/swagger/components/api-class/api-class-constructor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/react-app/dist/swagger/components/api-class/api-class-constructor.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/dist/swagger/components/api-class/api-class-constructor.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/react-app/dist/swagger/components/api-class/api-class-fields.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/dist/swagger/components/api-class/api-class-fields.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/react-app/dist/swagger/components/api-class/api-class-fields.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/dist/swagger/components/api-class/api-class-fields.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/react-app/dist/swagger/components/api-method/api-method-body.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/dist/swagger/components/api-method/api-method-body.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/react-app/dist/swagger/components/api-method/api-method-body.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/dist/swagger/components/api-method/api-method-body.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/react-app/dist/swagger/components/plugin.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/dist/swagger/components/plugin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/react-app/dist/swagger/components/plugin.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/react-app/dist/swagger/components/plugin.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/common/demo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/demo.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gen/api/index.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gen/api/roles-id.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gen/api/roles.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gen/api/user-id.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gen/api/user.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gen/model/index.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gen/model/role.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gen/model/user.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/dist/swagger/components/api-class/api-class-constructor.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/dist/swagger/components/api-class/api-class-constructor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/dist/swagger/components/api-class/api-class-constructor.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/dist/swagger/components/api-class/api-class-constructor.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/dist/swagger/components/api-method/api-method-body.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/dist/swagger/components/api-method/api-method-body.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/dist/swagger/components/api-method/api-method-body.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/dist/swagger/components/api-method/api-method-body.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/dist/swagger/components/plugin.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/dist/swagger/components/plugin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/dist/swagger/components/plugin.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/dist/swagger/components/plugin.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/swagger-config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/swagger-config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/swagger-generator.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/swagger-generator.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app/src/demo/api-classes.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/demo/api-classes.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app/src/demo/api-model-definitions.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/demo/api-model-definitions.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app/src/demo/custom-plugins.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/demo/custom-plugins.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app/src/demo/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/demo/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/react-app/src/demo/swagger-root.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/demo/swagger-root.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/common/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/common/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/common/swagger-context.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/common/swagger-context.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/common/swagger-plugins.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/common/swagger-plugins.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/components/api-class/all-class-export.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/components/api-class/api-all-class-export.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/components/api-class/api-class-constructor.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/components/api-class/api-class-constructor.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/components/api-class/api-class-definition.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/components/api-class/api-class-definition.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/components/api-class/api-class-fields.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/components/api-class/api-class-fields.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/components/api-class/api-class-import.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/components/api-class/api-class-import.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/components/api-class/api-class-methods.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/components/api-class/api-class-methods.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/components/api-class/api-class-name.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/components/api-class/api-class-name.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/components/api-class/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/components/api-class/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/components/api-method/api-method-arguments.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/components/api-method/api-method-arguments.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/components/api-method/api-method-body.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/components/api-method/api-method-body.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/components/api-method/api-method-definition.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/components/api-method/api-method-definition.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/components/api-method/api-method-return-type.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/components/api-method/api-method-return-type.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/components/plugin.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/components/plugin.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/components/definitions/all-models-export.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/components/definitions/all-models-export.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/components/definitions/model-definition.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/components/definitions/model-definition.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/components/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/components/plugin.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/common/default-plugin.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/model/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/model/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/model/swagger-class.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/model/swagger-class.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/model/swagger-common.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/model/swagger-definition.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/model/swagger-definition-model.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/model/swagger-doc.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/model/swagger-doc-model.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/model/swagger-method.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/model/swagger-method.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/utils.ts" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="swagger-root.tsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/react-app/src/demo/swagger-root.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="25" column="18" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="demo.tsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/common/demo.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="442">
+              <caret line="26" column="41" selection-start-line="26" selection-start-column="41" selection-end-line="26" selection-end-column="41" />
+              <folding>
+                <element signature="e#0#31#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="swagger-generator.tsx" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/common/swagger-generator.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-170">
+              <caret line="2" column="60" selection-start-line="2" selection-start-column="60" selection-end-line="2" selection-end-column="60" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="swagger-config.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/common/swagger-config.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
+              <folding>
+                <element signature="e#0#36#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="default-plugin.tsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/react-app/src/swagger/common/default-plugin.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/react-app/src/swagger/components/index.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="29" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/react-app/src/swagger/common/index.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="31" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="request-service.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/react-app/src/swagger/common/request-service.ts">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="swagger-context.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/react-app/src/swagger/common/swagger-context.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <element signature="e#0#36#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="swagger-plugins.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/react-app/src/swagger/common/swagger-plugins.ts">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+    </leaf>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/react-app/src/swagger/components/api-class/all-class-export.tsx" />
+        <option value="$PROJECT_DIR$/src/react-app/src/swagger/components/definitions/all-models-export.tsx" />
+        <option value="$PROJECT_DIR$/src/react-app/src/swagger/model/swagger-definition.ts" />
+        <option value="$PROJECT_DIR$/src/react-app/src/swagger/model/swagger-doc.ts" />
+        <option value="$PROJECT_DIR$/src/react-app/src/swagger/model/swagger-method-model.ts" />
+        <option value="$PROJECT_DIR$/src/react-app/src/swagger/utils.ts" />
+        <option value="$PROJECT_DIR$/src/react-app/src/swagger/model/swagger-class.ts" />
+        <option value="$PROJECT_DIR$/src/react-app/src/swagger/model/swagger-definition-model.ts" />
+        <option value="$PROJECT_DIR$/src/react-app/src/swagger/model/swagger-method.ts" />
+        <option value="$PROJECT_DIR$/src/react-app/src/swagger/model/index.ts" />
+        <option value="$PROJECT_DIR$/src/react-app/src/swagger/common/plugin.tsx" />
+        <option value="$PROJECT_DIR$/src/react-app/src/swagger/components/index.ts" />
+        <option value="$PROJECT_DIR$/src/react-app/src/swagger/common/index.ts" />
+        <option value="$PROJECT_DIR$/src/react-app/src/swagger/model/swagger-doc-model.ts" />
+        <option value="$PROJECT_DIR$/src/react-app/src/demo/swagger-root.tsx" />
+        <option value="$PROJECT_DIR$/src/common/swagger-config.ts" />
+        <option value="$PROJECT_DIR$/src/common/swagger-generator.tsx" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER">
+    <package-json value="$PROJECT_DIR$/package.json" />
+  </component>
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths>
+      <path value="$PROJECT_DIR$/package.json" />
+      <path value="$PROJECT_DIR$/src/react-app/package.json" />
+    </packageJsonPaths>
   </component>
   <component name="PackageJsonUpdateNotifier">
     <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1307" />
+    <option name="height" value="1100" />
+  </component>
   <component name="ProjectId" id="1R0F5lRPwf8IxKQgGJBPuVGEBbD" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="swagger-typescript-generator" type="b2602c69:ProjectViewProjectNode" />
+              <item name="swagger-typescript-generator" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="swagger-typescript-generator" type="b2602c69:ProjectViewProjectNode" />
+              <item name="swagger-typescript-generator" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="swagger-typescript-generator" type="b2602c69:ProjectViewProjectNode" />
+              <item name="swagger-typescript-generator" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../backoffice2-frontend" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/react-app" />
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
-    <property name="ts.external.directory.path" value="D:\git\swagger-typescript-generator\node_modules\typescript\lib" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\git\swagger-typescript-generator\src\react-app\src\swagger\common" />
+      <recent name="D:\git\swagger-typescript-generator\src" />
+      <recent name="D:\git\swagger-typescript-generator\src\react-app\src" />
+      <recent name="D:\git\swagger-typescript-generator\src\react-app" />
+      <recent name="D:\git\swagger-typescript-generator\src\common" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\git\swagger-typescript-generator\src" />
       <recent name="D:\git\swagger-typescript-generator\src\react-app" />
       <recent name="D:\git\swagger-typescript-generator\src\react-app\src" />
       <recent name="D:\git\swagger-typescript-generator\src\node-app\src" />
       <recent name="D:\git\swagger-typescript-generator\src\node-app" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\git\swagger-typescript-generator\src" />
-      <recent name="D:\git\swagger-typescript-generator\src\react-app\src" />
-      <recent name="D:\git\swagger-typescript-generator\src\react-app" />
-      <recent name="D:\git\swagger-typescript-generator\src\common" />
-      <recent name="D:\git\swagger-typescript-generator" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -144,6 +296,34 @@
     </task>
     <servers />
   </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="1479000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <editor active="true" />
+    <layout>
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info id="npm" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" weight="0.3008658" />
+      <window_info anchor="bottom" id="TypeScript" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24973656" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.32900432" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+    </layout>
+  </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
@@ -153,6 +333,12 @@
         <entry key="MAIN">
           <value>
             <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
               <option name="COLUMN_ORDER" />
             </State>
           </value>
@@ -161,9 +347,174 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <ignored-roots>
       <path value="D:" />
     </ignored-roots>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/react-app/src/swagger/components/api-class/api-class-constructor.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/react-app/src/swagger/components/api-class/api-all-class-export.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/react-app/src/swagger/components/api-class/index.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/react-app/src/swagger/components/definitions/all-models-export.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/react-app/src/swagger/utils.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="534">
+          <caret line="36" column="1" selection-start-line="36" selection-start-column="1" selection-end-line="36" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/react-app/src/swagger/model/common.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="12" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/react-app/src/swagger/model/swagger-class.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+          <folding>
+            <element signature="e#0#52#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/react-app/src/swagger/model/index.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/react-app/src/swagger/model/swagger-method.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1379">
+          <caret column="61" selection-start-column="61" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/react-app/src/swagger/components/index.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="29" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/react-app/src/swagger/common/default-plugin.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/react-app/src/swagger/common/index.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="31" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/react-app/src/swagger/common/request-service.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/react-app/src/swagger/common/swagger-context.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/react-app/src/swagger/common/swagger-plugins.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/react-app/src/swagger/model/swagger-doc-model.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="17" column="31" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#66#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/react-app/src/swagger/model/swagger-definition-model.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-19">
+          <caret line="8" column="28" lean-forward="true" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/react-app/src/demo/swagger-root.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="25" column="18" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/common/demo.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="41" selection-start-line="26" selection-start-column="41" selection-end-line="26" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/common/swagger-config.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/common/swagger-generator.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-170">
+          <caret line="2" column="60" selection-start-line="2" selection-start-column="60" selection-end-line="2" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>

@@ -1,5 +1,5 @@
 import {createContext} from "react";
-import {defaultPlugin, ISwaggerPlugin} from '../components/plugin';
+import {defaultPlugin, ISwaggerPlugin} from './default-plugin';
 
 export interface ISwaggerContextProps {
     plugin: ISwaggerPlugin;

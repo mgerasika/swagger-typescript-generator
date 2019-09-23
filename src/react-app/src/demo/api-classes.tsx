@@ -1,23 +1,23 @@
 import React, {ReactNode} from 'react';
 import {DiffComponent} from "./diff";
-import {SwaggerClass} from "../swagger/model/swagger-class";
+import {SwaggerClassModel} from "../swagger/model/swagger-class";
 import { ApiClassDefinitionComponent } from '../swagger/components/api-class';
 import {AllModelsExportComponent} from '../swagger/components/definitions';
-import {AllApiClassesExportComponent} from '../swagger/components/api-class/all-class-export';
+import {ApiAllClassesExportComponent} from '../swagger/components/api-class/api-all-class-export';
 
 interface IProps {
-    classes: SwaggerClass[];
+    classes: SwaggerClassModel[];
 }
 
 export const ApiClassesComponent: React.FC<IProps> = (props) => {
-    const renderCodegen = (swaggerClass: SwaggerClass) => {
+    const renderCodegen = (swaggerClass: SwaggerClassModel) => {
         return (<ApiClassDefinitionComponent swaggerClass={swaggerClass}></ApiClassDefinitionComponent>)
     };
-    const result = props.classes.map((def: SwaggerClass) => {
+    const result = props.classes.map((def: SwaggerClassModel) => {
         return <DiffComponent key={def.name} obj1={def.source} obj2={def} obj3={renderCodegen(def)}/>
     })
 
-    const renderAllClassesExport = <AllApiClassesExportComponent classes={props.classes} />
+    const renderAllClassesExport = <ApiAllClassesExportComponent classes={props.classes} />
 
     return (
         <>

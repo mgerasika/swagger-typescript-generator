@@ -1,8 +1,8 @@
 import {createContext} from "react";
-import {ISwaggerPlugin} from '../react-app/src/swagger/components';
+import {ISwaggerPlugin} from "../react-app/src/swagger/common";
 
 export interface ISwaggerConfig {
-    plugins: ISwaggerPlugin;
+    plugin: ISwaggerPlugin;
     swaggerInputJson: Object;
     modelFilesOutDir: string;
     apiFilesOutDir: string;

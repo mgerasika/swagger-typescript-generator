@@ -1,29 +1,30 @@
 import React, {useEffect, useState} from 'react';
 import {ApiModelDefinitionsComponent} from './api-model-definitions';
 import {ApiClassesComponent} from './api-classes';
-import {ISwaggerDocConfig, SwaggerDoc} from '../swagger/model/swagger-doc';
+import {ISwaggerDocModelConfig, SwaggerDocModel} from '../swagger/model/swagger-doc-model';
 import {ISwaggerContextProps, SwaggerContext} from '../swagger/common/swagger-context';
-import {ISwaggerPlugin} from '../swagger/components/plugin';
+import {ISwaggerPlugin} from '../swagger/common/default-plugin';
 
 const axios = require('axios');
 
 interface IProps {
-    plugins: ISwaggerPlugin;
+    plugin: ISwaggerPlugin;
 }
 
 export const SwaggerRootComponent: React.FC<IProps> = (props) => {
     const [url, setUrl] = useState('http://192.168.235.1:84/swagger/docs/v1');
-    const [root, setRoot] = useState<SwaggerDoc>();
+    const [root, setRoot] = useState<SwaggerDocModel>();
 
     const loadSwagger = () => {
         axios.get(url, {headers: {'Access-Control-Allow-Origin': 'http://localhost:3000/'}})
             .then((response: any) => {
-                const config: ISwaggerDocConfig = {
+                const config: ISwaggerDocModelConfig = {
                     source: response.data,
                     apiFolderPath: '../gen/api',
-                    modelFolderPath: '../gen/model'
+                    modelFolderPath: '../gen/model',
+                    plugin: props.plugin
                 };
-                setRoot(new SwaggerDoc(config));
+                setRoot(new SwaggerDocModel(config));
             })
             .catch((error: string) => {
                 console.log('load swagger error ' + error);
@@ -66,7 +67,7 @@ export const SwaggerRootComponent: React.FC<IProps> = (props) => {
 
     const getContextValue = (): ISwaggerContextProps => {
         return {
-            plugin: props.plugins
+            plugin: props.plugin
         };
     };
 

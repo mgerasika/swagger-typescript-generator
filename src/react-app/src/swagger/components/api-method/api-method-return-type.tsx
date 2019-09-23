@@ -1,8 +1,8 @@
 import React from "react";
-import {SwaggerMethod} from "../../model/swagger-method";
+import {SwaggerMethodModel} from "../../model/swagger-method";
 
 interface IProps {
-    swaggerMethod: SwaggerMethod;
+    swaggerMethod: SwaggerMethodModel;
 }
 
 export const ApiMethodReturnTypeComponent: React.FC<IProps> = (props) => {

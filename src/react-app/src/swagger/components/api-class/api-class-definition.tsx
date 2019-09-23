@@ -1,15 +1,15 @@
 import React, {useContext} from 'react';
-import {SwaggerClass} from '../../model/swagger-class';
+import {SwaggerClassModel} from '../../model/swagger-class';
 import {ApiClassFieldsComponent} from './api-class-fields';
 import {ApiClassConstructorComponent} from './api-class-constructor';
 import {ApiClassMethodsComponent} from './api-class-methods';
 import {ApiClassNameComponent} from './api-class-name';
-import {defaultPlugin} from '../plugin';
 import {SwaggerContext} from '../../common';
 import {lowerlize} from '../../utils';
+import {ApiClassImportAdapter} from "./api-class-import";
 
 interface IProps {
-    swaggerClass: SwaggerClass;
+    swaggerClass: SwaggerClassModel;
 }
 
 export const ApiClassDefinitionComponent: React.FC<IProps> = (props) => {
@@ -19,7 +19,7 @@ export const ApiClassDefinitionComponent: React.FC<IProps> = (props) => {
 
     return (
         <>
-            {defaultPlugin.apiClassImport({swaggerClass})}
+            <ApiClassImportAdapter swaggerClass={props.swaggerClass}/>
 
             <ApiClassNameComponent swaggerClass={props.swaggerClass}/>
             {'{\n'}

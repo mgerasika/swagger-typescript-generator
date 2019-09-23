@@ -1,8 +1,8 @@
-import {getJsType, parentSymbol, sourceSymbol} from "./swagger-common";
-import {SwaggerClass} from "./swagger-class";
+import {getJsType, parentSymbol, sourceSymbol} from "../utils";
+import {SwaggerClassModel} from "./swagger-class";
 import {lowerlize} from '../utils';
 
-export class SwaggerMethod {
+export class SwaggerMethodModel {
     public get source() {
         return (this as any)[sourceSymbol];
     }
@@ -11,7 +11,7 @@ export class SwaggerMethod {
         (this as any)[sourceSymbol] = val;
     }
 
-    public get parent(): SwaggerClass {
+    public get parent(): SwaggerClassModel {
         return (this as any)[parentSymbol];
     }
 
@@ -29,7 +29,7 @@ export class SwaggerMethod {
     public responseIsJsType?: boolean;
     public responseType?: string;
 
-    public constructor(parent: SwaggerClass, httpMethod: string, source: any) {
+    public constructor(parent: SwaggerClassModel, httpMethod: string, source: any) {
         this.parent = parent;
         this.source = source;
 
@@ -72,7 +72,7 @@ export class SwaggerMethodParameter {
         (this as any)[sourceSymbol] = val;
     }
 
-    public get parent(): SwaggerMethod {
+    public get parent(): SwaggerMethodModel {
         return (this as any)[parentSymbol];
     }
 
@@ -86,7 +86,7 @@ export class SwaggerMethodParameter {
     public isPathParameter?: boolean;
     public isJsType?: boolean;
 
-    public constructor(parent: SwaggerMethod, source: any) {
+    public constructor(parent: SwaggerMethodModel, source: any) {
         this.parent = parent;
         this.source = source;
 

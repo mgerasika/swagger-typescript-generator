@@ -1,7 +1,6 @@
-import {getJsType, sourceSymbol} from "./swagger-common";
-import {makeFileName} from '../utils';
+import {getJsType, makeFileName, sourceSymbol} from '../utils';
 
-export class SwaggerDefinition {
+export class SwaggerDefinitionModel {
     public get source() {
         return (this as any)[sourceSymbol];
     }

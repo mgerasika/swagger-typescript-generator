@@ -1,8 +1,8 @@
 import React from "react";
-import {SwaggerClass} from "../../model/swagger-class";
+import {SwaggerClassModel} from "../../model/swagger-class";
 
 interface IProps {
-    swaggerClass: SwaggerClass;
+    swaggerClass: SwaggerClassModel;
 }
 
 export const ApiClassFieldsComponent: React.FC<IProps> = (props) => {

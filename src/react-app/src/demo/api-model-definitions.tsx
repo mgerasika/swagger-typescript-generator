@@ -1,18 +1,18 @@
 import React, {ReactNode} from 'react';
 import {DiffComponent} from "./diff";
-import {SwaggerDefinition} from "../swagger/model/swagger-definition";
+import {SwaggerDefinitionModel} from "../swagger/model/swagger-definition-model";
 import {ModelDefinitionComponent} from '../swagger/components/definitions/model-definition';
 import {AllModelsExportComponent} from '../swagger/components/definitions';
 
 interface IProps {
-    definitions: SwaggerDefinition[];
+    definitions: SwaggerDefinitionModel[];
 }
 
 export const ApiModelDefinitionsComponent: React.FC<IProps> = (props) => {
-    const renderCodegen = (def: SwaggerDefinition) => {
+    const renderCodegen = (def: SwaggerDefinitionModel) => {
         return (<ModelDefinitionComponent definition={def}></ModelDefinitionComponent>)
     };
-    const result = props.definitions.map((def: SwaggerDefinition) => {
+    const result = props.definitions.map((def: SwaggerDefinitionModel) => {
         return <DiffComponent key={def.name} obj1={def.source} obj2={def} obj3={renderCodegen(def)}/>
     })
 

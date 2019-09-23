@@ -1,6 +1,6 @@
 import {ISwaggerConfig} from './swagger-config';
 import * as fs from 'fs';
-import {SwaggerClass, SwaggerDefinition, SwaggerDoc} from '../react-app/dist/swagger/model';
+import {SwaggerClass, SwaggerDefinition, SwaggerDoc} from '../react-app/src/swagger/model';
 import * as React from 'react';
 import {renderToString} from 'react-dom/server';
 import {
@@ -11,10 +11,6 @@ import {
     ISwaggerDocConfig,
     ModelDefinitionComponent
 } from '../react-app/dist/swagger';
-
-interface IProps {
-    definition: SwaggerDefinition;
-}
 
 export class SwaggerGenerator {
     private _config: ISwaggerConfig;
@@ -27,7 +23,8 @@ export class SwaggerGenerator {
         const swaggerConfig: ISwaggerDocConfig = {
             source: this._config.swaggerInputJson,
             apiFolderPath: '../api',
-            modelFolderPath: '../model'
+            modelFolderPath: '../model',
+            plugin:this._config.plugin
         };
         const swaggerDoc: SwaggerDoc = new SwaggerDoc(swaggerConfig);
         swaggerDoc.definitions.forEach((swaggerDefinition: SwaggerDefinition) => {
