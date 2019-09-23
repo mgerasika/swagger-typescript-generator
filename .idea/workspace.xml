@@ -2,21 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ce26be8b-bbf5-4618-81ac-984eef411fea" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/dist/common/demo.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/common/demo.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/common/demo.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/common/log-service.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/common/log-service.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/common/log-service.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/common/swagger-config.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/common/swagger-config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/common/swagger-config.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/common/swagger-generator.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/common/swagger-generator.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/common/swagger-generator.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/index.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/index.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/react-app/dist/App.d.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/react-app/dist/App.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/react-app/dist/App.js.map" beforeDir="false" />
@@ -134,8 +120,8 @@
       <change beforePath="$PROJECT_DIR$/dist/react-app/dist/swagger/utils.d.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/react-app/dist/swagger/utils.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/react-app/dist/swagger/utils.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/tsconfig.tsbuildinfo" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/common/request-service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/common/request-service.ts" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -229,7 +215,7 @@
       <workItem from="1569242204971" duration="962000" />
       <workItem from="1569243271381" duration="1351000" />
       <workItem from="1569244935977" duration="871000" />
-      <workItem from="1569246131105" duration="121000" />
+      <workItem from="1569246131105" duration="699000" />
     </task>
     <servers />
   </component>

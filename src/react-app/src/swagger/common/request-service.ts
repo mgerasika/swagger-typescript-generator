@@ -1,18 +1,13 @@
 import axios, {AxiosError, AxiosPromise} from 'axios';
 
-interface IOptions {
-    headers?: any;
-    body?: any;
-}
-
 export interface IRequestService {
     get(url: string): AxiosPromise;
 
-    post(url: string, options: IOptions): AxiosPromise;
+    post(url: string, body: any): AxiosPromise;
 
-    put(url: string, options: IOptions): AxiosPromise;
+    put(url: string, body: any): AxiosPromise;
 
-    delete(url: string, options?: IOptions): AxiosPromise;
+    delete(url: string, body?: any): AxiosPromise;
 }
 
 class RequestService implements IRequestService {
@@ -26,27 +21,25 @@ class RequestService implements IRequestService {
             });
     }
 
-    post(url: string, options: IOptions): AxiosPromise {
+    post(url: string, body: any): AxiosPromise {
         return axios
-            .post(url, options.body, {
-                headers: options.headers
+            .post(url, body, {
             })
             .catch((error: AxiosError) => {
                 return this.handleError(error.response);
             });
     }
 
-    put(url: string, options: IOptions): AxiosPromise {
-        return axios.put(url, options.body, {headers: options.headers}).catch((error: AxiosError) => {
+    put(url: string, body: any): AxiosPromise {
+        return axios.put(url, body).catch((error: AxiosError) => {
             return this.handleError(error.response);
         });
     }
 
-    delete(url: string, options?: IOptions): AxiosPromise {
+    delete(url: string,body:any): AxiosPromise {
         return axios
             .delete(url, {
-                ...options,
-                data: options && options.body ? options.body : null // This is workaround for setting "content-type": https://github.com/axios/axios/issues/86
+                data: body ? body : null // This is workaround for setting "content-type": https://github.com/axios/axios/issues/86
             })
             .catch((error: AxiosError) => {
                 return this.handleError(error.response);
