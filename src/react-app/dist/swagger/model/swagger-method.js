@@ -1,9 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var swagger_common_1 = require("./swagger-common");
 var utils_1 = require("../utils");
-var SwaggerMethod = /** @class */ (function () {
-    function SwaggerMethod(parent, httpMethod, source) {
+var utils_2 = require("../utils");
+var SwaggerMethodModel = /** @class */ (function () {
+    function SwaggerMethodModel(parent, httpMethod, source) {
         var _this = this;
         this.httpMethod = '';
         this.name = '';
@@ -11,7 +11,7 @@ var SwaggerMethod = /** @class */ (function () {
         this.parameters = [];
         this.parent = parent;
         this.source = source;
-        this.name = utils_1.lowerlize(this.source.operationId);
+        this.name = utils_2.lowerlize(this.source.operationId);
         this.httpMethod = httpMethod;
         this.tags = this.source.tags[0];
         if (source.parameters) {
@@ -19,47 +19,48 @@ var SwaggerMethod = /** @class */ (function () {
                 return new SwaggerMethodParameter(_this, obj);
             });
         }
-        if (source.responses && source.responses['204']) {
-            this.responseIsVoid = true;
-        }
+        this.responseIsVoid = true;
         if (source.responses && source.responses['200']) {
+            this.responseIsVoid = false;
             var schema = source.responses['200'].schema;
             if (schema) {
-                this.responseIsJsType = false;
                 this.responseIsArray = schema.type === 'array';
                 var responseType = schema.items ? schema.items['$ref'] : schema['$ref'];
                 if (responseType) {
-                    this.responseType = swagger_common_1.getJsType(responseType);
+                    this.responseType = utils_1.getJsType(responseType);
                 }
-            }
-            else {
-                this.responseIsJsType = true;
+                else {
+                    var additionalProperties = schema.additionalProperties;
+                    if (additionalProperties && additionalProperties["type"]) {
+                        this.responseType = utils_1.getJsType(additionalProperties["type"]);
+                    }
+                }
             }
         }
     }
-    Object.defineProperty(SwaggerMethod.prototype, "source", {
+    Object.defineProperty(SwaggerMethodModel.prototype, "source", {
         get: function () {
-            return this[swagger_common_1.sourceSymbol];
+            return this[utils_1.sourceSymbol];
         },
         set: function (val) {
-            this[swagger_common_1.sourceSymbol] = val;
+            this[utils_1.sourceSymbol] = val;
         },
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(SwaggerMethod.prototype, "parent", {
+    Object.defineProperty(SwaggerMethodModel.prototype, "parent", {
         get: function () {
-            return this[swagger_common_1.parentSymbol];
+            return this[utils_1.parentSymbol];
         },
         set: function (val) {
-            this[swagger_common_1.parentSymbol] = val;
+            this[utils_1.parentSymbol] = val;
         },
         enumerable: true,
         configurable: true
     });
-    return SwaggerMethod;
+    return SwaggerMethodModel;
 }());
-exports.SwaggerMethod = SwaggerMethod;
+exports.SwaggerMethodModel = SwaggerMethodModel;
 var SwaggerMethodParameter = /** @class */ (function () {
     function SwaggerMethodParameter(parent, source) {
         this.name = '';
@@ -69,10 +70,13 @@ var SwaggerMethodParameter = /** @class */ (function () {
         this.name = source.name;
         if (source['schema']) {
             this.isJsType = false;
-            this.type = swagger_common_1.getJsType(source['schema'].$ref);
+            this.type = utils_1.getJsType(source['schema'].$ref);
+            if (!this.type) {
+                this.type = utils_1.getJsType(source['schema'].type);
+            }
         }
         else {
-            this.type = swagger_common_1.getJsType(source.type);
+            this.type = utils_1.getJsType(source.type);
             this.isJsType = true;
         }
         this.isBodyParameter = source.in === 'body';
@@ -80,20 +84,20 @@ var SwaggerMethodParameter = /** @class */ (function () {
     }
     Object.defineProperty(SwaggerMethodParameter.prototype, "source", {
         get: function () {
-            return this[swagger_common_1.sourceSymbol];
+            return this[utils_1.sourceSymbol];
         },
         set: function (val) {
-            this[swagger_common_1.sourceSymbol] = val;
+            this[utils_1.sourceSymbol] = val;
         },
         enumerable: true,
         configurable: true
     });
     Object.defineProperty(SwaggerMethodParameter.prototype, "parent", {
         get: function () {
-            return this[swagger_common_1.parentSymbol];
+            return this[utils_1.parentSymbol];
         },
         set: function (val) {
-            this[swagger_common_1.parentSymbol] = val;
+            this[utils_1.parentSymbol] = val;
         },
         enumerable: true,
         configurable: true

@@ -12,7 +12,7 @@ export const html2text = (html: string) => {
     let result = html.replace(/<(?:.|\n)*?>/gm, '');
     result = result.replace(/&lt;/gm, '<');
     result = result.replace(/&gt;/gm, '>');
-    result = result.replace(/&#x27;/gm, "'");
+    result = result.replace(/&#x27;/gm, '\'');
     return result;
 };
 
@@ -22,16 +22,26 @@ export const makeFileName = (name: string) => {
     return `${words.join('-')}.ts`;
 };
 
-export const sourceSymbol = Symbol("source");
-export const parentSymbol = Symbol("source");
+export const sourceSymbol = Symbol('source');
+export const parentSymbol = Symbol('source');
 
+export const getModelName = (name:string) => {
+    return `I${name}Model`;
+}
 export const getJsType = (type: string) => {
     if (type === 'integer') {
         return 'number';
     }
+    if (type === 'array') {
+        return 'Array';
+    }
     if (type && type.indexOf('#') >= 0) {
         const parts = type.split('/');
-        return `I${parts[parts.length - 1]}`;
+        return getModelName(`${parts[parts.length - 1]}`);
     }
     return type;
-}
+};
+
+export const isModelByTypeName = (name: string): boolean => {
+    return name[0] == 'I' && name.indexOf('Model') !== 0;
+};

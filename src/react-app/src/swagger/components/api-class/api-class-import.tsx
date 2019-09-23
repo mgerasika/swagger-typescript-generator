@@ -1,15 +1,40 @@
 import React from 'react';
 import {SwaggerClassModel} from '../../model/swagger-class';
-import {SwaggerMethodModel} from '../../model';
+import {SwaggerMethodModel, SwaggerMethodParameter} from '../../model';
+import {isModelByTypeName} from '../../utils';
 
 interface IProps {
     swaggerClass: SwaggerClassModel;
 }
 
 export const ApiClassImportAdapter: React.FC<IProps> = (props) => {
+    const responseTypes = props.swaggerClass.methods.map((method: SwaggerMethodModel) => {
+        return method.responseType && isModelByTypeName(method.responseType) ? method.responseType : undefined;
+    });
+
+     let parameterTypes: string [] = [];
+    props.swaggerClass.methods.forEach((method: SwaggerMethodModel) => {
+        method.parameters.forEach((parameter: SwaggerMethodParameter) => {
+            if (parameter.type && isModelByTypeName(parameter.type)) {
+                parameterTypes.push(parameter.type);
+            }
+        });
+    });
+
+    const unique = [...responseTypes, ...parameterTypes].reduce((it: any, key: any) => {
+
+        if (key) {
+            it[key] = key;
+        }
+        return it;
+    }, {});
+
+    const result = Object.keys(unique).filter((filter: string | any) => !!filter).join(',');
+
     const imports = [
         'import {AxiosPromise} from \'axios\'',
-        'import {IRequestService, requestService} from \'swagger-typescript-generator\''];
+        'import {IRequestService, requestService} from \'swagger-typescript-generator\'',
+        `import {${result}} from \'${props.swaggerClass.parent.config.modelFolderPath}\'`];
 
     return (
         <>
@@ -32,17 +57,10 @@ export const ApiClassImportComponent: React.FC<IApiClassImportProps> = (props) =
         return (<div key={val}>{val};{'\n'}</div>);
     });
 
-    const responseTypes = props.swaggerClass.methods.map((method: SwaggerMethodModel) => {
-        return method.responseType;
-    }).filter((filter: string | any) => filter);
-
     return (
         <>
             {result}
-            <div>import {'{'} {responseTypes.join(',')} {'}'} from
-                '{props.swaggerClass.parent.config.modelFolderPath}';
-            </div>
-            {'\n\n'}
+            {'\n'}
         </>
     );
 };

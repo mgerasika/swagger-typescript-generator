@@ -5,4 +5,5 @@ function __export(m) {
 Object.defineProperty(exports, "__esModule", { value: true });
 __export(require("./request-service"));
 __export(require("./swagger-context"));
+__export(require("./default-plugin"));
 //# sourceMappingURL=index.js.map

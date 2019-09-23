@@ -26,7 +26,6 @@ export class SwaggerMethodModel {
 
     public responseIsVoid?: boolean;
     public responseIsArray?: boolean;
-    public responseIsJsType?: boolean;
     public responseType?: string;
 
     public constructor(parent: SwaggerClassModel, httpMethod: string, source: any) {
@@ -43,21 +42,22 @@ export class SwaggerMethodModel {
             });
         }
 
-        if (source.responses && source.responses['204']) {
-            this.responseIsVoid = true;
-        }
+        this.responseIsVoid = true;
         if (source.responses && source.responses['200']) {
+            this.responseIsVoid = false;
             const schema = source.responses['200'].schema;
             if (schema) {
-                this.responseIsJsType = false;
                 this.responseIsArray = schema.type === 'array';
                 const responseType = schema.items ? schema.items['$ref'] : schema['$ref'];
                 if (responseType) {
                     this.responseType = getJsType(responseType);
                 }
-            }
-            else {
-                this.responseIsJsType = true;
+                else {
+                    const additionalProperties = schema.additionalProperties;
+                    if(additionalProperties && additionalProperties["type"]) {
+                        this.responseType = getJsType(additionalProperties["type"]);
+                    }
+                }
             }
         }
     }

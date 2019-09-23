@@ -4,4 +4,4 @@ export * from './api-class-fields';
 export * from './api-class-import';
 export * from './api-class-methods';
 export * from './api-class-name';
-export * from './all-class-export';
+export * from './api-all-class-export';

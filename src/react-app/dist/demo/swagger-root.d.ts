@@ -1,7 +1,7 @@
 import React from 'react';
-import { ISwaggerPlugin } from '../swagger/components/plugin';
+import { ISwaggerPlugin } from '../swagger/common/default-plugin';
 interface IProps {
-    plugins: ISwaggerPlugin;
+    plugin: ISwaggerPlugin;
 }
 export declare const SwaggerRootComponent: React.FC<IProps>;
 export {};

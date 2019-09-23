@@ -8,14 +8,14 @@ var api_class_fields_1 = require("./api-class-fields");
 var api_class_constructor_1 = require("./api-class-constructor");
 var api_class_methods_1 = require("./api-class-methods");
 var api_class_name_1 = require("./api-class-name");
-var plugin_1 = require("../plugin");
 var utils_1 = require("../../utils");
+var api_class_import_1 = require("./api-class-import");
 exports.ApiClassDefinitionComponent = function (props) {
     // const pluginContext = useContext(SwaggerContext);
     // const plugin = pluginContext.plugin;
     var swaggerClass = props.swaggerClass;
     return (react_1.default.createElement(react_1.default.Fragment, null,
-        plugin_1.defaultPlugin.apiClassImport({ swaggerClass: swaggerClass }),
+        react_1.default.createElement(api_class_import_1.ApiClassImportAdapter, { swaggerClass: props.swaggerClass }),
         react_1.default.createElement(api_class_name_1.ApiClassNameComponent, { swaggerClass: props.swaggerClass }),
         '{\n',
         react_1.default.createElement(api_class_fields_1.ApiClassFieldsComponent, { swaggerClass: props.swaggerClass }),

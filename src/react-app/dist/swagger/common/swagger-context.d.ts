@@ -1,5 +1,5 @@
 /// <reference types="react" />
-import { ISwaggerPlugin } from '../components/plugin';
+import { ISwaggerPlugin } from './default-plugin';
 export interface ISwaggerContextProps {
     plugin: ISwaggerPlugin;
 }

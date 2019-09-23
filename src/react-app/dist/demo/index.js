@@ -16,6 +16,6 @@ __export(require("../demo/diff"));
 __export(require("./swagger-root"));
 exports.SwaggerDemoComponent = function () {
     return (react_1.default.createElement("div", null,
-        react_1.default.createElement(_1.SwaggerRootComponent, { plugins: custom_plugins_1.customPlugins })));
+        react_1.default.createElement(_1.SwaggerRootComponent, { plugin: custom_plugins_1.customPlugins })));
 };
 //# sourceMappingURL=index.js.map

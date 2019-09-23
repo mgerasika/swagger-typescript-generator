@@ -35,7 +35,7 @@ exports.ApiMethodBodyComponent = function (props) {
         '\t\t',
         "return this._requestService.",
         props.swaggerMethod.httpMethod,
-        ".apply(this.requestService,params);",
+        ".apply(this._requestService,params);",
         '\n'));
 };
 //# sourceMappingURL=api-method-body.js.map

@@ -1,11 +1,12 @@
-import { SwaggerMethod } from './swagger-method';
-import { SwaggerDoc } from './swagger-doc';
-export declare class SwaggerClass {
+import { SwaggerMethodModel } from './swagger-method';
+import { SwaggerDocModel } from './swagger-doc-model';
+export declare class SwaggerClassModel {
     name: string;
     url: string;
     fileName: string;
-    methods: SwaggerMethod[];
-    constructor(parent: SwaggerDoc, key: string, source: any);
+    methods: SwaggerMethodModel[];
+    constructor(parent: SwaggerDocModel, key: string, source: any);
+    readonly plugin: import("..").ISwaggerPlugin;
     source: any;
-    parent: SwaggerDoc;
+    parent: SwaggerDocModel;
 }

@@ -1,11 +1,12 @@
 import React from 'react';
-import { SwaggerClass } from '../../model/swagger-class';
-export interface IApiClassImportAdapterProps {
-    swaggerClass: SwaggerClass;
-}
+import { SwaggerClassModel } from '../../model/swagger-class';
 interface IProps {
-    swaggerClass: SwaggerClass;
+    swaggerClass: SwaggerClassModel;
+}
+export declare const ApiClassImportAdapter: React.FC<IProps>;
+export interface IApiClassImportProps {
+    swaggerClass: SwaggerClassModel;
     imports: string[];
 }
-export declare const ApiClassImportComponent: React.FC<IProps>;
+export declare const ApiClassImportComponent: React.FC<IApiClassImportProps>;
 export {};

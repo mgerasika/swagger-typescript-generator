@@ -13,7 +13,7 @@ export class SwaggerClassModel {
         this.source = source;
 
         // eslint-disable-next-line
-        this.name = key.replace(/[\{\}]/g, '').split('/').map(s => capitalize(s)).join('');
+        this.name = key.replace(/[\{\}]/g, '').split('/').map(s => capitalize(s)).join('') + 'Api';
         this.url = key;
         this.fileName = makeFileName(this.name);
 

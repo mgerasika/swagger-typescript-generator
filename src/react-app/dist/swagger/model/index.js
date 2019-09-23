@@ -4,8 +4,7 @@ function __export(m) {
 }
 Object.defineProperty(exports, "__esModule", { value: true });
 __export(require("./swagger-class"));
-__export(require("./swagger-common"));
-__export(require("./swagger-definition"));
-__export(require("./swagger-doc"));
+__export(require("./swagger-definition-model"));
+__export(require("./swagger-doc-model"));
 __export(require("./swagger-method"));
 //# sourceMappingURL=index.js.map

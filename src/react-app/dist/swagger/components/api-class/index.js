@@ -9,5 +9,5 @@ __export(require("./api-class-fields"));
 __export(require("./api-class-import"));
 __export(require("./api-class-methods"));
 __export(require("./api-class-name"));
-__export(require("./all-class-export"));
+__export(require("./api-all-class-export"));
 //# sourceMappingURL=index.js.map

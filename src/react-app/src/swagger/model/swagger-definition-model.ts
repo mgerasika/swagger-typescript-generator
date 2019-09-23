@@ -1,4 +1,4 @@
-import {getJsType, makeFileName, sourceSymbol} from '../utils';
+import {getJsType, getModelName, makeFileName, sourceSymbol} from '../utils';
 
 export class SwaggerDefinitionModel {
     public get source() {
@@ -17,7 +17,7 @@ export class SwaggerDefinitionModel {
     public constructor(name: string, source: any) {
         this.source = source;
 
-        this.name = `I${name}`;
+        this.name = getModelName(name);
         this.fileName = makeFileName(name);
         this.type = getJsType(source.type);
 

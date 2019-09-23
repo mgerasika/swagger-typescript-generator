@@ -12,7 +12,8 @@ interface IProps {
 }
 
 export const SwaggerRootComponent: React.FC<IProps> = (props) => {
-    const [url, setUrl] = useState('http://192.168.235.1:84/swagger/docs/v1');
+    const swaggerUrl = 'http://192.168.235.1:84/swagger/docs/v1';
+    const [url, setUrl] = useState(swaggerUrl);
     const [root, setRoot] = useState<SwaggerDocModel>();
 
     const loadSwagger = () => {

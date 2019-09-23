@@ -1,7 +1,7 @@
 import React from 'react';
-import { SwaggerDefinition } from '../../model/swagger-definition';
+import { SwaggerDefinitionModel } from '../../model/swagger-definition-model';
 interface IProps {
-    definition: SwaggerDefinition;
+    definition: SwaggerDefinitionModel;
 }
 export declare const ModelDefinitionComponent: React.FC<IProps>;
 export {};

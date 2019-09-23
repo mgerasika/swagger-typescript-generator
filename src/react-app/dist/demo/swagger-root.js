@@ -10,11 +10,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var api_model_definitions_1 = require("./api-model-definitions");
 var api_classes_1 = require("./api-classes");
-var swagger_doc_1 = require("../swagger/model/swagger-doc");
+var swagger_doc_model_1 = require("../swagger/model/swagger-doc-model");
 var swagger_context_1 = require("../swagger/common/swagger-context");
 var axios = require('axios');
 exports.SwaggerRootComponent = function (props) {
-    var _a = react_1.useState('http://192.168.235.1:84/swagger/docs/v1'), url = _a[0], setUrl = _a[1];
+    var swaggerUrl = 'http://192.168.235.1:84/swagger/docs/v1';
+    var _a = react_1.useState(swaggerUrl), url = _a[0], setUrl = _a[1];
     var _b = react_1.useState(), root = _b[0], setRoot = _b[1];
     var loadSwagger = function () {
         axios.get(url, { headers: { 'Access-Control-Allow-Origin': 'http://localhost:3000/' } })
@@ -22,12 +23,13 @@ exports.SwaggerRootComponent = function (props) {
             var config = {
                 source: response.data,
                 apiFolderPath: '../gen/api',
-                modelFolderPath: '../gen/model'
+                modelFolderPath: '../gen/model',
+                plugin: props.plugin
             };
-            setRoot(new swagger_doc_1.SwaggerDoc(config));
+            setRoot(new swagger_doc_model_1.SwaggerDocModel(config));
         })
             .catch(function (error) {
-            console.log(error);
+            console.log('load swagger error ' + error);
         });
     };
     var onExploreClick = function () {
@@ -54,7 +56,7 @@ exports.SwaggerRootComponent = function (props) {
     };
     var getContextValue = function () {
         return {
-            plugin: props.plugins
+            plugin: props.plugin
         };
     };
     return (react_1.default.createElement("div", { className: 'p-2' },

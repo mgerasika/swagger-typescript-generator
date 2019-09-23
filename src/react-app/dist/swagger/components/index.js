@@ -6,5 +6,4 @@ Object.defineProperty(exports, "__esModule", { value: true });
 __export(require("./api-class"));
 __export(require("./definitions"));
 __export(require("./api-method"));
-__export(require("./plugin"));
 //# sourceMappingURL=index.js.map

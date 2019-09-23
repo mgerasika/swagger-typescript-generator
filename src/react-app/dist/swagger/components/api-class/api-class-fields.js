@@ -7,7 +7,7 @@ var react_1 = __importDefault(require("react"));
 exports.ApiClassFieldsComponent = function (props) {
     return react_1.default.createElement(react_1.default.Fragment, null,
         '\t',
-        "public requestService:IRequestService; ",
+        "public _requestService:IRequestService; ",
         '\n');
 };
 //# sourceMappingURL=api-class-fields.js.map

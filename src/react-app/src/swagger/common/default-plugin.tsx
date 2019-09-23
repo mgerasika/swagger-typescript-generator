@@ -10,7 +10,7 @@ export interface ISwaggerPlugin {
 }
 
 export const defaultPlugin: ISwaggerPlugin = {
-    apiClassImport: (component:any, props: IApiClassImportProps) => {
-        return (<component {...props} />);
+    apiClassImport: (Component:React.FC<any>, props: IApiClassImportProps) => {
+        return (<Component {...props} />);
     }
 };

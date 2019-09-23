@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var diff_1 = require("./diff");
 var api_class_1 = require("../swagger/components/api-class");
-var all_class_export_1 = require("../swagger/components/api-class/all-class-export");
+var api_all_class_export_1 = require("../swagger/components/api-class/api-all-class-export");
 exports.ApiClassesComponent = function (props) {
     var renderCodegen = function (swaggerClass) {
         return (react_1.default.createElement(api_class_1.ApiClassDefinitionComponent, { swaggerClass: swaggerClass }));
@@ -14,7 +14,7 @@ exports.ApiClassesComponent = function (props) {
     var result = props.classes.map(function (def) {
         return react_1.default.createElement(diff_1.DiffComponent, { key: def.name, obj1: def.source, obj2: def, obj3: renderCodegen(def) });
     });
-    var renderAllClassesExport = react_1.default.createElement(all_class_export_1.AllApiClassesExportComponent, { classes: props.classes });
+    var renderAllClassesExport = react_1.default.createElement(api_all_class_export_1.ApiAllClassesExportComponent, { classes: props.classes });
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement("h5", { className: 'pl-3' }, "Api examble for index.ts:"),
         react_1.default.createElement(diff_1.DiffComponent, { key: 'index.ts', obj1: {}, obj2: {}, obj3: renderAllClassesExport }),

@@ -4,10 +4,13 @@ import {defaultPlugin, ISwaggerPlugin} from '../swagger/common/default-plugin';
 
 export const customPlugins: ISwaggerPlugin = {
     ...defaultPlugin,
-    apiClassImport: (component:any, props: IApiClassImportProps) => {
-        const imports = [...props.imports, 'hi'];
+    apiClassImport: (Component:React.FC<any>, props: IApiClassImportProps) => {
+        const newProps:IApiClassImportProps = {
+            ...props,
+            imports:[...props.imports]
+        }
         return <>
-            <component swaggerClass={props.swaggerClass} imports={imports}/>
+            <Component {...newProps}/>
         </>;
     }
 };

@@ -7,10 +7,10 @@ var react_1 = __importDefault(require("react"));
 exports.ApiClassConstructorComponent = function (props) {
     return react_1.default.createElement(react_1.default.Fragment, null,
         '\t',
-        "public constructor(requestService:IRequestService) ",
+        "public constructor(service:IRequestService) ",
         '{\n',
         '\t\t',
-        "this._requestService = requestService; ",
+        "this._requestService = service; ",
         '\n',
         '\t}\n');
 };

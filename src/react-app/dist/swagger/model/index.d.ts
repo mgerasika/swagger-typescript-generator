@@ -1,5 +1,4 @@
 export * from './swagger-class';
-export * from './swagger-common';
-export * from './swagger-definition';
-export * from './swagger-doc';
+export * from './swagger-definition-model';
+export * from './swagger-doc-model';
 export * from './swagger-method';

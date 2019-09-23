@@ -1,7 +1,7 @@
 import React from 'react';
-import { SwaggerClass } from "../swagger/model/swagger-class";
+import { SwaggerClassModel } from "../swagger/model/swagger-class";
 interface IProps {
-    classes: SwaggerClass[];
+    classes: SwaggerClassModel[];
 }
 export declare const ApiClassesComponent: React.FC<IProps>;
 export {};

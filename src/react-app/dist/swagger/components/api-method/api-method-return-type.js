@@ -8,6 +8,7 @@ exports.ApiMethodReturnTypeComponent = function (props) {
     if (props.swaggerMethod.responseIsVoid) {
         return (react_1.default.createElement(react_1.default.Fragment, null, 'AxiosPromise<void>'));
     }
-    return (react_1.default.createElement(react_1.default.Fragment, null, "AxiosPromise<" + props.swaggerMethod.responseType + ">"));
+    var arraySymbol = props.swaggerMethod.responseIsArray ? '[]' : '';
+    return (react_1.default.createElement(react_1.default.Fragment, null, "AxiosPromise<" + props.swaggerMethod.responseType + arraySymbol + ">"));
 };
 //# sourceMappingURL=api-method-return-type.js.map

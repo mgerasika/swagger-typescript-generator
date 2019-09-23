@@ -4,6 +4,36 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
+var utils_1 = require("../../utils");
+exports.ApiClassImportAdapter = function (props) {
+    var responseTypes = props.swaggerClass.methods.map(function (method) {
+        return method.responseType && utils_1.isModelByTypeName(method.responseType) ? method.responseType : undefined;
+    });
+    var parameterTypes = [];
+    props.swaggerClass.methods.forEach(function (method) {
+        method.parameters.forEach(function (parameter) {
+            if (parameter.type && utils_1.isModelByTypeName(parameter.type)) {
+                parameterTypes.push(parameter.type);
+            }
+        });
+    });
+    var unique = responseTypes.concat(parameterTypes).reduce(function (it, key) {
+        if (key) {
+            it[key] = key;
+        }
+        return it;
+    }, {});
+    var result = Object.keys(unique).filter(function (filter) { return !!filter; }).join(',');
+    var imports = [
+        'import {AxiosPromise} from \'axios\'',
+        'import {IRequestService, requestService} from \'swagger-typescript-generator\'',
+        "import {" + result + "} from '" + props.swaggerClass.parent.config.modelFolderPath + "'"
+    ];
+    return (react_1.default.createElement(react_1.default.Fragment, null, props.swaggerClass.plugin.apiClassImport(exports.ApiClassImportComponent, {
+        swaggerClass: props.swaggerClass,
+        imports: imports
+    })));
+};
 exports.ApiClassImportComponent = function (props) {
     var result = props.imports.map(function (val) {
         return (react_1.default.createElement("div", { key: val },
@@ -11,21 +41,8 @@ exports.ApiClassImportComponent = function (props) {
             ";",
             '\n'));
     });
-    var responseTypes = props.swaggerClass.methods.map(function (method) {
-        return method.responseType;
-    }).filter(function (filter) { return filter; });
     return (react_1.default.createElement(react_1.default.Fragment, null,
         result,
-        react_1.default.createElement("div", null,
-            "import ",
-            '{',
-            " ",
-            responseTypes.join(','),
-            " ",
-            '}',
-            " from '",
-            props.swaggerClass.parent.config.modelFolderPath,
-            "';"),
-        '\n\n'));
+        '\n'));
 };
 //# sourceMappingURL=api-class-import.js.map

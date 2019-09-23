@@ -1,24 +1,23 @@
-import { SwaggerClass } from "./swagger-class";
-export declare class SwaggerMethod {
+import { SwaggerClassModel } from "./swagger-class";
+export declare class SwaggerMethodModel {
     source: any;
-    parent: SwaggerClass;
+    parent: SwaggerClassModel;
     httpMethod: string;
     name: string;
     tags: string;
     parameters: SwaggerMethodParameter[];
     responseIsVoid?: boolean;
     responseIsArray?: boolean;
-    responseIsJsType?: boolean;
     responseType?: string;
-    constructor(parent: SwaggerClass, httpMethod: string, source: any);
+    constructor(parent: SwaggerClassModel, httpMethod: string, source: any);
 }
 export declare class SwaggerMethodParameter {
     source: any;
-    parent: SwaggerMethod;
+    parent: SwaggerMethodModel;
     name: string;
     type: string;
     isBodyParameter?: boolean;
     isPathParameter?: boolean;
     isJsType?: boolean;
-    constructor(parent: SwaggerMethod, source: any);
+    constructor(parent: SwaggerMethodModel, source: any);
 }
