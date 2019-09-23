@@ -1,6 +1,6 @@
 import {SwaggerMethodModel} from './swagger-method';
 import {SwaggerDocModel} from './swagger-doc-model';
-import {capitalize, makeFileName, sourceSymbol,parentSymbol} from '../utils';
+import {capitalize, makeFileName, sourceSymbol, parentSymbol, getClassName} from '../utils';
 
 export class SwaggerClassModel {
     public name: string = '';
@@ -13,7 +13,7 @@ export class SwaggerClassModel {
         this.source = source;
 
         // eslint-disable-next-line
-        this.name = key.replace(/[\{\}]/g, '').split('/').map(s => capitalize(s)).join('') + 'Api';
+        this.name = getClassName(key);
         this.url = key;
         this.fileName = makeFileName(this.name);
 

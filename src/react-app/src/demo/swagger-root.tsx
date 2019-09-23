@@ -21,8 +21,7 @@ export const SwaggerRootComponent: React.FC<IProps> = (props) => {
             .then((response: any) => {
                 const config: ISwaggerDocModelConfig = {
                     source: response.data,
-                    apiFolderPath: '../gen/api',
-                    modelFolderPath: '../gen/model',
+                    modelFolderPath: '../model',
                     plugin: props.plugin
                 };
                 setRoot(new SwaggerDocModel(config));

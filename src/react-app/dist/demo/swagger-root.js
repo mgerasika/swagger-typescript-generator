@@ -22,8 +22,7 @@ exports.SwaggerRootComponent = function (props) {
             .then(function (response) {
             var config = {
                 source: response.data,
-                apiFolderPath: '../gen/api',
-                modelFolderPath: '../gen/model',
+                modelFolderPath: '../model',
                 plugin: props.plugin
             };
             setRoot(new swagger_doc_model_1.SwaggerDocModel(config));

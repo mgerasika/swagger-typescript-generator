@@ -25,9 +25,9 @@ export const makeFileName = (name: string) => {
 export const sourceSymbol = Symbol('source');
 export const parentSymbol = Symbol('source');
 
-export const getModelName = (name:string) => {
+export const getModelName = (name: string) => {
     return `I${name}Model`;
-}
+};
 export const getJsType = (type: string) => {
     if (type === 'integer') {
         return 'number';
@@ -44,4 +44,8 @@ export const getJsType = (type: string) => {
 
 export const isModelByTypeName = (name: string): boolean => {
     return name[0] == 'I' && name.indexOf('Model') !== 0;
+};
+
+export const getClassName = (key: string) => {
+    return key.replace(/[\{\}]/g, '').replace(/[-_]/g, '/').split('/').map(s => capitalize(s)).join('') + 'Api';
 };

@@ -10,7 +10,7 @@ var SwaggerClassModel = /** @class */ (function () {
         this.parent = parent;
         this.source = source;
         // eslint-disable-next-line
-        this.name = key.replace(/[\{\}]/g, '').split('/').map(function (s) { return utils_1.capitalize(s); }).join('') + 'Api';
+        this.name = utils_1.getClassName(key);
         this.url = key;
         this.fileName = utils_1.makeFileName(this.name);
         this.methods = Object.keys(source).reduce(function (accum2, key2) {

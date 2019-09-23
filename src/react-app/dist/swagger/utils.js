@@ -43,4 +43,7 @@ exports.getJsType = function (type) {
 exports.isModelByTypeName = function (name) {
     return name[0] == 'I' && name.indexOf('Model') !== 0;
 };
+exports.getClassName = function (key) {
+    return key.replace(/[\{\}]/g, '').replace(/[-_]/g, '/').split('/').map(function (s) { return exports.capitalize(s); }).join('') + 'Api';
+};
 //# sourceMappingURL=utils.js.map

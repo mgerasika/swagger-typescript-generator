@@ -7,3 +7,4 @@ export declare const parentSymbol: unique symbol;
 export declare const getModelName: (name: string) => string;
 export declare const getJsType: (type: string) => string;
 export declare const isModelByTypeName: (name: string) => boolean;
+export declare const getClassName: (key: string) => string;

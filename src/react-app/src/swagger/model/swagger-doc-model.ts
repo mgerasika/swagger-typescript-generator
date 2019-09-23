@@ -6,7 +6,6 @@ const sourceSymbol = Symbol('source');
 
 export interface ISwaggerDocModelConfig {
     source: any;
-    apiFolderPath: string;
     modelFolderPath: string;
     plugin:ISwaggerPlugin;
 }
