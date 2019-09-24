@@ -28,7 +28,7 @@ export class SwaggerGenerator {
         const swaggerConfig: ISwaggerDocModelConfig = {
             source: this._config.swaggerInputJson,
             modelImportPath: this._config.modelImportPath,
-            plugin:this._config.plugin
+            plugin: this._config.plugin
         };
         const swaggerDoc: SwaggerDocModel = new SwaggerDocModel(swaggerConfig);
         swaggerDoc.definitions.forEach((swaggerDefinition: SwaggerDefinitionModel) => {
@@ -52,18 +52,19 @@ export class SwaggerGenerator {
             this.writeToFile(filePath, text);
         }
 
-         {const html = renderToString(<AllModelsExportComponent definitions={swaggerDoc.definitions}/>);
+        {
+            const html = renderToString(<AllModelsExportComponent definitions={swaggerDoc.definitions}/>);
             const text = html2text(html);
             const filePath = `${this._config.modelFilesOutDir}/index.ts`;
             this.writeToFile(filePath, text);
         }
     }
 
-     private createDirectory(dir: string) {
+    private createDirectory(dir: string) {
         const modelDirs = dir.split('/');
         const [first, ...rest] = modelDirs;
 
-           rest.reduce((accum: string, subDir: string) => {
+        rest.reduce((accum: string, subDir: string) => {
             const newDir = `${accum}/${subDir}`;
             console.log('ensure dir ' + newDir.toString());
             if (!fs.existsSync(newDir)) {
@@ -76,7 +77,7 @@ export class SwaggerGenerator {
     private writeToFile(fullPath: string, content: string) {
         fs.writeFile(fullPath, content, (err: any) => {
             // console.error('error write to file ' +err);
-            console.log(`write fo file success: ${fullPath}`)
+            console.log(`write fo file success: ${fullPath}`);
         });
     }
 }

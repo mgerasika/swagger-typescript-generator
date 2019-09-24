@@ -9,11 +9,10 @@ export const lowerlize = (s: string) => {
 };
 
 export const html2text = (html: string) => {
-    let result = html.replace(/<(?:.|\n)*?>/gm, '');
-    result = result.replace(/&lt;/gm, '<');
-    result = result.replace(/&gt;/gm, '>');
-    result = result.replace(/&#x27;/gm, '\'');
-    return result;
+    return html.replace(/<(?:.|\n)*?>/gm, '')
+        .replace(/&lt;/gm, '<')
+        .replace(/&gt;/gm, '>')
+        .replace(/&#x27;/gm, '\'');
 };
 
 export const makeFileName = (name: string) => {
@@ -52,11 +51,11 @@ export const getClassName = (key: string) => {
     return parts.filter(f => f != 'api').map(s => capitalize(s)).join('') + 'Api';
 };
 
-export const getResponseIsArray = (schema:any) :boolean => {
-    return  schema && schema.type === 'array';
-}
+export const getResponseIsArray = (schema: any): boolean => {
+    return schema && schema.type === 'array';
+};
 export const getResponseType = (schema: any): string => {
-    let res: string = "";
+    let res: string = '';
     const responseType = schema.items ? schema.items['$ref'] : schema['$ref'];
     if (responseType) {
         res = getJsType(responseType);
