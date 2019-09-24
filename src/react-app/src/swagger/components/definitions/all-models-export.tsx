@@ -1,5 +1,6 @@
 import React from 'react';
 import {SwaggerDefinitionModel, SwaggerDefinitionProperty} from '../../model/swagger-definition-model';
+import {Warning} from '../../utils';
 
 interface IProps {
     definitions: SwaggerDefinitionModel[];
@@ -12,6 +13,7 @@ export const AllModelsExportComponent: React.FC<IProps> = (props) => {
     });
     return (
         <>
+            {Warning}
             {exports}
         </>
     );

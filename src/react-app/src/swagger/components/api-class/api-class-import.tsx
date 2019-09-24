@@ -12,7 +12,7 @@ export const ApiClassImportAdapter: React.FC<IProps> = (props) => {
         return method.responseType && isModelByTypeName(method.responseType) ? method.responseType : undefined;
     });
 
-     let parameterTypes: string [] = [];
+    let parameterTypes: string [] = [];
     props.swaggerClass.methods.forEach((method: SwaggerMethodModel) => {
         method.parameters.forEach((parameter: SwaggerMethodParameter) => {
             if (parameter.type && isModelByTypeName(parameter.type)) {
@@ -22,19 +22,20 @@ export const ApiClassImportAdapter: React.FC<IProps> = (props) => {
     });
 
     const unique = [...responseTypes, ...parameterTypes].reduce((it: any, key: any) => {
-
         if (key) {
             it[key] = key;
         }
         return it;
     }, {});
 
-    const result = Object.keys(unique).filter((filter: string | any) => !!filter).join(',');
-
     const imports = [
         'import {AxiosPromise} from \'axios\'',
-        'import {IRequestService, requestService} from \'swagger-typescript-generator\'',
-        `import {${result}} from \'${props.swaggerClass.parent.config.modelFolderPath}\'`];
+        'import {IRequestService, requestService} from \'swagger-typescript-generator\''];
+
+    const result = Object.keys(unique).filter((filter: string | any) => !!filter).join(',');
+    if (result.length) {
+        imports.push(`import {${result}} from \'${props.swaggerClass.parent.config.modelImportPath}\'`);
+    }
 
     return (
         <>

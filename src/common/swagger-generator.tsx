@@ -27,7 +27,7 @@ export class SwaggerGenerator {
     generate() {
         const swaggerConfig: ISwaggerDocModelConfig = {
             source: this._config.swaggerInputJson,
-            modelFolderPath: '../model',
+            modelImportPath: this._config.modelImportPath,
             plugin:this._config.plugin
         };
         const swaggerDoc: SwaggerDocModel = new SwaggerDocModel(swaggerConfig);

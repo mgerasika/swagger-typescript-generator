@@ -1,6 +1,7 @@
 import React from 'react';
 import {SwaggerDefinitionModel, SwaggerDefinitionProperty} from '../../model/swagger-definition-model';
 import {SwaggerClassModel} from '../../model';
+import {Warning} from '../../utils';
 
 interface IProps {
     classes: SwaggerClassModel[];
@@ -13,6 +14,7 @@ export const ApiAllClassesExportComponent: React.FC<IProps> = (props) => {
     });
     return (
         <>
+            {Warning}
             {exports}
         </>
     );

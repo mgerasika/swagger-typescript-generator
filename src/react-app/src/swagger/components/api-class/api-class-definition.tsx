@@ -5,7 +5,7 @@ import {ApiClassConstructorComponent} from './api-class-constructor';
 import {ApiClassMethodsComponent} from './api-class-methods';
 import {ApiClassNameComponent} from './api-class-name';
 import {SwaggerContext} from '../../common';
-import {lowerlize} from '../../utils';
+import {lowerlize, Warning} from '../../utils';
 import {ApiClassImportAdapter} from "./api-class-import";
 
 interface IProps {
@@ -19,6 +19,7 @@ export const ApiClassDefinitionComponent: React.FC<IProps> = (props) => {
 
     return (
         <>
+            {Warning}
             <ApiClassImportAdapter swaggerClass={props.swaggerClass}/>
 
             <ApiClassNameComponent swaggerClass={props.swaggerClass}/>

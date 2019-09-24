@@ -1,4 +1,4 @@
-import {getJsType, parentSymbol, sourceSymbol} from "../utils";
+import {getJsType, getResponseIsArray, getResponseType, parentSymbol, sourceSymbol} from '../utils';
 import {SwaggerClassModel} from "./swagger-class";
 import {lowerlize} from '../utils';
 
@@ -47,17 +47,8 @@ export class SwaggerMethodModel {
             this.responseIsVoid = false;
             const schema = source.responses['200'].schema;
             if (schema) {
-                this.responseIsArray = schema.type === 'array';
-                const responseType = schema.items ? schema.items['$ref'] : schema['$ref'];
-                if (responseType) {
-                    this.responseType = getJsType(responseType);
-                }
-                else {
-                    const additionalProperties = schema.additionalProperties;
-                    if(additionalProperties && additionalProperties["type"]) {
-                        this.responseType = getJsType(additionalProperties["type"]);
-                    }
-                }
+                this.responseIsArray = getResponseIsArray(schema);
+                this.responseType = getResponseType(schema);
             }
         }
     }

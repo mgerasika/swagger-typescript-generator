@@ -20,7 +20,7 @@ var SwaggerGenerator = /** @class */ (function () {
         var _this = this;
         var swaggerConfig = {
             source: this._config.swaggerInputJson,
-            modelFolderPath: '../model',
+            modelImportPath: this._config.modelImportPath,
             plugin: this._config.plugin
         };
         var swaggerDoc = new model_1.SwaggerDocModel(swaggerConfig);

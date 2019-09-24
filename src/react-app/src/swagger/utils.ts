@@ -42,10 +42,33 @@ export const getJsType = (type: string) => {
     return type;
 };
 
+export const Warning = '/* This code generated with swagger-typescript-generator. Don\'t modify this file because it will be rewriten. */\n';
 export const isModelByTypeName = (name: string): boolean => {
     return name[0] == 'I' && name.indexOf('Model') !== 0;
 };
 
 export const getClassName = (key: string) => {
-    return key.replace(/[\{\}]/g, '').replace(/[-_]/g, '/').split('/').map(s => capitalize(s)).join('') + 'Api';
+    const parts = key.replace(/[\{\}]/g, '').replace(/[-_]/g, '/').split('/');
+    return parts.filter(f => f != 'api').map(s => capitalize(s)).join('') + 'Api';
+};
+
+export const getResponseIsArray = (schema:any) :boolean => {
+    return  schema && schema.type === 'array';
+}
+export const getResponseType = (schema: any): string => {
+    let res: string = "";
+    const responseType = schema.items ? schema.items['$ref'] : schema['$ref'];
+    if (responseType) {
+        res = getJsType(responseType);
+    }
+    if (!responseType) {
+        res = schema.type;
+    }
+    if (!responseType) {
+        const additionalProperties = schema.additionalProperties;
+        if (additionalProperties && additionalProperties['type']) {
+            res = getJsType(additionalProperties['type']);
+        }
+    }
+    return res;
 };

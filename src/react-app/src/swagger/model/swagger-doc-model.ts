@@ -6,7 +6,7 @@ const sourceSymbol = Symbol('source');
 
 export interface ISwaggerDocModelConfig {
     source: any;
-    modelFolderPath: string;
+    modelImportPath: string;
     plugin:ISwaggerPlugin;
 }
 
@@ -20,7 +20,7 @@ export class SwaggerDocModel {
         const {source} = config;
         this.definitions = Object.keys(source.definitions).reduce((accum: SwaggerDefinitionModel[], key) => {
             const obj = source.definitions[key];
-            accum.push(new SwaggerDefinitionModel(key, obj));
+            accum.push(new SwaggerDefinitionModel(this,key, obj));
             return accum;
         }, []);
 

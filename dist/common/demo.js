@@ -28,6 +28,7 @@ var generate = function (json) {
     var config = {
         apiFilesOutDir: parentDir + "/gen/api",
         modelFilesOutDir: parentDir + "/gen/model",
+        modelImportPath: '../api-model',
         plugin: common_1.defaultPlugin,
         swaggerInputJson: json
     };
