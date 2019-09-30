@@ -6,4 +6,5 @@ export interface ISwaggerConfig {
     modelFilesOutDir: string;
     modelImportPath: string;
     apiFilesOutDir: string;
+    urlFileOutDir: string;
 }

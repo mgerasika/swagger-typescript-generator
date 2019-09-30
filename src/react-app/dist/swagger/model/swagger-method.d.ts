@@ -1,7 +1,6 @@
-import { SwaggerClassModel } from "./swagger-class";
+import { SwaggerClassModel } from './swagger-class';
+import { IUrlInfo } from './url-info';
 export declare class SwaggerMethodModel {
-    source: any;
-    parent: SwaggerClassModel;
     httpMethod: string;
     name: string;
     tags: string;
@@ -10,14 +9,17 @@ export declare class SwaggerMethodModel {
     responseIsArray?: boolean;
     responseType?: string;
     constructor(parent: SwaggerClassModel, httpMethod: string, source: any);
+    source: any;
+    parent: SwaggerClassModel;
+    getUrlInfo(): IUrlInfo;
 }
 export declare class SwaggerMethodParameter {
-    source: any;
-    parent: SwaggerMethodModel;
     name: string;
     type: string;
     isBodyParameter?: boolean;
     isPathParameter?: boolean;
     isJsType?: boolean;
     constructor(parent: SwaggerMethodModel, source: any);
+    source: any;
+    parent: SwaggerMethodModel;
 }

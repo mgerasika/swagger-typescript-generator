@@ -1,6 +1,6 @@
 import {SwaggerMethodModel} from './swagger-method';
 import {SwaggerDocModel} from './swagger-doc-model';
-import {capitalize, makeFileName, sourceSymbol, parentSymbol, getClassName} from '../utils';
+import {getClassName, makeFileName, parentSymbol, sourceSymbol} from '../utils';
 
 export class SwaggerClassModel {
     public name: string = '';
@@ -24,7 +24,7 @@ export class SwaggerClassModel {
         }, []);
     }
 
-    public get plugin(){
+    public get plugin() {
         return this.parent.config.plugin;
     }
 

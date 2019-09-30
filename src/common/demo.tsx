@@ -21,6 +21,7 @@ const generate = (json: any) => {
     const config: ISwaggerConfig = {
         apiFilesOutDir: `${parentDir}/gen/api`,
         modelFilesOutDir: `${parentDir}/gen/model`,
+        urlFileOutDir: `${parentDir}/gen/model`,
         modelImportPath: '../api-model',
         plugin: defaultPlugin as any,
         swaggerInputJson: json

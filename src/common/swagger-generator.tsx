@@ -7,6 +7,7 @@ import {
     AllModelsExportComponent,
     ApiAllClassesExportComponent,
     ApiClassDefinitionComponent,
+    ApiUrlsComponent,
     html2text,
     ModelDefinitionComponent,
 } from '../react-app/dist/swagger';
@@ -28,7 +29,7 @@ export class SwaggerGenerator {
         const swaggerConfig: ISwaggerDocModelConfig = {
             source: this._config.swaggerInputJson,
             modelImportPath: this._config.modelImportPath,
-            plugin: this._config.plugin
+            plugin: this._config.plugin as any
         };
         const swaggerDoc: SwaggerDocModel = new SwaggerDocModel(swaggerConfig);
         swaggerDoc.definitions.forEach((swaggerDefinition: SwaggerDefinitionModel) => {
@@ -56,6 +57,13 @@ export class SwaggerGenerator {
             const html = renderToString(<AllModelsExportComponent definitions={swaggerDoc.definitions}/>);
             const text = html2text(html);
             const filePath = `${this._config.modelFilesOutDir}/index.ts`;
+            this.writeToFile(filePath, text);
+        }
+
+        {
+            const html = renderToString(<ApiUrlsComponent classes={swaggerDoc.classes}/>);
+            const text = html2text(html);
+            const filePath = `${this._config.urlFileOutDir}/index.ts`;
             this.writeToFile(filePath, text);
         }
     }

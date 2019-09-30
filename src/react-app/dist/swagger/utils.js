@@ -11,11 +11,10 @@ exports.lowerlize = function (s) {
     return s.charAt(0).toLowerCase() + s.slice(1);
 };
 exports.html2text = function (html) {
-    var result = html.replace(/<(?:.|\n)*?>/gm, '');
-    result = result.replace(/&lt;/gm, '<');
-    result = result.replace(/&gt;/gm, '>');
-    result = result.replace(/&#x27;/gm, '\'');
-    return result;
+    return html.replace(/<(?:.|\n)*?>/gm, '')
+        .replace(/&lt;/gm, '<')
+        .replace(/&gt;/gm, '>')
+        .replace(/&#x27;/gm, '\'');
 };
 exports.makeFileName = function (name) {
     var words = name.split(/(?=[A-Z])/).map(function (i) { return i.toLowerCase(); });
@@ -52,7 +51,7 @@ exports.getResponseIsArray = function (schema) {
     return schema && schema.type === 'array';
 };
 exports.getResponseType = function (schema) {
-    var res = "";
+    var res = '';
     var responseType = schema.items ? schema.items['$ref'] : schema['$ref'];
     if (responseType) {
         res = exports.getJsType(responseType);

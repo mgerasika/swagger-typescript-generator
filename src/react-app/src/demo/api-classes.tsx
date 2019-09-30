@@ -4,6 +4,7 @@ import {SwaggerClassModel} from "../swagger/model/swagger-class";
 import { ApiClassDefinitionComponent } from '../swagger/components/api-class';
 import {AllModelsExportComponent} from '../swagger/components/definitions';
 import {ApiAllClassesExportComponent} from '../swagger/components/api-class/api-all-class-export';
+import {ApiUrlsComponent} from '../swagger/components/urls';
 
 interface IProps {
     classes: SwaggerClassModel[];
@@ -18,12 +19,18 @@ export const ApiClassesComponent: React.FC<IProps> = (props) => {
     })
 
     const renderAllClassesExport = <ApiAllClassesExportComponent classes={props.classes} />
+    const renderAllUrlsExport = <ApiUrlsComponent classes={props.classes} />
 
     return (
         <>
             <h5 className={'pl-3'}>Api examble for index.ts:</h5>
             <DiffComponent key={'index.ts'} obj1={{}} obj2={{}} obj3={renderAllClassesExport}/>
             <hr/>
+
+            <h5 className={'pl-3'}>Urls for all apis:</h5>
+            <DiffComponent key={'index.ts'} obj1={{}} obj2={{}} obj3={renderAllUrlsExport}/>
+            <hr/>
+
             <h5 className={'pl-3'}>Api:</h5>
             {result}
         </>

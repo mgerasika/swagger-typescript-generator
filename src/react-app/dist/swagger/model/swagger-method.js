@@ -1,7 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var utils_1 = require("../utils");
-var utils_2 = require("../utils");
 var SwaggerMethodModel = /** @class */ (function () {
     function SwaggerMethodModel(parent, httpMethod, source) {
         var _this = this;
@@ -11,7 +10,7 @@ var SwaggerMethodModel = /** @class */ (function () {
         this.parameters = [];
         this.parent = parent;
         this.source = source;
-        this.name = utils_2.lowerlize(this.source.operationId);
+        this.name = utils_1.lowerlize(this.source.operationId);
         this.httpMethod = httpMethod;
         this.tags = this.source.tags[0];
         if (source.parameters) {
@@ -49,6 +48,13 @@ var SwaggerMethodModel = /** @class */ (function () {
         enumerable: true,
         configurable: true
     });
+    SwaggerMethodModel.prototype.getUrlInfo = function () {
+        return {
+            httpMethod: this.httpMethod,
+            name: this.name,
+            url: this.parent.url
+        };
+    };
     return SwaggerMethodModel;
 }());
 exports.SwaggerMethodModel = SwaggerMethodModel;
