@@ -6,7 +6,8 @@
   "scripts": {
     "start": "nodemon --exec babel-node --extensions \\\".tsx\\\" src/common/demo.tsx",
     "start:react-app": "cd src/react-app && npm run start",
-    "build": "npm run start:tsc && npm run git-version && npm publish",
+    "build:publish": "npm run start:tsc && npm run git-version && npm publish",
+    "build": "npm run start:tsc && npm run start",
     "start:tsc": "tsc --p tsconfig-build.json",
     "git-version": "npm --no-git-tag-version version patch"
   },
@@ -23,6 +24,7 @@
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-jsdom": "^3.0.0",
+    "serve": "^11.2.0",
     "swagger-ui-express": "^4.0.7",
     "yarn": "^1.17.3"
   },
