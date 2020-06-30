@@ -14,8 +14,7 @@ yarn add swagger-typescript-generator
 ```
 
 ## How to use
-The main idea - you should strongly synchronize interfaces betwen action and reducers, with typescript interfaces.
-This ideology uses a lot in .net projects and this is helpfull when you need support code.
+Example of config file
 
 
 ```ts
