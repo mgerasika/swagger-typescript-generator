@@ -12,12 +12,12 @@ interface IProps {
 }
 
 export const SwaggerRootComponent: React.FC<IProps> = (props) => {
-    const swaggerUrl = 'http://192.168.235.1:84/swagger/docs/v1';
+    const swaggerUrl = 'https://petstore.swagger.io/v2/swagger.json';
     const [url, setUrl] = useState(swaggerUrl);
     const [root, setRoot] = useState<SwaggerDocModel>();
 
     const loadSwagger = () => {
-        axios.get(url, {headers: {'Access-Control-Allow-Origin': 'http://localhost:3000/'}})
+        axios.get(url)
             .then((response: any) => {
                 const config: ISwaggerDocModelConfig = {
                     source: response.data,

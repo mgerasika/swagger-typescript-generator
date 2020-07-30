@@ -10,6 +10,7 @@ export class SwaggerMethodModel {
     public responseIsVoid?: boolean;
     public responseIsArray?: boolean;
     public responseType?: string;
+    public isFileUpload?: boolean;
 
     public constructor(parent: SwaggerClassModel, httpMethod: string, source: any) {
         this.parent = parent;
@@ -34,6 +35,7 @@ export class SwaggerMethodModel {
                 this.responseType = getResponseType(schema);
             }
         }
+        this.isFileUpload = this.parameters.some(s=>s.type === 'File');
     }
 
     public get source() {
@@ -67,6 +69,7 @@ export class SwaggerMethodParameter {
     public type: string = '';
     public isBodyParameter?: boolean;
     public isPathParameter?: boolean;
+    public isFormDataParameter?: boolean;
     public isJsType?: boolean;
 
     public constructor(parent: SwaggerMethodModel, source: any) {
@@ -86,6 +89,7 @@ export class SwaggerMethodParameter {
         }
         this.isBodyParameter = source.in === 'body';
         this.isPathParameter = source.in === 'path';
+        this.isFormDataParameter = source.in === 'formData';
     }
 
     public get source() {

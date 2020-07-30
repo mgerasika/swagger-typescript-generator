@@ -10,13 +10,13 @@ import {
     ApiUrlsComponent,
     html2text,
     ModelDefinitionComponent,
-} from '../react-app/dist/swagger';
+} from '../../dist/dist-react-app/swagger';
 import {
     ISwaggerDocModelConfig,
     SwaggerClassModel,
     SwaggerDefinitionModel,
     SwaggerDocModel
-} from '../react-app/dist/swagger/model';
+} from '../../dist/dist-react-app/swagger/model';
 
 export class SwaggerGenerator {
     private _config: ISwaggerConfig;
@@ -85,7 +85,7 @@ export class SwaggerGenerator {
     private writeToFile(fullPath: string, content: string) {
         fs.writeFile(fullPath, content, (err: any) => {
             // console.error('error write to file ' +err);
-            console.log(`write fo file success: ${fullPath}`);
+            console.log(`write to file success: ${fullPath}`);
         });
     }
 }

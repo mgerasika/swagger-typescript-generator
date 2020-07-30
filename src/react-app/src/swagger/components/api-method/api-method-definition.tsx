@@ -11,8 +11,10 @@ interface IProps {
 export const ApiMethodDefinitionComponent: React.FC<IProps> = (props) => {
 
     return (<>
-        {'\t'}public {props.swaggerMethod.name}(<ApiMethodArgumentsComponent swaggerMethod={props.swaggerMethod}/>):<ApiMethodReturnTypeComponent swaggerMethod={props.swaggerMethod} />{'{\n'}
-       <ApiMethodBodyComponent swaggerMethod={props.swaggerMethod} />
+        {'\t'}public {props.swaggerMethod.name}(<ApiMethodArgumentsComponent
+        swaggerMethod={props.swaggerMethod}/>):<ApiMethodReturnTypeComponent
+        swaggerMethod={props.swaggerMethod}/>{'{\n'}
+        <ApiMethodBodyComponent swaggerMethod={props.swaggerMethod}/>
         {'\t}\n'}
     </>);
 }

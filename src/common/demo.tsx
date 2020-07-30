@@ -3,15 +3,15 @@ import axios from 'axios';
 import {ISwaggerConfig} from './swagger-config';
 import {SwaggerGenerator} from './swagger-generator';
 import * as path from 'path';
-import {defaultPlugin} from '../react-app/dist/swagger/common';
+import {defaultPlugin} from '../../dist/dist-react-app/swagger/common';
 
-const url = 'http://192.168.235.1:84/swagger/docs/v1';
+const url = 'https://petstore.swagger.io/v2/swagger.json';
 axios.get(url)
     .then(response => {
         generate(response.data);
     })
     .catch(error => {
-        console.log('axios ' + error);
+        console.log('demo:' + error);
     });
 
 const generate = (json: any) => {
@@ -27,6 +27,11 @@ const generate = (json: any) => {
         swaggerInputJson: json
     };
     const swaggerGenerator = new SwaggerGenerator(config);
-    swaggerGenerator.generate();
+    try {
+        swaggerGenerator.generate();
+    }
+    catch (e) {
+        console.log('generator error ' + e);
+    }
 };
 

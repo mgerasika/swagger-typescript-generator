@@ -1,2 +1,2 @@
 import * as React from 'react';
-export * from './react-app/dist/main';
+export * from '../dist/dist-react-app/main';

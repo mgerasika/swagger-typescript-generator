@@ -1,4 +1,4 @@
-import {ISwaggerPlugin} from '../react-app/src/swagger/common';
+import {ISwaggerPlugin} from '../../dist/dist-react-app/swagger/common';
 
 export interface ISwaggerConfig {
     plugin: ISwaggerPlugin;
