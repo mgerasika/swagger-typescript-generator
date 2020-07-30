@@ -1,5 +1,6 @@
-import {ISwaggerConfig} from './swagger-config';
+import {INodeSwaggerConfig} from './node-swagger-config';
 import * as fs from 'fs';
+import {ISwaggerPlugin,ISwaggerUtils} from '../../dist/dist-react-app/swagger/common';
 
 import * as React from 'react';
 import {renderToString} from 'react-dom/server';
@@ -18,10 +19,11 @@ import {
     SwaggerDocModel
 } from '../../dist/dist-react-app/swagger/model';
 
-export class SwaggerGenerator {
-    private _config: ISwaggerConfig;
 
-    constructor(config: ISwaggerConfig) {
+export class SwaggerGenerator {
+    private _config: INodeSwaggerConfig;
+
+    constructor(config: INodeSwaggerConfig) {
         this._config = config;
     }
 
@@ -29,8 +31,19 @@ export class SwaggerGenerator {
         const swaggerConfig: ISwaggerDocModelConfig = {
             source: this._config.swaggerInputJson,
             modelImportPath: this._config.modelImportPath,
-            plugin: this._config.plugin as any
+            plugin: this._config.plugin as any,
+            createCustomUtilsFactory: (baseUtils:ISwaggerUtils)=> baseUtils
         };
+
+        if(this._config.apiFilesOutDir) {
+            this.createDirectory(this._config.apiFilesOutDir);
+        }
+        if(this._config.modelFilesOutDir) {
+            this.createDirectory(this._config.modelFilesOutDir);
+        }
+        if(this._config.urlFileOutDir) {
+            this.createDirectory(this._config.urlFileOutDir);
+        }
         const swaggerDoc: SwaggerDocModel = new SwaggerDocModel(swaggerConfig);
         swaggerDoc.definitions.forEach((swaggerDefinition: SwaggerDefinitionModel) => {
             const filePath = `${this._config.modelFilesOutDir}/${swaggerDefinition.fileName}`;
@@ -84,8 +97,12 @@ export class SwaggerGenerator {
 
     private writeToFile(fullPath: string, content: string) {
         fs.writeFile(fullPath, content, (err: any) => {
-            // console.error('error write to file ' +err);
-            console.log(`write to file success: ${fullPath}`);
+            if(err) {
+                console.error('error write to file ' + err);
+            }
+            else {
+                console.log(`write to file success: ${fullPath}`);
+            }
         });
     }
 }

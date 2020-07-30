@@ -2,13 +2,16 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var swagger_definition_model_1 = require("./swagger-definition-model");
 var swagger_class_1 = require("./swagger-class");
+var common_1 = require("../common");
 var sourceSymbol = Symbol('source');
 var SwaggerDocModel = /** @class */ (function () {
     function SwaggerDocModel(config) {
         var _this = this;
         this.definitions = [];
         this.classes = [];
+        this.utils = common_1.defaultUtils;
         this.config = config;
+        this.utils = config.createCustomUtilsFactory(common_1.defaultUtils);
         var source = config.source;
         this.definitions = Object.keys(source.definitions).reduce(function (accum, key) {
             var obj = source.definitions[key];

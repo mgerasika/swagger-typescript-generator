@@ -1,7 +1,7 @@
 import { AxiosPromise } from 'axios';
 export interface IRequestService {
     get(url: string): AxiosPromise;
-    post(url: string, body: any): AxiosPromise;
+    post<T>(url: string, body: T): AxiosPromise;
     put(url: string, body: any): AxiosPromise;
     delete(url: string, body?: any): AxiosPromise;
     upload(url: string, formData: FormData): AxiosPromise;

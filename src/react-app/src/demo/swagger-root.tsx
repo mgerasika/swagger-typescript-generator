@@ -2,13 +2,15 @@ import React, {useEffect, useState} from 'react';
 import {ApiModelDefinitionsComponent} from './api-model-definitions';
 import {ApiClassesComponent} from './api-classes';
 import {ISwaggerDocModelConfig, SwaggerDocModel} from '../swagger/model/swagger-doc-model';
-import {ISwaggerContextProps, SwaggerContext} from '../swagger/common/swagger-context';
 import {ISwaggerPlugin} from '../swagger/common/default-plugin';
+import {ISwaggerUtils} from "../swagger/common/swagger-utils";
+import {createCustomUtilsFactory} from "./custom-utils";
 
 const axios = require('axios');
 
 interface IProps {
     plugin: ISwaggerPlugin;
+    createCustomUtilsFactory:(baseUtils:ISwaggerUtils) => ISwaggerUtils;
 }
 
 export const SwaggerRootComponent: React.FC<IProps> = (props) => {
@@ -22,7 +24,8 @@ export const SwaggerRootComponent: React.FC<IProps> = (props) => {
                 const config: ISwaggerDocModelConfig = {
                     source: response.data,
                     modelImportPath: '../api-model',
-                    plugin: props.plugin
+                    plugin: props.plugin,
+                    createCustomUtilsFactory: createCustomUtilsFactory
                 };
                 setRoot(new SwaggerDocModel(config));
             })
@@ -65,12 +68,6 @@ export const SwaggerRootComponent: React.FC<IProps> = (props) => {
         ) : null;
     };
 
-    const getContextValue = (): ISwaggerContextProps => {
-        return {
-            plugin: props.plugin
-        };
-    };
-
     return (
         <div className={'p-2'}>
             <div className={'d-flex px-3 pt-1'}>
@@ -80,9 +77,7 @@ export const SwaggerRootComponent: React.FC<IProps> = (props) => {
             </div>
             <hr/>
 
-            <SwaggerContext.Provider value={getContextValue()}>
-                {renderSwagger()}
-            </SwaggerContext.Provider>
+            {renderSwagger()}
         </div>
     );
 };

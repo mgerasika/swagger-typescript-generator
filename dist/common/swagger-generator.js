@@ -21,8 +21,18 @@ var SwaggerGenerator = /** @class */ (function () {
         var swaggerConfig = {
             source: this._config.swaggerInputJson,
             modelImportPath: this._config.modelImportPath,
-            plugin: this._config.plugin
+            plugin: this._config.plugin,
+            createCustomUtilsFactory: function (baseUtils) { return baseUtils; }
         };
+        if (this._config.apiFilesOutDir) {
+            this.createDirectory(this._config.apiFilesOutDir);
+        }
+        if (this._config.modelFilesOutDir) {
+            this.createDirectory(this._config.modelFilesOutDir);
+        }
+        if (this._config.urlFileOutDir) {
+            this.createDirectory(this._config.urlFileOutDir);
+        }
         var swaggerDoc = new model_1.SwaggerDocModel(swaggerConfig);
         swaggerDoc.definitions.forEach(function (swaggerDefinition) {
             var filePath = _this._config.modelFilesOutDir + "/" + swaggerDefinition.fileName;
@@ -69,8 +79,12 @@ var SwaggerGenerator = /** @class */ (function () {
     };
     SwaggerGenerator.prototype.writeToFile = function (fullPath, content) {
         fs.writeFile(fullPath, content, function (err) {
-            // console.error('error write to file ' +err);
-            console.log("write to file success: " + fullPath);
+            if (err) {
+                console.error('error write to file ' + err);
+            }
+            else {
+                console.log("write to file success: " + fullPath);
+            }
         });
     };
     return SwaggerGenerator;

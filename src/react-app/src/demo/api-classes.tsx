@@ -15,7 +15,7 @@ export const ApiClassesComponent: React.FC<IProps> = (props) => {
         return (<ApiClassDefinitionComponent swaggerClass={swaggerClass}></ApiClassDefinitionComponent>)
     };
     const result = props.classes.map((def: SwaggerClassModel) => {
-        return <DiffComponent key={def.name} obj1={def.source} obj2={def} obj3={renderCodegen(def)}/>
+        return <DiffComponent key={def.fileName} obj1={def.source} obj2={def} obj3={renderCodegen(def)}/>
     })
 
     const renderAllClassesExport = <ApiAllClassesExportComponent classes={props.classes} />

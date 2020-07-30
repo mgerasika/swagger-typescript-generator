@@ -3,7 +3,7 @@ import axios, {AxiosError, AxiosPromise} from 'axios';
 export interface IRequestService {
     get(url: string): AxiosPromise;
 
-    post(url: string, body: any): AxiosPromise;
+    post<T>(url: string, body: T): AxiosPromise;
 
     put(url: string, body: any): AxiosPromise;
 

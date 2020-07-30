@@ -11,8 +11,6 @@ var api_class_name_1 = require("./api-class-name");
 var utils_1 = require("../../utils");
 var api_class_import_1 = require("./api-class-import");
 exports.ApiClassDefinitionComponent = function (props) {
-    // const pluginContext = useContext(SwaggerContext);
-    // const plugin = pluginContext.plugin;
     var swaggerClass = props.swaggerClass;
     return (react_1.default.createElement(react_1.default.Fragment, null,
         utils_1.Warning,

@@ -27,7 +27,7 @@ export const ApiMethodBodyComponent: React.FC<IProps> = (props) => {
         if(formDataParameters.length) {
             return (<>
                 {'\t\t'}const formData = new FormData();{'\n'}
-                {formDataParameters.map(param => <>{'\t\t'}formData.append('{param.name}',{param.name}){'\n'}</>)}
+                {formDataParameters.map(param => <React.Fragment key={param.name}>{'\t\t'}formData.append('{param.name}',{param.name}){'\n'}</React.Fragment>)}
             </>);
         }
         return '';

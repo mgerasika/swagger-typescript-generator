@@ -26,12 +26,13 @@ var generate = function (json) {
     var parentDir = path.resolve(__dirname, '..');
     console.log('parentDir=' + parentDir);
     var config = {
-        apiFilesOutDir: parentDir + "/gen/api",
-        modelFilesOutDir: parentDir + "/gen/model",
-        urlFileOutDir: parentDir + "/gen/model",
+        apiFilesOutDir: parentDir + "/../gen/api",
+        modelFilesOutDir: parentDir + "/../gen/api-model",
+        urlFileOutDir: parentDir + "/../gen/api-model-url",
         modelImportPath: '../api-model',
         plugin: common_1.defaultPlugin,
-        swaggerInputJson: json
+        swaggerInputJson: json,
+        createSwaggerUtilsFactory: function (baseUtils) { return baseUtils; }
     };
     var swaggerGenerator = new swagger_generator_1.SwaggerGenerator(config);
     try {

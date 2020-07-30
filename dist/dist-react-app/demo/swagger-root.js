@@ -11,7 +11,7 @@ var react_1 = __importStar(require("react"));
 var api_model_definitions_1 = require("./api-model-definitions");
 var api_classes_1 = require("./api-classes");
 var swagger_doc_model_1 = require("../swagger/model/swagger-doc-model");
-var swagger_context_1 = require("../swagger/common/swagger-context");
+var custom_utils_1 = require("./custom-utils");
 var axios = require('axios');
 exports.SwaggerRootComponent = function (props) {
     var swaggerUrl = 'https://petstore.swagger.io/v2/swagger.json';
@@ -23,7 +23,8 @@ exports.SwaggerRootComponent = function (props) {
             var config = {
                 source: response.data,
                 modelImportPath: '../api-model',
-                plugin: props.plugin
+                plugin: props.plugin,
+                createCustomUtilsFactory: custom_utils_1.createCustomUtilsFactory
             };
             setRoot(new swagger_doc_model_1.SwaggerDocModel(config));
         })
@@ -53,17 +54,12 @@ exports.SwaggerRootComponent = function (props) {
             react_1.default.createElement("hr", null),
             react_1.default.createElement(api_model_definitions_1.ApiModelDefinitionsComponent, { definitions: root.definitions }))) : null;
     };
-    var getContextValue = function () {
-        return {
-            plugin: props.plugin
-        };
-    };
     return (react_1.default.createElement("div", { className: 'p-2' },
         react_1.default.createElement("div", { className: 'd-flex px-3 pt-1' },
             react_1.default.createElement("h5", null, "Url\u00A0to\u00A0swagger.json:\u00A0"),
             react_1.default.createElement("input", { type: 'text', className: 'w-100', value: url, onChange: function (ev) { return setUrl(ev.target.value); } }),
             react_1.default.createElement("button", { onClick: onExploreClick }, "explore")),
         react_1.default.createElement("hr", null),
-        react_1.default.createElement(swagger_context_1.SwaggerContext.Provider, { value: getContextValue() }, renderSwagger())));
+        renderSwagger()));
 };
 //# sourceMappingURL=swagger-root.js.map

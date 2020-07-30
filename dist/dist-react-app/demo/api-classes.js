@@ -13,7 +13,7 @@ exports.ApiClassesComponent = function (props) {
         return (react_1.default.createElement(api_class_1.ApiClassDefinitionComponent, { swaggerClass: swaggerClass }));
     };
     var result = props.classes.map(function (def) {
-        return react_1.default.createElement(diff_1.DiffComponent, { key: def.name, obj1: def.source, obj2: def, obj3: renderCodegen(def) });
+        return react_1.default.createElement(diff_1.DiffComponent, { key: def.fileName, obj1: def.source, obj2: def, obj3: renderCodegen(def) });
     });
     var renderAllClassesExport = react_1.default.createElement(api_all_class_export_1.ApiAllClassesExportComponent, { classes: props.classes });
     var renderAllUrlsExport = react_1.default.createElement(urls_1.ApiUrlsComponent, { classes: props.classes });

@@ -25,7 +25,7 @@ exports.ApiMethodBodyComponent = function (props) {
                 '\t\t',
                 "const formData = new FormData();",
                 '\n',
-                formDataParameters.map(function (param) { return react_1.default.createElement(react_1.default.Fragment, null,
+                formDataParameters.map(function (param) { return react_1.default.createElement(react_1.default.Fragment, { key: param.name },
                     '\t\t',
                     "formData.append('",
                     param.name,

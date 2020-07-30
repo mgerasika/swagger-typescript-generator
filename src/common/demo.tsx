@@ -1,6 +1,6 @@
 import * as React from 'react';
 import axios from 'axios';
-import {ISwaggerConfig} from './swagger-config';
+import {INodeSwaggerConfig} from './node-swagger-config';
 import {SwaggerGenerator} from './swagger-generator';
 import * as path from 'path';
 import {defaultPlugin} from '../../dist/dist-react-app/swagger/common';
@@ -18,13 +18,14 @@ const generate = (json: any) => {
     const parentDir = path.resolve(__dirname, '..');
     console.log('parentDir=' + parentDir);
 
-    const config: ISwaggerConfig = {
-        apiFilesOutDir: `${parentDir}/gen/api`,
-        modelFilesOutDir: `${parentDir}/gen/model`,
-        urlFileOutDir: `${parentDir}/gen/model`,
+    const config: INodeSwaggerConfig = {
+        apiFilesOutDir: `${parentDir}/../gen/api`,
+        modelFilesOutDir: `${parentDir}/../gen/api-model`,
+        urlFileOutDir: `${parentDir}/../gen/api-model-url`,
         modelImportPath: '../api-model',
         plugin: defaultPlugin as any,
-        swaggerInputJson: json
+        swaggerInputJson: json,
+        createSwaggerUtilsFactory: (baseUtils) => baseUtils
     };
     const swaggerGenerator = new SwaggerGenerator(config);
     try {

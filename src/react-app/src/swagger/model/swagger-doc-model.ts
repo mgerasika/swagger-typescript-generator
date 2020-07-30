@@ -1,6 +1,7 @@
 import {SwaggerDefinitionModel} from './swagger-definition-model';
 import {SwaggerClassModel} from './swagger-class';
-import {ISwaggerPlugin} from "../common";
+import {defaultUtils, ISwaggerPlugin} from "../common";
+import {ISwaggerUtils} from "../common/swagger-utils";
 
 const sourceSymbol = Symbol('source');
 
@@ -8,14 +9,17 @@ export interface ISwaggerDocModelConfig {
     source: any;
     modelImportPath: string;
     plugin:ISwaggerPlugin;
+    createCustomUtilsFactory:(baseUtils:ISwaggerUtils) => ISwaggerUtils;
 }
 
 export class SwaggerDocModel {
     public definitions: SwaggerDefinitionModel[] = [];
     public classes: SwaggerClassModel[] = [];
+    public utils:ISwaggerUtils = defaultUtils;
 
     public constructor(config: ISwaggerDocModelConfig) {
         this.config = config;
+        this.utils = config.createCustomUtilsFactory(defaultUtils);
 
         const {source} = config;
         this.definitions = Object.keys(source.definitions).reduce((accum: SwaggerDefinitionModel[], key) => {
