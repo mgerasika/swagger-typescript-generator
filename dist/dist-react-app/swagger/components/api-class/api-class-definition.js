@@ -13,7 +13,7 @@ var api_class_import_1 = require("./api-class-import");
 exports.ApiClassDefinitionComponent = function (props) {
     var swaggerClass = props.swaggerClass;
     return (react_1.default.createElement(react_1.default.Fragment, null,
-        utils_1.Warning,
+        swaggerClass.utils.getWarningMessage(),
         react_1.default.createElement(api_class_import_1.ApiClassImportAdapter, { swaggerClass: props.swaggerClass }),
         react_1.default.createElement(api_class_name_1.ApiClassNameComponent, { swaggerClass: props.swaggerClass }),
         '{\n',

@@ -4,7 +4,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
-var utils_1 = require("../../utils");
 exports.ModelDefinitionComponent = function (props) {
     var fields = props.definition.properties.map(function (parameter) {
         var type = parameter.isArray ? parameter.type + "[]" : parameter.type;
@@ -16,7 +15,7 @@ exports.ModelDefinitionComponent = function (props) {
             '\n'));
     });
     var types = props.definition.properties.map(function (parameter) {
-        return utils_1.isModelByTypeName(parameter.type) ? parameter.type : undefined;
+        return props.definition.utils.isModelByTypeName(parameter.type) ? parameter.type : undefined;
     }).filter(function (filter) { return !!filter && filter != props.definition.name; }).join(',');
     var imports = [];
     if (types.length) {
@@ -29,7 +28,7 @@ exports.ModelDefinitionComponent = function (props) {
             '\n'));
     });
     return (react_1.default.createElement(react_1.default.Fragment, null,
-        utils_1.Warning,
+        props.definition.utils.getWarningMessage(),
         result,
         "export interface ",
         props.definition.name,

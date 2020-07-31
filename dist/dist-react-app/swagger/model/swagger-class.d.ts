@@ -5,6 +5,7 @@ export declare class SwaggerClassModel {
     url: string;
     fileName: string;
     methods: SwaggerMethodModel[];
+    readonly utils: import("..").ISwaggerUtils;
     constructor(parent: SwaggerDocModel, key: string, source: any);
     readonly plugin: import("..").ISwaggerPlugin;
     source: any;

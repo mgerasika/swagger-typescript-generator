@@ -10,15 +10,22 @@ var SwaggerClassModel = /** @class */ (function () {
         this.parent = parent;
         this.source = source;
         // eslint-disable-next-line
-        this.name = utils_1.getClassName(key);
+        this.name = this.utils.getClassName(this, key);
         this.url = key;
-        this.fileName = utils_1.makeFileName(this.name);
+        this.fileName = this.utils.getClassFileName(this, this.name);
         this.methods = Object.keys(source).reduce(function (accum2, key2) {
             var obj2 = source[key2];
             accum2.push(new swagger_method_1.SwaggerMethodModel(_this, key2, obj2));
             return accum2;
         }, []);
     }
+    Object.defineProperty(SwaggerClassModel.prototype, "utils", {
+        get: function () {
+            return this.parent.utils;
+        },
+        enumerable: true,
+        configurable: true
+    });
     Object.defineProperty(SwaggerClassModel.prototype, "plugin", {
         get: function () {
             return this.parent.config.plugin;

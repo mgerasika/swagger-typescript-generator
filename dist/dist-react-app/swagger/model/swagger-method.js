@@ -10,9 +10,9 @@ var SwaggerMethodModel = /** @class */ (function () {
         this.parameters = [];
         this.parent = parent;
         this.source = source;
-        this.name = utils_1.lowerlize(this.source.operationId);
         this.httpMethod = httpMethod;
         this.tags = this.source.tags[0];
+        this.name = this.utils.getMethodName(this, this.source.operationId);
         if (source.parameters) {
             this.parameters = source.parameters.map(function (obj) {
                 return new SwaggerMethodParameter(_this, obj);
@@ -23,12 +23,19 @@ var SwaggerMethodModel = /** @class */ (function () {
             this.responseIsVoid = false;
             var schema = source.responses['200'].schema;
             if (schema) {
-                this.responseIsArray = utils_1.getResponseIsArray(schema);
-                this.responseType = utils_1.getResponseType(schema);
+                this.responseIsArray = this.utils.getMethodResponseIsArray(this, schema);
+                this.responseType = this.utils.getMethodResponseType(this, schema);
             }
         }
         this.isFileUpload = this.parameters.some(function (s) { return s.type === 'File'; });
     }
+    Object.defineProperty(SwaggerMethodModel.prototype, "utils", {
+        get: function () {
+            return this.parent.utils;
+        },
+        enumerable: true,
+        configurable: true
+    });
     Object.defineProperty(SwaggerMethodModel.prototype, "source", {
         get: function () {
             return this[utils_1.sourceSymbol];
@@ -65,22 +72,29 @@ var SwaggerMethodParameter = /** @class */ (function () {
         this.type = '';
         this.parent = parent;
         this.source = source;
-        this.name = source.name;
+        this.name = this.utils.getMethodParameterName(this, source.name);
         if (source['schema']) {
             this.isJsType = false;
-            this.type = utils_1.getJsType(source['schema'].$ref);
+            this.type = this.utils.getMethodParameterType(this, source['schema'].$ref);
             if (!this.type) {
-                this.type = utils_1.getJsType(source['schema'].type);
+                this.type = this.utils.getMethodParameterType(this, source['schema'].type);
             }
         }
         else {
-            this.type = utils_1.getJsType(source.type);
+            this.type = this.utils.getMethodParameterType(this, source.type);
             this.isJsType = true;
         }
         this.isBodyParameter = source.in === 'body';
         this.isPathParameter = source.in === 'path';
         this.isFormDataParameter = source.in === 'formData';
     }
+    Object.defineProperty(SwaggerMethodParameter.prototype, "utils", {
+        get: function () {
+            return this.parent.utils;
+        },
+        enumerable: true,
+        configurable: true
+    });
     Object.defineProperty(SwaggerMethodParameter.prototype, "source", {
         get: function () {
             return this[utils_1.sourceSymbol];

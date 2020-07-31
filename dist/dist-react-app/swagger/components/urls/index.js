@@ -4,9 +4,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
-var utils_1 = require("../../utils");
 exports.ApiUrlsComponent = function (props) {
     var urls = [];
+    var warning = props.classes.length ? props.classes[0].utils.getWarningMessage() : "";
     props.classes.forEach(function (def) {
         def.methods.forEach(function (method) {
             urls.push(method.getUrlInfo());
@@ -25,7 +25,7 @@ exports.ApiUrlsComponent = function (props) {
             '\n'));
     });
     return (react_1.default.createElement(react_1.default.Fragment, null,
-        utils_1.Warning,
+        warning,
         "export const API_URLS = ",
         '{\n',
         " ",

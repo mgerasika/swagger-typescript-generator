@@ -9,6 +9,7 @@ export declare class SwaggerMethodModel {
     responseIsArray?: boolean;
     responseType?: string;
     isFileUpload?: boolean;
+    readonly utils: import("..").ISwaggerUtils;
     constructor(parent: SwaggerClassModel, httpMethod: string, source: any);
     source: any;
     parent: SwaggerClassModel;
@@ -21,6 +22,7 @@ export declare class SwaggerMethodParameter {
     isPathParameter?: boolean;
     isFormDataParameter?: boolean;
     isJsType?: boolean;
+    readonly utils: import("..").ISwaggerUtils;
     constructor(parent: SwaggerMethodModel, source: any);
     source: any;
     parent: SwaggerMethodModel;

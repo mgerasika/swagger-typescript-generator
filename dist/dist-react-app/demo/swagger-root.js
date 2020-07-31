@@ -29,7 +29,7 @@ exports.SwaggerRootComponent = function (props) {
             setRoot(new swagger_doc_model_1.SwaggerDocModel(config));
         })
             .catch(function (error) {
-            console.log('load swagger error ' + error);
+            console.error('load swagger error ' + error);
         });
     };
     var onExploreClick = function () {
