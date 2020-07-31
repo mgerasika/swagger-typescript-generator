@@ -1,6 +1,6 @@
 import {SwaggerMethodModel} from './swagger-method';
 import {SwaggerDocModel} from './swagger-doc-model';
-import {getClassName, makeFileName, parentSymbol, sourceSymbol} from '../utils';
+import { parentSymbol, sourceSymbol} from '../utils';
 
 export class SwaggerClassModel {
     public name: string = '';
@@ -8,14 +8,18 @@ export class SwaggerClassModel {
     public fileName: string;
     public methods: SwaggerMethodModel[] = [];
 
+    public get utils() {
+        return this.parent.utils;
+    }
+
     public constructor(parent: SwaggerDocModel, key: string, source: any) {
         this.parent = parent;
         this.source = source;
 
         // eslint-disable-next-line
-        this.name = getClassName(key);
+        this.name = this.utils.getClassName(this,key);
         this.url = key;
-        this.fileName = makeFileName(this.name);
+        this.fileName = this.utils.getClassFileName(this,this.name);
 
         this.methods = Object.keys(source).reduce((accum2: any, key2) => {
             const obj2 = source[key2];

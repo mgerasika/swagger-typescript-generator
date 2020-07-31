@@ -1,4 +1,4 @@
-import {getJsType, getResponseIsArray, getResponseType, lowerlize, parentSymbol, sourceSymbol} from '../utils';
+import {parentSymbol, sourceSymbol} from '../utils';
 import {SwaggerClassModel} from './swagger-class';
 import {IUrlInfo} from './url-info';
 
@@ -12,13 +12,17 @@ export class SwaggerMethodModel {
     public responseType?: string;
     public isFileUpload?: boolean;
 
+    public get utils() {
+        return this.parent.utils;
+    }
+
     public constructor(parent: SwaggerClassModel, httpMethod: string, source: any) {
         this.parent = parent;
         this.source = source;
 
-        this.name = lowerlize(this.source.operationId);
         this.httpMethod = httpMethod;
         [this.tags] = this.source.tags;
+        this.name = this.utils.getMethodName(this,this.source.operationId);
 
         if (source.parameters) {
             this.parameters = source.parameters.map((obj: any) => {
@@ -31,8 +35,8 @@ export class SwaggerMethodModel {
             this.responseIsVoid = false;
             const schema = source.responses['200'].schema;
             if (schema) {
-                this.responseIsArray = getResponseIsArray(schema);
-                this.responseType = getResponseType(schema);
+                this.responseIsArray = this.utils.getMethodResponseIsArray(this,schema);
+                this.responseType = this.utils.getMethodResponseType(this,schema);
             }
         }
         this.isFileUpload = this.parameters.some(s=>s.type === 'File');
@@ -72,19 +76,23 @@ export class SwaggerMethodParameter {
     public isFormDataParameter?: boolean;
     public isJsType?: boolean;
 
+    public get utils() {
+        return this.parent.utils;
+    }
+
     public constructor(parent: SwaggerMethodModel, source: any) {
         this.parent = parent;
         this.source = source;
 
-        this.name = source.name;
+        this.name = this.utils.getMethodParameterName(this,source.name);
         if (source['schema']) {
             this.isJsType = false;
-            this.type = getJsType(source['schema'].$ref);
+            this.type = this.utils.getMethodParameterType(this,source['schema'].$ref);
             if (!this.type) {
-                this.type = getJsType(source['schema'].type);
+                this.type = this.utils.getMethodParameterType(this,source['schema'].type);
             }
         } else {
-            this.type = getJsType(source.type);
+            this.type = this.utils.getMethodParameterType(this,source.type);
             this.isJsType = true;
         }
         this.isBodyParameter = source.in === 'body';

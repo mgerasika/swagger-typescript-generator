@@ -30,7 +30,7 @@ export const SwaggerRootComponent: React.FC<IProps> = (props) => {
                 setRoot(new SwaggerDocModel(config));
             })
             .catch((error: string) => {
-                console.log('load swagger error ' + error);
+                console.error('load swagger error ' + error);
             });
     };
     const onExploreClick = () => {

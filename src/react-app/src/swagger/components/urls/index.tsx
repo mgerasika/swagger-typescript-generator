@@ -1,6 +1,5 @@
 import React from 'react';
 import {SwaggerClassModel, SwaggerMethodModel} from '../../model';
-import {Warning} from '../../utils';
 import {IUrlInfo} from '../../model/url-info';
 
 interface IProps {
@@ -9,6 +8,7 @@ interface IProps {
 
 export const ApiUrlsComponent: React.FC<IProps> = (props) => {
     const urls: IUrlInfo[] = [];
+    const warning = props.classes.length ? props.classes[0].utils.getWarningMessage() : "";
     props.classes.forEach((def: SwaggerClassModel) => {
         def.methods.forEach((method: SwaggerMethodModel) => {
             urls.push(method.getUrlInfo());
@@ -22,7 +22,7 @@ export const ApiUrlsComponent: React.FC<IProps> = (props) => {
     });
     return (
         <>
-            {Warning}
+            {warning}
             export const API_URLS = {'{\n'} {result}
             {'};\n'}
         </>

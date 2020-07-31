@@ -1,7 +1,6 @@
 import React from 'react';
 import {SwaggerClassModel} from '../../model/swagger-class';
 import {SwaggerMethodModel, SwaggerMethodParameter} from '../../model';
-import {isModelByTypeName} from '../../utils';
 
 interface IProps {
     swaggerClass: SwaggerClassModel;
@@ -9,13 +8,13 @@ interface IProps {
 
 export const ApiClassImportAdapter: React.FC<IProps> = (props) => {
     const responseTypes = props.swaggerClass.methods.map((method: SwaggerMethodModel) => {
-        return method.responseType && isModelByTypeName(method.responseType) ? method.responseType : undefined;
+        return method.responseType && props.swaggerClass.utils.isModelByTypeName(method.responseType) ? method.responseType : undefined;
     });
 
     let parameterTypes: string [] = [];
     props.swaggerClass.methods.forEach((method: SwaggerMethodModel) => {
         method.parameters.forEach((parameter: SwaggerMethodParameter) => {
-            if (parameter.type && isModelByTypeName(parameter.type)) {
+            if (parameter.type && props.swaggerClass.utils.isModelByTypeName(parameter.type)) {
                 parameterTypes.push(parameter.type);
             }
         });

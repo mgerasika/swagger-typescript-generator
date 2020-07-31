@@ -1,6 +1,5 @@
 import React from 'react';
 import {SwaggerDefinitionModel, SwaggerDefinitionProperty} from '../../model/swagger-definition-model';
-import {isModelByTypeName, Warning} from '../../utils';
 
 interface IProps {
     definition: SwaggerDefinitionModel;
@@ -13,7 +12,7 @@ export const ModelDefinitionComponent: React.FC<IProps> = (props) => {
     });
 
     const types = props.definition.properties.map((parameter: SwaggerDefinitionProperty) => {
-        return isModelByTypeName(parameter.type) ? parameter.type : undefined;
+        return props.definition.utils.isModelByTypeName(parameter.type) ? parameter.type : undefined;
     }).filter((filter: string | any) => !!filter && filter != props.definition.name).join(',');
 
     const imports = [];
@@ -27,7 +26,7 @@ export const ModelDefinitionComponent: React.FC<IProps> = (props) => {
 
     return (
         <>
-            {Warning}
+            {props.definition.utils.getWarningMessage()}
             {result}
             export interface {props.definition.name}
             {'{'} {'\n'}{fields}
