@@ -1,1 +1,0 @@
-{"version":3,"file":"default-plugin.js","sourceRoot":"","sources":["../../../../src/react-app/src/swagger/common/default-plugin.tsx"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;AACA,2CAA+B;AAUlB,QAAA,aAAa,GAAmB;IACzC,cAAc,EAAE,UAAC,SAAuB,EAAE,KAA2B;QACjE,OAAO,CAAC,oBAAC,SAAS,eAAK,KAAK,EAAI,CAAC,CAAC;IACtC,CAAC;CACJ,CAAC"}
