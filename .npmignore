@@ -1,2 +1,8 @@
 /node_modules/
 /src/
+/loaders/
+.babelrc
+nodemon.json
+tsconfig.json
+tsconfig-build.json
+/.idea/
