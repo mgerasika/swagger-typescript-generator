@@ -60,11 +60,15 @@
     "@types/react": "16.8.23",
     "@types/react-dom": "16.8.5",
     "@types/swagger-ui-express": "^3.0.1",
-    "babel-eslint": "10.0.3",
-    "babel-loader": "8.0.6",
+    "babel-eslint": "10.0.1",
+    "babel-loader": "8.0.5",
     "create-react-app": "^3.4.1",
     "del-cli": "^3.0.1",
-    "typescript": "^3.5.3"
+    "typescript": "^3.5.3",
+    "babel-jest": "^24.8.0",
+    "jest": "24.7.1",
+    "webpack": "4.29.6",
+    "webpack-dev-server": "3.2.1"
   },
   "repository": {
     "type": "git",
