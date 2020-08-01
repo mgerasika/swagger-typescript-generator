@@ -1,19 +1,19 @@
 {
   "name": "swagger-typescript-generator",
-  "version": "1.1.27",
+  "version": "1.1.36",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "start": "nodemon --exec babel-node --extensions \\\".tsx\\\" src/node-app/demo.tsx",
     "start:react-app": "cd src/react-app && npm run start",
-    "build:publish": "npm run build && npm run git-version && npm publish",
+    "build:publish": "npm run build && npm run git-version && npm run sleep && npm run delete:dist-src && npm publish",
     "build": "npm run delete:dist && npm run build:react-app && npm run build:tsc && npm run sleep && npm run delete:dist-src",
     "build:tsc": "tsc --p tsconfig-build.json",
     "build:react-app": "cd src/react-app && npm run build:tsc",
     "git-version": "npm --no-git-tag-version version patch",
     "delete:dist": "del-cli --force dist",
     "delete:dist-src": "del-cli --force dist/src",
-    "sleep": "sleepms 1000"
+    "sleep": "sleepms 7000"
   },
   "dependencies": {
     "@babel/polyfill": "^7.6.0",
