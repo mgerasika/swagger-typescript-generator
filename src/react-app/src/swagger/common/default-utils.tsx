@@ -74,7 +74,18 @@ export const defaultUtils : ISwaggerUtils = {
     getMethodName : (context:SwaggerMethodModel, name: string) => lowerlize(name),
     getMethodParameterName : (context:SwaggerMethodParameter,name: string) => name,
     getMethodResponseType: (context:SwaggerMethodModel,schema:any) => getResponseType(schema),
-    getMethodParameterType:(context:SwaggerMethodParameter,type: string) => getJsType(type),
+    getMethodParameterType:(context:SwaggerMethodParameter,schema: any) => {
+        if(schema['schema']) {
+            const res = getJsType(schema['schema'].$ref);
+            if (res) {
+                return res;
+            }
+            return getJsType(schema['schema'].type);
+        }
+        else{
+            return getJsType(schema.type);
+        }
+    },
 
     getModelName : (context:SwaggerDefinitionModel, name:string) => getModelName(name),
     getModelFileName : (context:SwaggerDefinitionModel, name: string) => getFileName(name),

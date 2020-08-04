@@ -14,6 +14,7 @@ export class SwaggerMethodModel {
     public responseType?: string;
     public isFileUpload?: boolean;
     public description?:string;
+    public responseModelRef?:SwaggerDefinitionModel;
 
     public get doc() {
         return this.parent.doc;
@@ -54,6 +55,11 @@ export class SwaggerMethodModel {
 
     public init(){
         this.parameters.forEach(p=>p.init());
+
+        const responseModel = this.doc.definitions.find(f=>f.name === this.responseType);
+        if(responseModel) {
+            this.responseModelRef = responseModel;
+        }
     }
 
     public get source() {
@@ -109,16 +115,8 @@ export class SwaggerMethodParameter {
         this.source = source;
 
         this.name = this.utils.getMethodParameterName(this,source.name);
-        if (source['schema']) {
-            this.isJsType = false;
-            this.type = this.utils.getMethodParameterType(this,source['schema'].$ref);
-            if (!this.type) {
-                this.type = this.utils.getMethodParameterType(this,source['schema'].type);
-            }
-        } else {
-            this.type = this.utils.getMethodParameterType(this,source.type);
-            this.isJsType = true;
-        }
+        this.type = this.utils.getMethodParameterType(this,source);
+        this.isJsType = source['schema'] ? false : true;
         this.isBodyParameter = source.in === 'body'  ? true : undefined;
         this.isPathParameter = source.in === 'path' ? true : undefined;
         this.isQueryParameter = source.in === 'query' ? true : undefined;
