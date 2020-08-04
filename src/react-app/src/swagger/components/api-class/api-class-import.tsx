@@ -29,7 +29,7 @@ export const ApiClassImportAdapter: React.FC<IProps> = (props) => {
 
     const imports = [
         'import {AxiosPromise} from \'axios\'',
-        'import {IRequestService, requestService} from \'swagger-typescript-generator\''];
+        'import {IRequestService, di} from \'swagger-typescript-generator\''];
 
     const result = Object.keys(unique).filter((filter: string | any) => !!filter).join(',');
     if (result.length) {

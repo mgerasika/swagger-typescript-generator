@@ -1,6 +1,8 @@
 import {parentSymbol, sourceSymbol} from '../utils';
 import {SwaggerClassModel} from './swagger-class';
 import {IUrlInfo} from './url-info';
+import {getResponseIsArray, getIsEnum} from "../common";
+import {SwaggerDefinitionModel} from "./swagger-definition-model";
 
 export class SwaggerMethodModel {
     public httpMethod: string = '';
@@ -11,6 +13,11 @@ export class SwaggerMethodModel {
     public responseIsArray?: boolean;
     public responseType?: string;
     public isFileUpload?: boolean;
+    public description?:string;
+
+    public get doc() {
+        return this.parent.doc;
+    }
 
     public get utils() {
         return this.parent.utils;
@@ -35,11 +42,18 @@ export class SwaggerMethodModel {
             this.responseIsVoid = false;
             const schema = source.responses['200'].schema;
             if (schema) {
-                this.responseIsArray = this.utils.getMethodResponseIsArray(this,schema);
+                this.responseIsArray = getResponseIsArray(schema);
                 this.responseType = this.utils.getMethodResponseType(this,schema);
             }
         }
         this.isFileUpload = this.parameters.some(s=>s.type === 'File');
+        if(source.summary) {
+            this.description = source.summary;
+        }
+    }
+
+    public init(){
+        this.parameters.forEach(p=>p.init());
     }
 
     public get source() {
@@ -73,8 +87,18 @@ export class SwaggerMethodParameter {
     public type: string = '';
     public isBodyParameter?: boolean;
     public isPathParameter?: boolean;
+    public isQueryParameter?: boolean;
     public isFormDataParameter?: boolean;
+    public required?: boolean;
+    public isEnum?: boolean;
     public isJsType?: boolean;
+    public description?:string;
+    public modelRef?:SwaggerDefinitionModel;
+    public enumValues?:[];
+
+    public get doc() {
+        return this.parent.doc;
+    }
 
     public get utils() {
         return this.parent.utils;
@@ -95,9 +119,21 @@ export class SwaggerMethodParameter {
             this.type = this.utils.getMethodParameterType(this,source.type);
             this.isJsType = true;
         }
-        this.isBodyParameter = source.in === 'body';
-        this.isPathParameter = source.in === 'path';
-        this.isFormDataParameter = source.in === 'formData';
+        this.isBodyParameter = source.in === 'body'  ? true : undefined;
+        this.isPathParameter = source.in === 'path' ? true : undefined;
+        this.isQueryParameter = source.in === 'query' ? true : undefined;
+        this.isFormDataParameter = source.in === 'formData' ? true : undefined;
+        this.required = source.required ? true : undefined;
+        this.isEnum =  getIsEnum(source) ? true : undefined;
+        this.description = source.description ? source.description : undefined;
+        this.enumValues = source.enum ? source.enum : undefined;
+    }
+
+    public init(){
+        const def = this.doc.definitions.find(df =>df.name === this.type);
+        if(def) {
+            this.modelRef = def;
+        }
     }
 
     public get source() {

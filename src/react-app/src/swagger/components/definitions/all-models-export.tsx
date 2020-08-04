@@ -8,8 +8,9 @@ interface IProps {
 export const AllModelsExportComponent: React.FC<IProps> = (props) => {
     const warning = props.definitions.length ? props.definitions[0].utils.getWarningMessage() : ''
     const exports = props.definitions.map((def: SwaggerDefinitionModel) => {
-        const name = def.fileName.split('.');
-        return (<span key={def.name}>export * from './{name[0]}'{'\n'}</span>);
+        const idx = def.fileName.lastIndexOf('.');
+        const name = def.fileName.substr(0,idx-1);
+        return (<span key={def.name}>export * from './{name}'{'\n'}</span>);
     });
     return (
         <>

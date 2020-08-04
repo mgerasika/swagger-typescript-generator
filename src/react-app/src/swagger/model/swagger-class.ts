@@ -8,6 +8,10 @@ export class SwaggerClassModel {
     public fileName: string;
     public methods: SwaggerMethodModel[] = [];
 
+    public get doc() {
+        return this.parent;
+    }
+
     public get utils() {
         return this.parent.utils;
     }
@@ -26,6 +30,10 @@ export class SwaggerClassModel {
             accum2.push(new SwaggerMethodModel(this, key2, obj2));
             return accum2;
         }, []);
+    }
+
+    public init(){
+        this.methods.forEach(m=>m.init());
     }
 
     public get plugin() {

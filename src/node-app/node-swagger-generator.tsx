@@ -28,13 +28,6 @@ export class NodeSwaggerGenerator {
     }
 
     generate() {
-        const swaggerConfig: ISwaggerDocModelConfig = {
-            source: this._config.swaggerInputJson,
-            modelImportPath: this._config.modelImportPath,
-            plugin: this._config.plugin as any,
-            createCustomUtilsFactory: (baseUtils:ISwaggerUtils)=> baseUtils
-        };
-
         if(this._config.apiFilesOutDir) {
             this.createDirectory(this._config.apiFilesOutDir);
         }
@@ -44,7 +37,7 @@ export class NodeSwaggerGenerator {
         if(this._config.urlFileOutDir) {
             this.createDirectory(this._config.urlFileOutDir);
         }
-        const swaggerDoc: SwaggerDocModel = new SwaggerDocModel(swaggerConfig);
+        const swaggerDoc: SwaggerDocModel = new SwaggerDocModel(this._config.swaggerConfig);
         swaggerDoc.definitions.forEach((swaggerDefinition: SwaggerDefinitionModel) => {
             const filePath = `${this._config.modelFilesOutDir}/${swaggerDefinition.fileName}`;
             const html = renderToString(<ModelDefinitionComponent definition={swaggerDefinition}/>);

@@ -48,8 +48,16 @@ const getResponseType = (schema:any) => {
     return res;
 };
 
-const getResponseIsArray = (schema: any): boolean => {
+export const getResponseIsArray = (schema: any): boolean => {
     return schema && schema.type === 'array';
+};
+
+export const getIsEnum = (schema: any): boolean => {
+    return schema && schema.items && schema.items.enum && schema.items.enum.length > 0 || schema && schema.enum ? true : false;
+};
+
+export const getIsEnumForDefinition = (schema: any): boolean => {
+    return schema && schema.enum && schema.enum.length ? true : false;
 };
 
 const getFileName = (name: string) => {
@@ -65,7 +73,6 @@ export const defaultUtils : ISwaggerUtils = {
     getClassFileName : (context:SwaggerClassModel, name: string) => getFileName(name),
     getMethodName : (context:SwaggerMethodModel, name: string) => lowerlize(name),
     getMethodParameterName : (context:SwaggerMethodParameter,name: string) => name,
-    getMethodResponseIsArray :(context:SwaggerMethodModel,schema: any): boolean => getResponseIsArray(schema),
     getMethodResponseType: (context:SwaggerMethodModel,schema:any) => getResponseType(schema),
     getMethodParameterType:(context:SwaggerMethodParameter,type: string) => getJsType(type),
 
@@ -87,7 +94,6 @@ export const defaultUtils : ISwaggerUtils = {
             return getJsType(schema.type)
         }
     },
-    getModelPropertyResponseIsArray:(context:SwaggerDefinitionProperty,name:string) => getResponseIsArray(name),
 
     isModelByTypeName : (name: string|undefined): boolean => {
         return !!name && (name[0] === 'I' && name.indexOf('Model') !== 0);

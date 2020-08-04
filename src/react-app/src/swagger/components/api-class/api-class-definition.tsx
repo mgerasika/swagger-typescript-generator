@@ -25,7 +25,7 @@ export const ApiClassDefinitionComponent: React.FC<IProps> = (props) => {
             <ApiClassConstructorComponent swaggerClass={props.swaggerClass}/>
             <ApiClassMethodsComponent swaggerClass={props.swaggerClass}/>
             {'}\n'}
-            <span>export const {lowerlize(props.swaggerClass.name)} = new {props.swaggerClass.name}{'('}requestService{');\n'}</span>
+            <span>export const {lowerlize(props.swaggerClass.name)} = new {props.swaggerClass.name}{"('"}{swaggerClass.parent.config.apiUrl}{"');\n"}</span>
         </>
     );
 };

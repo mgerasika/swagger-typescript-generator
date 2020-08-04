@@ -3,7 +3,7 @@ import {
     sourceSymbol
 } from '../utils';
 import {SwaggerDocModel} from './swagger-doc-model';
-import {SwaggerClassModel} from "./swagger-class";
+import {getResponseIsArray, getIsEnum, getIsEnumForDefinition} from "../common";
 
 export class SwaggerDefinitionModel {
     public get source() {
@@ -39,11 +39,18 @@ export class SwaggerDefinitionModel {
         this.fileName = this.utils.getModelFileName(this,name);
         this.type = this.utils.getModelType(this,source);
 
+        const requiredArray = source.required || [];
         this.properties = Object.keys(source.properties).reduce((accum2: any, key2) => {
             const obj2 = source.properties[key2];
-            accum2.push(new SwaggerDefinitionProperty(this,key2, obj2));
+            const prop = new SwaggerDefinitionProperty(this,key2, obj2);
+            prop.required = requiredArray.some((x:string) => x === prop.name);
+            accum2.push(prop);
             return accum2;
         }, [])
+    }
+
+    public init(){
+
     }
 }
 
@@ -62,8 +69,12 @@ export class SwaggerDefinitionProperty {
 
     public name: string = '';
     public type: string = '';
-    public isArray: boolean = false;
-    public get parent(): SwaggerDefinitionModel {
+    public isArray?: boolean;
+    public isEnum?: boolean ;
+    public required?: boolean;
+    public enumValues?:[];
+
+     public get parent(): SwaggerDefinitionModel {
         return (this as any)[parentSymbol];
     }
 
@@ -77,6 +88,8 @@ export class SwaggerDefinitionProperty {
 
         this.name = name;
         this.type = this.utils.getModelPropertyType(this,source);
-        this.isArray = this.utils.getModelPropertyResponseIsArray(this,source);
+        this.isArray = getResponseIsArray(source) ? true : undefined;
+        this.isEnum = getIsEnumForDefinition(source) ? true : undefined;
+        this.enumValues = source.enum ? source.enum : undefined;
     }
 }

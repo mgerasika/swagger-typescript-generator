@@ -6,6 +6,7 @@ import {ISwaggerUtils} from "../common/swagger-utils";
 const sourceSymbol = Symbol('source');
 
 export interface ISwaggerDocModelConfig {
+    apiUrl:string;
     source: any;
     modelImportPath: string;
     plugin:ISwaggerPlugin;
@@ -34,6 +35,9 @@ export class SwaggerDocModel {
             accum.push(new SwaggerClassModel(this, key, obj));
             return accum;
         }, []);
+
+        this.definitions.forEach(def => def.init());
+        this.classes.forEach(cl => cl.init());
     }
 
     public get config(): ISwaggerDocModelConfig {

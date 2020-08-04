@@ -5,14 +5,14 @@ export interface IRequestService {
 
     post<T>(url: string, body: T): AxiosPromise;
 
-    put(url: string, body: any): AxiosPromise;
+    put<T>(url: string, body: T): AxiosPromise;
 
-    delete(url: string, body?: any): AxiosPromise;
+    delete<T>(url: string, body?: T): AxiosPromise;
 
     upload(url:string,formData:FormData):AxiosPromise;
 }
 
-class RequestService implements IRequestService {
+export class RequestService implements IRequestService {
     get(url: string): AxiosPromise {
         return axios
             .get(url, {
@@ -23,7 +23,7 @@ class RequestService implements IRequestService {
             });
     }
 
-    post(url: string, body: any): AxiosPromise {
+    post<T>(url: string, body: T): AxiosPromise {
         return axios
             .post(url, body, {
             })
@@ -32,13 +32,13 @@ class RequestService implements IRequestService {
             });
     }
 
-    put(url: string, body: any): AxiosPromise {
+    put<T>(url: string, body: T): AxiosPromise {
         return axios.put(url, body).catch((error: AxiosError) => {
             return this.handleError(error.response);
         });
     }
 
-    delete(url: string,body:any): AxiosPromise {
+    delete<T>(url: string,body?:T): AxiosPromise {
         return axios
             .delete(url, {
                 data: body ? body : null // This is workaround for setting "content-type": https://github.com/axios/axios/issues/86
@@ -65,4 +65,3 @@ class RequestService implements IRequestService {
         });
     }
 }
-export const requestService = new RequestService();

@@ -33,21 +33,22 @@ export const ApiMethodBodyComponent: React.FC<IProps> = (props) => {
         return '';
     }
 
-    const getMethodUrl = () => {
+    const getMethodUrlBody = () => {
         const swaggerClass = props.swaggerMethod.parent;
-        return swaggerClass.url.replace(/{/g, '${');
+        const result = swaggerClass.url.replace(/{/g, '${');
+        return '${this._apiUrl}' + `${result}`;
     }
 
     const getParams = () => {
         const postArguments = getHttpBodyArguments();
-        return postArguments && postArguments.length ? `[url,${postArguments}]` : `[url]`;
+        return postArguments && postArguments.length ? `${postArguments}` : ``;
     }
 
     const methodName = props.swaggerMethod.isFileUpload ? 'upload' : props.swaggerMethod.httpMethod;
+    const params = getParams() ? ' ,' + getParams() : '';
     return (<>
-        {'\t\t'}const url = `{getMethodUrl()}`;{'\n'}
+        {'\t\t'}const url = `{getMethodUrlBody()}`;{'\n'}
         {getFormDataScript()}
-        {'\t\t'}const params = {getParams()};{'\n'}
-        {'\t\t'}return this._requestService.{methodName}.apply(this._requestService,params);{'\n'}
+        {'\t\t'}return di.requestService.{methodName}(url{params});{'\n'}
     </>);
 }

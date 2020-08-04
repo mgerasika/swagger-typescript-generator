@@ -7,8 +7,8 @@ interface IProps {
 
 export const ApiClassConstructorComponent: React.FC<IProps> = (props) => {
     return <>
-        {'\t'}public constructor(service:IRequestService) {'{\n'}
-        {'\t\t'}this._requestService = service; {'\n'}
+        {'\t'}public constructor(apiUrl:string) {'{\n'}
+        {'\t\t'}this._apiUrl = apiUrl; {'\n'}
         {'\t}\n'}
     </>
 }
