@@ -1,13 +1,12 @@
 import {SwaggerMethodModel} from './swagger-method';
 import {SwaggerDocModel} from './swagger-doc-model';
 import { parentSymbol, sourceSymbol} from '../utils';
-import {SwaggerPathModel} from "./swagger-path";
 
-export class SwaggerClassModel {
+export class SwaggerPathModel {
     public name: string = '';
-    public fileName: string;
-    public tag:string = "";
-    public methods: SwaggerMethodModel[] = [];
+    public url:string;
+    public tag:string = '';
+    public httpMethod:string = '';
 
     public get doc() {
         return this.parent;
@@ -17,20 +16,20 @@ export class SwaggerClassModel {
         return this.parent.utils;
     }
 
-    public constructor(parent: SwaggerDocModel, name: string, source: any, paths:SwaggerPathModel[]) {
+    public constructor(parent: SwaggerDocModel, key: string, source: any) {
         this.parent = parent;
         this.source = source;
-        this.tag = name;
-        this.name = this.utils.getClassName(this,name);
-        this.fileName = this.utils.getClassFileName(this,this.name);
 
-        this.methods = paths.map( obj2 => {
-            return new SwaggerMethodModel(this, obj2.httpMethod, obj2.source[obj2.httpMethod]);
-        });
+        this.name = this.utils.getPathName(this,key);
+        this.url = key;
+        Object.keys(source).forEach(f=>{
+            this.httpMethod = f;
+            const el = source[f];
+            this.tag = el.tags[0];
+        })
     }
 
     public init(){
-        this.methods.forEach(m=>m.init());
     }
 
     public get plugin() {

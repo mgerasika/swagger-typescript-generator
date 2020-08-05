@@ -11,6 +11,8 @@ import {
     SwaggerMethodModel,
     SwaggerMethodParameter
 } from "../model";
+import {SwaggerEnumModel} from "../model/swagger-enum";
+import {SwaggerPathModel} from "../model/swagger-path";
 
 export interface ISwaggerUtils {
     getClassName: (context:SwaggerClassModel, name:string) => string;
@@ -25,5 +27,7 @@ export interface ISwaggerUtils {
     getModelFileName : (context:SwaggerDefinitionModel, name: string) => string;
     getModelType:(context:SwaggerDefinitionModel,schema:any) =>string;
     getModelPropertyType:(context:SwaggerDefinitionProperty,schema: any) => string;
-    isModelByTypeName : (name: string|undefined) => boolean ;
+
+    getEnumName : (context:SwaggerEnumModel, name: string) => string;
+    getPathName: (context:SwaggerPathModel, name:string) => string;
 }

@@ -35,7 +35,7 @@ export const ApiMethodBodyComponent: React.FC<IProps> = (props) => {
 
     const getMethodUrlBody = () => {
         const swaggerClass = props.swaggerMethod.parent;
-        const result = swaggerClass.url.replace(/{/g, '${');
+        const result = props.swaggerMethod.url.replace(/{/g, '${');
         return '${this._apiUrl}' + `${result}`;
     }
 

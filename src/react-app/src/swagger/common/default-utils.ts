@@ -7,11 +7,27 @@ import {
     SwaggerMethodModel,
     SwaggerMethodParameter
 } from "../model";
+import {SwaggerEnumModel} from "../model/swagger-enum";
+import {SwaggerPathModel} from "../model/swagger-path";
 
 const getModelName = (name: string) => {
-    return `I${name}Model`;
+    return `I${name}Model`.replace(/[\[\]\.]/g, '');
 };
 
+const getEnumName = (name: string) => {
+    return `${name}Enum`;
+};
+
+export const uniqueItems = <T>(items: T[], keyFn: (el:T) => any): T[] => {
+    const uniqueEnums = items.reduce((it: any, el: any) => {
+        const key = keyFn(el);
+        if(key) {
+            it[key] = el;
+        }
+        return it;
+    }, {});
+    return Object.values(uniqueEnums) as any;
+}
 
 const getJsType = (type: string) => {
     if (type === 'integer') {
@@ -30,7 +46,7 @@ const getJsType = (type: string) => {
     return type;
 }
 
-const getResponseType = (schema:any) => {
+const getResponseType = (schema: any) => {
     let res: string = '';
     const responseType = schema.items ? schema.items['$ref'] : schema['$ref'];
     if (responseType) {
@@ -61,53 +77,54 @@ export const getIsEnumForDefinition = (schema: any): boolean => {
 };
 
 const getFileName = (name: string) => {
+    name = name.replace(/[\[\]]/g, '');
     let words = name.split(/(?=[A-Z])/).map((i: string) => i.toLowerCase());
     words = words.filter((f: string) => !['api', 'i'].includes(f));
     return `${words.join('-')}.ts`;
 }
-export const defaultUtils : ISwaggerUtils = {
-    getClassName : (context:SwaggerClassModel, key: string) => {
+export const defaultUtils: ISwaggerUtils = {
+    getClassName: (context: SwaggerClassModel, key: string) => {
         const parts = key.replace(/[\{\}]/g, '').replace(/[-_]/g, '/').split('/');
         return parts.filter(f => f != 'api').map(s => capitalize(s)).join('') + 'Api';
     },
-    getClassFileName : (context:SwaggerClassModel, name: string) => getFileName(name),
-    getMethodName : (context:SwaggerMethodModel, name: string) => lowerlize(name),
-    getMethodParameterName : (context:SwaggerMethodParameter,name: string) => name,
-    getMethodResponseType: (context:SwaggerMethodModel,schema:any) => getResponseType(schema),
-    getMethodParameterType:(context:SwaggerMethodParameter,schema: any) => {
-        if(schema['schema']) {
+    getPathName: (context: SwaggerPathModel, key: string) => {
+        const parts = key.replace(/[\{\}]/g, '').replace(/[-_]/g, '/').split('/');
+        return parts.filter(f => f != 'api').map(s => capitalize(s)).join('') + 'Api';
+    },
+    getClassFileName: (context: SwaggerClassModel, name: string) => getFileName(name),
+    getMethodName: (context: SwaggerMethodModel, name: string) => lowerlize(name),
+    getMethodParameterName: (context: SwaggerMethodParameter, name: string) => name,
+    getMethodResponseType: (context: SwaggerMethodModel, schema: any) => getResponseType(schema),
+    getMethodParameterType: (context: SwaggerMethodParameter, schema: any) => {
+        if (schema['schema']) {
             const res = getJsType(schema['schema'].$ref);
             if (res) {
                 return res;
             }
             return getJsType(schema['schema'].type);
-        }
-        else{
+        } else {
             return getJsType(schema.type);
         }
     },
 
-    getModelName : (context:SwaggerDefinitionModel, name:string) => getModelName(name),
-    getModelFileName : (context:SwaggerDefinitionModel, name: string) => getFileName(name),
-    getModelType:(context:SwaggerDefinitionModel,schema: any) => {
+    getModelName: (context: SwaggerDefinitionModel, name: string) => getModelName(name),
+    getModelFileName: (context: SwaggerDefinitionModel, name: string) => getFileName(name),
+    getModelType: (context: SwaggerDefinitionModel, schema: any) => {
         if (schema.items) {
             return getResponseType(schema);
-        }
-        else {
+        } else {
             return getJsType(schema.type)
         }
     },
-    getModelPropertyType:(context:SwaggerDefinitionProperty,schema: any) => {
+    getModelPropertyType: (context: SwaggerDefinitionProperty, schema: any) => {
         if (schema.items) {
             return getResponseType(schema);
-        }
-        else {
+        } else {
             return getJsType(schema.type)
         }
     },
+    getWarningMessage: () => '/* This code generated with swagger-typescript-generator. Don\'t modify this file because it will be rewriten. */\n',
 
-    isModelByTypeName : (name: string|undefined): boolean => {
-        return !!name && (name[0] === 'I' && name.indexOf('Model') !== 0);
-    },
-    getWarningMessage:() =>'/* This code generated with swagger-typescript-generator. Don\'t modify this file because it will be rewriten. */\n'
+
+    getEnumName: (context: SwaggerEnumModel, name: string) => getEnumName(name),
 }

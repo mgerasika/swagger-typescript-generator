@@ -4,8 +4,10 @@ import { SwaggerRootComponent } from '.';
 import {createCustomUtilsFactory} from "./custom-utils";
 
 export * from './custom-plugins';
-export * from '../demo/api-classes';
-export * from '../demo/api-model-definitions';
+export * from './api-all-classes';
+export * from './api-all-path';
+export * from './api-all-enums';
+export * from './api-all-models-definitions';
 export * from '../demo/diff';
 export * from './swagger-root';
 export * from './custom-utils';

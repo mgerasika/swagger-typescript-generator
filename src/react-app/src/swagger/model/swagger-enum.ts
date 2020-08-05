@@ -1,13 +1,14 @@
-import {SwaggerMethodModel} from './swagger-method';
 import {SwaggerDocModel} from './swagger-doc-model';
 import { parentSymbol, sourceSymbol} from '../utils';
-import {SwaggerPathModel} from "./swagger-path";
+import {SwaggerDefinitionModel} from "./swagger-definition-model";
 
-export class SwaggerClassModel {
+export class SwaggerEnumModel {
+    public key: string = '';
     public name: string = '';
-    public fileName: string;
-    public tag:string = "";
-    public methods: SwaggerMethodModel[] = [];
+    public description?:string;
+    public type?:string;
+    public values?:string[];
+    public namespace?:string[];
 
     public get doc() {
         return this.parent;
@@ -17,20 +18,19 @@ export class SwaggerClassModel {
         return this.parent.utils;
     }
 
-    public constructor(parent: SwaggerDocModel, name: string, source: any, paths:SwaggerPathModel[]) {
+    public constructor(parent: SwaggerDocModel, key: string, modelDef: SwaggerDefinitionModel, source: any) {
         this.parent = parent;
         this.source = source;
-        this.tag = name;
-        this.name = this.utils.getClassName(this,name);
-        this.fileName = this.utils.getClassFileName(this,this.name);
 
-        this.methods = paths.map( obj2 => {
-            return new SwaggerMethodModel(this, obj2.httpMethod, obj2.source[obj2.httpMethod]);
-        });
+        this.key = key;
+        this.name =  this.utils.getEnumName(this,key);
+        this.values = source.enum;
+        this.description = source.description;
+        this.type = source.type;
+        this.namespace = [modelDef.name];
     }
 
     public init(){
-        this.methods.forEach(m=>m.init());
     }
 
     public get plugin() {

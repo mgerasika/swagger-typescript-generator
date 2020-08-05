@@ -1,6 +1,7 @@
 import React from 'react';
 import {SwaggerClassModel} from '../../model/swagger-class';
 import {SwaggerMethodModel, SwaggerMethodParameter} from '../../model';
+import {uniqueItems} from "../../common";
 
 interface IProps {
     swaggerClass: SwaggerClassModel;
@@ -8,32 +9,43 @@ interface IProps {
 
 export const ApiClassImportAdapter: React.FC<IProps> = (props) => {
     const responseTypes = props.swaggerClass.methods.map((method: SwaggerMethodModel) => {
-        return method.responseType && props.swaggerClass.utils.isModelByTypeName(method.responseType) ? method.responseType : undefined;
+        return method.responseType && method.responseModelRef ? method.responseType : undefined;
     });
 
     let parameterTypes: string [] = [];
     props.swaggerClass.methods.forEach((method: SwaggerMethodModel) => {
         method.parameters.forEach((parameter: SwaggerMethodParameter) => {
-            if (parameter.type && props.swaggerClass.utils.isModelByTypeName(parameter.type)) {
-                parameterTypes.push(parameter.type);
+            if (parameter.type && parameter.modelRef) {
+                parameterTypes.push(parameter.modelRef.name);
             }
         });
     });
 
-    const unique = [...responseTypes, ...parameterTypes].reduce((it: any, key: any) => {
-        if (key) {
-            it[key] = key;
-        }
-        return it;
-    }, {});
+
+    const uniqueMethodParameters = uniqueItems([...responseTypes, ...parameterTypes], (el) => el);
 
     const imports = [
         'import {AxiosPromise} from \'axios\'',
         'import {IRequestService, di} from \'swagger-typescript-generator\''];
 
-    const result = Object.keys(unique).filter((filter: string | any) => !!filter).join(',');
-    if (result.length) {
-        imports.push(`import {${result}} from \'${props.swaggerClass.parent.config.modelImportPath}\'`);
+    const modelNames = uniqueMethodParameters.filter((filter: string | any) => !!filter).join(',');
+    if (modelNames.length) {
+        imports.push(`import {${modelNames}} from \'${props.swaggerClass.parent.config.modelImportPath}\'`);
+    }
+
+
+    let enumTypes: string [] = [];
+    props.swaggerClass.methods.forEach((method: SwaggerMethodModel) => {
+        method.parameters.forEach((parameter: SwaggerMethodParameter) => {
+            if (parameter.type && parameter.enumRef) {
+                enumTypes.push(parameter.enumRef.name);
+            }
+        });
+    });
+
+    const enumNames = uniqueItems(enumTypes, x=>x).filter((filter: string | any) => !!filter).join(',');
+    if (enumNames.length) {
+        imports.push(`import {${enumNames}} from \'${props.swaggerClass.parent.config.enumImportPath}\'`);
     }
 
     return (

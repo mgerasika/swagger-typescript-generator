@@ -10,7 +10,7 @@ interface IProps {
     classes: SwaggerClassModel[];
 }
 
-export const ApiClassesComponent: React.FC<IProps> = (props) => {
+export const ApiAllClassesComponent: React.FC<IProps> = (props) => {
     const renderCodegen = (swaggerClass: SwaggerClassModel) => {
         return (<ApiClassDefinitionComponent swaggerClass={swaggerClass}></ApiClassDefinitionComponent>)
     };

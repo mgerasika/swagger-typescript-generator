@@ -1,5 +1,6 @@
 import React from 'react';
 import {SwaggerDefinitionModel, SwaggerDefinitionProperty} from '../../model/swagger-definition-model';
+import {DefinitionImportComponent} from "./definition-import";
 
 interface IProps {
     definition: SwaggerDefinitionModel;
@@ -8,11 +9,12 @@ interface IProps {
 export const ModelDefinitionComponent: React.FC<IProps> = (props) => {
     const fields = props.definition.properties.map((parameter: SwaggerDefinitionProperty) => {
         const type = parameter.isArray ? `${parameter.type}[]` : parameter.type;
-        return (<span key={parameter.name}>{'\t'}{parameter.name}:{type}{'\n'}</span>);
+        const required = parameter.required ? "" : "?";
+        return (<span key={parameter.name}>{'\t'}{parameter.name}{required}:{type}{'\n'}</span>);
     });
 
     const types = props.definition.properties.map((parameter: SwaggerDefinitionProperty) => {
-        return props.definition.utils.isModelByTypeName(parameter.type) ? parameter.type : undefined;
+        return parameter.enumModelRef ? parameter.type : undefined;
     }).filter((filter: string | any) => !!filter && filter != props.definition.name).join(',');
 
     const imports = [];
@@ -27,6 +29,7 @@ export const ModelDefinitionComponent: React.FC<IProps> = (props) => {
     return (
         <>
             {props.definition.utils.getWarningMessage()}
+            <DefinitionImportComponent swaggerDefinition={props.definition} />
             {result}
             export interface {props.definition.name}
             {'{'} {'\n'}{fields}

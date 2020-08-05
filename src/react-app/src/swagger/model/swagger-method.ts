@@ -3,11 +3,13 @@ import {SwaggerClassModel} from './swagger-class';
 import {IUrlInfo} from './url-info';
 import {getResponseIsArray, getIsEnum} from "../common";
 import {SwaggerDefinitionModel} from "./swagger-definition-model";
+import {SwaggerEnumModel} from "./swagger-enum";
 
 export class SwaggerMethodModel {
     public httpMethod: string = '';
     public name: string = '';
     public tags: string = '';
+    public url : string = '';
     public parameters: SwaggerMethodParameter[] = [];
     public responseIsVoid?: boolean;
     public responseIsArray?: boolean;
@@ -59,6 +61,7 @@ export class SwaggerMethodModel {
         const responseModel = this.doc.definitions.find(f=>f.name === this.responseType);
         if(responseModel) {
             this.responseModelRef = responseModel;
+            this.responseType = responseModel.name;
         }
     }
 
@@ -82,7 +85,7 @@ export class SwaggerMethodModel {
         return {
             httpMethod: this.httpMethod,
             name: this.name,
-            url: this.parent.url
+            url: this.url
         };
     }
 
@@ -100,6 +103,7 @@ export class SwaggerMethodParameter {
     public isJsType?: boolean;
     public description?:string;
     public modelRef?:SwaggerDefinitionModel;
+    public enumRef?:SwaggerEnumModel;
     public enumValues?:[];
 
     public get doc() {
@@ -128,9 +132,16 @@ export class SwaggerMethodParameter {
     }
 
     public init(){
-        const def = this.doc.definitions.find(df =>df.name === this.type);
-        if(def) {
-            this.modelRef = def;
+        const modelRef = this.doc.definitions.find(df =>df.name === this.type);
+        if(modelRef) {
+            this.modelRef = modelRef;
+            this.type = modelRef.name;
+        }
+
+        const enumRef = this.doc.enums.find(df =>df.key === this.type);
+        if(enumRef) {
+            this.enumRef = enumRef;
+            this.type = enumRef.name;
         }
     }
 
