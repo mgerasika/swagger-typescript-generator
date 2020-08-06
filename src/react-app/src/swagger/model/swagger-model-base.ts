@@ -1,7 +1,21 @@
-import {parentSymbol, sourceSymbol} from "../utils";
+import {parentSymbol, privateSymbol, sourceSymbol} from "../utils";
 import {SwaggerDocModel} from "./swagger-doc-model";
 
 export class SwaggerModelBase<T> {
+    constructor() {
+        (this as any)[privateSymbol] = {};
+    }
+
+    toJSON() {
+        if(this.doc.config.showPrivateFieldsForDebug) {
+            return {
+                PRIVATE: (this as any)[privateSymbol],
+                ...this
+            }
+        }
+        return this;
+    }
+
     public get utils(){
         return this.doc.utils;
     }
@@ -27,5 +41,13 @@ export class SwaggerModelBase<T> {
 
     public set parent(val) {
         (this as any)[parentSymbol] = val;
+    }
+
+    public getPrivateValue(name:string): any {
+        return (this as any)[privateSymbol][name];
+    }
+
+    public setPrivateValue(name:string, val:any) {
+        (this as any)[privateSymbol][name] = val;
     }
 }

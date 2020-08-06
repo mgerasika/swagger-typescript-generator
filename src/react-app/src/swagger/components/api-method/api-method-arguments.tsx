@@ -10,7 +10,7 @@ export const ApiMethodArgumentsComponent: React.FC<IProps> = (props) => {
     const result = props.swaggerMethod.parameters.map((parameter: SwaggerMethodParameter, index: number) => {
         const isLastArgument = index !== props.swaggerMethod.parameters.length - 1;
         const separator = isLastArgument ? ',' : ''
-        return (<span key={parameter.name}>{parameter.name}:{parameter.type}{separator}</span>)
+        return (<span key={`${parameter.name}${index}`}>{parameter.name}:{parameter.type}{separator}</span>)
     });
     return (<>{result}</>);
 }

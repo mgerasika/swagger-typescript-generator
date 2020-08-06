@@ -11,6 +11,7 @@ import {ApiUrlsComponent} from "../swagger/components/urls";
 import {AllModelsExportComponent} from "../swagger/components/definitions";
 import {ApiAllEnumsComponent} from "./api-all-enums";
 import {ApiAllPathComponent} from "./api-all-path";
+import 'bootstrap/dist/css/bootstrap.css';
 
 const axios = require('axios');
 
@@ -41,6 +42,7 @@ export const SwaggerRootComponent: React.FC<IProps> = (props) => {
                     modelImportPath: '../api-model',
                     enumImportPath: '../api-enum',
                     plugin: props.plugin,
+                    showPrivateFieldsForDebug:false,
                     createCustomUtilsFactory: createCustomUtilsFactory
                 };
                 setRoot(new SwaggerDocModel(config));
@@ -123,10 +125,10 @@ export const SwaggerRootComponent: React.FC<IProps> = (props) => {
                 <hr/>
 
                 <h5 className={'pl-3'}>All definitions exports:</h5>
-                <DiffComponent key={'index.ts'} obj3={renderAllModelsExport}/>
+                <DiffComponent obj3={renderAllModelsExport}/>
                 <hr/>
                 <h5 className={'pl-3'}>Urls:</h5>
-                <DiffComponent key={'index.ts'}  obj3={renderAllUrlsExport}/>
+                <DiffComponent  obj3={renderAllUrlsExport}/>
                 <hr/>
             </>
         ) : null;

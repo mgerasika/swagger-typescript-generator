@@ -18,7 +18,13 @@ export class SwaggerMethodModel extends SwaggerModelBase<SwaggerClassModel>{
     public responseType?: string;
     public isFileUpload?: boolean;
     public description?:string;
-    public responseModelRef?:SwaggerDefinitionModel;
+
+    public get responseModelRef():SwaggerDefinitionModel {
+        return this.getPrivateValue('responseModelRef') as SwaggerDefinitionModel;
+    }
+    public set responseModelRef(val:SwaggerDefinitionModel) {
+        this.setPrivateValue('responseModelRef',val) ;
+    }
 
     public constructor(parent: SwaggerClassModel, httpMethod: string, source: any) {
         super();

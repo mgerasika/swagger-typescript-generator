@@ -29,6 +29,10 @@ export const uniqueItems = <T>(items: T[], keyFn: (el:T) => any): T[] => {
     return Object.values(uniqueEnums) as any;
 }
 
+const jsTypes = ['number','integer','boolean','string','Array','File'];
+export const getIsJsType = (name:string) =>{
+    return jsTypes.includes(name);
+}
 const getJsType = (type: string) => {
     if (type === 'integer') {
         return 'number';
@@ -124,7 +128,5 @@ export const defaultUtils: ISwaggerUtils = {
         }
     },
     getWarningMessage: () => '/* This code generated with swagger-typescript-generator. Don\'t modify this file because it will be rewriten. */\n',
-
-
     getEnumName: (context: SwaggerEnumModel, name: string) => getEnumName(name),
 }

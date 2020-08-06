@@ -10,13 +10,24 @@ export class SwaggerDefinitionProperty  extends SwaggerModelBase<SwaggerDefiniti
     public isEnum?: boolean ;
     public required?: boolean;
     public enumValues?:[];
-    public enumModelRef?:SwaggerEnumModel;
+
+    public get enumModelRef():SwaggerEnumModel {
+        return this.getPrivateValue('enumModelRef') as SwaggerEnumModel;
+    }
+    public set enumModelRef(val:SwaggerEnumModel) {
+        this.setPrivateValue('enumModelRef',val) ;
+    }
 
     public init(){
-        const enumRef = this.doc.enums.find(f=>f.keys.includes(this.name));
-        if(enumRef) {
-            this.enumModelRef = enumRef;
-            this.type = enumRef.name;
+        if(this.isEnum) {
+            const enumRef = this.doc.enums.find(f => f.keys.includes(this.name));
+            if (enumRef) {
+                this.enumModelRef = enumRef;
+                this.type = enumRef.name;
+            }
+            else {
+                console.error('Enum not found',this);
+            }
         }
     }
 

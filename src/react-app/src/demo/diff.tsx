@@ -19,13 +19,13 @@ export const DiffComponent: React.FC<IProps> = (props) => {
              <div className={'d-flex w-100'}>
                 {props.obj1 && <div className={'col-4'}>
                 <pre>
-                 {JSON.stringify(props.obj1, null, 4)}
+                 {JSON.stringify(props.obj1, null, 2)}
                 </pre>
                 </div>}
 
                 {props.obj2 && <div className={'col-4'}>
                 <pre>
-                    {JSON.stringify(props.obj2, null, 4)}
+                    {JSON.stringify(props.obj2, null, 2)}
                 </pre>
                 </div>}
 
