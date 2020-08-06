@@ -1,5 +1,6 @@
 import React from "react";
-import {SwaggerMethodModel, SwaggerMethodParameter} from "../../model/swagger-method";
+import {SwaggerMethodModel} from "../../model/swagger-method";
+import {SwaggerMethodParameter} from "../../model";
 
 interface IProps {
     swaggerMethod: SwaggerMethodModel;

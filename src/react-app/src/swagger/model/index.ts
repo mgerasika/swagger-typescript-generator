@@ -2,3 +2,8 @@ export * from './swagger-class';
 export * from './swagger-definition-model';
 export * from './swagger-doc-model';
 export * from './swagger-method';
+export * from './swagger-model-base';
+export * from './swagger-enum';
+export * from './swagger-path';
+export * from './swagger-method-parameter';
+export * from './swagger-definition-model-property';

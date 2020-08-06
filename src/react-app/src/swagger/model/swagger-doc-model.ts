@@ -16,6 +16,7 @@ export interface ISwaggerDocModelConfig {
     createCustomUtilsFactory:(baseUtils:ISwaggerUtils) => ISwaggerUtils;
 }
 
+
 export class SwaggerDocModel {
     public definitions: SwaggerDefinitionModel[] = [];
     public classes: SwaggerClassModel[] = [];
@@ -89,6 +90,10 @@ export class SwaggerDocModel {
         this.enums.forEach(cl => cl.init());
         this.definitions.forEach(def => def.init());
         this.classes.forEach(cl => cl.init());
+    }
+
+    public get doc() :SwaggerDocModel{
+        return this;
     }
 
     public get config(): ISwaggerDocModelConfig {

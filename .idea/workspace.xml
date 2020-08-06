@@ -17,12 +17,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ce26be8b-bbf5-4618-81ac-984eef411fea" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/react-app/src/swagger/model/swagger-definition-model-property.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/react-app/src/swagger/model/swagger-method-parameter.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/react-app/src/swagger/model/swagger-model-base.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/demo/swagger-root.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/demo/swagger-root.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/model/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/model/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/model/swagger-class.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/model/swagger-class.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/model/swagger-definition-model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/model/swagger-definition-model.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/model/swagger-doc-model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/model/swagger-doc-model.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/model/swagger-enum.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/model/swagger-enum.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/model/swagger-method.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/model/swagger-method.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/model/swagger-path.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/model/swagger-path.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/utils.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +57,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/react-app/src/demo" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/react-app/src/swagger/model" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -73,8 +79,8 @@
       <recent name="D:\git\swagger-typescript-generator\src\common" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\git\swagger-typescript-generator\src\react-app\src\demo" />
       <recent name="D:\git\swagger-typescript-generator\src\react-app\src\swagger\model" />
+      <recent name="D:\git\swagger-typescript-generator\src\react-app\src\demo" />
       <recent name="D:\git\swagger-typescript-generator\src\react-app\src\swagger\components\definitions" />
       <recent name="D:\git\swagger-typescript-generator\src\react-app\src\swagger\components\api-enum" />
       <recent name="D:\git\swagger-typescript-generator\src\react-app\src\swagger\common" />
@@ -143,7 +149,7 @@
       <workItem from="1596178119707" duration="12807000" />
       <workItem from="1596311106103" duration="9466000" />
       <workItem from="1596522907942" duration="44000" />
-      <workItem from="1596566554416" duration="24591000" />
+      <workItem from="1596566554416" duration="27006000" />
     </task>
     <servers />
   </component>

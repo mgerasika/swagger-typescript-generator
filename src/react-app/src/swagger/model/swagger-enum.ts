@@ -1,9 +1,10 @@
 import {SwaggerDocModel} from './swagger-doc-model';
 import { parentSymbol, sourceSymbol} from '../utils';
 import {SwaggerDefinitionModel} from "./swagger-definition-model";
-import {SwaggerMethodParameter} from "./swagger-method";
+import {SwaggerModelBase} from "./swagger-model-base";
+import {SwaggerMethodParameter} from "./swagger-method-parameter";
 
-export class SwaggerEnumModel {
+export class SwaggerEnumModel extends SwaggerModelBase<SwaggerDocModel>{
     public keys: string[] = [];
     public name: string = '';
     public description?:string;
@@ -11,15 +12,9 @@ export class SwaggerEnumModel {
     public values?:string[];
     public namespace?:string[];
 
-    public get doc() {
-        return this.parent;
-    }
-
-    public get utils() {
-        return this.parent.utils;
-    }
-
     public constructor(parent: SwaggerDocModel, key: string, model:{modelDef?: SwaggerDefinitionModel,methodPropertyDef?:SwaggerMethodParameter}, source: any) {
+        super();
+
         this.parent = parent;
         this.source = source;
 
@@ -35,25 +30,5 @@ export class SwaggerEnumModel {
     }
 
     public init(){
-    }
-
-    public get plugin() {
-        return this.parent.config.plugin;
-    }
-
-    public get source() {
-        return (this as any)[sourceSymbol];
-    }
-
-    public set source(val) {
-        (this as any)[sourceSymbol] = val;
-    }
-
-    public get parent(): SwaggerDocModel {
-        return (this as any)[parentSymbol];
-    }
-
-    public set parent(val) {
-        (this as any)[parentSymbol] = val;
     }
 }

@@ -2,22 +2,17 @@ import {SwaggerMethodModel} from './swagger-method';
 import {SwaggerDocModel} from './swagger-doc-model';
 import { parentSymbol, sourceSymbol} from '../utils';
 import {SwaggerPathModel} from "./swagger-path";
+import {SwaggerModelBase} from "./swagger-model-base";
 
-export class SwaggerClassModel {
+export class SwaggerClassModel extends SwaggerModelBase<SwaggerDocModel>{
     public name: string = '';
     public fileName: string;
     public tag:string = "";
     public methods: SwaggerMethodModel[] = [];
 
-    public get doc() {
-        return this.parent;
-    }
-
-    public get utils() {
-        return this.parent.utils;
-    }
-
     public constructor(parent: SwaggerDocModel, name: string, source: any, paths:SwaggerPathModel[]) {
+        super();
+
         this.parent = parent;
         this.source = source;
         this.tag = name;
@@ -35,21 +30,5 @@ export class SwaggerClassModel {
 
     public get plugin() {
         return this.parent.config.plugin;
-    }
-
-    public get source() {
-        return (this as any)[sourceSymbol];
-    }
-
-    public set source(val) {
-        (this as any)[sourceSymbol] = val;
-    }
-
-    public get parent(): SwaggerDocModel {
-        return (this as any)[parentSymbol];
-    }
-
-    public set parent(val) {
-        (this as any)[parentSymbol] = val;
     }
 }

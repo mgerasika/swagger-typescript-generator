@@ -16,4 +16,5 @@ export const html2text = (html: string) => {
 };
 
 export const sourceSymbol = Symbol('source');
-export const parentSymbol = Symbol('source');
+export const parentSymbol = Symbol('parent');
+export const privateSymbol = Symbol('parent');

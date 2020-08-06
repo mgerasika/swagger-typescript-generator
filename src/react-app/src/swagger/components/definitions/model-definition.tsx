@@ -1,6 +1,7 @@
 import React from 'react';
-import {SwaggerDefinitionModel, SwaggerDefinitionProperty} from '../../model/swagger-definition-model';
+import {SwaggerDefinitionModel} from '../../model/swagger-definition-model';
 import {DefinitionImportComponent} from "./definition-import";
+import {SwaggerDefinitionProperty} from "../../model";
 
 interface IProps {
     definition: SwaggerDefinitionModel;
