@@ -1,5 +1,4 @@
 import {SwaggerDocModel} from './swagger-doc-model';
-import { parentSymbol, sourceSymbol} from '../utils';
 import {SwaggerDefinitionModel} from "./swagger-definition-model";
 import {SwaggerModelBase} from "./swagger-model-base";
 import {SwaggerMethodParameter} from "./swagger-method-parameter";

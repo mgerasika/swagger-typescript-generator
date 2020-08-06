@@ -7,3 +7,4 @@ export * from './swagger-enum';
 export * from './swagger-path';
 export * from './swagger-method-parameter';
 export * from './swagger-definition-model-property';
+export * from './swagger-doc-model-config';

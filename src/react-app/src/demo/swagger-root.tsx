@@ -1,7 +1,7 @@
 import React, {useEffect, useMemo, useState} from 'react';
 import {ApiAllModelDefinitionsComponent} from './api-all-models-definitions';
 import {ApiAllClassesComponent} from './api-all-classes';
-import {ISwaggerDocModelConfig, SwaggerDocModel} from '../swagger/model/swagger-doc-model';
+import {SwaggerDocModel} from '../swagger/model/swagger-doc-model';
 import {ISwaggerPlugin} from '../swagger/common/default-plugin';
 import {ISwaggerUtils} from "../swagger/common/swagger-utils";
 import {createCustomUtilsFactory} from "./custom-utils";
@@ -11,7 +11,7 @@ import {ApiUrlsComponent} from "../swagger/components/urls";
 import {AllModelsExportComponent} from "../swagger/components/definitions";
 import {ApiAllEnumsComponent} from "./api-all-enums";
 import {ApiAllPathComponent} from "./api-all-path";
-import 'bootstrap/dist/css/bootstrap.css';
+import {ISwaggerDocModelConfig} from "../swagger/model";
 
 const axios = require('axios');
 

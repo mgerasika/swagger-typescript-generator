@@ -1,23 +1,15 @@
 import {INodeSwaggerConfig} from './node-swagger-config';
 import * as fs from 'fs';
-import {ISwaggerPlugin,ISwaggerUtils} from '../../dist/dist-react-app/swagger/common';
-
 import * as React from 'react';
 import {renderToString} from 'react-dom/server';
+import {SwaggerClassModel, SwaggerDefinitionModel, SwaggerDocModel} from "../react-app/src/swagger/model";
+import {AllModelsExportComponent, ModelDefinitionComponent} from "../react-app/src/swagger/components/definitions";
 import {
-    AllModelsExportComponent,
     ApiAllClassesExportComponent,
     ApiClassDefinitionComponent,
     ApiUrlsComponent,
-    html2text,
-    ModelDefinitionComponent,
-} from '../../dist/dist-react-app/swagger';
-import {
-    ISwaggerDocModelConfig,
-    SwaggerClassModel,
-    SwaggerDefinitionModel,
-    SwaggerDocModel
-} from '../../dist/dist-react-app/swagger/model';
+    html2text
+} from "../react-app/src/swagger";
 
 
 export class NodeSwaggerGenerator {

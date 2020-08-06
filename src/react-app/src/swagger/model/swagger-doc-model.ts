@@ -1,22 +1,12 @@
 import {SwaggerDefinitionModel} from './swagger-definition-model';
 import {SwaggerClassModel} from './swagger-class';
-import {defaultUtils, ISwaggerPlugin, uniqueItems} from "../common";
+import {defaultUtils, uniqueItems} from "../common";
 import {ISwaggerUtils} from "../common/swagger-utils";
 import {SwaggerEnumModel} from "./swagger-enum";
 import {SwaggerPathModel} from "./swagger-path";
+import {ISwaggerDocModelConfig} from "./swagger-doc-model-config";
 
 const sourceSymbol = Symbol('source');
-
-export interface ISwaggerDocModelConfig {
-    apiUrl:string;
-    source: any;
-    modelImportPath: string;
-    enumImportPath: string;
-    plugin:ISwaggerPlugin;
-    showPrivateFieldsForDebug?:boolean;
-    createCustomUtilsFactory:(baseUtils:ISwaggerUtils) => ISwaggerUtils;
-}
-
 
 export class SwaggerDocModel {
     public definitions: SwaggerDefinitionModel[] = [];

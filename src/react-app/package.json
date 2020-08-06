@@ -5,7 +5,8 @@
   "react-dom": "^16.8.6",
   "scripts": {
     "start": "react-scripts start",
-    "build:tsc": "tsc --p tsconfig-build.json",
+    "build:tsc": "",
+    "build:tsc2": "tsc --p tsconfig-build.json",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

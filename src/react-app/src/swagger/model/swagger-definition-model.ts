@@ -1,10 +1,4 @@
-import {
-    parentSymbol,
-    sourceSymbol
-} from '../utils';
 import {SwaggerDocModel} from './swagger-doc-model';
-import {getResponseIsArray, getIsEnum, getIsEnumForDefinition} from "../common";
-import {SwaggerEnumModel} from "./swagger-enum";
 import {SwaggerModelBase} from "./swagger-model-base";
 import {SwaggerDefinitionProperty} from "./swagger-definition-model-property";
 
