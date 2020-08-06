@@ -1,9 +1,10 @@
 import {SwaggerDocModel} from './swagger-doc-model';
 import { parentSymbol, sourceSymbol} from '../utils';
 import {SwaggerDefinitionModel} from "./swagger-definition-model";
+import {SwaggerMethodParameter} from "./swagger-method";
 
 export class SwaggerEnumModel {
-    public key: string = '';
+    public keys: string[] = [];
     public name: string = '';
     public description?:string;
     public type?:string;
@@ -18,16 +19,19 @@ export class SwaggerEnumModel {
         return this.parent.utils;
     }
 
-    public constructor(parent: SwaggerDocModel, key: string, modelDef: SwaggerDefinitionModel, source: any) {
+    public constructor(parent: SwaggerDocModel, key: string, model:{modelDef?: SwaggerDefinitionModel,methodPropertyDef?:SwaggerMethodParameter}, source: any) {
         this.parent = parent;
         this.source = source;
 
-        this.key = key;
+        this.keys.push(key);
         this.name =  this.utils.getEnumName(this,key);
         this.values = source.enum;
+        if(!this.values && model.methodPropertyDef) {
+            this.values = model.methodPropertyDef.enumValues ? model.methodPropertyDef.enumValues : [];
+        }
         this.description = source.description;
         this.type = source.type;
-        this.namespace = [modelDef.name];
+        //this.namespace = [modelDef.name];
     }
 
     public init(){

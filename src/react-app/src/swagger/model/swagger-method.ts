@@ -138,7 +138,7 @@ export class SwaggerMethodParameter {
             this.type = modelRef.name;
         }
 
-        const enumRef = this.doc.enums.find(df =>df.key === this.type);
+        const enumRef = this.doc.enums.find(df =>df.keys.includes(this.name));
         if(enumRef) {
             this.enumRef = enumRef;
             this.type = enumRef.name;

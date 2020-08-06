@@ -25,7 +25,7 @@ export const SwaggerRootComponent: React.FC<IProps> = (props) => {
         'https://flipdish-yellow-team.azurewebsites.net/swagger/docs/private-v1.0',
         'https://flipdish-yellow-team.azurewebsites.net/swagger/docs/v1.0'
     ];
-    const [url, setUrl] = useState(apiUrls[0]);
+    const [url, setUrl] = useState(window.localStorage.getItem('url') ||apiUrls[0]);
     const [selectedApi, setSelectedApi] = useState(window.localStorage.getItem('selectedApi') || '');
     const [selectedPath, setSelectedPath] = useState(window.localStorage.getItem('selectedPath') || '');
     const [selectedDefinition, setSelectedDefinition] = useState(window.localStorage.getItem('selectedDefinition') || '');
@@ -45,9 +45,6 @@ export const SwaggerRootComponent: React.FC<IProps> = (props) => {
                 };
                 setRoot(new SwaggerDocModel(config));
             })
-            .catch((error: string) => {
-                console.error('load swagger error ' + error);
-            });
     };
     const onExploreClick = () => {
         loadSwagger();
@@ -58,6 +55,10 @@ export const SwaggerRootComponent: React.FC<IProps> = (props) => {
             loadSwagger();
         }
     });
+
+    useEffect(() => {
+        loadSwagger();
+    },[url]);
 
     const selectedApiObjects = useMemo(()=>{
         if(root && selectedApi === 'ALL') {

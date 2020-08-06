@@ -1,6 +1,6 @@
 import {SwaggerDefinitionModel} from './swagger-definition-model';
 import {SwaggerClassModel} from './swagger-class';
-import {defaultUtils, ISwaggerPlugin} from "../common";
+import {defaultUtils, ISwaggerPlugin, uniqueItems} from "../common";
 import {ISwaggerUtils} from "../common/swagger-utils";
 import {SwaggerEnumModel} from "./swagger-enum";
 import {SwaggerPathModel} from "./swagger-path";
@@ -41,19 +41,49 @@ export class SwaggerDocModel {
             return accum;
         }, []);
 
-        this.classes = source.tags.map((tag:any) => {
-            const paths = this.paths.filter(f=>f.tag === tag.name);
-            return new SwaggerClassModel(this, tag.name, tag, paths );
-        }, []);
+        if(source.tags) {
+            this.classes = source.tags.map((tag: any) => {
+                const paths = this.paths.filter(f => f.tag === tag.name);
+                return new SwaggerClassModel(this, tag.name, tag, paths);
+            }, []);
+        }
+        else {
+            const tags = uniqueItems(this.paths, (p)=>p.tag).map(p=>p.tag);
+            this.classes = tags.map((tag: string) => {
+                const paths = this.paths.filter(f => f.tag === tag);
+                const source = paths.map(p=>p.source);
+                return new SwaggerClassModel(this, tag, source, paths);
+            }, []);
+        }
 
+        // enums
         this.definitions.forEach(def =>{
             def.properties.forEach( defProp =>{
                 if(defProp.isEnum) {
-                    const enumModel = new SwaggerEnumModel(this,defProp.name,def, defProp.source);
+                    const enumModel = new SwaggerEnumModel(this,defProp.name, {modelDef:def}, defProp.source);
                     this.enums.push(enumModel);
                 }
             })
         })
+
+        this.classes.forEach(cl =>{
+            cl.methods.forEach( meth =>{
+               meth.parameters.forEach( par=>{
+                   if(par.isEnum) {
+                       const enumModel = new SwaggerEnumModel(this,par.name, {methodPropertyDef:par}, meth.source);
+                       this.enums.push(enumModel);
+                   }
+               })
+            })
+        })
+        // TODO optimize
+        const uniqueEnums = uniqueItems(this.enums, (e)=> e.name + JSON.stringify(e.values));
+        uniqueEnums.forEach(uniqueEnum =>{
+            const similarEnums = this.enums.filter(f=>JSON.stringify(f.values) === JSON.stringify(uniqueEnum.values));
+            uniqueEnum.keys.push(...similarEnums.map(m=>m.keys[0]))
+            uniqueEnum.keys = uniqueItems(uniqueEnum.keys,k=>k);
+        })
+        this.enums = uniqueEnums;
 
         this.paths.forEach(cl => cl.init());
         this.enums.forEach(cl => cl.init());

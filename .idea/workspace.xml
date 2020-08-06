@@ -17,26 +17,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ce26be8b-bbf5-4618-81ac-984eef411fea" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/react-app/src/demo/api-all-enums.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/react-app/src/demo/api-all-path.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/react-app/src/swagger/components/definitions/definition-import.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/react-app/src/swagger/components/enum-definition/api-enum.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/react-app/src/swagger/model/swagger-enum.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/react-app/src/swagger/model/swagger-path.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/demo/api-classes.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/demo/api-all-classes.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/demo/api-model-definitions.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/demo/api-all-models-definitions.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/demo/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/demo/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/react-app/src/demo/swagger-root.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/demo/swagger-root.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/common/default-utils.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/common/default-utils.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/common/swagger-utils.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/common/swagger-utils.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/components/api-class/api-class-import.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/components/api-class/api-class-import.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/components/api-method/api-method-body.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/components/api-method/api-method-body.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/components/definitions/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/components/definitions/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/components/definitions/model-definition.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/components/definitions/model-definition.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/model/swagger-class.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/model/swagger-class.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/model/swagger-definition-model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/model/swagger-definition-model.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/model/swagger-doc-model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/model/swagger-doc-model.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/model/swagger-enum.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/model/swagger-enum.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/model/swagger-method.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/model/swagger-method.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -158,7 +143,7 @@
       <workItem from="1596178119707" duration="12807000" />
       <workItem from="1596311106103" duration="9466000" />
       <workItem from="1596522907942" duration="44000" />
-      <workItem from="1596566554416" duration="21106000" />
+      <workItem from="1596566554416" duration="24591000" />
     </task>
     <servers />
   </component>

@@ -93,7 +93,7 @@ export class SwaggerDefinitionProperty {
     }
 
     public init(){
-        const enumRef = this.doc.enums.find(f=>f.key === this.name);
+        const enumRef = this.doc.enums.find(f=>f.keys.includes(this.name));
         if(enumRef) {
             this.enumModelRef = enumRef;
             this.type = enumRef.name;
