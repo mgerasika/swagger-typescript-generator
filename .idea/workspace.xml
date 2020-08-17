@@ -26,8 +26,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ce26be8b-bbf5-4618-81ac-984eef411fea" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +55,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../docker-react-admin" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -85,12 +84,22 @@
       <recent name="D:\git\swagger-typescript-generator\src\common" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.open-react-prod">
+  <component name="RunManager" selected="npm.build-react-prod">
     <configuration name="build-react-app" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
       <scripts>
         <script value="build-react-app" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="build-react-prod" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build-react-prod" />
       </scripts>
       <node-interpreter value="project" />
       <envs />
@@ -116,16 +125,6 @@
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="build:react-app" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="build:react-app" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
-    </configuration>
     <configuration name="open-react-prod" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -138,11 +137,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.build-react-prod" />
         <item itemvalue="npm.open-react-prod" />
         <item itemvalue="npm.build-react" />
         <item itemvalue="npm.build-react-app" />
         <item itemvalue="npm.build" />
-        <item itemvalue="npm.build:react-app" />
       </list>
     </recent_temporary>
   </component>
@@ -196,7 +195,7 @@
       <workItem from="1597241642302" duration="32000" />
       <workItem from="1597669882656" duration="10185000" />
       <workItem from="1597682819556" duration="426000" />
-      <workItem from="1597683286072" duration="676000" />
+      <workItem from="1597683286072" duration="1328000" />
     </task>
     <servers />
   </component>
@@ -237,26 +236,26 @@
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state x="708" y="382" key="#com.intellij.fileTypes.FileTypeChooser/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@0.0.1920.1160" timestamp="1597680249435" />
-    <state x="740" y="335" key="FileChooserDialogImpl" timestamp="1597680184712">
+    <state x="740" y="335" key="FileChooserDialogImpl" timestamp="1597684084283">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state x="740" y="335" key="FileChooserDialogImpl/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@0.0.1920.1160" timestamp="1597680184712" />
-    <state width="1899" height="321" key="GridCell.Tab.0.bottom" timestamp="1597682393500">
+    <state x="740" y="335" key="FileChooserDialogImpl/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@0.0.1920.1160" timestamp="1597684084283" />
+    <state width="1899" height="321" key="GridCell.Tab.0.bottom" timestamp="1597684516661">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state width="1899" height="321" key="GridCell.Tab.0.bottom/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@0.0.1920.1160" timestamp="1597682393500" />
-    <state width="1899" height="321" key="GridCell.Tab.0.center" timestamp="1597682393500">
+    <state width="1899" height="321" key="GridCell.Tab.0.bottom/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@0.0.1920.1160" timestamp="1597684516661" />
+    <state width="1899" height="321" key="GridCell.Tab.0.center" timestamp="1597684516661">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state width="1899" height="321" key="GridCell.Tab.0.center/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@0.0.1920.1160" timestamp="1597682393500" />
-    <state width="1899" height="321" key="GridCell.Tab.0.left" timestamp="1597682393500">
+    <state width="1899" height="321" key="GridCell.Tab.0.center/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@0.0.1920.1160" timestamp="1597684516661" />
+    <state width="1899" height="321" key="GridCell.Tab.0.left" timestamp="1597684516661">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state width="1899" height="321" key="GridCell.Tab.0.left/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@0.0.1920.1160" timestamp="1597682393500" />
-    <state width="1899" height="321" key="GridCell.Tab.0.right" timestamp="1597682393500">
+    <state width="1899" height="321" key="GridCell.Tab.0.left/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@0.0.1920.1160" timestamp="1597684516661" />
+    <state width="1899" height="321" key="GridCell.Tab.0.right" timestamp="1597684516661">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state width="1899" height="321" key="GridCell.Tab.0.right/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@0.0.1920.1160" timestamp="1597682393500" />
+    <state width="1899" height="321" key="GridCell.Tab.0.right/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@0.0.1920.1160" timestamp="1597684516661" />
     <state x="983" y="402" key="RollbackChangesDialog" timestamp="1596085463831">
       <screen x="0" y="23" width="2560" height="1339" />
     </state>
