@@ -26,13 +26,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ce26be8b-bbf5-4618-81ac-984eef411fea" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.dockerignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/heroku.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -200,6 +194,8 @@
       <workItem from="1596566554416" duration="35927000" />
       <workItem from="1597241642302" duration="32000" />
       <workItem from="1597669882656" duration="10185000" />
+      <workItem from="1597682819556" duration="426000" />
+      <workItem from="1597683286072" duration="309000" />
     </task>
     <servers />
   </component>
