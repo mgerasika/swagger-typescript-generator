@@ -12,40 +12,65 @@ import {AllModelsExportComponent} from "../swagger/components/definitions";
 import {ApiAllEnumsComponent} from "./api-all-enums";
 import {ApiAllPathComponent} from "./api-all-path";
 import {ISwaggerDocModelConfig} from "../swagger/model";
+import {hydrate} from "react-dom";
+import {SwaggerPanelComponent} from "./swagger-panel";
 
 const axios = require('axios');
 
 interface IProps {
     plugin: ISwaggerPlugin;
-    createCustomUtilsFactory:(baseUtils:ISwaggerUtils) => ISwaggerUtils;
+    createCustomUtilsFactory: (baseUtils: ISwaggerUtils) => ISwaggerUtils;
+}
+
+const compareFn = (a: string, b: string) => (a < b ? -1 : a > b ? 1 : 0)
+
+interface ISelectItem {
+    name: string;
+    value: string;
+}
+
+interface IState {
+    url: string;
+    selectedApi: string;
+    selectedPath: string;
+    selectedDefinition: string;
+    selectedEnum: string;
+    root?: SwaggerDocModel;
+    selectedPanelTitle: string;
 }
 
 export const SwaggerRootComponent: React.FC<IProps> = (props) => {
     const apiUrls = [
         'https://petstore.swagger.io/v2/swagger.json',
-        'https://flipdish-yellow-team.azurewebsites.net/swagger/docs/private-v1.0',
-        'https://flipdish-yellow-team.azurewebsites.net/swagger/docs/v1.0'
+        'https://flipdish-yellow-team-qa.azurewebsites.net/swagger/docs/private-v1.0',
+        'https://flipdish-yellow-team-qa.azurewebsites.net/swagger/docs/v1.0'
     ];
-    const [url, setUrl] = useState(window.localStorage.getItem('url') ||apiUrls[0]);
-    const [selectedApi, setSelectedApi] = useState(window.localStorage.getItem('selectedApi') || '');
-    const [selectedPath, setSelectedPath] = useState(window.localStorage.getItem('selectedPath') || '');
-    const [selectedDefinition, setSelectedDefinition] = useState(window.localStorage.getItem('selectedDefinition') || '');
-    const [selectedEnum, setSelectedEnum] = useState(window.localStorage.getItem('selectedEnum') || '');
-    const [root, setRoot] = useState<SwaggerDocModel>();
+
+    const [state, setState] = useState<IState>({
+        url: window.localStorage.getItem('url') || apiUrls[0],
+        selectedApi: window.localStorage.getItem('selectedApi') || '',
+        selectedPath: window.localStorage.getItem('selectedPath') || '',
+        selectedDefinition: window.localStorage.getItem('selectedDefinition') || '',
+        selectedEnum: window.localStorage.getItem('selectedEnum') || '',
+        selectedPanelTitle: window.localStorage.getItem('selectedPanelTitle') || '',
+    });
 
     const loadSwagger = () => {
-        axios.get(url)
+        axios.get(state.url)
             .then((response: any) => {
                 const config: ISwaggerDocModelConfig = {
-                    apiUrl:'https://petstore.swagger.io',
+                    apiUrl: 'https://petstore.swagger.io',
                     source: response.data,
                     modelImportPath: '../api-model',
                     enumImportPath: '../api-enum',
                     plugin: props.plugin,
-                    showPrivateFieldsForDebug:false,
+                    showPrivateFieldsForDebug: false,
                     createCustomUtilsFactory: createCustomUtilsFactory
                 };
-                setRoot(new SwaggerDocModel(config));
+                setState({
+                    ...state,
+                    root: new SwaggerDocModel(config)
+                });
             })
     };
     const onExploreClick = () => {
@@ -53,92 +78,199 @@ export const SwaggerRootComponent: React.FC<IProps> = (props) => {
     };
 
     useEffect(() => {
-        if (!root) {
+        if (!state.root) {
             loadSwagger();
         }
     });
 
     useEffect(() => {
         loadSwagger();
-    },[url]);
+    }, [state.url]);
 
-    const selectedApiObjects = useMemo(()=>{
-        if(root && selectedApi === 'ALL') {
-            return root.classes;
+    const selectedApiObjects = useMemo(() => {
+        if (state.root && state.selectedApi === 'ALL') {
+            return state.root.classes;
         }
-        return root ? root.classes.filter(c=> c.name === selectedApi) : [];
-    },[root,selectedApi])
+        return state.root ? state.root.classes.filter(c => c.name === state.selectedApi) : [];
+    }, [state.root, state.selectedApi])
 
-    const selectedDefinitionObjects = useMemo(()=>{
-        if(root && selectedDefinition === 'ALL') {
-            return root.definitions;
+    const selectedDefinitionObjects = useMemo(() => {
+        if (state.root && state.selectedDefinition === 'ALL') {
+            return state.root.definitions;
         }
-        return root ? root.definitions.filter(c=>c.name === selectedDefinition) : [];
-    },[root,selectedDefinition])
+        return state.root ? state.root.definitions.filter(c => c.name === state.selectedDefinition) : [];
+    }, [state.root, state.selectedDefinition])
 
-    const selectedEnumObjects = useMemo(()=>{
-        if(root && selectedEnum === 'ALL') {
-            return root.enums;
+    const selectedEnumObjects = useMemo(() => {
+        if (state.root && state.selectedEnum === 'ALL') {
+            return state.root.enums;
         }
-        return root ? root.enums.filter(c=>c.name === selectedEnum) : [];
-    },[root,selectedEnum])
+        return state.root ? state.root.enums.filter(c => c.name === state.selectedEnum) : [];
+    }, [state.root, state.selectedEnum])
 
-    const selectedPathsObjects = useMemo(()=>{
-        if(root && selectedPath === 'ALL') {
-            return root.paths;
+    const selectedPathsObjects = useMemo(() => {
+        if (state.root && state.selectedPath === 'ALL') {
+            return state.root.paths;
         }
-        return root ? root.paths.filter(c=>c.name === selectedPath) : [];
-    },[root,selectedPath])
+        return state.root ? state.root.paths.filter(c => c.name === state.selectedPath) : [];
+    }, [state.root, state.selectedPath])
 
-    const renderAllClassesExport = root ? <ApiAllClassesExportComponent classes={root.classes} /> : null;
-    const renderAllUrlsExport = root ? <ApiUrlsComponent classes={root.classes} /> : null;
-    const renderAllModelsExport = root ? <AllModelsExportComponent definitions={root.definitions} /> : null;
+    const renderAllClassesExport = state.root ? <ApiAllClassesExportComponent classes={state.root.classes}/> : null;
+    const renderAllUrlsExport = state.root ? <ApiUrlsComponent classes={state.root.classes}/> : null;
+    const renderAllModelsExport = state.root ? <AllModelsExportComponent definitions={state.root.definitions}/> : null;
+
+    const renderHeaderTitles = () => {
+        return <div className={'d-flex w-100'}>
+            <div className={'col-4'}>
+                <label>Swagger</label>
+            </div>
+            <div className={'col-4'}>
+                <label>Transformed</label>
+            </div>
+
+            <div className={'col-4'}>
+                <label>Typescript</label>
+            </div>
+        </div>
+    }
+    const handleSelectdPanelTitleChange = (t: string) => {
+        setState({
+            ...state,
+            selectedPanelTitle: t
+        })
+    }
+    const renderHeader = () => {
+        const h6Style = {marginBottom: 0, lineHeight: '28px', width: '200px'};
+        const selectStyle = {width: '200px'};
+        return <>
+            <div className="form-row align-items-center">
+                <div className="col-auto my-1 w-100">
+                    <label className="mr-sm-2" htmlFor="inlineFormCustomSelect1">Url:</label>
+                    <select className="form-control" id="inlineFormCustomSelect1" value={state.url} onChange={(ev) => {
+                        window.localStorage.setItem('url', ev.target.value);
+                        setState({
+                            ...state,
+                            url: ev.target.value
+                        })
+                    }}>
+                        {renderUrlOptions()}
+                    </select>
+                </div>
+            </div>
+        </>
+    }
 
     const renderSwagger = () => {
-        return root && root.definitions ? (
+        return state.root && state.root.definitions ? (
             <>
-                <div className={'d-flex w-100'}>
-                    <div className={'col-4'}>
-                        <h5>Swagger</h5>
-                    </div>
-                    <div className={'col-4'}>
-                        <h5>Transformed</h5>
-                    </div>
+                <SwaggerPanelComponent title="Path"
+                                       renderSettings={() =>
+                                           <div className="col-auto my-1 w-25">
+                                               <label className="mr-sm-2"
+                                                      htmlFor="inlineFormCustomSelect1">Path:</label>
+                                               <select className="form-control" id="inlineFormCustomSelect1"
+                                                       value={state.selectedPath}
+                                                       onChange={(ev) => {
+                                                           window.localStorage.setItem('selectedPath', ev.target.value);
+                                                           setState({
+                                                               ...state,
+                                                               selectedPath: ev.target.value
+                                                           })
+                                                       }}>
+                                                   <option value='ALL'>ALL</option>
+                                                   <option value=''></option>
+                                                   {renderPathOptions()}
+                                               </select>
+                                           </div>}
 
-                    <div className={'col-4'}>
-                        <h5>Typescript</h5>
-                    </div>
-                </div>
+                                       renderContent={() => <>{renderHeaderTitles()}<ApiAllPathComponent
+                                           paths={selectedPathsObjects}/></>} activeTitle={state.selectedPanelTitle}
+                                       onClick={handleSelectdPanelTitleChange}/>
 
-                <hr/>
-                {root && <><ApiAllPathComponent paths={selectedPathsObjects}/><hr/></>}
+                <SwaggerPanelComponent
+                    renderSettings={() => <div className="col-auto my-1 w-25">
+                        <label className="mr-sm-2" htmlFor="inlineFormCustomSelect1">Api class:</label>
+                        <select className="form-control" id="inlineFormCustomSelect1" value={state.selectedApi}
+                                onChange={(ev) => {
+                                    window.localStorage.setItem('selectedApi', ev.target.value);
+                                    setState({
+                                        ...state,
+                                        selectedApi: ev.target.value
+                                    })
+                                }}>
+                            <option value='ALL'>ALL</option>
+                            <option value=''></option>
+                            {renderApiMethodOptions()}
+                        </select>
+                    </div>}
+                    title="Api" renderContent={() => <>{renderHeaderTitles()}
+                    <ApiAllClassesComponent classes={selectedApiObjects}/></>} activeTitle={state.selectedPanelTitle}
+                    onClick={handleSelectdPanelTitleChange}/>
 
-                {root && <><ApiAllClassesComponent classes={selectedApiObjects}/><hr/></>}
+                <SwaggerPanelComponent title="Model"
+                                       renderSettings={() => <div className="col-auto my-1 w-25">
+                                           <label className="mr-sm-2"
+                                                  htmlFor="inlineFormCustomSelect1">Definition:</label>
+                                           <select className="form-control" id="inlineFormCustomSelect1"
+                                                   value={state.selectedDefinition}
+                                                   onChange={(ev) => {
+                                                       window.localStorage.setItem('selectedDefinition', ev.target.value);
+                                                       setState({
+                                                           ...state,
+                                                           selectedDefinition: ev.target.value
+                                                       })
+                                                   }}>
+                                               <option value='ALL'>ALL</option>
+                                               <option value=''></option>
+                                               {renderApiDefinitionsOptions()}
+                                           </select>
+                                       </div>
+                                       }
+                                       renderContent={() => <>{renderHeaderTitles()}<ApiAllModelDefinitionsComponent
+                                           definitions={selectedDefinitionObjects}/></>}
+                                       activeTitle={state.selectedPanelTitle} onClick={handleSelectdPanelTitleChange}/>
 
-                {root && <><ApiAllModelDefinitionsComponent definitions={selectedDefinitionObjects}/><hr/></>}
+                <SwaggerPanelComponent
+                    renderSettings={() => <div className="col-auto my-1 w-25">
+                        <label className="mr-sm-2" htmlFor="inlineFormCustomSelect1">Enum:</label>
+                        <select className="form-control" id="inlineFormCustomSelect1" value={state.selectedEnum}
+                                onChange={(ev) => {
+                                    window.localStorage.setItem('selectedEnum', ev.target.value);
+                                    setState({
+                                        ...state,
+                                        selectedEnum: ev.target.value
+                                    })
+                                }}>
+                            <option value='ALL'>ALL</option>
+                            <option value=''></option>
+                            {renderEnumOptions()}
+                        </select>
+                    </div>}
+                    title="Enums" renderContent={() => <>{renderHeaderTitles()}<ApiAllEnumsComponent
+                    enums={selectedEnumObjects}/></>} activeTitle={state.selectedPanelTitle}
+                    onClick={handleSelectdPanelTitleChange}/>
 
-                {root && <><ApiAllEnumsComponent enums={selectedEnumObjects}/><hr/></>}
 
-                <hr />
-                <h5 className={'pl-3'}>All APIs exports:</h5>
-                <DiffComponent key={'index.ts'}  obj3={renderAllClassesExport}/>
-                <hr/>
+                <SwaggerPanelComponent title="All APIs exports" renderContent={() => <DiffComponent key={'index.ts'}
+                                                                                                    obj3={renderAllClassesExport}/>}
+                                       activeTitle={state.selectedPanelTitle} onClick={handleSelectdPanelTitleChange}/>
 
-                <h5 className={'pl-3'}>All definitions exports:</h5>
-                <DiffComponent obj3={renderAllModelsExport}/>
-                <hr/>
-                <h5 className={'pl-3'}>Urls:</h5>
-                <DiffComponent  obj3={renderAllUrlsExport}/>
-                <hr/>
+                <SwaggerPanelComponent title="All definitions exports"
+                                       renderContent={() => <DiffComponent obj3={renderAllModelsExport}/>}
+                                       activeTitle={state.selectedPanelTitle} onClick={handleSelectdPanelTitleChange}/>
+
+                <SwaggerPanelComponent title="Urls" renderContent={() => <DiffComponent obj3={renderAllUrlsExport}/>}
+                                       activeTitle={state.selectedPanelTitle} onClick={handleSelectdPanelTitleChange}/>
             </>
         ) : null;
     };
 
     const renderApiMethodOptions = () => {
-        if(!root) {
+        if (!state.root) {
             return null;
         }
-        const items = root.classes.map(item => <option key={item.name} value={item.name}>{item.name}</option>)
+        const items = state.root.classes.sort((a, b) => compareFn(a.name, b.name)).map(item => <option key={item.name}
+                                                                                                       value={item.name}>{item.name}</option>)
         return <>{items}</>
     }
 
@@ -148,90 +280,36 @@ export const SwaggerRootComponent: React.FC<IProps> = (props) => {
     }
 
     const renderApiDefinitionsOptions = () => {
-        if(!root) {
+        if (!state.root) {
             return null;
         }
-        const items = root.definitions.map(item => <option key={item.name} value={item.name}>{item.name}</option>)
+        const items = state.root.definitions.sort((a, b) => compareFn(a.name, b.name)).map(item =>
+            <option key={item.name} value={item.name}>{item.name}</option>)
         return <>{items}</>
     }
 
     const renderEnumOptions = () => {
-        if(!root) {
+        if (!state.root) {
             return null;
         }
-        const items = root.enums.map((item,idx) => <option key={`${item.name}_${idx}`} value={item.name}>{item.name}</option>)
+        const items = state.root.enums.sort((a, b) => compareFn(a.name, b.name)).map((item, idx) =>
+            <option key={`${item.name}_${idx}`} value={item.name}>{item.name}</option>)
         return <>{items}</>
     }
 
     const renderPathOptions = () => {
-        if(!root) {
+        if (!state.root) {
             return null;
         }
-        const items = root.paths.map((item,idx) => <option key={`${item.name}_${idx}`} value={item.name}>{item.name}</option>)
+        const items = state.root.paths.sort((a, b) => compareFn(a.name, b.name)).map((item, idx) =>
+            <option key={`${item.name}_${idx}`} value={item.name}>{item.name}</option>)
         return <>{items}</>
     }
 
+
     return (
         <div className={'p-2'}>
-            <div className={'d-flex px-3 pt-1 py-2'}>
-                <h5 style={{width:'300px'}}>Url&nbsp;to&nbsp;swagger.json:&nbsp;</h5>
-                <select className={'w-100'} value={url} onChange={(ev) => {
-                    window.localStorage.setItem('url',ev.target.value);
-                    setUrl(ev.target.value);
-                }}>
-                    {renderUrlOptions()}
-                </select>
-                <button onClick={onExploreClick}>explore</button>
-            </div>
-            <div className={'d-flex px-3 pt-1 py-2'}>
-                <div className={'d-flex w-25'}>
-                    <h5>Paths:&nbsp;</h5>
-                    <select className={'w-100'} value={selectedPath} onChange={(ev) => {
-                        window.localStorage.setItem('selectedPath',ev.target.value);
-                        setSelectedPath(ev.target.value);
-                    }}>
-                        <option value='ALL'>ALL</option>
-                        <option value=''></option>
-                        {renderPathOptions()}
-                    </select>
-                </div>
-                <div className={'d-flex w-25'}>
-                    <h5>Api&nbsp;method:&nbsp;</h5>
-                    <select className={'w-100'} value={selectedApi} onChange={(ev) => {
-                        window.localStorage.setItem('selectedApi',ev.target.value);
-                        setSelectedApi(ev.target.value);
-                    }}>
-                        <option value='ALL'>ALL</option>
-                        <option value=''></option>
-                        {renderApiMethodOptions()}
-                    </select>
-                </div>
-                <div className={'d-flex w-25 pl-3'}>
-                    <h5 style={{width:200}}>Definitions:</h5>
-                    <select className={'w-100'} value={selectedDefinition} onChange={(ev) => {
-                        window.localStorage.setItem('selectedDefinition',ev.target.value);
-                        setSelectedDefinition(ev.target.value)
-                    }}>
-                        <option value='ALL'>ALL</option>
-                        <option value=''></option>
-                        {renderApiDefinitionsOptions()}
-                    </select>
-                </div>
-
-                <div className={'d-flex w-25 pl-3'}>
-                    <h5 style={{width:200}}>Enums:</h5>
-                    <select className={'w-100'} value={selectedEnum} onChange={(ev) => {
-                        window.localStorage.setItem('selectedEnum',ev.target.value);
-                        setSelectedEnum(ev.target.value)
-                    }}>
-                        <option value='ALL'>ALL</option>
-                        <option value=''></option>
-                        {renderEnumOptions()}
-                    </select>
-                </div>
-
-            </div>
-            <hr/>
+            {renderHeader()}
 
             {renderSwagger()}
         </div>

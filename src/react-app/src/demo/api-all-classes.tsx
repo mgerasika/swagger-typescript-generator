@@ -20,7 +20,6 @@ export const ApiAllClassesComponent: React.FC<IProps> = (props) => {
 
     return props.classes.length ? (
         <>
-            <h5 className={'pl-3'}>Api:</h5>
             {result}
         </>
     ) : null;

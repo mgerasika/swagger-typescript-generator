@@ -11,7 +11,7 @@ import {SwaggerEnumModel} from "../model/swagger-enum";
 import {SwaggerPathModel} from "../model/swagger-path";
 
 const getModelName = (name: string) => {
-    return `I${name}Model`.replace(/[\[\]\.]/g, '');
+    return `${name}Model`.replace(/[\[\]\.]/g, '');
 };
 
 const getEnumName = (name: string) => {
