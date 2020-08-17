@@ -14,7 +14,7 @@ WORKDIR /app/
 #    && ssh-keyscan bitbucket.org >> ~/.ssh/known_hosts
 
 RUN npm install
-RUN npm run build
+RUN npm run build-react-prod
 
 FROM nginx:latest
 COPY docker/nginx.conf /etc/nginx/conf.d/default.conf

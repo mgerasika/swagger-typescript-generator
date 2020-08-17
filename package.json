@@ -10,7 +10,7 @@
     "build": "npm run delete:dist && npm run build:react-app && npm run build:tsc",
     "build:tsc": "tsc --p tsconfig-build.json",
     "build:react-app": "cd src/react-app && npm run build:tsc",
-    "build-react": "cd src/react-app && npm run build:react",
+    "build-react-prod": "cd src/react-app && npm run build:react",
     "open-react-prod": "http-server src/react-app/build",
     "git-version": "npm --no-git-tag-version version patch",
     "delete:dist": "del-cli --force dist"
