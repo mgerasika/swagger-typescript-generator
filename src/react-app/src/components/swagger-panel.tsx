@@ -1,18 +1,5 @@
-import React, {ReactNode, useEffect, useMemo, useState} from 'react';
-import {DemoApiAllModelDefinitionsComponent} from '../demo/api-all-models-definitions';
-import {DemoApiAllClassesComponent} from '../demo/api-all-classes';
-import {SwaggerDocModel} from '../swagger/model/swagger-doc-model';
-import {ISwaggerPlugin} from '../swagger/common/default-plugin';
-import {ISwaggerUtils} from "../swagger/common/swagger-utils";
-import {createCustomUtilsFactory} from "../demo/custom-utils";
-import {DiffComponent} from "../demo/diff";
-import {ApiAllClassesExportComponent} from "../swagger/components/api-class";
-import {ApiUrlsComponent} from "../swagger/components/urls";
-import {AllModelsExportComponent} from "../swagger/components/definitions";
-import {DemoApiAllEnumsComponent} from "../demo/api-all-enums";
-import {DemoApiAllPathComponent} from "../demo/api-all-path";
-import {ISwaggerDocModelConfig} from "../swagger/model";
-import {hydrate} from "react-dom";
+import React, {ReactNode} from 'react';
+
 
 const axios = require('axios');
 

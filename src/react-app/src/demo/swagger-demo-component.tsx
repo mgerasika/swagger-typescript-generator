@@ -1,29 +1,30 @@
 import React, {useEffect, useMemo, useState} from 'react';
-import {DemoApiAllModelDefinitionsComponent} from './api-all-models-definitions';
-import {DemoApiAllClassesComponent} from './api-all-classes';
+import {DemoApiAllModelDefinitionsComponent} from './demo-api-all-models-definitions';
+import {DemoApiAllClassesComponent} from './demo-api-all-classes';
 import {SwaggerDocModel} from '../swagger/model/swagger-doc-model';
 import {ISwaggerPlugin} from '../swagger/common/default-plugin';
 import {ISwaggerUtils} from "../swagger/common/swagger-utils";
-import {createCustomUtilsFactory} from "./custom-utils";
-import {DiffComponent} from "./diff";
-import {ApiAllClassesExportComponent} from "../swagger/components/api-class";
+import {AllClassesExportComponent} from "../swagger/components/api-class";
 import {ApiUrlsComponent} from "../swagger/components/urls";
 import {AllModelsExportComponent} from "../swagger/components/definitions";
-import {DemoApiAllEnumsComponent} from "./api-all-enums";
-import {DemoApiAllPathComponent} from "./api-all-path";
+import {DemoApiAllEnumsComponent} from "./demo-api-all-enums";
+import {DemoApiAllPathComponent} from "./demo-api-all-path";
 import {ISwaggerDocModelConfig} from "../swagger/model";
 import {SwaggerPanelComponent} from "../components/swagger-panel";
 import {Select} from "../components/select";
 import {dictionary} from "../components/dictionary";
 import {AllEnumsExportComponent} from "../swagger/components/enum-definition";
+import {defaultUtils} from "../swagger/common";
+import {DiffSingle} from "./diff-single";
 
 const axios = require('axios');
 
 interface IProps {
+    apiUrls:string[];
     plugin: ISwaggerPlugin;
-    createCustomUtilsFactory: (baseUtils: ISwaggerUtils) => ISwaggerUtils;
+    createDocumentFactory:(baceDocument:SwaggerDocModel) => SwaggerDocModel;
+    createUtilsFactory: (baseUtils: ISwaggerUtils) => ISwaggerUtils;
 }
-
 
 interface IState {
     url: string;
@@ -35,15 +36,9 @@ interface IState {
     selectedPanelTitle: string;
 }
 
-export const SwaggerRootComponent: React.FC<IProps> = (props) => {
-    const apiUrls = [
-        'https://petstore.swagger.io/v2/swagger.json',
-        'https://flipdish-yellow-team-qa.azurewebsites.net/swagger/docs/private-v1.0',
-        'https://flipdish-yellow-team-qa.azurewebsites.net/swagger/docs/v1.0'
-    ];
-
+export const SwaggerDemoComponent: React.FC<IProps> = (props) => {
     const [state, setState] = useState<IState>({
-        url: window.localStorage.getItem('url') || apiUrls[0],
+        url: window.localStorage.getItem('url') || props.apiUrls.length ? props.apiUrls[0] : 'https://petstore.swagger.io/v2/swagger.json',
         selectedApi: window.localStorage.getItem('selectedApi') || '',
         selectedPath: window.localStorage.getItem('selectedPath') || '',
         selectedDefinition: window.localStorage.getItem('selectedDefinition') || '',
@@ -54,18 +49,18 @@ export const SwaggerRootComponent: React.FC<IProps> = (props) => {
     const loadSwagger = () => {
         axios.get(state.url)
             .then((response: any) => {
+                const utils = props.createUtilsFactory(defaultUtils);
                 const config: ISwaggerDocModelConfig = {
-                    apiUrl: 'https://petstore.swagger.io',
+                    apiUrl: state.url,
                     source: response.data,
                     modelImportPath: '../api-model',
                     enumImportPath: '../api-enum',
                     plugin: props.plugin,
                     showPrivateFieldsForDebug: false,
-                    createCustomUtilsFactory: createCustomUtilsFactory
                 };
                 setState({
                     ...state,
-                    root: new SwaggerDocModel(config)
+                    root: props.createDocumentFactory(new SwaggerDocModel(config,utils))
                 });
             })
     };
@@ -109,20 +104,7 @@ export const SwaggerRootComponent: React.FC<IProps> = (props) => {
         return state.root ? state.root.paths.filter(c => c.name === state.selectedPath) : [];
     }, [state.root, state.selectedPath])
 
-    const renderHeaderTitles = () => {
-        return <div className={'d-flex w-100'}>
-            <div className={'col-4'}>
-                <div className="form-control-sm pl-0">Swagger</div>
-            </div>
-            <div className={'col-4'}>
-                <div className="form-control-sm pl-0">Transformed</div>
-            </div>
 
-            <div className={'col-4'}>
-                <div className="form-control-sm pl-0">Typescript</div>
-            </div>
-        </div>
-    }
     const handleSelectedPanelTitleChange = (t: string) => {
         window.localStorage.setItem('selectedPanelTitle', t);
         setState({
@@ -131,30 +113,26 @@ export const SwaggerRootComponent: React.FC<IProps> = (props) => {
         })
     }
     const renderHeader = () => {
-        return <>
-            <div className="w-75 mb-2">
-                <div className="row justify-content-between">
-                    <div className="col-sm-12 col-md-6 col-lg-4">
-                        <pre style={{textAlign:'left',lineHeight:'28px'}} className="m-0 p-0">
-                            <a href="https://github.com/mgerasika/swagger-typescript-generator">swagger-typescript-generator</a>
-                        </pre>
-                    </div>
-                    <div className="col-sm-12 col-md-6 col-lg-8">
-                        <Select value={state.url} onChange={(ev) => {
-                            window.localStorage.setItem('url', ev.target.value);
-                            setState({
-                                ...state,
-                                root:undefined,
-                                url: ev.target.value
-                            })
-                        }} options={dictionary.getUrlOptions(apiUrls)}/>
-                    </div>
+        return <div className="row mb-2" style={{width:'99%'}}>
+                <div className="col-sm-12 col-md-5 col-lg-3">
+                    <pre style={{textAlign:'left',lineHeight:'28px'}} className="m-0 p-0">
+                        <a href="https://github.com/mgerasika/swagger-typescript-generator">swagger-typescript-generator</a>
+                    </pre>
                 </div>
-            </div>
-        </>
+                <div className="col-sm-12 col-md-6 col-lg-8 ml-3">
+                    <Select value={state.url} onChange={(ev) => {
+                        window.localStorage.setItem('url', ev.target.value);
+                        setState({
+                            ...state,
+                            root:undefined,
+                            url: ev.target.value
+                        })
+                    }} options={dictionary.getUrlOptions(props.apiUrls)}/>
+                </div>
+        </div>
     }
 
-    const renderAllClassesExport = state.root ? <ApiAllClassesExportComponent classes={state.root.classes}/> : null;
+    const renderAllClassesExport = state.root ? <AllClassesExportComponent classes={state.root.classes}/> : null;
     const renderAllUrlsExport = state.root ? <ApiUrlsComponent classes={state.root.classes}/> : null;
     const renderAllModelsExport = state.root ? <AllModelsExportComponent definitions={state.root.definitions}/> : null;
     const renderAllEnumsExport = state.root ? <AllEnumsExportComponent enums={state.root.enums}/> : null;
@@ -166,7 +144,8 @@ export const SwaggerRootComponent: React.FC<IProps> = (props) => {
                     activeTitle={state.selectedPanelTitle}
                     onClick={handleSelectedPanelTitleChange}
                     renderSettings={() =>
-                        <div className="col-auto w-25">
+                        <div className="row">
+                        <div className="col-md-4 col-sm-12">
                             <Select label="Api class" value={state.selectedApi} onChange={(ev) => {
                                 window.localStorage.setItem('selectedApi', ev.target.value);
                                 setState({
@@ -175,10 +154,10 @@ export const SwaggerRootComponent: React.FC<IProps> = (props) => {
                                 })
                             }} options={dictionary.getClassesOptions(state.root)}/>
                         </div>
+                        </div>
                     }
                     renderContent={() =>
                         <>
-                            {renderHeaderTitles()}
                             <DemoApiAllClassesComponent classes={selectedApiObjects}/>
                         </>}
                 />
@@ -188,7 +167,8 @@ export const SwaggerRootComponent: React.FC<IProps> = (props) => {
                     activeTitle={state.selectedPanelTitle}
                     onClick={handleSelectedPanelTitleChange}
                     renderSettings={() =>
-                        <div className="col-auto w-25">
+                        <div className="row">
+                            <div className="col-md-4 col-sm-12">
                             <Select label="Definition" value={state.selectedDefinition}
                                     onChange={(ev) => {
                                         window.localStorage.setItem('selectedDefinition', ev.target.value);
@@ -199,10 +179,10 @@ export const SwaggerRootComponent: React.FC<IProps> = (props) => {
                                     }} options={dictionary.getApiDefinitionsOptions(state.root)}/>
 
                         </div>
+                        </div>
                     }
                     renderContent={() =>
                         <>
-                            {renderHeaderTitles()}
                             <DemoApiAllModelDefinitionsComponent
                                 definitions={selectedDefinitionObjects}/>
                         </>}
@@ -213,7 +193,8 @@ export const SwaggerRootComponent: React.FC<IProps> = (props) => {
                     activeTitle={state.selectedPanelTitle}
                     onClick={handleSelectedPanelTitleChange}
                     renderSettings={() =>
-                        <div className="col-auto w-25">
+                        <div className="row">
+                            <div className="col-md-4 col-sm-12">
                             <Select label="Enum" value={state.selectedEnum} onChange={(ev) => {
                                 window.localStorage.setItem('selectedEnum', ev.target.value);
                                 setState({
@@ -221,11 +202,10 @@ export const SwaggerRootComponent: React.FC<IProps> = (props) => {
                                     selectedEnum: ev.target.value
                                 })
                             }} options={dictionary.getEnumOptions(state.root)}/>
-
+                            </div>
                         </div>}
                     renderContent={() =>
                         <>
-                            {renderHeaderTitles()}
                             <DemoApiAllEnumsComponent
                                 enums={selectedEnumObjects}/>
                         </>}
@@ -236,7 +216,8 @@ export const SwaggerRootComponent: React.FC<IProps> = (props) => {
                     activeTitle={state.selectedPanelTitle}
                     onClick={handleSelectedPanelTitleChange}
                     renderSettings={() =>
-                        <div className="col-auto w-25">
+                        <div className="row">
+                            <div className="col-md-4 col-sm-12">
                             <Select label="Path" value={state.selectedPath} onChange={(ev) => {
                                 window.localStorage.setItem('selectedPath', ev.target.value);
                                 setState({
@@ -244,11 +225,12 @@ export const SwaggerRootComponent: React.FC<IProps> = (props) => {
                                     selectedPath: ev.target.value
                                 })
                             }} options={dictionary.getPathOptions(state.root)}/>
+                            </div>
                         </div>}
 
                     renderContent={() =>
                         <>
-                            {renderHeaderTitles()}<DemoApiAllPathComponent
+                            <DemoApiAllPathComponent
                             paths={selectedPathsObjects}/>
                         </>}
                 />
@@ -256,22 +238,22 @@ export const SwaggerRootComponent: React.FC<IProps> = (props) => {
 
                 <SwaggerPanelComponent
                     title="All APIs exports"
-                    renderContent={() => <DiffComponent key={'index.ts'} obj3={renderAllClassesExport}/>}
+                    renderContent={() => <DiffSingle key={'index.ts'} obj={renderAllClassesExport}/>}
                     activeTitle={state.selectedPanelTitle} onClick={handleSelectedPanelTitleChange}/>
 
                 <SwaggerPanelComponent
                     title="All models exports"
-                    renderContent={() => <DiffComponent obj3={renderAllModelsExport}/>}
+                    renderContent={() => <DiffSingle obj={renderAllModelsExport}/>}
                     activeTitle={state.selectedPanelTitle} onClick={handleSelectedPanelTitleChange}/>
 
                 <SwaggerPanelComponent
                     title="All enums exports"
-                    renderContent={() => <DiffComponent obj3={renderAllEnumsExport}/>}
+                    renderContent={() => <DiffSingle obj={renderAllEnumsExport}/>}
                     activeTitle={state.selectedPanelTitle} onClick={handleSelectedPanelTitleChange}/>
 
                 <SwaggerPanelComponent
                     title="Urls"
-                    renderContent={() => <DiffComponent obj3={renderAllUrlsExport}/>}
+                    renderContent={() => <DiffSingle obj={renderAllUrlsExport}/>}
                     activeTitle={state.selectedPanelTitle} onClick={handleSelectedPanelTitleChange}/>
             </>
         ) : null;

@@ -31,7 +31,8 @@ export const Select = (props: Props) => {
                             {renderOptions()}
                         </select>
                     </div>
-                </> : <select className="form-control form-control-sm" id="inlineFormCustomSelect1"
+                </>
+                : <select className="form-control form-control-sm" id="inlineFormCustomSelect1"
                               value={props.value} onChange={(ev) => {
                     props.onChange(ev as any);
                 }}>

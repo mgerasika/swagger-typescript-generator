@@ -3,7 +3,7 @@ import {DiffComponent} from "./diff";
 import {SwaggerClassModel} from "../swagger/model/swagger-class";
 import { ApiClassDefinitionComponent } from '../swagger/components/api-class';
 import {AllModelsExportComponent} from '../swagger/components/definitions';
-import {ApiAllClassesExportComponent} from '../swagger/components/api-class/api-all-class-export';
+import {AllClassesExportComponent} from '../swagger/components/api-class/all-class-export';
 import {ApiUrlsComponent} from '../swagger/components/urls';
 import {SwaggerPathModel} from "../swagger/model/swagger-path";
 

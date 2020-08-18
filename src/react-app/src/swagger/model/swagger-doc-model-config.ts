@@ -10,5 +10,4 @@ export interface ISwaggerDocModelConfig {
     enumImportPath: string;
     plugin:ISwaggerPlugin;
     showPrivateFieldsForDebug?:boolean;
-    createCustomUtilsFactory:(baseUtils:ISwaggerUtils) => ISwaggerUtils;
 }

@@ -1,22 +1,30 @@
 import React from 'react';
 import {customPlugins} from "./custom-plugins";
-import { SwaggerRootComponent } from '.';
-import {createCustomUtilsFactory} from "./custom-utils";
+import {SwaggerDemoComponent} from '.';
 
 export * from './custom-plugins';
-export * from './api-all-classes';
-export * from './api-all-path';
-export * from './api-all-enums';
-export * from './api-all-models-definitions';
+export * from './demo-api-all-classes';
+export * from './demo-api-all-path';
+export * from './demo-api-all-enums';
+export * from './demo-api-all-models-definitions';
 export * from '../demo/diff';
-export * from './swagger-root';
+export * from '../demo/diff-single';
+export * from './swagger-demo-component';
 export * from '../components/swagger-panel';
-export * from './custom-utils';
 
-export const SwaggerDemoComponent: React.FC = () => {
+const apiUrls = [
+    'https://petstore.swagger.io/v2/swagger.json',
+    'https://flipdish-yellow-team-qa.azurewebsites.net/swagger/docs/private-v1.0',
+    'https://flipdish-yellow-team-qa.azurewebsites.net/swagger/docs/v1.0'
+];
+export const ExampleComponent: React.FC = () => {
     return (
         <div>
-            <SwaggerRootComponent plugin={customPlugins} createCustomUtilsFactory={createCustomUtilsFactory}/>
+            <SwaggerDemoComponent
+                plugin={customPlugins}
+                apiUrls={apiUrls}
+                createUtilsFactory={(baseUtils) => baseUtils}
+                createDocumentFactory={(baseDocument) => baseDocument}/>
         </div>
     );
 }

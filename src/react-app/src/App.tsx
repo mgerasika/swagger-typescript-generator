@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
-import {SwaggerDemoComponent} from './demo';
+import {ExampleComponent} from './demo';
 
 export const App: React.FC = () => {
     return (
         <div>
-            <SwaggerDemoComponent />
+            <ExampleComponent />
         </div>
     );
 }

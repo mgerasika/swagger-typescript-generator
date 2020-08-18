@@ -4,12 +4,18 @@ import * as React from 'react';
 import {renderToString} from 'react-dom/server';
 import {
     AllModelsExportComponent,
-    ApiAllClassesExportComponent,
+    AllClassesExportComponent,
     ApiClassDefinitionComponent,
-    ApiUrlsComponent, html2text,
+    ApiUrlsComponent,
+    html2text,
     AllEnumsExportComponent,
     EnumDefinitionComponent,
-    ModelDefinitionComponent, SwaggerClassModel, SwaggerEnumModel, SwaggerDefinitionModel, SwaggerDocModel,
+    ModelDefinitionComponent,
+    SwaggerClassModel,
+    SwaggerEnumModel,
+    SwaggerDefinitionModel,
+    SwaggerDocModel,
+    defaultUtils,
 } from "../react-app/src/main";
 
 export class NodeSwaggerGenerator {
@@ -32,7 +38,8 @@ export class NodeSwaggerGenerator {
         if(this._config.enumFilesOutDir) {
             this.createDirectory(this._config.enumFilesOutDir);
         }
-        const swaggerDoc: SwaggerDocModel = new SwaggerDocModel(this._config.swaggerConfig);
+        const utils = this._config.createUtilsFactory(defaultUtils);
+        const swaggerDoc: SwaggerDocModel = this._config.createDocumentFactory( new SwaggerDocModel(this._config.swaggerDocConfig, utils) );
         swaggerDoc.definitions.forEach((swaggerDefinition: SwaggerDefinitionModel) => {
             const filePath = `${this._config.modelFilesOutDir}/${swaggerDefinition.fileName}`;
             const html = renderToString(<ModelDefinitionComponent definition={swaggerDefinition}/>);
@@ -55,7 +62,7 @@ export class NodeSwaggerGenerator {
         });
 
         {
-            const html = renderToString(<ApiAllClassesExportComponent classes={swaggerDoc.classes}/>);
+            const html = renderToString(<AllClassesExportComponent classes={swaggerDoc.classes}/>);
             const text = html2text(html);
             const filePath = `${this._config.apiFilesOutDir}/index.ts`;
             this.writeToFile(filePath, text);

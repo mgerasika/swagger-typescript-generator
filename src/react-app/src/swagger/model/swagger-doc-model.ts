@@ -15,9 +15,9 @@ export class SwaggerDocModel {
     public enums: SwaggerEnumModel[] = [];
     public utils:ISwaggerUtils = defaultUtils;
 
-    public constructor(config: ISwaggerDocModelConfig) {
+    public constructor(config: ISwaggerDocModelConfig,utils:ISwaggerUtils) {
         this.config = config;
-        this.utils = config.createCustomUtilsFactory(defaultUtils);
+        this.utils = utils;
 
         const {source} = config;
 

@@ -24,20 +24,20 @@ const generate = (json: any) => {
         modelFilesOutDir: `${parentDir}/../gen/api-model`,
         urlFileOutDir: `${parentDir}/../gen/api-model-url`,
         enumFilesOutDir: `${parentDir}/../gen/api-enum`,
-       swaggerConfig:{
-           modelImportPath: '../api-model',
-           enumImportPath: '../api-enum',
-           apiUrl:url,
-           plugin: defaultPlugin as any,
-           source: json,
-           createCustomUtilsFactory: (baseUtils:any) => baseUtils
-       }
+        createUtilsFactory: (baseUtils) => baseUtils,
+        createDocumentFactory: (baseDocument) => baseDocument,
+        swaggerDocConfig: {
+            modelImportPath: '../api-model',
+            enumImportPath: '../api-enum',
+            apiUrl: url,
+            plugin: defaultPlugin as any,
+            source: json,
+        }
     };
     const swaggerGenerator = new NodeSwaggerGenerator(config);
     try {
         swaggerGenerator.generate();
-    }
-    catch (e) {
+    } catch (e) {
         console.log('generator error ' + e);
     }
 };
