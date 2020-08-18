@@ -21,8 +21,8 @@ export const ExampleComponent: React.FC = () => {
     return (
         <div>
             <SwaggerDemoComponent
-                plugin={customPlugins}
                 apiUrls={apiUrls}
+                createComponentsFactory={(baseComponents)=>baseComponents}
                 createUtilsFactory={(baseUtils) => baseUtils}
                 createDocumentFactory={(baseDocument) => baseDocument}/>
         </div>

@@ -26,8 +26,4 @@ export class SwaggerClassModel extends SwaggerModelBase<SwaggerDocModel>{
     public init(){
         this.methods.forEach(m=>m.init());
     }
-
-    public get plugin() {
-        return this.parent.config.plugin;
-    }
 }

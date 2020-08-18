@@ -1,6 +1,6 @@
 import {SwaggerDefinitionModel} from './swagger-definition-model';
 import {SwaggerClassModel} from './swagger-class';
-import {defaultUtils, uniqueItems} from "../common";
+import {defaultComponents, defaultUtils, ISwaggerComponents, uniqueItems} from "../common";
 import {ISwaggerUtils} from "../common/swagger-utils";
 import {SwaggerEnumModel} from "./swagger-enum";
 import {SwaggerPathModel} from "./swagger-path";
@@ -14,10 +14,12 @@ export class SwaggerDocModel {
     public paths: SwaggerPathModel[] = [];
     public enums: SwaggerEnumModel[] = [];
     public utils:ISwaggerUtils = defaultUtils;
+    public components:ISwaggerComponents = defaultComponents;
 
-    public constructor(config: ISwaggerDocModelConfig,utils:ISwaggerUtils) {
+    public constructor(config: ISwaggerDocModelConfig,utils:ISwaggerUtils,components:ISwaggerComponents) {
         this.config = config;
         this.utils = utils;
+        this.components = components;
 
         const {source} = config;
 

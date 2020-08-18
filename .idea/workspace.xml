@@ -26,26 +26,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ce26be8b-bbf5-4618-81ac-984eef411fea" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/react-app/src/demo/diff-single.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/node-app/demo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/node-app/demo.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/node-app/node-swagger-config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/node-app/node-swagger-config.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/node-app/node-swagger-generator.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/node-app/node-swagger-generator.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/components/select.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/components/select.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/components/swagger-panel.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/components/swagger-panel.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/demo/api-all-classes.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/demo/demo-api-all-classes.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/demo/api-all-enums.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/demo/demo-api-all-enums.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/demo/api-all-models-definitions.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/demo/demo-api-all-models-definitions.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/demo/api-all-path.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/demo/demo-api-all-path.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/demo/custom-utils.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/demo/diff.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/demo/diff.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app/src/demo/custom-plugins.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/demo/custom-plugins.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/react-app/src/demo/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/demo/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/demo/swagger-root.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/demo/swagger-demo-component.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/components/api-class/api-all-class-export.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/components/api-class/all-class-export.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/components/api-class/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/components/api-class/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app/src/demo/swagger-demo-component.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/demo/swagger-demo-component.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/common/default-plugin.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/common/default-components.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/common/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/common/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/components/api-class/api-class-import.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/components/api-class/api-class-import.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/model/swagger-class.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/model/swagger-class.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/model/swagger-doc-model-config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/model/swagger-doc-model-config.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/model/swagger-doc-model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/model/swagger-doc-model.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/model/swagger-model-base.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/model/swagger-model-base.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +68,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/react-app/src/demo" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -216,7 +210,8 @@
       <workItem from="1597682819556" duration="426000" />
       <workItem from="1597683286072" duration="1328000" />
       <workItem from="1597701982856" duration="8647000" />
-      <workItem from="1597710875506" duration="12027000" />
+      <workItem from="1597710875506" duration="12208000" />
+      <workItem from="1597735229404" duration="782000" />
     </task>
     <servers />
   </component>
@@ -267,26 +262,26 @@
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state x="708" y="382" key="#com.intellij.fileTypes.FileTypeChooser/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@0.0.1920.1160" timestamp="1597702068865" />
-    <state x="740" y="335" key="FileChooserDialogImpl" timestamp="1597714397220">
+    <state x="740" y="335" key="FileChooserDialogImpl" timestamp="1597734104603">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state x="740" y="335" key="FileChooserDialogImpl/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@0.0.1920.1160" timestamp="1597714397220" />
-    <state width="1899" height="372" key="GridCell.Tab.0.bottom" timestamp="1597714870989">
+    <state x="740" y="335" key="FileChooserDialogImpl/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@0.0.1920.1160" timestamp="1597734104603" />
+    <state width="1899" height="372" key="GridCell.Tab.0.bottom" timestamp="1597734105713">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state width="1899" height="372" key="GridCell.Tab.0.bottom/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@0.0.1920.1160" timestamp="1597714870989" />
-    <state width="1899" height="372" key="GridCell.Tab.0.center" timestamp="1597714870989">
+    <state width="1899" height="372" key="GridCell.Tab.0.bottom/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@0.0.1920.1160" timestamp="1597734105713" />
+    <state width="1899" height="372" key="GridCell.Tab.0.center" timestamp="1597734105713">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state width="1899" height="372" key="GridCell.Tab.0.center/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@0.0.1920.1160" timestamp="1597714870989" />
-    <state width="1899" height="372" key="GridCell.Tab.0.left" timestamp="1597714870989">
+    <state width="1899" height="372" key="GridCell.Tab.0.center/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@0.0.1920.1160" timestamp="1597734105713" />
+    <state width="1899" height="372" key="GridCell.Tab.0.left" timestamp="1597734105713">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state width="1899" height="372" key="GridCell.Tab.0.left/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@0.0.1920.1160" timestamp="1597714870989" />
-    <state width="1899" height="372" key="GridCell.Tab.0.right" timestamp="1597714870989">
+    <state width="1899" height="372" key="GridCell.Tab.0.left/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@0.0.1920.1160" timestamp="1597734105713" />
+    <state width="1899" height="372" key="GridCell.Tab.0.right" timestamp="1597734105713">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state width="1899" height="372" key="GridCell.Tab.0.right/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@0.0.1920.1160" timestamp="1597714870989" />
+    <state width="1899" height="372" key="GridCell.Tab.0.right/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@0.0.1920.1160" timestamp="1597734105713" />
     <state x="983" y="402" key="RollbackChangesDialog" timestamp="1596085463831">
       <screen x="0" y="23" width="2560" height="1339" />
     </state>

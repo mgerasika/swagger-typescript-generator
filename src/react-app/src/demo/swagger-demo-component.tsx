@@ -2,7 +2,7 @@ import React, {useEffect, useMemo, useState} from 'react';
 import {DemoApiAllModelDefinitionsComponent} from './demo-api-all-models-definitions';
 import {DemoApiAllClassesComponent} from './demo-api-all-classes';
 import {SwaggerDocModel} from '../swagger/model/swagger-doc-model';
-import {ISwaggerPlugin} from '../swagger/common/default-plugin';
+import {defaultComponents, ISwaggerComponents} from '../swagger/common/default-components';
 import {ISwaggerUtils} from "../swagger/common/swagger-utils";
 import {AllClassesExportComponent} from "../swagger/components/api-class";
 import {ApiUrlsComponent} from "../swagger/components/urls";
@@ -21,9 +21,9 @@ const axios = require('axios');
 
 interface IProps {
     apiUrls:string[];
-    plugin: ISwaggerPlugin;
-    createDocumentFactory:(baceDocument:SwaggerDocModel) => SwaggerDocModel;
-    createUtilsFactory: (baseUtils: ISwaggerUtils) => ISwaggerUtils;
+    createComponentsFactory?: (baseComponents:ISwaggerComponents) => ISwaggerComponents;
+    createDocumentFactory?:(baseDoc:SwaggerDocModel) => SwaggerDocModel;
+    createUtilsFactory?: (baseUtils: ISwaggerUtils) => ISwaggerUtils;
 }
 
 interface IState {
@@ -49,18 +49,19 @@ export const SwaggerDemoComponent: React.FC<IProps> = (props) => {
     const loadSwagger = () => {
         axios.get(state.url)
             .then((response: any) => {
-                const utils = props.createUtilsFactory(defaultUtils);
+                const utils = props.createUtilsFactory ? props.createUtilsFactory(defaultUtils) : defaultUtils;
                 const config: ISwaggerDocModelConfig = {
                     apiUrl: state.url,
                     source: response.data,
                     modelImportPath: '../api-model',
                     enumImportPath: '../api-enum',
-                    plugin: props.plugin,
                     showPrivateFieldsForDebug: false,
                 };
+                const plugin = props.createComponentsFactory ? props.createComponentsFactory(defaultComponents) : defaultComponents;
+                const doc = new SwaggerDocModel(config,utils, plugin);
                 setState({
                     ...state,
-                    root: props.createDocumentFactory(new SwaggerDocModel(config,utils))
+                    root:props.createDocumentFactory ? props.createDocumentFactory(doc) : doc
                 });
             })
     };

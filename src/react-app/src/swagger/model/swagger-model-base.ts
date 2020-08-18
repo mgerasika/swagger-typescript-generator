@@ -20,8 +20,8 @@ export class SwaggerModelBase<T> {
         return this.doc.utils;
     }
 
-    public get plugin() {
-        return this.doc.config.plugin;
+    public get components() {
+        return this.doc.components;
     }
 
     public get doc() :SwaggerDocModel{

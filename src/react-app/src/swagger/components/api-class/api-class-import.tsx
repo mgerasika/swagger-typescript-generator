@@ -49,7 +49,7 @@ export const ApiClassImportAdapter: React.FC<IProps> = (props) => {
 
     return (
         <>
-            {props.swaggerClass.plugin.apiClassImport(
+            {props.swaggerClass.components.apiClassImport(
                 ApiClassImportComponent, {
                     swaggerClass: props.swaggerClass,
                     imports

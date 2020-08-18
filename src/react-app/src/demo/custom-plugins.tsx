@@ -1,9 +1,9 @@
 import React from 'react';
 import {ApiClassImportComponent, IApiClassImportProps} from '../swagger/components';
-import {defaultPlugin, ISwaggerPlugin} from '../swagger/common/default-plugin';
+import {defaultComponents, ISwaggerComponents} from '../swagger/common/default-components';
 
-export const customPlugins: ISwaggerPlugin = {
-    ...defaultPlugin,
+export const customPlugins: ISwaggerComponents = {
+    ...defaultComponents,
     apiClassImport: (Component:React.FC<any>, props: IApiClassImportProps) => {
         const newProps:IApiClassImportProps = {
             ...props,

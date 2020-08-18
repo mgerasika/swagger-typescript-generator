@@ -1,4 +1,4 @@
-import { ISwaggerPlugin} from "../common";
+import { ISwaggerComponents} from "../common";
 import {ISwaggerUtils} from "../common/swagger-utils";
 
 const sourceSymbol = Symbol('source');
@@ -8,6 +8,5 @@ export interface ISwaggerDocModelConfig {
     source: any;
     modelImportPath: string;
     enumImportPath: string;
-    plugin:ISwaggerPlugin;
     showPrivateFieldsForDebug?:boolean;
 }

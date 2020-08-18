@@ -5,11 +5,11 @@ import {
     IApiClassImportProps
 } from '../components/api-class/api-class-import';
 
-export interface ISwaggerPlugin {
+export interface ISwaggerComponents {
     apiClassImport: SwaggerPluginAction<IApiClassImportProps>;
 }
 
-export const defaultPlugin: ISwaggerPlugin = {
+export const defaultComponents: ISwaggerComponents = {
     apiClassImport: (Component:React.FC<any>, props: IApiClassImportProps) => {
         return (<Component {...props} />);
     }

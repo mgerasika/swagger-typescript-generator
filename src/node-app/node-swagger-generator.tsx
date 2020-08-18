@@ -15,7 +15,7 @@ import {
     SwaggerEnumModel,
     SwaggerDefinitionModel,
     SwaggerDocModel,
-    defaultUtils,
+    defaultUtils, defaultComponents,
 } from "../react-app/src/main";
 
 export class NodeSwaggerGenerator {
@@ -38,8 +38,10 @@ export class NodeSwaggerGenerator {
         if(this._config.enumFilesOutDir) {
             this.createDirectory(this._config.enumFilesOutDir);
         }
-        const utils = this._config.createUtilsFactory(defaultUtils);
-        const swaggerDoc: SwaggerDocModel = this._config.createDocumentFactory( new SwaggerDocModel(this._config.swaggerDocConfig, utils) );
+        const utils = this._config.createUtilsFactory ? this._config.createUtilsFactory(defaultUtils) : defaultUtils;
+        const components = this._config.createComponentsFactory ? this._config.createComponentsFactory(defaultComponents) : defaultComponents;
+        const doc =  new SwaggerDocModel(this._config.swaggerDocConfig, utils,components);
+        const swaggerDoc: SwaggerDocModel = this._config.createDocumentFactory ? this._config.createDocumentFactory(doc) : doc;
         swaggerDoc.definitions.forEach((swaggerDefinition: SwaggerDefinitionModel) => {
             const filePath = `${this._config.modelFilesOutDir}/${swaggerDefinition.fileName}`;
             const html = renderToString(<ModelDefinitionComponent definition={swaggerDefinition}/>);

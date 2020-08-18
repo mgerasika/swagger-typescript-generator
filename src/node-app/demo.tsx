@@ -3,7 +3,7 @@ import axios from 'axios';
 import {INodeSwaggerConfig} from './node-swagger-config';
 import {NodeSwaggerGenerator} from './node-swagger-generator';
 import * as path from 'path';
-import {defaultPlugin} from "../react-app/src/main";
+import {defaultComponents} from "../react-app/src/main";
 
 const url = 'https://petstore.swagger.io/v2/swagger.json';
 axios.get(url)
@@ -24,13 +24,13 @@ const generate = (json: any) => {
         modelFilesOutDir: `${parentDir}/../gen/api-model`,
         urlFileOutDir: `${parentDir}/../gen/api-model-url`,
         enumFilesOutDir: `${parentDir}/../gen/api-enum`,
+        createComponentsFactory: (baseComponents) => baseComponents,
         createUtilsFactory: (baseUtils) => baseUtils,
         createDocumentFactory: (baseDocument) => baseDocument,
         swaggerDocConfig: {
             modelImportPath: '../api-model',
             enumImportPath: '../api-enum',
             apiUrl: url,
-            plugin: defaultPlugin as any,
             source: json,
         }
     };
