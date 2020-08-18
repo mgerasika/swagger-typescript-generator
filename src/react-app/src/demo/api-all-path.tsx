@@ -11,7 +11,7 @@ interface IProps {
     paths: SwaggerPathModel[];
 }
 
-export const ApiAllPathComponent: React.FC<IProps> = (props) => {
+export const DemoApiAllPathComponent: React.FC<IProps> = (props) => {
     const result = props.paths.map((def: SwaggerPathModel) => {
         return <DiffComponent key={def.name} obj1={def.source} obj2={def} obj3={JSON.stringify(def,null,2)}/>
     })

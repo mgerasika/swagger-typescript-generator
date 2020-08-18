@@ -13,10 +13,15 @@
     "strict": true
   },
   "include": [
-    "src/**/*"
+    "src/**/*",
+    "src/react-app/src/**/*"
   ],
   "exclude": [
     "node_modules",
-    "gen"
+    "**/*.spec.ts",
+    "tmp",
+    "dist",
+    "react-app",
+    "**/react-app"
   ]
 }

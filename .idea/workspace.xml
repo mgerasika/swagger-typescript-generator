@@ -26,15 +26,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ce26be8b-bbf5-4618-81ac-984eef411fea" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/react-app/src/components/dictionary.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/react-app/src/components/select.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/react-app/src/swagger/components/enum-definition/all-enums-export.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/react-app/src/swagger/components/enum-definition/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/node-app/demo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/node-app/demo.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/node-app/node-swagger-config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/node-app/node-swagger-config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/node-app/node-swagger-generator.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/node-app/node-swagger-generator.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app/src/components/swagger-panel.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/components/swagger-panel.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app/src/demo/api-all-classes.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/demo/api-all-classes.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/react-app/src/demo/api-all-enums.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/demo/api-all-enums.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/react-app/src/demo/api-all-models-definitions.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/demo/api-all-models-definitions.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/demo/diff.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/demo/diff.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/demo/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/demo/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/demo/swagger-panel.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/components/swagger-panel.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app/src/demo/api-all-path.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/demo/api-all-path.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/react-app/src/demo/swagger-root.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/demo/swagger-root.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/common/default-utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/common/default-utils.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/common/swagger-utils.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/common/swagger-utils.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/components/api-class/api-class-import.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/components/api-class/api-class-import.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/components/definitions/definition-import.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/components/definitions/definition-import.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/components/definitions/model-definition.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/components/definitions/model-definition.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/components/enum-definition/api-enum.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/components/enum-definition/api-enum.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/components/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/model/swagger-definition-model-property.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/model/swagger-definition-model-property.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/model/swagger-enum.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/model/swagger-enum.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig-build.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig-build.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +79,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/react-app/src/components" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../react-eng-words" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -77,6 +93,13 @@
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\git\swagger-typescript-generator\src\react-app\src\swagger\components\enum-definition" />
+      <recent name="D:\git\swagger-typescript-generator\src\react-app\src\components" />
+      <recent name="D:\git\swagger-typescript-generator\docker" />
+      <recent name="D:\git\swagger-typescript-generator" />
+      <recent name="D:\git\swagger-typescript-generator\src\react-app\src\demo" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\git\swagger-typescript-generator\src\react-app\src\components" />
       <recent name="D:\git\swagger-typescript-generator\src\react-app\src\swagger\common" />
@@ -84,20 +107,13 @@
       <recent name="D:\git\swagger-typescript-generator\src\react-app\src" />
       <recent name="D:\git\swagger-typescript-generator\src\react-app" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\git\swagger-typescript-generator\src\react-app\src\components" />
-      <recent name="D:\git\swagger-typescript-generator\docker" />
-      <recent name="D:\git\swagger-typescript-generator" />
-      <recent name="D:\git\swagger-typescript-generator\src\react-app\src\demo" />
-      <recent name="D:\git\swagger-typescript-generator\src\react-app\src\swagger\model" />
-    </key>
   </component>
-  <component name="RunManager" selected="npm.start:react-app">
-    <configuration name="build-react-prod" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="npm.build:publish">
+    <configuration name="build:publish" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
       <scripts>
-        <script value="build-react-prod" />
+        <script value="build:publish" />
       </scripts>
       <node-interpreter value="project" />
       <envs />
@@ -123,11 +139,11 @@
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="open-react-prod" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
       <scripts>
-        <script value="open-react-prod" />
+        <script value="start" />
       </scripts>
       <node-interpreter value="project" />
       <envs />
@@ -145,11 +161,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.build:publish" />
+        <item itemvalue="npm.start" />
         <item itemvalue="npm.start:react-app" />
         <item itemvalue="npm.install-react-prod" />
         <item itemvalue="npm.build:react-app" />
-        <item itemvalue="npm.build-react-prod" />
-        <item itemvalue="npm.open-react-prod" />
       </list>
     </recent_temporary>
   </component>
@@ -204,12 +220,23 @@
       <workItem from="1597669882656" duration="10185000" />
       <workItem from="1597682819556" duration="426000" />
       <workItem from="1597683286072" duration="1328000" />
-      <workItem from="1597701982856" duration="7889000" />
+      <workItem from="1597701982856" duration="8647000" />
+      <workItem from="1597710875506" duration="7832000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -245,35 +272,35 @@
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state x="708" y="382" key="#com.intellij.fileTypes.FileTypeChooser/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@0.0.1920.1160" timestamp="1597702068865" />
-    <state x="740" y="335" key="FileChooserDialogImpl" timestamp="1597703636663">
+    <state x="740" y="335" key="FileChooserDialogImpl" timestamp="1597714397220">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state x="740" y="335" key="FileChooserDialogImpl/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@0.0.1920.1160" timestamp="1597703636663" />
-    <state width="1899" height="192" key="GridCell.Tab.0.bottom" timestamp="1597708892099">
+    <state x="740" y="335" key="FileChooserDialogImpl/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@0.0.1920.1160" timestamp="1597714397220" />
+    <state width="1899" height="372" key="GridCell.Tab.0.bottom" timestamp="1597714870989">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state width="1899" height="192" key="GridCell.Tab.0.bottom/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@0.0.1920.1160" timestamp="1597708892099" />
-    <state width="1899" height="192" key="GridCell.Tab.0.center" timestamp="1597708892099">
+    <state width="1899" height="372" key="GridCell.Tab.0.bottom/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@0.0.1920.1160" timestamp="1597714870989" />
+    <state width="1899" height="372" key="GridCell.Tab.0.center" timestamp="1597714870989">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state width="1899" height="192" key="GridCell.Tab.0.center/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@0.0.1920.1160" timestamp="1597708892099" />
-    <state width="1899" height="192" key="GridCell.Tab.0.left" timestamp="1597708892098">
+    <state width="1899" height="372" key="GridCell.Tab.0.center/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@0.0.1920.1160" timestamp="1597714870989" />
+    <state width="1899" height="372" key="GridCell.Tab.0.left" timestamp="1597714870989">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state width="1899" height="192" key="GridCell.Tab.0.left/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@0.0.1920.1160" timestamp="1597708892098" />
-    <state width="1899" height="192" key="GridCell.Tab.0.right" timestamp="1597708892099">
+    <state width="1899" height="372" key="GridCell.Tab.0.left/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@0.0.1920.1160" timestamp="1597714870989" />
+    <state width="1899" height="372" key="GridCell.Tab.0.right" timestamp="1597714870989">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state width="1899" height="192" key="GridCell.Tab.0.right/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@0.0.1920.1160" timestamp="1597708892099" />
+    <state width="1899" height="372" key="GridCell.Tab.0.right/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@0.0.1920.1160" timestamp="1597714870989" />
     <state x="983" y="402" key="RollbackChangesDialog" timestamp="1596085463831">
       <screen x="0" y="23" width="2560" height="1339" />
     </state>
     <state x="983" y="402" key="RollbackChangesDialog/0.23.2560.1339/2560.62.2560.1417@0.23.2560.1339" timestamp="1596085463831" />
-    <state x="729" y="367" width="555" height="534" key="find.popup" timestamp="1596745624032">
+    <state x="729" y="367" width="555" height="534" key="find.popup" timestamp="1597712489954">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state x="972" y="447" width="615" height="490" key="find.popup/0.23.2560.1339/2560.62.2560.1417@0.23.2560.1339" timestamp="1596094936341" />
-    <state x="729" y="367" width="555" height="534" key="find.popup/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@0.0.1920.1160" timestamp="1596745624032" />
+    <state x="729" y="367" width="555" height="534" key="find.popup/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@0.0.1920.1160" timestamp="1597712489954" />
     <state x="-1211" y="262" key="run.anything.popup" timestamp="1597671076968">
       <screen x="-1920" y="0" width="1920" height="1160" />
     </state>

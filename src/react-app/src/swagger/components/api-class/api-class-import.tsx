@@ -25,8 +25,7 @@ export const ApiClassImportAdapter: React.FC<IProps> = (props) => {
     const uniqueMethodParameters = uniqueItems([...responseTypes, ...parameterTypes], (el) => el);
 
     const imports = [
-        'import {AxiosPromise} from \'axios\'',
-        'import {IRequestService, di} from \'swagger-typescript-generator\''];
+        'import {di} from \'swagger-typescript-generator\''];
 
     const modelNames = uniqueMethodParameters.filter((filter: string | any) => !!filter).join(',');
     if (modelNames.length) {

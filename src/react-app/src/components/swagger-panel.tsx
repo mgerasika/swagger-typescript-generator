@@ -1,6 +1,6 @@
 import React, {ReactNode, useEffect, useMemo, useState} from 'react';
-import {ApiAllModelDefinitionsComponent} from '../demo/api-all-models-definitions';
-import {ApiAllClassesComponent} from '../demo/api-all-classes';
+import {DemoApiAllModelDefinitionsComponent} from '../demo/api-all-models-definitions';
+import {DemoApiAllClassesComponent} from '../demo/api-all-classes';
 import {SwaggerDocModel} from '../swagger/model/swagger-doc-model';
 import {ISwaggerPlugin} from '../swagger/common/default-plugin';
 import {ISwaggerUtils} from "../swagger/common/swagger-utils";
@@ -9,8 +9,8 @@ import {DiffComponent} from "../demo/diff";
 import {ApiAllClassesExportComponent} from "../swagger/components/api-class";
 import {ApiUrlsComponent} from "../swagger/components/urls";
 import {AllModelsExportComponent} from "../swagger/components/definitions";
-import {ApiAllEnumsComponent} from "../demo/api-all-enums";
-import {ApiAllPathComponent} from "../demo/api-all-path";
+import {DemoApiAllEnumsComponent} from "../demo/api-all-enums";
+import {DemoApiAllPathComponent} from "../demo/api-all-path";
 import {ISwaggerDocModelConfig} from "../swagger/model";
 import {hydrate} from "react-dom";
 
@@ -41,12 +41,12 @@ export const SwaggerPanelComponent: React.FC<IProps> = (props) => {
             <div style={{float:'right'}}>
                 {isExpanded ? <svg width="1em" height="1em" viewBox="0 0 16 16" className="bi bi-chevron-down" fill="currentColor"
                                    xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd"
+                    <path fillRule="evenodd"
                           d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
                 </svg> :
                     <svg width="1em" height="1em" viewBox="0 0 16 16" className="bi bi-chevron-right" fill="currentColor"
                      xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd"
+                    <path fillRule="evenodd"
                           d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
                 </svg> }
             </div>

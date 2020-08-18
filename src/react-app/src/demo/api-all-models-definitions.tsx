@@ -8,7 +8,7 @@ interface IProps {
     definitions: SwaggerDefinitionModel[];
 }
 
-export const ApiAllModelDefinitionsComponent: React.FC<IProps> = (props) => {
+export const DemoApiAllModelDefinitionsComponent: React.FC<IProps> = (props) => {
     const renderCodegen = (def: SwaggerDefinitionModel) => {
         return (<ModelDefinitionComponent definition={def}></ModelDefinitionComponent>)
     };

@@ -3,7 +3,7 @@ import axios from 'axios';
 import {INodeSwaggerConfig} from './node-swagger-config';
 import {NodeSwaggerGenerator} from './node-swagger-generator';
 import * as path from 'path';
-import {defaultPlugin} from "../react-app/src/swagger/common";
+import {defaultPlugin} from "../react-app/src/main";
 
 const url = 'https://petstore.swagger.io/v2/swagger.json';
 axios.get(url)
@@ -19,11 +19,11 @@ const generate = (json: any) => {
     console.log('parentDir=' + parentDir);
 
 
-
     const config: INodeSwaggerConfig = {
         apiFilesOutDir: `${parentDir}/../gen/api`,
         modelFilesOutDir: `${parentDir}/../gen/api-model`,
         urlFileOutDir: `${parentDir}/../gen/api-model-url`,
+        enumFilesOutDir: `${parentDir}/../gen/api-enum`,
        swaggerConfig:{
            modelImportPath: '../api-model',
            enumImportPath: '../api-enum',

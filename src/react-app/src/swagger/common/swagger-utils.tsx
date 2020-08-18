@@ -29,5 +29,6 @@ export interface ISwaggerUtils {
     getModelPropertyType:(context:SwaggerDefinitionProperty,schema: any) => string;
 
     getEnumName : (context:SwaggerEnumModel, name: string) => string;
+    getEnumFileName : (context:SwaggerEnumModel,name: string) => string;
     getPathName: (context:SwaggerPathModel, name:string) => string;
 }

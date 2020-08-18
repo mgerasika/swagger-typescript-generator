@@ -29,9 +29,9 @@ export const uniqueItems = <T>(items: T[], keyFn: (el:T) => any): T[] => {
     return Object.values(uniqueEnums) as any;
 }
 
-const jsTypes = ['number','integer','boolean','string','Array','File'];
+const jsTypes = ['number','integer','boolean','string','array','file'];
 export const getIsJsType = (name:string) =>{
-    return jsTypes.includes(name);
+    return jsTypes.includes(name.toLowerCase());
 }
 const getJsType = (type: string) => {
     if (type === 'integer') {
@@ -52,18 +52,33 @@ const getJsType = (type: string) => {
 
 const getResponseType = (schema: any) => {
     let res: string = '';
+    if(schema.$ref) {
+        return getJsType(schema.$ref)
+    }
+    if (schema['schema']) {
+        const res = getJsType(schema['schema'].$ref);
+        if (res) {
+            return res;
+        }
+        return getJsType(schema['schema'].type);
+    }
     const responseType = schema.items ? schema.items['$ref'] : schema['$ref'];
     if (responseType) {
         res = getJsType(responseType);
     }
     if (!responseType) {
-        res = schema.type;
-    }
-    if (!responseType) {
         const additionalProperties = schema.additionalProperties;
         if (additionalProperties && additionalProperties['type']) {
-            res = getJsType(additionalProperties['type']);
+            if(additionalProperties['items']) {
+                res = getJsType(additionalProperties['items'].$ref)
+            }
+            else {
+                res = getJsType(additionalProperties['type']);
+            }
         }
+    }
+    if (!res) {
+        res = schema.type;
     }
     return res;
 };
@@ -100,33 +115,19 @@ export const defaultUtils: ISwaggerUtils = {
     getMethodParameterName: (context: SwaggerMethodParameter, name: string) => name,
     getMethodResponseType: (context: SwaggerMethodModel, schema: any) => getResponseType(schema),
     getMethodParameterType: (context: SwaggerMethodParameter, schema: any) => {
-        if (schema['schema']) {
-            const res = getJsType(schema['schema'].$ref);
-            if (res) {
-                return res;
-            }
-            return getJsType(schema['schema'].type);
-        } else {
-            return getJsType(schema.type);
-        }
+        return getResponseType(schema);
     },
 
     getModelName: (context: SwaggerDefinitionModel, name: string) => getModelName(name),
     getModelFileName: (context: SwaggerDefinitionModel, name: string) => getFileName(name),
     getModelType: (context: SwaggerDefinitionModel, schema: any) => {
-        if (schema.items) {
-            return getResponseType(schema);
-        } else {
-            return getJsType(schema.type)
-        }
+        return getResponseType(schema);
+
     },
     getModelPropertyType: (context: SwaggerDefinitionProperty, schema: any) => {
-        if (schema.items) {
-            return getResponseType(schema);
-        } else {
-            return getJsType(schema.type)
-        }
+        return getResponseType(schema);
     },
     getWarningMessage: () => '/* This code generated with swagger-typescript-generator. Don\'t modify this file because it will be rewriten. */\n',
     getEnumName: (context: SwaggerEnumModel, name: string) => getEnumName(name),
+    getEnumFileName: (context: SwaggerEnumModel, name: string) => getFileName(name),
 }

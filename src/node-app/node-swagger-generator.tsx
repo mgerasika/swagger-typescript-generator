@@ -2,15 +2,15 @@ import {INodeSwaggerConfig} from './node-swagger-config';
 import * as fs from 'fs';
 import * as React from 'react';
 import {renderToString} from 'react-dom/server';
-import {SwaggerClassModel, SwaggerDefinitionModel, SwaggerDocModel} from "../react-app/src/swagger/model";
-import {AllModelsExportComponent, ModelDefinitionComponent} from "../react-app/src/swagger/components/definitions";
 import {
+    AllModelsExportComponent,
     ApiAllClassesExportComponent,
     ApiClassDefinitionComponent,
-    ApiUrlsComponent,
-    html2text
-} from "../react-app/src/swagger";
-
+    ApiUrlsComponent, html2text,
+    AllEnumsExportComponent,
+    EnumDefinitionComponent,
+    ModelDefinitionComponent, SwaggerClassModel, SwaggerEnumModel, SwaggerDefinitionModel, SwaggerDocModel,
+} from "../react-app/src/main";
 
 export class NodeSwaggerGenerator {
     private _config: INodeSwaggerConfig;
@@ -29,6 +29,9 @@ export class NodeSwaggerGenerator {
         if(this._config.urlFileOutDir) {
             this.createDirectory(this._config.urlFileOutDir);
         }
+        if(this._config.enumFilesOutDir) {
+            this.createDirectory(this._config.enumFilesOutDir);
+        }
         const swaggerDoc: SwaggerDocModel = new SwaggerDocModel(this._config.swaggerConfig);
         swaggerDoc.definitions.forEach((swaggerDefinition: SwaggerDefinitionModel) => {
             const filePath = `${this._config.modelFilesOutDir}/${swaggerDefinition.fileName}`;
@@ -44,6 +47,13 @@ export class NodeSwaggerGenerator {
             this.writeToFile(filePath, text);
         });
 
+        swaggerDoc.enums.forEach((swaggerEnum: SwaggerEnumModel) => {
+            const filePath = `${this._config.enumFilesOutDir}/${swaggerEnum.fileName}`;
+            const html = renderToString(<EnumDefinitionComponent swaggerEnum={swaggerEnum}/>);
+            const text = html2text(html);
+            this.writeToFile(filePath, text);
+        });
+
         {
             const html = renderToString(<ApiAllClassesExportComponent classes={swaggerDoc.classes}/>);
             const text = html2text(html);
@@ -55,6 +65,13 @@ export class NodeSwaggerGenerator {
             const html = renderToString(<AllModelsExportComponent definitions={swaggerDoc.definitions}/>);
             const text = html2text(html);
             const filePath = `${this._config.modelFilesOutDir}/index.ts`;
+            this.writeToFile(filePath, text);
+        }
+
+        {
+            const html = renderToString(<AllEnumsExportComponent enums={swaggerDoc.enums}/>);
+            const text = html2text(html);
+            const filePath = `${this._config.enumFilesOutDir}/index.ts`;
             this.writeToFile(filePath, text);
         }
 

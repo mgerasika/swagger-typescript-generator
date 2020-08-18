@@ -12,7 +12,7 @@ interface IProps {
     enums: SwaggerEnumModel[];
 }
 
-export const ApiAllEnumsComponent: React.FC<IProps> = (props) => {
+export const DemoApiAllEnumsComponent: React.FC<IProps> = (props) => {
     const renderCodegen = (swaggerEnum: SwaggerEnumModel) => {
         return (<EnumDefinitionComponent swaggerEnum={swaggerEnum}></EnumDefinitionComponent>)
     };

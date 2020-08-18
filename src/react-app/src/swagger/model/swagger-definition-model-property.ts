@@ -1,7 +1,7 @@
 import {SwaggerModelBase} from "./swagger-model-base";
 import {SwaggerDefinitionModel} from "./swagger-definition-model";
 import {SwaggerEnumModel} from "./swagger-enum";
-import {getIsEnumForDefinition, getResponseIsArray} from "../common";
+import {getIsEnumForDefinition, getIsJsType, getResponseIsArray} from "../common";
 
 export class SwaggerDefinitionProperty  extends SwaggerModelBase<SwaggerDefinitionModel> {
     public name: string = '';
@@ -9,6 +9,7 @@ export class SwaggerDefinitionProperty  extends SwaggerModelBase<SwaggerDefiniti
     public isArray?: boolean;
     public isEnum?: boolean ;
     public required?: boolean;
+    public isJsType:boolean;
     public enumValues?:[];
 
     public get enumModelRef():SwaggerEnumModel {
@@ -16,6 +17,13 @@ export class SwaggerDefinitionProperty  extends SwaggerModelBase<SwaggerDefiniti
     }
     public set enumModelRef(val:SwaggerEnumModel) {
         this.setPrivateValue('enumModelRef',val) ;
+    }
+
+    public get subModelRef():SwaggerDefinitionModel {
+        return this.getPrivateValue('subModelRef') as SwaggerDefinitionModel;
+    }
+    public set subModelRef(val:SwaggerDefinitionModel) {
+        this.setPrivateValue('subModelRef',val) ;
     }
 
     public init(){
@@ -29,6 +37,16 @@ export class SwaggerDefinitionProperty  extends SwaggerModelBase<SwaggerDefiniti
                 console.error('Enum not found',this);
             }
         }
+        if(!this.isEnum && !this.isJsType) {
+            const modelRef = this.doc.definitions.find(f => f.name === this.type);
+            if (modelRef) {
+                this.subModelRef = modelRef;
+                this.type = modelRef.name;
+            }
+            else {
+                console.error('Model not found into swagger-def-model',this);
+            }
+        }
     }
 
     public constructor(parent:SwaggerDefinitionModel,name: string, source: any) {
@@ -40,6 +58,7 @@ export class SwaggerDefinitionProperty  extends SwaggerModelBase<SwaggerDefiniti
         this.name = name;
         this.isEnum = getIsEnumForDefinition(source) ? true : undefined;
         this.type = this.utils.getModelPropertyType(this,source);
+        this.isJsType = getIsJsType(this.type);
         this.isArray = getResponseIsArray(source) ? true : undefined;
         this.enumValues = source.enum ? source.enum : undefined;
     }

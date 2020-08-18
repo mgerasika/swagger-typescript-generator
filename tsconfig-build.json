@@ -21,7 +21,8 @@
     "skipLibCheck": true
   },
   "include": [
-    "src/**/*"
+    "src/**/*",
+    "src/react-app/src/**/*"
   ],
   "exclude": [
     "node_modules",

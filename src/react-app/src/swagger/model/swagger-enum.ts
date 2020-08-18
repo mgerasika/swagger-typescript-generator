@@ -10,6 +10,7 @@ export class SwaggerEnumModel extends SwaggerModelBase<SwaggerDocModel>{
     public type?:string;
     public values?:string[];
     public namespace?:string[];
+    public fileName: string;
 
     public constructor(parent: SwaggerDocModel, key: string, model:{modelDef?: SwaggerDefinitionModel,methodPropertyDef?:SwaggerMethodParameter}, source: any) {
         super();
@@ -19,6 +20,7 @@ export class SwaggerEnumModel extends SwaggerModelBase<SwaggerDocModel>{
 
         this.keys.push(key);
         this.name =  this.utils.getEnumName(this,key);
+        this.fileName = this.utils.getEnumFileName(this,key);
         this.values = source.enum;
         if(!this.values && model.methodPropertyDef) {
             this.values = model.methodPropertyDef.enumValues ? model.methodPropertyDef.enumValues : [];

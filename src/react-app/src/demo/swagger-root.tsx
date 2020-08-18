@@ -1,6 +1,6 @@
 import React, {useEffect, useMemo, useState} from 'react';
-import {ApiAllModelDefinitionsComponent} from './api-all-models-definitions';
-import {ApiAllClassesComponent} from './api-all-classes';
+import {DemoApiAllModelDefinitionsComponent} from './api-all-models-definitions';
+import {DemoApiAllClassesComponent} from './api-all-classes';
 import {SwaggerDocModel} from '../swagger/model/swagger-doc-model';
 import {ISwaggerPlugin} from '../swagger/common/default-plugin';
 import {ISwaggerUtils} from "../swagger/common/swagger-utils";
@@ -9,12 +9,13 @@ import {DiffComponent} from "./diff";
 import {ApiAllClassesExportComponent} from "../swagger/components/api-class";
 import {ApiUrlsComponent} from "../swagger/components/urls";
 import {AllModelsExportComponent} from "../swagger/components/definitions";
-import {ApiAllEnumsComponent} from "./api-all-enums";
-import {ApiAllPathComponent} from "./api-all-path";
+import {DemoApiAllEnumsComponent} from "./api-all-enums";
+import {DemoApiAllPathComponent} from "./api-all-path";
 import {ISwaggerDocModelConfig} from "../swagger/model";
 import {SwaggerPanelComponent} from "../components/swagger-panel";
 import {Select} from "../components/select";
 import {dictionary} from "../components/dictionary";
+import {AllEnumsExportComponent} from "../swagger/components/enum-definition";
 
 const axios = require('axios');
 
@@ -156,6 +157,7 @@ export const SwaggerRootComponent: React.FC<IProps> = (props) => {
     const renderAllClassesExport = state.root ? <ApiAllClassesExportComponent classes={state.root.classes}/> : null;
     const renderAllUrlsExport = state.root ? <ApiUrlsComponent classes={state.root.classes}/> : null;
     const renderAllModelsExport = state.root ? <AllModelsExportComponent definitions={state.root.definitions}/> : null;
+    const renderAllEnumsExport = state.root ? <AllEnumsExportComponent enums={state.root.enums}/> : null;
     const renderSwagger = () => {
         return state.root && state.root.definitions ? (
             <>
@@ -177,7 +179,7 @@ export const SwaggerRootComponent: React.FC<IProps> = (props) => {
                     renderContent={() =>
                         <>
                             {renderHeaderTitles()}
-                            <ApiAllClassesComponent classes={selectedApiObjects}/>
+                            <DemoApiAllClassesComponent classes={selectedApiObjects}/>
                         </>}
                 />
 
@@ -201,7 +203,7 @@ export const SwaggerRootComponent: React.FC<IProps> = (props) => {
                     renderContent={() =>
                         <>
                             {renderHeaderTitles()}
-                            <ApiAllModelDefinitionsComponent
+                            <DemoApiAllModelDefinitionsComponent
                                 definitions={selectedDefinitionObjects}/>
                         </>}
                 />
@@ -224,7 +226,7 @@ export const SwaggerRootComponent: React.FC<IProps> = (props) => {
                     renderContent={() =>
                         <>
                             {renderHeaderTitles()}
-                            <ApiAllEnumsComponent
+                            <DemoApiAllEnumsComponent
                                 enums={selectedEnumObjects}/>
                         </>}
                 />
@@ -246,7 +248,7 @@ export const SwaggerRootComponent: React.FC<IProps> = (props) => {
 
                     renderContent={() =>
                         <>
-                            {renderHeaderTitles()}<ApiAllPathComponent
+                            {renderHeaderTitles()}<DemoApiAllPathComponent
                             paths={selectedPathsObjects}/>
                         </>}
                 />
@@ -258,8 +260,13 @@ export const SwaggerRootComponent: React.FC<IProps> = (props) => {
                     activeTitle={state.selectedPanelTitle} onClick={handleSelectedPanelTitleChange}/>
 
                 <SwaggerPanelComponent
-                    title="All definitions exports"
+                    title="All models exports"
                     renderContent={() => <DiffComponent obj3={renderAllModelsExport}/>}
+                    activeTitle={state.selectedPanelTitle} onClick={handleSelectedPanelTitleChange}/>
+
+                <SwaggerPanelComponent
+                    title="All enums exports"
+                    renderContent={() => <DiffComponent obj3={renderAllEnumsExport}/>}
                     activeTitle={state.selectedPanelTitle} onClick={handleSelectedPanelTitleChange}/>
 
                 <SwaggerPanelComponent
