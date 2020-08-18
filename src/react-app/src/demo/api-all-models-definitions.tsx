@@ -19,7 +19,6 @@ export const ApiAllModelDefinitionsComponent: React.FC<IProps> = (props) => {
 
     return props.definitions.length ? (
         <>
-            <h5 className={'pl-3'}>Definitions:</h5>
             {result}
         </>
     ) : null;

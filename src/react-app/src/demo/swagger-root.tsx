@@ -12,8 +12,9 @@ import {AllModelsExportComponent} from "../swagger/components/definitions";
 import {ApiAllEnumsComponent} from "./api-all-enums";
 import {ApiAllPathComponent} from "./api-all-path";
 import {ISwaggerDocModelConfig} from "../swagger/model";
-import {hydrate} from "react-dom";
-import {SwaggerPanelComponent} from "./swagger-panel";
+import {SwaggerPanelComponent} from "../components/swagger-panel";
+import {Select} from "../components/select";
+import {dictionary} from "../components/dictionary";
 
 const axios = require('axios');
 
@@ -22,12 +23,6 @@ interface IProps {
     createCustomUtilsFactory: (baseUtils: ISwaggerUtils) => ISwaggerUtils;
 }
 
-const compareFn = (a: string, b: string) => (a < b ? -1 : a > b ? 1 : 0)
-
-interface ISelectItem {
-    name: string;
-    value: string;
-}
 
 interface IState {
     url: string;
@@ -52,7 +47,7 @@ export const SwaggerRootComponent: React.FC<IProps> = (props) => {
         selectedPath: window.localStorage.getItem('selectedPath') || '',
         selectedDefinition: window.localStorage.getItem('selectedDefinition') || '',
         selectedEnum: window.localStorage.getItem('selectedEnum') || '',
-        selectedPanelTitle: window.localStorage.getItem('selectedPanelTitle') || '',
+        selectedPanelTitle: window.localStorage.getItem('selectedPanelTitle') || 'Api',
     });
 
     const loadSwagger = () => {
@@ -73,9 +68,7 @@ export const SwaggerRootComponent: React.FC<IProps> = (props) => {
                 });
             })
     };
-    const onExploreClick = () => {
-        loadSwagger();
-    };
+
 
     useEffect(() => {
         if (!state.root) {
@@ -115,200 +108,178 @@ export const SwaggerRootComponent: React.FC<IProps> = (props) => {
         return state.root ? state.root.paths.filter(c => c.name === state.selectedPath) : [];
     }, [state.root, state.selectedPath])
 
-    const renderAllClassesExport = state.root ? <ApiAllClassesExportComponent classes={state.root.classes}/> : null;
-    const renderAllUrlsExport = state.root ? <ApiUrlsComponent classes={state.root.classes}/> : null;
-    const renderAllModelsExport = state.root ? <AllModelsExportComponent definitions={state.root.definitions}/> : null;
-
     const renderHeaderTitles = () => {
         return <div className={'d-flex w-100'}>
             <div className={'col-4'}>
-                <label>Swagger</label>
+                <div className="form-control-sm pl-0">Swagger</div>
             </div>
             <div className={'col-4'}>
-                <label>Transformed</label>
+                <div className="form-control-sm pl-0">Transformed</div>
             </div>
 
             <div className={'col-4'}>
-                <label>Typescript</label>
+                <div className="form-control-sm pl-0">Typescript</div>
             </div>
         </div>
     }
-    const handleSelectdPanelTitleChange = (t: string) => {
+    const handleSelectedPanelTitleChange = (t: string) => {
+        window.localStorage.setItem('selectedPanelTitle', t);
         setState({
             ...state,
             selectedPanelTitle: t
         })
     }
     const renderHeader = () => {
-        const h6Style = {marginBottom: 0, lineHeight: '28px', width: '200px'};
-        const selectStyle = {width: '200px'};
         return <>
-            <div className="form-row align-items-center">
-                <div className="col-auto my-1 w-100">
-                    <label className="mr-sm-2" htmlFor="inlineFormCustomSelect1">Url:</label>
-                    <select className="form-control" id="inlineFormCustomSelect1" value={state.url} onChange={(ev) => {
-                        window.localStorage.setItem('url', ev.target.value);
-                        setState({
-                            ...state,
-                            url: ev.target.value
-                        })
-                    }}>
-                        {renderUrlOptions()}
-                    </select>
+            <div className="w-75 mb-2">
+                <div className="row justify-content-between">
+                    <div className="col-sm-12 col-md-6 col-lg-4">
+                        <pre style={{textAlign:'left',lineHeight:'28px'}} className="m-0 p-0">
+                            <a href="https://github.com/mgerasika/swagger-typescript-generator">swagger-typescript-generator</a>
+                        </pre>
+                    </div>
+                    <div className="col-sm-12 col-md-6 col-lg-8">
+                        <Select value={state.url} onChange={(ev) => {
+                            window.localStorage.setItem('url', ev.target.value);
+                            setState({
+                                ...state,
+                                root:undefined,
+                                url: ev.target.value
+                            })
+                        }} options={dictionary.getUrlOptions(apiUrls)}/>
+                    </div>
                 </div>
             </div>
         </>
     }
 
+    const renderAllClassesExport = state.root ? <ApiAllClassesExportComponent classes={state.root.classes}/> : null;
+    const renderAllUrlsExport = state.root ? <ApiUrlsComponent classes={state.root.classes}/> : null;
+    const renderAllModelsExport = state.root ? <AllModelsExportComponent definitions={state.root.definitions}/> : null;
     const renderSwagger = () => {
         return state.root && state.root.definitions ? (
             <>
-                <SwaggerPanelComponent title="Path"
-                                       renderSettings={() =>
-                                           <div className="col-auto my-1 w-25">
-                                               <label className="mr-sm-2"
-                                                      htmlFor="inlineFormCustomSelect1">Path:</label>
-                                               <select className="form-control" id="inlineFormCustomSelect1"
-                                                       value={state.selectedPath}
-                                                       onChange={(ev) => {
-                                                           window.localStorage.setItem('selectedPath', ev.target.value);
-                                                           setState({
-                                                               ...state,
-                                                               selectedPath: ev.target.value
-                                                           })
-                                                       }}>
-                                                   <option value='ALL'>ALL</option>
-                                                   <option value=''></option>
-                                                   {renderPathOptions()}
-                                               </select>
-                                           </div>}
-
-                                       renderContent={() => <>{renderHeaderTitles()}<ApiAllPathComponent
-                                           paths={selectedPathsObjects}/></>} activeTitle={state.selectedPanelTitle}
-                                       onClick={handleSelectdPanelTitleChange}/>
+                <SwaggerPanelComponent
+                    title="Api"
+                    activeTitle={state.selectedPanelTitle}
+                    onClick={handleSelectedPanelTitleChange}
+                    renderSettings={() =>
+                        <div className="col-auto w-25">
+                            <Select label="Api class" value={state.selectedApi} onChange={(ev) => {
+                                window.localStorage.setItem('selectedApi', ev.target.value);
+                                setState({
+                                    ...state,
+                                    selectedApi: ev.target.value
+                                })
+                            }} options={dictionary.getClassesOptions(state.root)}/>
+                        </div>
+                    }
+                    renderContent={() =>
+                        <>
+                            {renderHeaderTitles()}
+                            <ApiAllClassesComponent classes={selectedApiObjects}/>
+                        </>}
+                />
 
                 <SwaggerPanelComponent
-                    renderSettings={() => <div className="col-auto my-1 w-25">
-                        <label className="mr-sm-2" htmlFor="inlineFormCustomSelect1">Api class:</label>
-                        <select className="form-control" id="inlineFormCustomSelect1" value={state.selectedApi}
-                                onChange={(ev) => {
-                                    window.localStorage.setItem('selectedApi', ev.target.value);
-                                    setState({
-                                        ...state,
-                                        selectedApi: ev.target.value
-                                    })
-                                }}>
-                            <option value='ALL'>ALL</option>
-                            <option value=''></option>
-                            {renderApiMethodOptions()}
-                        </select>
-                    </div>}
-                    title="Api" renderContent={() => <>{renderHeaderTitles()}
-                    <ApiAllClassesComponent classes={selectedApiObjects}/></>} activeTitle={state.selectedPanelTitle}
-                    onClick={handleSelectdPanelTitleChange}/>
+                    title="Model"
+                    activeTitle={state.selectedPanelTitle}
+                    onClick={handleSelectedPanelTitleChange}
+                    renderSettings={() =>
+                        <div className="col-auto w-25">
+                            <Select label="Definition" value={state.selectedDefinition}
+                                    onChange={(ev) => {
+                                        window.localStorage.setItem('selectedDefinition', ev.target.value);
+                                        setState({
+                                            ...state,
+                                            selectedDefinition: ev.target.value
+                                        })
+                                    }} options={dictionary.getApiDefinitionsOptions(state.root)}/>
 
-                <SwaggerPanelComponent title="Model"
-                                       renderSettings={() => <div className="col-auto my-1 w-25">
-                                           <label className="mr-sm-2"
-                                                  htmlFor="inlineFormCustomSelect1">Definition:</label>
-                                           <select className="form-control" id="inlineFormCustomSelect1"
-                                                   value={state.selectedDefinition}
-                                                   onChange={(ev) => {
-                                                       window.localStorage.setItem('selectedDefinition', ev.target.value);
-                                                       setState({
-                                                           ...state,
-                                                           selectedDefinition: ev.target.value
-                                                       })
-                                                   }}>
-                                               <option value='ALL'>ALL</option>
-                                               <option value=''></option>
-                                               {renderApiDefinitionsOptions()}
-                                           </select>
-                                       </div>
-                                       }
-                                       renderContent={() => <>{renderHeaderTitles()}<ApiAllModelDefinitionsComponent
-                                           definitions={selectedDefinitionObjects}/></>}
-                                       activeTitle={state.selectedPanelTitle} onClick={handleSelectdPanelTitleChange}/>
+                        </div>
+                    }
+                    renderContent={() =>
+                        <>
+                            {renderHeaderTitles()}
+                            <ApiAllModelDefinitionsComponent
+                                definitions={selectedDefinitionObjects}/>
+                        </>}
+                />
 
                 <SwaggerPanelComponent
-                    renderSettings={() => <div className="col-auto my-1 w-25">
-                        <label className="mr-sm-2" htmlFor="inlineFormCustomSelect1">Enum:</label>
-                        <select className="form-control" id="inlineFormCustomSelect1" value={state.selectedEnum}
-                                onChange={(ev) => {
-                                    window.localStorage.setItem('selectedEnum', ev.target.value);
-                                    setState({
-                                        ...state,
-                                        selectedEnum: ev.target.value
-                                    })
-                                }}>
-                            <option value='ALL'>ALL</option>
-                            <option value=''></option>
-                            {renderEnumOptions()}
-                        </select>
-                    </div>}
-                    title="Enums" renderContent={() => <>{renderHeaderTitles()}<ApiAllEnumsComponent
-                    enums={selectedEnumObjects}/></>} activeTitle={state.selectedPanelTitle}
-                    onClick={handleSelectdPanelTitleChange}/>
+                    title="Enums"
+                    activeTitle={state.selectedPanelTitle}
+                    onClick={handleSelectedPanelTitleChange}
+                    renderSettings={() =>
+                        <div className="col-auto w-25">
+                            <Select label="Enum" value={state.selectedEnum} onChange={(ev) => {
+                                window.localStorage.setItem('selectedEnum', ev.target.value);
+                                setState({
+                                    ...state,
+                                    selectedEnum: ev.target.value
+                                })
+                            }} options={dictionary.getEnumOptions(state.root)}/>
+
+                        </div>}
+                    renderContent={() =>
+                        <>
+                            {renderHeaderTitles()}
+                            <ApiAllEnumsComponent
+                                enums={selectedEnumObjects}/>
+                        </>}
+                />
+
+                <SwaggerPanelComponent
+                    title="Path"
+                    activeTitle={state.selectedPanelTitle}
+                    onClick={handleSelectedPanelTitleChange}
+                    renderSettings={() =>
+                        <div className="col-auto w-25">
+                            <Select label="Path" value={state.selectedPath} onChange={(ev) => {
+                                window.localStorage.setItem('selectedPath', ev.target.value);
+                                setState({
+                                    ...state,
+                                    selectedPath: ev.target.value
+                                })
+                            }} options={dictionary.getPathOptions(state.root)}/>
+                        </div>}
+
+                    renderContent={() =>
+                        <>
+                            {renderHeaderTitles()}<ApiAllPathComponent
+                            paths={selectedPathsObjects}/>
+                        </>}
+                />
 
 
-                <SwaggerPanelComponent title="All APIs exports" renderContent={() => <DiffComponent key={'index.ts'}
-                                                                                                    obj3={renderAllClassesExport}/>}
-                                       activeTitle={state.selectedPanelTitle} onClick={handleSelectdPanelTitleChange}/>
+                <SwaggerPanelComponent
+                    title="All APIs exports"
+                    renderContent={() => <DiffComponent key={'index.ts'} obj3={renderAllClassesExport}/>}
+                    activeTitle={state.selectedPanelTitle} onClick={handleSelectedPanelTitleChange}/>
 
-                <SwaggerPanelComponent title="All definitions exports"
-                                       renderContent={() => <DiffComponent obj3={renderAllModelsExport}/>}
-                                       activeTitle={state.selectedPanelTitle} onClick={handleSelectdPanelTitleChange}/>
+                <SwaggerPanelComponent
+                    title="All definitions exports"
+                    renderContent={() => <DiffComponent obj3={renderAllModelsExport}/>}
+                    activeTitle={state.selectedPanelTitle} onClick={handleSelectedPanelTitleChange}/>
 
-                <SwaggerPanelComponent title="Urls" renderContent={() => <DiffComponent obj3={renderAllUrlsExport}/>}
-                                       activeTitle={state.selectedPanelTitle} onClick={handleSelectdPanelTitleChange}/>
+                <SwaggerPanelComponent
+                    title="Urls"
+                    renderContent={() => <DiffComponent obj3={renderAllUrlsExport}/>}
+                    activeTitle={state.selectedPanelTitle} onClick={handleSelectedPanelTitleChange}/>
             </>
         ) : null;
     };
 
-    const renderApiMethodOptions = () => {
-        if (!state.root) {
-            return null;
-        }
-        const items = state.root.classes.sort((a, b) => compareFn(a.name, b.name)).map(item => <option key={item.name}
-                                                                                                       value={item.name}>{item.name}</option>)
-        return <>{items}</>
+    const renderLoader = () =>{
+        return <div className="spinner-border text-secondary position-absolute" role="status" style={{left:'50%',top:'50%'}}>
+            <span className="sr-only">Loading...</span>
+        </div>
     }
-
-    const renderUrlOptions = () => {
-        const items = apiUrls.map(item => <option key={item} value={item}>{item}</option>)
-        return <>{items}</>
-    }
-
-    const renderApiDefinitionsOptions = () => {
-        if (!state.root) {
-            return null;
-        }
-        const items = state.root.definitions.sort((a, b) => compareFn(a.name, b.name)).map(item =>
-            <option key={item.name} value={item.name}>{item.name}</option>)
-        return <>{items}</>
-    }
-
-    const renderEnumOptions = () => {
-        if (!state.root) {
-            return null;
-        }
-        const items = state.root.enums.sort((a, b) => compareFn(a.name, b.name)).map((item, idx) =>
-            <option key={`${item.name}_${idx}`} value={item.name}>{item.name}</option>)
-        return <>{items}</>
-    }
-
-    const renderPathOptions = () => {
-        if (!state.root) {
-            return null;
-        }
-        const items = state.root.paths.sort((a, b) => compareFn(a.name, b.name)).map((item, idx) =>
-            <option key={`${item.name}_${idx}`} value={item.name}>{item.name}</option>)
-        return <>{items}</>
-    }
-
 
     return (
         <div className={'p-2'}>
+            {!state.root && renderLoader()}
+
             {renderHeader()}
 
             {renderSwagger()}

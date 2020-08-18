@@ -22,7 +22,6 @@ export const ApiAllEnumsComponent: React.FC<IProps> = (props) => {
 
     return props.enums.length ? (
         <>
-            <h5 className={'pl-3'}>Enums:</h5>
             {result}
         </>
     ) : null;

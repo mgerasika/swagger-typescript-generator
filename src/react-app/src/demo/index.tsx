@@ -10,6 +10,7 @@ export * from './api-all-enums';
 export * from './api-all-models-definitions';
 export * from '../demo/diff';
 export * from './swagger-root';
+export * from '../components/swagger-panel';
 export * from './custom-utils';
 
 export const SwaggerDemoComponent: React.FC = () => {
