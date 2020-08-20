@@ -2,6 +2,7 @@ import {INodeSwaggerConfig} from './node-swagger-config';
 import * as fs from 'fs';
 import * as React from 'react';
 import {renderToString} from 'react-dom/server';
+const Path = require('path');
 import {
     defaultComponents,
     defaultUtils,
@@ -28,21 +29,28 @@ export class NodeSwaggerGenerator {
 
     generate() {
         if(this._config.apiFilesOutDir) {
+            this.deleteFolderRecursive(this._config.apiFilesOutDir);
             this.createDirectory(this._config.apiFilesOutDir);
         }
         if(this._config.modelFilesOutDir) {
+            this.deleteFolderRecursive(this._config.modelFilesOutDir);
             this.createDirectory(this._config.modelFilesOutDir);
         }
         if(this._config.urlFileOutDir) {
+            this.deleteFolderRecursive(this._config.urlFileOutDir);
             this.createDirectory(this._config.urlFileOutDir);
         }
         if(this._config.enumFilesOutDir) {
+            this.deleteFolderRecursive(this._config.enumFilesOutDir);
             this.createDirectory(this._config.enumFilesOutDir);
         }
         const utils = this._config.createUtilsFactory ? this._config.createUtilsFactory(defaultUtils) : defaultUtils;
         const components = this._config.createComponentsFactory ? this._config.createComponentsFactory(defaultComponents) : defaultComponents;
-        const doc =  new SwaggerDoc(this._config.swaggerDocConfig, utils,components);
-        const swaggerDoc: SwaggerDoc = this._config.createDocumentFactory ? this._config.createDocumentFactory(doc) : doc;
+        let swaggerDoc = new SwaggerDoc(this._config.swaggerDocConfig, utils,components);
+        if(this._config.createDocumentFactory) {
+            swaggerDoc = this._config.createDocumentFactory(swaggerDoc);
+            swaggerDoc.init();
+        }
         swaggerDoc.definitions.forEach((swaggerDefinition: SwaggerModel) => {
             const filePath = `${this._config.modelFilesOutDir}/${swaggerDefinition.fileName}`;
             const html = renderToString(<SwaggerModelAdapter swaggerModel={swaggerDefinition}/>);
@@ -93,6 +101,20 @@ export class NodeSwaggerGenerator {
         }
     }
 
+    public deleteFolderRecursive (urlToDir:string) {
+        if (fs.existsSync(urlToDir)) {
+            fs.readdirSync(urlToDir).forEach((file, index) => {
+                const curPath = Path.join(urlToDir, file);
+                if (fs.lstatSync(curPath).isDirectory()) { // recurse
+                    this.deleteFolderRecursive(curPath);
+                } else { // delete file
+                    fs.unlinkSync(curPath);
+                }
+            });
+            fs.rmdirSync(urlToDir);
+        }
+    };
+
     private createDirectory(dir: string) {
         const modelDirs = dir.split('/');
         const [first, ...rest] = modelDirs;
@@ -108,13 +130,17 @@ export class NodeSwaggerGenerator {
     }
 
     private writeToFile(fullPath: string, content: string) {
-        fs.writeFile(fullPath, content, (err: any) => {
-            if(err) {
-                console.error('error write to file ' + err);
-            }
-            else {
-                console.log(`write to file success: ${fullPath}`);
-            }
+        fs.writeFileSync(fullPath,content,{
+            encoding: 'utf8'
         });
+        // bug!!! added strange lines of code
+        // fs.writeFile(fullPath, content, (err: any) => {
+        //     if(err) {
+        //         console.error(`write to file error: ${fullPath}`,content);
+        //     }
+        //     else {
+        //         console.log(`write to file success: ${fullPath}`, content);
+        //     }
+        // });
     }
 }

@@ -49,7 +49,7 @@ export const ExampleComponent: React.FC = () => {
         <div>
             <SwaggerDemoComponent
                 apiUrls={apiUrls}
-                createComponentsFactory={customComponentsFactory}
+                //createComponentsFactory={customComponentsFactory}
                 createUtilsFactory={(baseUtils) => baseUtils}
                 createDocumentFactory={(baseDocument) => baseDocument}/>
         </div>

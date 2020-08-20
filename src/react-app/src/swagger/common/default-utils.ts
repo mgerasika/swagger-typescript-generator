@@ -5,11 +5,17 @@ import {SwaggerEnum} from "../models/swagger-enum";
 import {SwaggerPath} from "../models/swagger-path";
 
 const getModelName = (name: string) => {
-    return `${name}`.replace(/[\[\]\.]/g, '');
+    const newName = `${name}`.replace(/[\[\]\.]/g, '');
+    return capitalize(newName);
+};
+
+const getMethodName = (name: string) => {
+    return `${name}`.replace(/[\[\]\. ]/g, ' ').split(' ').map((x,idx)=> idx==0 ? lowerlize(x) : capitalize(x)).join('');
 };
 
 const getEnumName = (name: string) => {
-    return `${name}Enum`;
+    const newName =  `${name}`.replace(/[\[\]\.]/g, '');
+    return  capitalize(`${newName}Enum`);
 };
 
 export const uniqueItems = <T>(items: T[], keyFn: (el: T) => any): T[] => {
@@ -27,12 +33,13 @@ const jsTypes = ['number', 'integer', 'boolean', 'string', 'array', 'file'];
 export const getIsJsType = (name: string) => {
     return jsTypes.includes(name.toLowerCase());
 }
-const getJsType = (type: string) => {
+const getJsType = (type: string,schema:any) => {
     if (type === 'integer') {
         return 'number';
     }
     if (type === 'array') {
-        return 'Array';
+        const itemType:string = schema && schema['items'] ? getJsType(schema['items'].type as string, schema['items']) : 'any';
+        return `Array<${itemType}>`;
     }
     if (type === 'file') {
         return 'File';
@@ -47,31 +54,31 @@ const getJsType = (type: string) => {
 const getResponseType = (schema: any) => {
     let res: string = '';
     if (schema.$ref) {
-        return getJsType(schema.$ref)
+        return getJsType(schema.$ref,schema)
     }
     if (schema['schema']) {
-        const res = getJsType(schema['schema'].$ref);
+        const res = getJsType(schema['schema'].$ref,schema['schema']);
         if (res) {
             return res;
         }
-        return getJsType(schema['schema'].type);
+        return getJsType(schema['schema'].type,schema['schema']);
     }
     const responseType = schema.items ? schema.items['$ref'] : schema['$ref'];
     if (responseType) {
-        res = getJsType(responseType);
+        res = getJsType(responseType,schema);
     }
     if (!responseType) {
         const additionalProperties = schema.additionalProperties;
         if (additionalProperties && additionalProperties['type']) {
             if (additionalProperties['items']) {
-                res = getJsType(additionalProperties['items'].$ref)
+                res = getJsType(additionalProperties['items'].$ref,additionalProperties['items'])
             } else {
-                res = getJsType(additionalProperties['type']);
+                res = getJsType(additionalProperties['type'],additionalProperties);
             }
         }
     }
     if (!res) {
-        res = getJsType(schema.type);
+        res = getJsType(schema.type,schema);
     }
     return res;
 };
@@ -85,11 +92,11 @@ export const getIsEnum = (schema: any): boolean => {
 };
 
 export const getIsEnumForDefinition = (schema: any): boolean => {
-    return schema && schema.enum && schema.enum.length ? true : false;
+    return schema && schema.items && schema.items.enum && schema.items.enum.length > 0 || schema && schema.enum ? true : false;
 };
 
 const getFileName = (name: string) => {
-    name = name.replace(/[\[\]]/g, '');
+    name = name.replace(/[\[\]\.]/g, '');
     let words = name.split(/(?=[A-Z])/).map((i: string) => i.toLowerCase());
     words = words.filter((f: string) => !['api', 'i'].includes(f));
     return `${words.join('-')}.ts`;
@@ -104,7 +111,7 @@ export const defaultUtils: ISwaggerUtils = {
         return parts.filter(f => f != 'api').map(s => capitalize(s)).join('') + 'Api';
     },
     getClassFileName: (context: SwaggerClass, name: string) => getFileName(name),
-    getMethodName: (context: SwaggerMethod, name: string) => lowerlize(name),
+    getMethodName: (context: SwaggerMethod, name: string) => getMethodName(name),
     getMethodParameterName: (context: SwaggerMethodParameter, name: string) => name,
     getMethodResponseType: (context: SwaggerMethod, schema: any) => getResponseType(schema),
     getMethodParameterType: (context: SwaggerMethodParameter, schema: any) => {

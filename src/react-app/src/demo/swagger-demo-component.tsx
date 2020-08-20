@@ -58,10 +58,14 @@ export const SwaggerDemoComponent: React.FC<IProps> = (props) => {
                     showPrivateFieldsForDebug: false,
                 };
                 const plugin = props.createComponentsFactory ? props.createComponentsFactory(defaultComponents) : defaultComponents;
-                const doc = new SwaggerDoc(config, utils, plugin);
+                let doc = new SwaggerDoc(config, utils, plugin);
+                if(props.createDocumentFactory) {
+                    doc = props.createDocumentFactory(doc);
+                    doc.init();
+                }
                 setState({
                     ...state,
-                    root: props.createDocumentFactory ? props.createDocumentFactory(doc) : doc
+                    root: doc
                 });
             })
     };

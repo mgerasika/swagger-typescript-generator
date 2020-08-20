@@ -2,9 +2,11 @@
 export interface IRequestService {
     get<T>(url: string): Promise<T>;
 
-    post<T,T2>(url: string, body: T): Promise<T2>;
+    head<T>(url: string): Promise<T>;
 
-    put<T,T2>(url: string, body: T): Promise<T2>;
+    post<T,T2>(url: string, body?: T): Promise<T2>;
+
+    put<T,T2>(url: string, body?: T): Promise<T2>;
 
     delete<T,T2>(url: string, body?: T): Promise<T2>;
 
