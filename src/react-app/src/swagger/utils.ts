@@ -15,6 +15,4 @@ export const html2text = (html: string) => {
         .replace(/&#x27;/gm, '\'');
 };
 
-export const sourceSymbol = Symbol('source');
-export const parentSymbol = Symbol('parent');
 export const privateSymbol = Symbol('parent');

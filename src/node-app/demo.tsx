@@ -3,7 +3,6 @@ import axios from 'axios';
 import {INodeSwaggerConfig} from './node-swagger-config';
 import {NodeSwaggerGenerator} from './node-swagger-generator';
 import * as path from 'path';
-import {defaultComponents} from "../react-app/src/main";
 
 const url = 'https://petstore.swagger.io/v2/swagger.json';
 axios.get(url)

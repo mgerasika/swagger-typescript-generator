@@ -1,22 +1,43 @@
 import React from 'react';
-import {SwaggerClassModel, SwaggerMethodModel} from '../../model';
-import {IUrlInfo} from '../../model/url-info';
+import {SwaggerClass, SwaggerDoc, SwaggerMethod} from '../../models';
+import {IUrlInfo} from '../../models/url-info';
 
 interface IProps {
-    classes: SwaggerClassModel[];
+    doc:SwaggerDoc;
+    classes: SwaggerClass[];
 }
 
-export const ApiUrlsComponent: React.FC<IProps> = (props) => {
+export const SwaggerAllUrlsComponent = (props: IProps) => {
     const urls: IUrlInfo[] = [];
-    const warning = props.classes.length ? props.classes[0].utils.getWarningMessage() : "";
-    props.classes.forEach((def: SwaggerClassModel) => {
-        def.methods.forEach((method: SwaggerMethodModel) => {
+    props.classes.forEach((def: SwaggerClass) => {
+        def.methods.forEach((method: SwaggerMethod) => {
             urls.push(method.getUrlInfo());
         });
     });
 
-    const result = urls.map((def: IUrlInfo, index: number) => {
-        const isLast = index === urls.length - 1;
+    return (
+        <>
+            {props.doc.components.renderAllUrls(
+                Component, {
+                    urls: urls,
+                    doc: props.doc,
+                    classes: props.classes,
+                })}
+        </>
+    );
+}
+
+
+export interface ISwaggerAllUrlsProps extends IProps {
+    urls : IUrlInfo[];
+}
+
+const Component: React.FC<ISwaggerAllUrlsProps> = (props) => {
+    const warning = props.classes.length ? props.classes[0].utils.getWarningMessage() : "";
+
+
+    const result = props.urls.map((def: IUrlInfo, index: number) => {
+        const isLast = index === props.urls.length - 1;
         const renderComa = !isLast && ',';
         return (<span key={`${def.name}${index}`}>{'\t'}{def.name}:'{def.url}'{renderComa}{'\n'}</span>);
     });

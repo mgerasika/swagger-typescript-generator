@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useRef} from "react";
 
 export interface ISelectOption {
     label: string;
@@ -13,18 +13,25 @@ interface Props {
 }
 
 export const Select = (props: Props) => {
+    const ref = useRef<any>();
     const renderOptions = () => {
         const items = props.options.map(item => <option key={item.value} value={item.value}>{item.label}</option>)
         return <>{items}</>
     }
+
+    useEffect(() => {
+        ref.current.value = props.value;
+    }, [props.value]);
     return <>
         <div className="row">
             {props.label ?
                 <>
-                    <label htmlFor="staticEmail"
-                           className="col-lg-4 col-md-12 col-form-label form-control-sm">{props.label}</label>
+                    <label
+                        className="col-lg-4 col-md-12 col-form-label form-control-sm">{props.label}
+                    </label>
                     <div className="col-lg-8 col-md-12">
-                        <select className="form-control form-control-sm" id="inlineFormCustomSelect1"
+
+                        <select ref={ref} className="form-control form-control-sm"
                                 value={props.value} onChange={(ev) => {
                             props.onChange(ev as any);
                         }}>
@@ -32,8 +39,8 @@ export const Select = (props: Props) => {
                         </select>
                     </div>
                 </>
-                : <select className="form-control form-control-sm" id="inlineFormCustomSelect1"
-                              value={props.value} onChange={(ev) => {
+                : <select ref={ref} className="form-control form-control-sm"
+                          value={props.value} onChange={(ev) => {
                     props.onChange(ev as any);
                 }}>
                     {renderOptions()}

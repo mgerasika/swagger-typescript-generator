@@ -1,8 +1,8 @@
 class DependencyInjection {
-    private _data: Map<string, ()=>any> = new Map<string, ()=>any>();
+    private _data: Map<string, () => any> = new Map<string, () => any>();
     private _instances: Map<string, any> = new Map<string, any>();
 
-    public use<T>(name: string, construct: ()=> T) {
+    public use<T>(name: string, construct: () => T) {
         this._data.set(name, construct);
     }
 
@@ -10,7 +10,7 @@ class DependencyInjection {
         // lazy initialization
         if (!this._instances.get(name)) {
             const fn = this._data.get(name);
-            if(!fn) {
+            if (!fn) {
                 console.error('Missed di constructor for ' + name);
             }
             const instance: T = fn && fn();

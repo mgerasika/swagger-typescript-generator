@@ -1,28 +1,28 @@
 import React, {useEffect, useMemo, useState} from 'react';
-import {DemoApiAllModelDefinitionsComponent} from './demo-api-all-models-definitions';
-import {DemoApiAllClassesComponent} from './demo-api-all-classes';
-import {SwaggerDocModel} from '../swagger/model/swagger-doc-model';
+import {DemoAllModelsComponent} from './demo-all-models';
+import {DemoAllClassesComponent} from './demo-all-classes';
+import {SwaggerDoc} from '../swagger/models/swagger-doc';
 import {defaultComponents, ISwaggerComponents} from '../swagger/common/default-components';
 import {ISwaggerUtils} from "../swagger/common/swagger-utils";
-import {AllClassesExportComponent} from "../swagger/components/api-class";
-import {ApiUrlsComponent} from "../swagger/components/urls";
-import {AllModelsExportComponent} from "../swagger/components/definitions";
-import {DemoApiAllEnumsComponent} from "./demo-api-all-enums";
-import {DemoApiAllPathComponent} from "./demo-api-all-path";
-import {ISwaggerDocModelConfig} from "../swagger/model";
+import {SwaggerAllClassesExportAdapter} from "../swagger/components/api-class";
+import {SwaggerAllUrlsComponent} from "../swagger/components/urls";
+import {DemoAllEnumsComponent} from "./demo-all-enums";
+import {DemoAllPathComponent} from "./demo-all-path";
+import {ISwaggerDocConfig} from "../swagger/models";
 import {SwaggerPanelComponent} from "../components/swagger-panel";
 import {Select} from "../components/select";
 import {dictionary} from "../components/dictionary";
-import {AllEnumsExportComponent} from "../swagger/components/enum-definition";
+import {SwaggerAllEnumsExportAdapter} from "../swagger/components/enum";
 import {defaultUtils} from "../swagger/common";
 import {DiffSingle} from "./diff-single";
+import {SwaggerAllModelsExportAdapter} from "../swagger/components/model";
 
 const axios = require('axios');
 
 interface IProps {
-    apiUrls:string[];
-    createComponentsFactory?: (baseComponents:ISwaggerComponents) => ISwaggerComponents;
-    createDocumentFactory?:(baseDoc:SwaggerDocModel) => SwaggerDocModel;
+    apiUrls: string[];
+    createComponentsFactory?: (baseComponents: ISwaggerComponents) => ISwaggerComponents;
+    createDocumentFactory?: (baseDoc: SwaggerDoc) => SwaggerDoc;
     createUtilsFactory?: (baseUtils: ISwaggerUtils) => ISwaggerUtils;
 }
 
@@ -32,13 +32,13 @@ interface IState {
     selectedPath: string;
     selectedDefinition: string;
     selectedEnum: string;
-    root?: SwaggerDocModel;
+    root?: SwaggerDoc;
     selectedPanelTitle: string;
 }
 
 export const SwaggerDemoComponent: React.FC<IProps> = (props) => {
     const [state, setState] = useState<IState>({
-        url: window.localStorage.getItem('url') || props.apiUrls.length ? props.apiUrls[0] : 'https://petstore.swagger.io/v2/swagger.json',
+        url: window.localStorage.getItem('url') ? window.localStorage.getItem('url') as string : props.apiUrls.length ? props.apiUrls[0] : 'https://petstore.swagger.io/v2/swagger.json',
         selectedApi: window.localStorage.getItem('selectedApi') || '',
         selectedPath: window.localStorage.getItem('selectedPath') || '',
         selectedDefinition: window.localStorage.getItem('selectedDefinition') || '',
@@ -50,7 +50,7 @@ export const SwaggerDemoComponent: React.FC<IProps> = (props) => {
         axios.get(state.url)
             .then((response: any) => {
                 const utils = props.createUtilsFactory ? props.createUtilsFactory(defaultUtils) : defaultUtils;
-                const config: ISwaggerDocModelConfig = {
+                const config: ISwaggerDocConfig = {
                     apiUrl: state.url,
                     source: response.data,
                     modelImportPath: '../api-model',
@@ -58,10 +58,10 @@ export const SwaggerDemoComponent: React.FC<IProps> = (props) => {
                     showPrivateFieldsForDebug: false,
                 };
                 const plugin = props.createComponentsFactory ? props.createComponentsFactory(defaultComponents) : defaultComponents;
-                const doc = new SwaggerDocModel(config,utils, plugin);
+                const doc = new SwaggerDoc(config, utils, plugin);
                 setState({
                     ...state,
-                    root:props.createDocumentFactory ? props.createDocumentFactory(doc) : doc
+                    root: props.createDocumentFactory ? props.createDocumentFactory(doc) : doc
                 });
             })
     };
@@ -114,29 +114,32 @@ export const SwaggerDemoComponent: React.FC<IProps> = (props) => {
         })
     }
     const renderHeader = () => {
-        return <div className="row mb-2" style={{width:'99%'}}>
-                <div className="col-sm-12 col-md-5 col-lg-3">
-                    <pre style={{textAlign:'left',lineHeight:'28px'}} className="m-0 p-0">
+        return <div className="row mb-2" style={{width: '99%'}}>
+            <div className="col-sm-12 col-md-5 col-lg-3">
+                    <pre style={{textAlign: 'left', lineHeight: '28px'}} className="m-0 p-0">
                         <a href="https://github.com/mgerasika/swagger-typescript-generator">swagger-typescript-generator</a>
                     </pre>
-                </div>
-                <div className="col-sm-12 col-md-6 col-lg-8 ml-3">
-                    <Select value={state.url} onChange={(ev) => {
-                        window.localStorage.setItem('url', ev.target.value);
-                        setState({
-                            ...state,
-                            root:undefined,
-                            url: ev.target.value
-                        })
-                    }} options={dictionary.getUrlOptions(props.apiUrls)}/>
-                </div>
+            </div>
+            <div className="col-sm-12 col-md-6 col-lg-8 ml-3">
+                <Select value={state.url} onChange={(ev) => {
+                    window.localStorage.setItem('url', ev.target.value);
+                    setState({
+                        ...state,
+                        root: undefined,
+                        url: ev.target.value
+                    })
+                }} options={dictionary.getUrlOptions(props.apiUrls)}/>
+            </div>
         </div>
     }
 
-    const renderAllClassesExport = state.root ? <AllClassesExportComponent classes={state.root.classes}/> : null;
-    const renderAllUrlsExport = state.root ? <ApiUrlsComponent classes={state.root.classes}/> : null;
-    const renderAllModelsExport = state.root ? <AllModelsExportComponent definitions={state.root.definitions}/> : null;
-    const renderAllEnumsExport = state.root ? <AllEnumsExportComponent enums={state.root.enums}/> : null;
+    const renderAllClassesExport = state.root ?
+        <SwaggerAllClassesExportAdapter doc={state.root} swaggerClasses={state.root.classes}/> : null;
+    const renderAllUrlsExport = state.root ? <SwaggerAllUrlsComponent doc={state.root} classes={state.root.classes}/> : null;
+    const renderAllModelsExport = state.root ?
+        <SwaggerAllModelsExportAdapter doc={state.root} models={state.root.definitions}/> : null;
+    const renderAllEnumsExport = state.root ?
+        <SwaggerAllEnumsExportAdapter doc={state.root} enums={state.root.enums}/> : null;
     const renderSwagger = () => {
         return state.root && state.root.definitions ? (
             <>
@@ -146,20 +149,20 @@ export const SwaggerDemoComponent: React.FC<IProps> = (props) => {
                     onClick={handleSelectedPanelTitleChange}
                     renderSettings={() =>
                         <div className="row">
-                        <div className="col-md-4 col-sm-12">
-                            <Select label="Api class" value={state.selectedApi} onChange={(ev) => {
-                                window.localStorage.setItem('selectedApi', ev.target.value);
-                                setState({
-                                    ...state,
-                                    selectedApi: ev.target.value
-                                })
-                            }} options={dictionary.getClassesOptions(state.root)}/>
-                        </div>
+                            <div className="col-md-4 col-sm-12">
+                                <Select label="Api class" value={state.selectedApi} onChange={(ev) => {
+                                    window.localStorage.setItem('selectedApi', ev.target.value);
+                                    setState({
+                                        ...state,
+                                        selectedApi: ev.target.value
+                                    })
+                                }} options={dictionary.getClassesOptions(state.root)}/>
+                            </div>
                         </div>
                     }
                     renderContent={() =>
                         <>
-                            <DemoApiAllClassesComponent classes={selectedApiObjects}/>
+                            <DemoAllClassesComponent classes={selectedApiObjects}/>
                         </>}
                 />
 
@@ -170,21 +173,21 @@ export const SwaggerDemoComponent: React.FC<IProps> = (props) => {
                     renderSettings={() =>
                         <div className="row">
                             <div className="col-md-4 col-sm-12">
-                            <Select label="Definition" value={state.selectedDefinition}
-                                    onChange={(ev) => {
-                                        window.localStorage.setItem('selectedDefinition', ev.target.value);
-                                        setState({
-                                            ...state,
-                                            selectedDefinition: ev.target.value
-                                        })
-                                    }} options={dictionary.getApiDefinitionsOptions(state.root)}/>
+                                <Select label="Definition" value={state.selectedDefinition}
+                                        onChange={(ev) => {
+                                            window.localStorage.setItem('selectedDefinition', ev.target.value);
+                                            setState({
+                                                ...state,
+                                                selectedDefinition: ev.target.value
+                                            })
+                                        }} options={dictionary.getApiDefinitionsOptions(state.root)}/>
 
-                        </div>
+                            </div>
                         </div>
                     }
                     renderContent={() =>
                         <>
-                            <DemoApiAllModelDefinitionsComponent
+                            <DemoAllModelsComponent
                                 definitions={selectedDefinitionObjects}/>
                         </>}
                 />
@@ -196,18 +199,18 @@ export const SwaggerDemoComponent: React.FC<IProps> = (props) => {
                     renderSettings={() =>
                         <div className="row">
                             <div className="col-md-4 col-sm-12">
-                            <Select label="Enum" value={state.selectedEnum} onChange={(ev) => {
-                                window.localStorage.setItem('selectedEnum', ev.target.value);
-                                setState({
-                                    ...state,
-                                    selectedEnum: ev.target.value
-                                })
-                            }} options={dictionary.getEnumOptions(state.root)}/>
+                                <Select label="Enum" value={state.selectedEnum} onChange={(ev) => {
+                                    window.localStorage.setItem('selectedEnum', ev.target.value);
+                                    setState({
+                                        ...state,
+                                        selectedEnum: ev.target.value
+                                    })
+                                }} options={dictionary.getEnumOptions(state.root)}/>
                             </div>
                         </div>}
                     renderContent={() =>
                         <>
-                            <DemoApiAllEnumsComponent
+                            <DemoAllEnumsComponent
                                 enums={selectedEnumObjects}/>
                         </>}
                 />
@@ -219,20 +222,20 @@ export const SwaggerDemoComponent: React.FC<IProps> = (props) => {
                     renderSettings={() =>
                         <div className="row">
                             <div className="col-md-4 col-sm-12">
-                            <Select label="Path" value={state.selectedPath} onChange={(ev) => {
-                                window.localStorage.setItem('selectedPath', ev.target.value);
-                                setState({
-                                    ...state,
-                                    selectedPath: ev.target.value
-                                })
-                            }} options={dictionary.getPathOptions(state.root)}/>
+                                <Select label="Path" value={state.selectedPath} onChange={(ev) => {
+                                    window.localStorage.setItem('selectedPath', ev.target.value);
+                                    setState({
+                                        ...state,
+                                        selectedPath: ev.target.value
+                                    })
+                                }} options={dictionary.getPathOptions(state.root)}/>
                             </div>
                         </div>}
 
                     renderContent={() =>
                         <>
-                            <DemoApiAllPathComponent
-                            paths={selectedPathsObjects}/>
+                            <DemoAllPathComponent
+                                paths={selectedPathsObjects}/>
                         </>}
                 />
 
@@ -260,8 +263,9 @@ export const SwaggerDemoComponent: React.FC<IProps> = (props) => {
         ) : null;
     };
 
-    const renderLoader = () =>{
-        return <div className="spinner-border text-secondary position-absolute" role="status" style={{left:'50%',top:'50%'}}>
+    const renderLoader = () => {
+        return <div className="spinner-border text-secondary position-absolute" role="status"
+                    style={{left: '50%', top: '50%'}}>
             <span className="sr-only">Loading...</span>
         </div>
     }

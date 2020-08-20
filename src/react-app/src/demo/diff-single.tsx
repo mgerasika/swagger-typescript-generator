@@ -5,7 +5,7 @@ interface IProps {
 }
 
 export const DiffSingle: React.FC<IProps> = (props) => {
-   return (
+    return (
         <div className={'d-flex w-100'}>
             {props.obj && <div className={'col-12'}>
                 <pre>

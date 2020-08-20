@@ -3,19 +3,20 @@ import * as fs from 'fs';
 import * as React from 'react';
 import {renderToString} from 'react-dom/server';
 import {
-    AllModelsExportComponent,
     AllClassesExportComponent,
+    AllEnumsExportComponent,
+    AllModelsExportComponent,
     ApiClassDefinitionComponent,
     ApiUrlsComponent,
-    html2text,
-    AllEnumsExportComponent,
+    defaultComponents,
+    defaultUtils,
     EnumDefinitionComponent,
+    html2text,
     ModelDefinitionComponent,
     SwaggerClassModel,
-    SwaggerEnumModel,
     SwaggerDefinitionModel,
     SwaggerDocModel,
-    defaultUtils, defaultComponents,
+    SwaggerEnumModel,
 } from "../react-app/src/main";
 
 export class NodeSwaggerGenerator {

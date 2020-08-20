@@ -5,7 +5,7 @@ import {ExampleComponent} from './demo';
 export const App: React.FC = () => {
     return (
         <div>
-            <ExampleComponent />
+            <ExampleComponent/>
         </div>
     );
 }
