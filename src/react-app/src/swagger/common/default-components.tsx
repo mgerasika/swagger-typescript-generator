@@ -19,6 +19,7 @@ import {
     ISwaggerEnumProps
 } from '../components';
 import {ISwaggerApiClassInstanceProps} from '../components/api-class/swagger-api-class-instance';
+import {ISwaggerApiMethodNameProps} from "../components/api-method/swagger-api-method-name";
 
 export interface ISwaggerComponents {
     renderAllClassesExport: SwaggerPluginAction<ISwaggerAllClassesExportProps>;
@@ -31,6 +32,7 @@ export interface ISwaggerComponents {
     renderApiClassInstance: SwaggerPluginAction<ISwaggerApiClassInstanceProps>;
 
     renderApiMethodArguments: SwaggerPluginAction<ISwaggerApiMethodArgumentsProps>;
+    renderApiMethodName: SwaggerPluginAction<ISwaggerApiMethodNameProps>;
     renderApiMethodBody: SwaggerPluginAction<ISwaggerApiMethodBodyProps>;
     renderApiMethod: SwaggerPluginAction<ISwaggerApiMethodProps>;
     renderApiMethodReturnType: SwaggerPluginAction<ISwaggerApiMethodReturnTypeProps>;
@@ -72,6 +74,9 @@ export const defaultComponents: ISwaggerComponents = {
     },
 
     renderApiMethodArguments: (Component: React.FC<any>, props: ISwaggerApiMethodArgumentsProps) => {
+        return (<Component {...props} />);
+    },
+    renderApiMethodName: (Component: React.FC<any>, props: ISwaggerApiMethodNameProps) => {
         return (<Component {...props} />);
     },
     renderApiMethodBody: (Component: React.FC<any>, props: ISwaggerApiMethodBodyProps) => {

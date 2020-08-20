@@ -26,69 +26,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ce26be8b-bbf5-4618-81ac-984eef411fea" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/react-app/src/swagger/common/axios-request-service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/react-app/src/swagger/components/api-class/comment.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/react-app/src/swagger/components/api-method/swagger-api-method-name.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/components/dictionary.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/components/dictionary.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/components/select.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/components/select.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/components/swagger-panel.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/components/swagger-panel.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/demo/custom-plugins.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/demo/custom-plugins.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/demo/demo-api-all-classes.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/demo/demo-api-all-enums.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/demo/demo-api-all-models-definitions.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/demo/demo-api-all-path.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/demo/diff-single.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/demo/diff-single.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/demo/diff.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/demo/diff.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/node-app/node-swagger-generator.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/node-app/node-swagger-generator.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/react-app/src/demo/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/demo/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/demo/swagger-demo-component.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/demo/swagger-demo-component.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/serviceWorker.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/serviceWorker.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/common/default-components.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/common/default-components.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/common/default-utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/common/default-utils.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/common/dependency-injection.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/common/dependency-injection.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/common/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/common/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/common/request-service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/common/request-service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/common/swagger-plugins.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/common/swagger-plugins.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/common/swagger-utils.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/common/swagger-utils.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/components/api-class/all-class-export.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/components/api-class/api-class-constructor.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/components/api-class/api-class-definition.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/components/api-class/api-class-fields.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/components/api-class/api-class-import.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/components/api-class/api-class-methods.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/components/api-class/api-class-name.tsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/components/api-class/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/components/api-class/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/components/api-method/api-method-arguments.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/components/api-method/api-method-body.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/components/api-method/api-method-definition.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/components/api-method/api-method-return-type.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/components/api-method/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/components/api-method/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/components/definitions/all-models-export.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/components/definitions/definition-import.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/components/definitions/index.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/components/definitions/model-definition.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/components/enum-definition/all-enums-export.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/components/enum-definition/api-enum.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/components/enum-definition/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/components/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/components/urls/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/components/urls/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/model/index.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/model/swagger-class.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/model/swagger-definition-model-property.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/model/swagger-definition-model.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/model/swagger-doc-model-config.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/model/swagger-doc-model.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/model/swagger-enum.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/model/swagger-method-parameter.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/model/swagger-method.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/model/swagger-model-base.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/model/swagger-path.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/model/url-info.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/utils.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +64,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../web-portal" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/react-app/src/swagger/components/api-method" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -131,19 +78,22 @@
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\git\swagger-typescript-generator\src\react-app\src\demo" />
-      <recent name="D:\git\swagger-typescript-generator\src\react-app\src\swagger\components\enum-definition" />
-      <recent name="D:\git\swagger-typescript-generator\src\react-app\src\components" />
-      <recent name="D:\git\swagger-typescript-generator\docker" />
-      <recent name="D:\git\swagger-typescript-generator" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\git\swagger-typescript-generator\src\react-app\src\components" />
       <recent name="D:\git\swagger-typescript-generator\src\react-app\src\swagger\common" />
       <recent name="D:\git\swagger-typescript-generator\src" />
       <recent name="D:\git\swagger-typescript-generator\src\react-app\src" />
       <recent name="D:\git\swagger-typescript-generator\src\react-app" />
+    </key>
+    <key name="es6.move.members.recent.items">
+      <recent name="D:\git\swagger-typescript-generator\src\react-app\src\swagger\common\axios-request-service.ts" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\git\swagger-typescript-generator\src\react-app\src\swagger\components\api-method" />
+      <recent name="D:\git\swagger-typescript-generator\src\react-app\src\demo" />
+      <recent name="D:\git\swagger-typescript-generator\src\react-app\src\swagger\components\enum-definition" />
+      <recent name="D:\git\swagger-typescript-generator\src\react-app\src\components" />
+      <recent name="D:\git\swagger-typescript-generator\docker" />
     </key>
   </component>
   <component name="RunManager" selected="npm.build:publish">
@@ -264,7 +214,7 @@
       <workItem from="1597761734597" duration="648000" />
       <workItem from="1597797628306" duration="906000" />
       <workItem from="1597826902620" duration="409000" />
-      <workItem from="1597850668349" duration="11224000" />
+      <workItem from="1597850668349" duration="17369000" />
     </task>
     <servers />
   </component>
@@ -339,11 +289,11 @@
       <screen x="0" y="23" width="2560" height="1339" />
     </state>
     <state x="983" y="402" key="RollbackChangesDialog/0.23.2560.1339/2560.62.2560.1417@0.23.2560.1339" timestamp="1596085463831" />
-    <state x="729" y="367" width="555" height="534" key="find.popup" timestamp="1597864552978">
+    <state x="729" y="367" width="555" height="534" key="find.popup" timestamp="1597903517327">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state x="972" y="447" width="615" height="490" key="find.popup/0.23.2560.1339/2560.62.2560.1417@0.23.2560.1339" timestamp="1596094936341" />
-    <state x="729" y="367" width="555" height="534" key="find.popup/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@0.0.1920.1160" timestamp="1597864552978" />
+    <state x="729" y="367" width="555" height="534" key="find.popup/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@0.0.1920.1160" timestamp="1597903517327" />
     <state x="-1211" y="262" key="run.anything.popup" timestamp="1597671076968">
       <screen x="-1920" y="0" width="1920" height="1160" />
     </state>

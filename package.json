@@ -1,6 +1,6 @@
 {
   "name": "swagger-typescript-generator",
-  "version": "1.1.51",
+  "version": "1.1.53",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -26,7 +26,6 @@
     "nodemon": "^2.0.1",
     "path": "^0.12.7",
     "react": "^16.9.0",
-    "react-bootstrap-select": "^0.14.0",
     "react-dom": "^16.9.0",
     "react-jsdom": "^3.0.0",
     "serve": "^11.2.0",

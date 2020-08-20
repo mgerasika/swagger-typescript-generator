@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {ReactNode} from 'react';
 import {SwaggerDemoComponent} from '.';
 import {ISwaggerComponents} from "../swagger/common";
 
@@ -18,12 +18,31 @@ const apiUrls = [
     'https://flipdish-yellow-team-qa.azurewebsites.net/swagger/docs/v1.0'
 ];
 
+interface IProps{
+    style?:object;
+    children:ReactNode;
+}
+const Customization = ({children,style}:IProps) => {
+    return <span style={{border:'1px solid red',...style}}>{children}</span>
+}
 const customComponentsFactory = (baseComponents: ISwaggerComponents): ISwaggerComponents => ({
     ...baseComponents,
+    renderApiMethod : (BaseComponent,props) => {
+        return <Customization style={{display:'block'}}><BaseComponent {...props}/></Customization>
+    },
+    renderApiMethodName : (BaseComponent,props) => {
+        return <Customization><BaseComponent {...props}/></Customization>
+    },
+    renderApiMethodArguments : (BaseComponent,props) => {
+        return <Customization><BaseComponent {...props}/></Customization>
+    },
     renderApiMethodReturnType: (BaseComponent,props) => {
         props.returnType = 'hello'
-        return <span style={{border:'1px solid red'}}><BaseComponent {...props}/></span>
-    }
+        return <Customization><BaseComponent {...props}/></Customization>
+    },
+    renderApiMethodBody : (BaseComponent,props) => {
+        return <Customization style={{display:'inline-block'}}><BaseComponent {...props}/></Customization>
+    },
 })
 export const ExampleComponent: React.FC = () => {
     return (

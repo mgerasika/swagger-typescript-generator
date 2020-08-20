@@ -3,20 +3,20 @@ import * as fs from 'fs';
 import * as React from 'react';
 import {renderToString} from 'react-dom/server';
 import {
-    AllClassesExportComponent,
-    AllEnumsExportComponent,
-    AllModelsExportComponent,
-    ApiClassDefinitionComponent,
-    ApiUrlsComponent,
     defaultComponents,
     defaultUtils,
-    EnumDefinitionComponent,
     html2text,
-    ModelDefinitionComponent,
-    SwaggerClassModel,
-    SwaggerDefinitionModel,
-    SwaggerDocModel,
-    SwaggerEnumModel,
+    SwaggerAllClassesExportAdapter,
+    SwaggerAllEnumsExportAdapter,
+    SwaggerAllModelsExportAdapter,
+    SwaggerAllUrlsComponent,
+    SwaggerApiClassAdapter,
+    SwaggerClass,
+    SwaggerDoc,
+    SwaggerEnum,
+    SwaggerEnumAdapter,
+    SwaggerModel,
+    SwaggerModelAdapter,
 } from "../react-app/src/main";
 
 export class NodeSwaggerGenerator {
@@ -41,52 +41,52 @@ export class NodeSwaggerGenerator {
         }
         const utils = this._config.createUtilsFactory ? this._config.createUtilsFactory(defaultUtils) : defaultUtils;
         const components = this._config.createComponentsFactory ? this._config.createComponentsFactory(defaultComponents) : defaultComponents;
-        const doc =  new SwaggerDocModel(this._config.swaggerDocConfig, utils,components);
-        const swaggerDoc: SwaggerDocModel = this._config.createDocumentFactory ? this._config.createDocumentFactory(doc) : doc;
-        swaggerDoc.definitions.forEach((swaggerDefinition: SwaggerDefinitionModel) => {
+        const doc =  new SwaggerDoc(this._config.swaggerDocConfig, utils,components);
+        const swaggerDoc: SwaggerDoc = this._config.createDocumentFactory ? this._config.createDocumentFactory(doc) : doc;
+        swaggerDoc.definitions.forEach((swaggerDefinition: SwaggerModel) => {
             const filePath = `${this._config.modelFilesOutDir}/${swaggerDefinition.fileName}`;
-            const html = renderToString(<ModelDefinitionComponent definition={swaggerDefinition}/>);
+            const html = renderToString(<SwaggerModelAdapter swaggerModel={swaggerDefinition}/>);
             const text = html2text(html);
             this.writeToFile(filePath, text);
         });
 
-        swaggerDoc.classes.forEach((swaggerClass: SwaggerClassModel) => {
+        swaggerDoc.classes.forEach((swaggerClass: SwaggerClass) => {
             const filePath = `${this._config.apiFilesOutDir}/${swaggerClass.fileName}`;
-            const html = renderToString(<ApiClassDefinitionComponent swaggerClass={swaggerClass}/>);
+            const html = renderToString(<SwaggerApiClassAdapter swaggerClass={swaggerClass}/>);
             const text = html2text(html);
             this.writeToFile(filePath, text);
         });
 
-        swaggerDoc.enums.forEach((swaggerEnum: SwaggerEnumModel) => {
+        swaggerDoc.enums.forEach((swaggerEnum: SwaggerEnum) => {
             const filePath = `${this._config.enumFilesOutDir}/${swaggerEnum.fileName}`;
-            const html = renderToString(<EnumDefinitionComponent swaggerEnum={swaggerEnum}/>);
+            const html = renderToString(<SwaggerEnumAdapter swaggerEnum={swaggerEnum}/>);
             const text = html2text(html);
             this.writeToFile(filePath, text);
         });
 
         {
-            const html = renderToString(<AllClassesExportComponent classes={swaggerDoc.classes}/>);
+            const html = renderToString(<SwaggerAllClassesExportAdapter doc={swaggerDoc} swaggerClasses={swaggerDoc.classes}/>);
             const text = html2text(html);
             const filePath = `${this._config.apiFilesOutDir}/index.ts`;
             this.writeToFile(filePath, text);
         }
 
         {
-            const html = renderToString(<AllModelsExportComponent definitions={swaggerDoc.definitions}/>);
+            const html = renderToString(<SwaggerAllModelsExportAdapter  doc={swaggerDoc} models={swaggerDoc.definitions}/>);
             const text = html2text(html);
             const filePath = `${this._config.modelFilesOutDir}/index.ts`;
             this.writeToFile(filePath, text);
         }
 
         {
-            const html = renderToString(<AllEnumsExportComponent enums={swaggerDoc.enums}/>);
+            const html = renderToString(<SwaggerAllEnumsExportAdapter doc={swaggerDoc} enums={swaggerDoc.enums}/>);
             const text = html2text(html);
             const filePath = `${this._config.enumFilesOutDir}/index.ts`;
             this.writeToFile(filePath, text);
         }
 
         {
-            const html = renderToString(<ApiUrlsComponent classes={swaggerDoc.classes}/>);
+            const html = renderToString(<SwaggerAllUrlsComponent doc={swaggerDoc} classes={swaggerDoc.classes}/>);
             const text = html2text(html);
             const filePath = `${this._config.urlFileOutDir}/index.ts`;
             this.writeToFile(filePath, text);

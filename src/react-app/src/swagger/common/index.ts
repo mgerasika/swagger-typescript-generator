@@ -6,3 +6,4 @@ export * from './default-utils';
 export * from './dependency-injection';
 export * from './utils-service';
 export * from './di';
+export {RequestService} from "./axios-request-service";
