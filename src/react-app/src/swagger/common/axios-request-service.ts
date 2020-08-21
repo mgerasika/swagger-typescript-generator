@@ -1,4 +1,4 @@
-import axios, {AxiosError, AxiosPromise} from "axios";
+import axios, {AxiosError} from "axios";
 import {IRequestService} from "./request-service";
 
 export class RequestService implements IRequestService {

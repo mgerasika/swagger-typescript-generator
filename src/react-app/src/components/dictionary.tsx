@@ -30,8 +30,8 @@ export const dictionary = {
         if (!root) {
             return [];
         }
-        const items = root.enums.sort((a, b) => compareFn(a.name, b.name))
-            .map(item => ({label: item.name, value: item.name})) as ISelectOption[];
+        const items = root.enums.sort((a, b) => compareFn(a.fullName, b.fullName))
+            .map(item => ({label: item.fullName, value: item.fullName})) as ISelectOption[];
         return [{label: '', value: ''}, {label: 'ALL', value: 'ALL'}, ...items];
     },
 

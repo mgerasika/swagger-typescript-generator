@@ -9,4 +9,5 @@ class LogService {
         console.log((clc as any).red(msg));
     }
 }
+
 export const logService = new LogService();

@@ -1,8 +1,8 @@
 import * as React from 'react';
 import axios from 'axios';
-import {INodeSwaggerConfig} from './node-swagger-config';
-import {NodeSwaggerGenerator} from './node-swagger-generator';
+import {INodeSwaggerConfigForMultiFile} from './node-swagger-config';
 import * as path from 'path';
+import {NodeSwaggerGeneratorForMultiFile} from "./node-swagger-generator-for-multi-file";
 
 const url = 'https://petstore.swagger.io/v2/swagger.json';
 axios.get(url)
@@ -18,10 +18,9 @@ const generate = (json: any) => {
     console.log('parentDir=' + parentDir);
 
 
-    const config: INodeSwaggerConfig = {
+    const config: INodeSwaggerConfigForMultiFile = {
         apiFilesOutDir: `${parentDir}/../gen/api`,
         modelFilesOutDir: `${parentDir}/../gen/api-model`,
-        urlFileOutDir: `${parentDir}/../gen/api-model-url`,
         enumFilesOutDir: `${parentDir}/../gen/api-enum`,
         createComponentsFactory: (baseComponents) => baseComponents,
         createUtilsFactory: (baseUtils) => baseUtils,
@@ -33,7 +32,7 @@ const generate = (json: any) => {
             source: json,
         }
     };
-    const swaggerGenerator = new NodeSwaggerGenerator(config);
+    const swaggerGenerator = new NodeSwaggerGeneratorForMultiFile(config);
     try {
         swaggerGenerator.generate();
     } catch (e) {

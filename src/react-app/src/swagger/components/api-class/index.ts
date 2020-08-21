@@ -5,4 +5,5 @@ export * from './swagger-api-class-import';
 export * from './swagger-api-class-methods';
 export * from './swagger-api-class-name';
 export * from './swagger-all-class-export';
+export * from './swagger-api-class-content';
 export * from './comment';

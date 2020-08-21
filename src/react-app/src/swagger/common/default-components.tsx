@@ -5,6 +5,7 @@ import {ISwaggerModelImportProps, ISwaggerModelProps} from "../components/model"
 import {
     ISwaggerAllClassesExportProps,
     ISwaggerAllEnumsExportProps,
+    ISwaggerAllInOneFileProps,
     ISwaggerAllModelsExportProps,
     ISwaggerAllUrlsProps,
     ISwaggerApiClassConstructorProps,
@@ -45,6 +46,7 @@ export interface ISwaggerComponents {
     renderEnum: SwaggerPluginAction<ISwaggerEnumProps>;
 
     renderAllUrls: SwaggerPluginAction<ISwaggerAllUrlsProps>;
+    renderAllInOneFile: SwaggerPluginAction<ISwaggerAllInOneFileProps>;
 }
 
 export const defaultComponents: ISwaggerComponents = {
@@ -107,6 +109,10 @@ export const defaultComponents: ISwaggerComponents = {
     },
 
     renderAllUrls: (Component: React.FC<any>, props: ISwaggerAllUrlsProps) => {
+        return (<Component {...props} />);
+    },
+
+    renderAllInOneFile: (Component: React.FC<any>, props: ISwaggerAllInOneFileProps) => {
         return (<Component {...props} />);
     },
 };

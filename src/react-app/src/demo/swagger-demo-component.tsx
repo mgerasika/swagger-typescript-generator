@@ -16,6 +16,7 @@ import {SwaggerAllEnumsExportAdapter} from "../swagger/components/enum";
 import {defaultUtils} from "../swagger/common";
 import {DiffSingle} from "./diff-single";
 import {SwaggerAllModelsExportAdapter} from "../swagger/components/model";
+import {SwaggerAllInOneFileAdapter} from "../swagger/components";
 
 const axios = require('axios');
 
@@ -99,7 +100,7 @@ export const SwaggerDemoComponent: React.FC<IProps> = (props) => {
         if (state.root && state.selectedEnum === 'ALL') {
             return state.root.enums;
         }
-        return state.root ? state.root.enums.filter(c => c.name === state.selectedEnum) : [];
+        return state.root ? state.root.enums.filter(c => c.fullName === state.selectedEnum) : [];
     }, [state.root, state.selectedEnum])
 
     const selectedPathsObjects = useMemo(() => {
@@ -136,6 +137,9 @@ export const SwaggerDemoComponent: React.FC<IProps> = (props) => {
             </div>
         </div>
     }
+
+    const renderAllInOneFile = state.root ?
+        <SwaggerAllInOneFileAdapter doc={state.root} /> : null;
 
     const renderAllClassesExport = state.root ?
         <SwaggerAllClassesExportAdapter doc={state.root} swaggerClasses={state.root.classes}/> : null;
@@ -243,6 +247,10 @@ export const SwaggerDemoComponent: React.FC<IProps> = (props) => {
                         </>}
                 />
 
+                <SwaggerPanelComponent
+                    title="All in one file"
+                    renderContent={() => <DiffSingle key={'index.ts'} obj={renderAllInOneFile}/>}
+                    activeTitle={state.selectedPanelTitle} onClick={handleSelectedPanelTitleChange}/>
 
                 <SwaggerPanelComponent
                     title="All APIs exports"

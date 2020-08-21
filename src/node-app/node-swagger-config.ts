@@ -1,12 +1,18 @@
-import {ISwaggerDocConfig, SwaggerDoc,ISwaggerComponents, ISwaggerUtils} from "../react-app/src/main";
+import {ISwaggerComponents, ISwaggerDocConfig, ISwaggerUtils, SwaggerDoc} from "../react-app/src/main";
 
-export interface INodeSwaggerConfig {
-    modelFilesOutDir: string;
-    apiFilesOutDir: string;
-    enumFilesOutDir: string;
-    urlFileOutDir: string;
+export interface INodeSwaggerConfigBase {
     swaggerDocConfig: ISwaggerDocConfig;
     createComponentsFactory?: (baseComponents: ISwaggerComponents) => ISwaggerComponents;
     createUtilsFactory?: (baseUtils: ISwaggerUtils) => ISwaggerUtils;
     createDocumentFactory?: (baceDocument: SwaggerDoc) => SwaggerDoc;
+}
+
+export interface INodeSwaggerConfigForMultiFile extends INodeSwaggerConfigBase {
+    modelFilesOutDir: string;
+    apiFilesOutDir: string;
+    enumFilesOutDir: string;
+}
+
+export interface INodeSwaggerConfigForOneFile extends INodeSwaggerConfigBase {
+    outDir: string;
 }

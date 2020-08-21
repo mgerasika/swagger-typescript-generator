@@ -31,7 +31,7 @@ export const uniqueItems = <T>(items: T[], keyFn: (el: T) => any): T[] => {
 
 const jsTypes = ['number', 'integer', 'boolean', 'string', 'array', 'file'];
 export const getIsJsType = (name: string) => {
-    return jsTypes.includes(name.toLowerCase());
+    return jsTypes.includes(name.toLowerCase()) || name.toLowerCase().indexOf('array<') == 0;
 }
 const getJsType = (type: string,schema:any) => {
     if (type === 'integer') {
