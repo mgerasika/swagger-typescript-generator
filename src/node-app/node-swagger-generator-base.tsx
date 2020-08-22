@@ -10,29 +10,29 @@ import {html2text} from "../react-app/src/swagger";
 const Path = require('path');
 
 export abstract class NodeSwaggerGeneratorBase {
-    public deleteDirectory(urlToDir:string) {
+    public deleteDirectory(urlToDir: string) {
         this.deleteDirectoryRecursive(urlToDir);
         console.log('delete directory success ' + urlToDir)
     }
 
-    public component2string(component:ReactElement):string{
+    public component2string(component: ReactElement): string {
         const html = renderToString(component);
         const text = html2text(html);
         return text;
     }
 
-    public createSwaggerDoc(config:INodeSwaggerConfigBase){
+    public createSwaggerDoc(config: INodeSwaggerConfigBase) {
         const utils = config.createUtilsFactory ? config.createUtilsFactory(defaultUtils) : defaultUtils;
         const components = config.createComponentsFactory ? config.createComponentsFactory(defaultComponents) : defaultComponents;
-        let swaggerDoc = new SwaggerDoc(config.swaggerDocConfig, utils,components);
-        if(config.createDocumentFactory) {
+        let swaggerDoc = new SwaggerDoc(config.swaggerDocConfig, utils, components);
+        if (config.createDocumentFactory) {
             swaggerDoc = config.createDocumentFactory(swaggerDoc);
             swaggerDoc.init();
         }
         return swaggerDoc;
     }
 
-    private deleteDirectoryRecursive (urlToDir:string) {
+    private deleteDirectoryRecursive(urlToDir: string) {
         if (fs.existsSync(urlToDir)) {
             fs.readdirSync(urlToDir).forEach((file, index) => {
                 const curPath = Path.join(urlToDir, file);
@@ -63,7 +63,7 @@ export abstract class NodeSwaggerGeneratorBase {
     }
 
     public writeToFile(fullPath: string, content: string) {
-        fs.writeFileSync(fullPath,content,{
+        fs.writeFileSync(fullPath, content, {
             encoding: 'utf8'
         });
         console.log('write to file success ' + fullPath);

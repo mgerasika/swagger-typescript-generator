@@ -10,7 +10,7 @@ export const SwaggerApiMethodNameAdapter = (props: IProps) => {
         <>
             {props.swaggerMethod.components.renderApiMethodName(
                 Component, {
-                    accessor : "public",
+                    accessor: "public",
                     methodName: props.swaggerMethod.name,
                     swaggerMethod: props.swaggerMethod,
                 })}
@@ -19,8 +19,8 @@ export const SwaggerApiMethodNameAdapter = (props: IProps) => {
 }
 
 export interface ISwaggerApiMethodNameProps extends IProps {
-    accessor : string;
-    methodName:string;
+    accessor: string;
+    methodName: string;
 }
 
 const Component: React.FC<ISwaggerApiMethodNameProps> = (props) => {

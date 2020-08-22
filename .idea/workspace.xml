@@ -26,36 +26,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ce26be8b-bbf5-4618-81ac-984eef411fea" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/babel.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/__tests__/example1.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/__tests__/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/node-app/node-swagger-generator-base.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/node-app/node-swagger-generator-for-single-file.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/react-app/src/swagger/common/assert.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/react-app/src/swagger/components/api-class/swagger-api-class-content.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/react-app/src/swagger/components/enum/swagger-enum-content.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/react-app/src/swagger/components/model/swagger-model-content.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/react-app/src/swagger/components/swagger-all-in-one-file.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/react-app/src/swagger/models/swagger-class.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/react-app/src/swagger/namespace.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/__tests__/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/__tests__/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/node-app/demo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/node-app/demo.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/node-app/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/node-app/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/node-app/log-service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/node-app/log-service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/node-app/node-swagger-config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/node-app/node-swagger-config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/node-app/node-swagger-generator.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/node-app/node-swagger-generator-for-multi-file.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/components/dictionary.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/components/dictionary.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/node-app/node-swagger-generator-base.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/node-app/node-swagger-generator-base.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/node-app/node-swagger-generator-for-multi-file.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/node-app/node-swagger-generator-for-multi-file.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/node-app/node-swagger-generator-for-single-file.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/node-app/node-swagger-generator-for-single-file.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/react-app/src/components/select.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/components/select.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app/src/demo/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/demo/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/react-app/src/demo/swagger-demo-component.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/demo/swagger-demo-component.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/common/assert.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/common/assert.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/common/axios-request-service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/common/axios-request-service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/common/default-components.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/common/default-components.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/common/default-utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/common/default-utils.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/common/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/common/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/components/api-class/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/components/api-class/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/components/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/common/request-service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/common/request-service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/common/swagger-utils.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/common/utils-service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/common/utils-service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/components/api-class/comment.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/components/api-class/comment.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/components/api-method/swagger-api-method-name.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/components/api-method/swagger-api-method-name.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/components/enum/swagger-enum-content.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/components/enum/swagger-enum-content.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/components/model/swagger-model-content.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/components/model/swagger-model-content.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/components/swagger-all-in-one-file.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/components/swagger-all-in-one-file.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/components/urls/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/components/urls/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/models/swagger-class.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/models/swagger-class.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/namespace.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/namespace.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +81,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/react-app/src" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -256,7 +253,11 @@
       <workItem from="1597942269718" duration="6000" />
       <workItem from="1597942399874" duration="706000" />
       <workItem from="1597979992807" duration="10387000" />
-      <workItem from="1598017142953" duration="5368000" />
+      <workItem from="1598017142953" duration="9881000" />
+      <workItem from="1598038190256" duration="14000" />
+      <workItem from="1598038614027" duration="40000" />
+      <workItem from="1598038685050" duration="6000" />
+      <workItem from="1598039433019" duration="2556000" />
     </task>
     <servers />
   </component>
@@ -307,84 +308,100 @@
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state x="708" y="382" key="#com.intellij.fileTypes.FileTypeChooser/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@0.0.1920.1160" timestamp="1597702068865" />
-    <state x="740" y="335" key="FileChooserDialogImpl" timestamp="1597997555978">
+    <state x="740" y="335" key="FileChooserDialogImpl" timestamp="1598038689290">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state x="740" y="335" key="FileChooserDialogImpl/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@0.0.1920.1160" timestamp="1597997555978" />
+    <state x="740" y="335" key="FileChooserDialogImpl/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@0.0.1920.1160" timestamp="1598038689290" />
     <state x="2413" y="284" key="FileChooserDialogImpl/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@1920.0.1280.984" timestamp="1597942511108" />
-    <state width="1899" height="491" key="GridCell.Tab.0.bottom" timestamp="1598021640017">
-      <screen x="0" y="0" width="1920" height="1160" />
+    <state width="1899" height="491" key="GridCell.Tab.0.bottom" timestamp="1598037984581">
+      <screen x="1920" y="0" width="1280" height="984" />
     </state>
     <state width="1899" height="491" key="GridCell.Tab.0.bottom/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@0.0.1920.1160" timestamp="1598021640017" />
-    <state width="1899" height="491" key="GridCell.Tab.0.center" timestamp="1598021640017">
-      <screen x="0" y="0" width="1920" height="1160" />
+    <state width="1899" height="491" key="GridCell.Tab.0.bottom/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@1920.0.1280.984" timestamp="1598037984581" />
+    <state width="1899" height="491" key="GridCell.Tab.0.center" timestamp="1598037984581">
+      <screen x="1920" y="0" width="1280" height="984" />
     </state>
     <state width="1899" height="491" key="GridCell.Tab.0.center/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@0.0.1920.1160" timestamp="1598021640017" />
-    <state width="1899" height="491" key="GridCell.Tab.0.left" timestamp="1598021640016">
-      <screen x="0" y="0" width="1920" height="1160" />
+    <state width="1899" height="491" key="GridCell.Tab.0.center/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@1920.0.1280.984" timestamp="1598037984581" />
+    <state width="1899" height="491" key="GridCell.Tab.0.left" timestamp="1598037984580">
+      <screen x="1920" y="0" width="1280" height="984" />
     </state>
     <state width="1899" height="491" key="GridCell.Tab.0.left/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@0.0.1920.1160" timestamp="1598021640016" />
-    <state width="1899" height="491" key="GridCell.Tab.0.right" timestamp="1598021640017">
-      <screen x="0" y="0" width="1920" height="1160" />
+    <state width="1899" height="491" key="GridCell.Tab.0.left/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@1920.0.1280.984" timestamp="1598037984580" />
+    <state width="1899" height="491" key="GridCell.Tab.0.right" timestamp="1598037984581">
+      <screen x="1920" y="0" width="1280" height="984" />
     </state>
     <state width="1899" height="491" key="GridCell.Tab.0.right/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@0.0.1920.1160" timestamp="1598021640017" />
-    <state width="1899" height="396" key="GridCell.Tab.1.bottom" timestamp="1598021561718">
-      <screen x="0" y="0" width="1920" height="1160" />
+    <state width="1899" height="491" key="GridCell.Tab.0.right/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@1920.0.1280.984" timestamp="1598037984581" />
+    <state width="1899" height="396" key="GridCell.Tab.1.bottom" timestamp="1598037984575">
+      <screen x="1920" y="0" width="1280" height="984" />
     </state>
     <state width="1899" height="396" key="GridCell.Tab.1.bottom/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@0.0.1920.1160" timestamp="1598021561718" />
-    <state width="1899" height="396" key="GridCell.Tab.1.center" timestamp="1598021561718">
-      <screen x="0" y="0" width="1920" height="1160" />
+    <state width="1899" height="396" key="GridCell.Tab.1.bottom/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@1920.0.1280.984" timestamp="1598037984575" />
+    <state width="1899" height="396" key="GridCell.Tab.1.center" timestamp="1598037984575">
+      <screen x="1920" y="0" width="1280" height="984" />
     </state>
     <state width="1899" height="396" key="GridCell.Tab.1.center/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@0.0.1920.1160" timestamp="1598021561718" />
-    <state width="1899" height="396" key="GridCell.Tab.1.left" timestamp="1598021561718">
-      <screen x="0" y="0" width="1920" height="1160" />
+    <state width="1899" height="396" key="GridCell.Tab.1.center/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@1920.0.1280.984" timestamp="1598037984575" />
+    <state width="1899" height="396" key="GridCell.Tab.1.left" timestamp="1598037984575">
+      <screen x="1920" y="0" width="1280" height="984" />
     </state>
     <state width="1899" height="396" key="GridCell.Tab.1.left/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@0.0.1920.1160" timestamp="1598021561718" />
-    <state width="1899" height="396" key="GridCell.Tab.1.right" timestamp="1598021561718">
-      <screen x="0" y="0" width="1920" height="1160" />
+    <state width="1899" height="396" key="GridCell.Tab.1.left/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@1920.0.1280.984" timestamp="1598037984575" />
+    <state width="1899" height="396" key="GridCell.Tab.1.right" timestamp="1598037984575">
+      <screen x="1920" y="0" width="1280" height="984" />
     </state>
     <state width="1899" height="396" key="GridCell.Tab.1.right/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@0.0.1920.1160" timestamp="1598021561718" />
-    <state width="1899" height="396" key="GridCell.Tab.2.bottom" timestamp="1598021561718">
-      <screen x="0" y="0" width="1920" height="1160" />
+    <state width="1899" height="396" key="GridCell.Tab.1.right/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@1920.0.1280.984" timestamp="1598037984575" />
+    <state width="1899" height="396" key="GridCell.Tab.2.bottom" timestamp="1598037984575">
+      <screen x="1920" y="0" width="1280" height="984" />
     </state>
     <state width="1899" height="396" key="GridCell.Tab.2.bottom/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@0.0.1920.1160" timestamp="1598021561718" />
-    <state width="1899" height="396" key="GridCell.Tab.2.center" timestamp="1598021561718">
-      <screen x="0" y="0" width="1920" height="1160" />
+    <state width="1899" height="396" key="GridCell.Tab.2.bottom/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@1920.0.1280.984" timestamp="1598037984575" />
+    <state width="1899" height="396" key="GridCell.Tab.2.center" timestamp="1598037984575">
+      <screen x="1920" y="0" width="1280" height="984" />
     </state>
     <state width="1899" height="396" key="GridCell.Tab.2.center/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@0.0.1920.1160" timestamp="1598021561718" />
-    <state width="1899" height="396" key="GridCell.Tab.2.left" timestamp="1598021561718">
-      <screen x="0" y="0" width="1920" height="1160" />
+    <state width="1899" height="396" key="GridCell.Tab.2.center/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@1920.0.1280.984" timestamp="1598037984575" />
+    <state width="1899" height="396" key="GridCell.Tab.2.left" timestamp="1598037984575">
+      <screen x="1920" y="0" width="1280" height="984" />
     </state>
     <state width="1899" height="396" key="GridCell.Tab.2.left/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@0.0.1920.1160" timestamp="1598021561718" />
-    <state width="1899" height="396" key="GridCell.Tab.2.right" timestamp="1598021561718">
-      <screen x="0" y="0" width="1920" height="1160" />
+    <state width="1899" height="396" key="GridCell.Tab.2.left/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@1920.0.1280.984" timestamp="1598037984575" />
+    <state width="1899" height="396" key="GridCell.Tab.2.right" timestamp="1598037984575">
+      <screen x="1920" y="0" width="1280" height="984" />
     </state>
     <state width="1899" height="396" key="GridCell.Tab.2.right/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@0.0.1920.1160" timestamp="1598021561718" />
-    <state width="1899" height="396" key="GridCell.Tab.3.bottom" timestamp="1598021561719">
-      <screen x="0" y="0" width="1920" height="1160" />
+    <state width="1899" height="396" key="GridCell.Tab.2.right/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@1920.0.1280.984" timestamp="1598037984575" />
+    <state width="1899" height="396" key="GridCell.Tab.3.bottom" timestamp="1598037984575">
+      <screen x="1920" y="0" width="1280" height="984" />
     </state>
     <state width="1899" height="396" key="GridCell.Tab.3.bottom/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@0.0.1920.1160" timestamp="1598021561719" />
-    <state width="1899" height="396" key="GridCell.Tab.3.center" timestamp="1598021561719">
-      <screen x="0" y="0" width="1920" height="1160" />
+    <state width="1899" height="396" key="GridCell.Tab.3.bottom/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@1920.0.1280.984" timestamp="1598037984575" />
+    <state width="1899" height="396" key="GridCell.Tab.3.center" timestamp="1598037984575">
+      <screen x="1920" y="0" width="1280" height="984" />
     </state>
     <state width="1899" height="396" key="GridCell.Tab.3.center/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@0.0.1920.1160" timestamp="1598021561719" />
-    <state width="1899" height="396" key="GridCell.Tab.3.left" timestamp="1598021561718">
-      <screen x="0" y="0" width="1920" height="1160" />
+    <state width="1899" height="396" key="GridCell.Tab.3.center/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@1920.0.1280.984" timestamp="1598037984575" />
+    <state width="1899" height="396" key="GridCell.Tab.3.left" timestamp="1598037984575">
+      <screen x="1920" y="0" width="1280" height="984" />
     </state>
     <state width="1899" height="396" key="GridCell.Tab.3.left/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@0.0.1920.1160" timestamp="1598021561718" />
-    <state width="1899" height="396" key="GridCell.Tab.3.right" timestamp="1598021561719">
-      <screen x="0" y="0" width="1920" height="1160" />
+    <state width="1899" height="396" key="GridCell.Tab.3.left/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@1920.0.1280.984" timestamp="1598037984575" />
+    <state width="1899" height="396" key="GridCell.Tab.3.right" timestamp="1598037984575">
+      <screen x="1920" y="0" width="1280" height="984" />
     </state>
     <state width="1899" height="396" key="GridCell.Tab.3.right/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@0.0.1920.1160" timestamp="1598021561719" />
+    <state width="1899" height="396" key="GridCell.Tab.3.right/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@1920.0.1280.984" timestamp="1598037984575" />
     <state x="983" y="402" key="RollbackChangesDialog" timestamp="1596085463831">
       <screen x="0" y="23" width="2560" height="1339" />
     </state>
     <state x="983" y="402" key="RollbackChangesDialog/0.23.2560.1339/2560.62.2560.1417@0.23.2560.1339" timestamp="1596085463831" />
-    <state x="729" y="367" width="555" height="564" key="find.popup" timestamp="1597996915301">
+    <state x="729" y="367" width="555" height="564" key="find.popup" timestamp="1598038629580">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state x="972" y="447" width="615" height="490" key="find.popup/0.23.2560.1339/2560.62.2560.1417@0.23.2560.1339" timestamp="1596094936341" />
-    <state x="729" y="367" width="555" height="564" key="find.popup/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@0.0.1920.1160" timestamp="1597996915301" />
+    <state x="729" y="367" width="555" height="564" key="find.popup/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@0.0.1920.1160" timestamp="1598038629580" />
     <state x="-1211" y="262" key="run.anything.popup" timestamp="1597671076968">
       <screen x="-1920" y="0" width="1920" height="1160" />
     </state>
@@ -394,17 +411,5 @@
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state x="623" y="255" width="672" height="678" key="search.everywhere.popup/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@0.0.1920.1160" timestamp="1597677911651" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/react-app/src/swagger/models/swagger-doc.ts</url>
-          <line>26</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

@@ -22,7 +22,7 @@ export class RequestService implements IRequestService {
             }) as any as Promise<T>;
     }
 
-    post<T,T2>(url: string, body?: T): Promise<T2> {
+    post<T, T2>(url: string, body?: T): Promise<T2> {
         return axios
             .post(url, body, {})
             .catch((error: AxiosError) => {
@@ -30,20 +30,20 @@ export class RequestService implements IRequestService {
             }) as any as Promise<T2>;
     }
 
-    put<T,T2>(url: string, body?: T): Promise<T2> {
+    put<T, T2>(url: string, body?: T): Promise<T2> {
         return axios.put(url, body).catch((error: AxiosError) => {
             return this.handleError(error.response);
-        })as any as Promise<T2>;
+        }) as any as Promise<T2>;
     }
 
-    delete<T,T2>(url: string, body?: T): Promise<T2> {
+    delete<T, T2>(url: string, body?: T): Promise<T2> {
         return axios
             .delete(url, {
                 data: body ? body : null // This is workaround for setting "content-type": https://github.com/axios/axios/issues/86
             })
             .catch((error: AxiosError) => {
                 return this.handleError(error.response);
-            })as any as Promise<T2>;
+            }) as any as Promise<T2>;
     }
 
     upload<T>(url: string, formData: FormData): Promise<T> {

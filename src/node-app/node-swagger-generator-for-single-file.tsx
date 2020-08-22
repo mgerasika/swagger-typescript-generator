@@ -5,7 +5,7 @@ import {NodeSwaggerGeneratorBase} from "./node-swagger-generator-base";
 
 const Path = require('path');
 
-export class NodeSwaggerGeneratorForSingleFile extends NodeSwaggerGeneratorBase{
+export class NodeSwaggerGeneratorForSingleFile extends NodeSwaggerGeneratorBase {
     private _config: INodeSwaggerConfigForOneFile;
 
     constructor(config: INodeSwaggerConfigForOneFile) {
@@ -16,7 +16,7 @@ export class NodeSwaggerGeneratorForSingleFile extends NodeSwaggerGeneratorBase{
     generate() {
         const swaggerDoc = this.createSwaggerDoc(this._config);
 
-        if(this._config.outDir) {
+        if (this._config.outDir) {
             this.deleteDirectory(this._config.outDir);
             this.createDirectory(this._config.outDir);
         }

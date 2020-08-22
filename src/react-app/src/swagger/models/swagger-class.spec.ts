@@ -1,11 +1,11 @@
 import {defaultComponents, defaultUtils} from "../common";
 import {SwaggerDoc} from "./swagger-doc";
 
-describe("swagger class",()=>{
+describe("swagger class", () => {
     let swaggerDoc = null as any;
 
-    beforeEach(()=>{
-        swaggerDoc = new SwaggerDoc({apiUrl:'http://example.com',source:json},defaultUtils,defaultComponents);
+    beforeEach(() => {
+        swaggerDoc = new SwaggerDoc({apiUrl: 'http://example.com', source: json}, defaultUtils, defaultComponents);
     })
 
     test('has correct class name', () => {

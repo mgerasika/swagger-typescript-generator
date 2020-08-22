@@ -15,7 +15,7 @@ import {NodeSwaggerGeneratorBase} from "./node-swagger-generator-base";
 
 const Path = require('path');
 
-export class NodeSwaggerGeneratorForMultiFile extends NodeSwaggerGeneratorBase{
+export class NodeSwaggerGeneratorForMultiFile extends NodeSwaggerGeneratorBase {
     private _config: INodeSwaggerConfigForMultiFile;
 
     constructor(config: INodeSwaggerConfigForMultiFile) {
@@ -26,15 +26,15 @@ export class NodeSwaggerGeneratorForMultiFile extends NodeSwaggerGeneratorBase{
     generate() {
         const swaggerDoc = this.createSwaggerDoc(this._config);
 
-        if(this._config.apiFilesOutDir) {
+        if (this._config.apiFilesOutDir) {
             this.deleteDirectory(this._config.apiFilesOutDir);
             this.createDirectory(this._config.apiFilesOutDir);
         }
-        if(this._config.modelFilesOutDir) {
+        if (this._config.modelFilesOutDir) {
             this.deleteDirectory(this._config.modelFilesOutDir);
             this.createDirectory(this._config.modelFilesOutDir);
         }
-        if(this._config.enumFilesOutDir) {
+        if (this._config.enumFilesOutDir) {
             this.deleteDirectory(this._config.enumFilesOutDir);
             this.createDirectory(this._config.enumFilesOutDir);
         }
@@ -58,19 +58,22 @@ export class NodeSwaggerGeneratorForMultiFile extends NodeSwaggerGeneratorBase{
         });
 
         {
-            const text = this.component2string(<SwaggerAllClassesExportAdapter doc={swaggerDoc} swaggerClasses={swaggerDoc.classes}/>);
+            const text = this.component2string(<SwaggerAllClassesExportAdapter doc={swaggerDoc}
+                                                                               swaggerClasses={swaggerDoc.classes}/>);
             const filePath = `${this._config.apiFilesOutDir}/index.ts`;
             this.writeToFile(filePath, text);
         }
 
         {
-            const text = this.component2string(<SwaggerAllModelsExportAdapter  doc={swaggerDoc} models={swaggerDoc.definitions}/>);
+            const text = this.component2string(<SwaggerAllModelsExportAdapter doc={swaggerDoc}
+                                                                              models={swaggerDoc.definitions}/>);
             const filePath = `${this._config.modelFilesOutDir}/index.ts`;
             this.writeToFile(filePath, text);
         }
 
         {
-            const text = this.component2string(<SwaggerAllEnumsExportAdapter doc={swaggerDoc} enums={swaggerDoc.enums}/>);
+            const text = this.component2string(<SwaggerAllEnumsExportAdapter doc={swaggerDoc}
+                                                                             enums={swaggerDoc.enums}/>);
             const filePath = `${this._config.enumFilesOutDir}/index.ts`;
             this.writeToFile(filePath, text);
         }

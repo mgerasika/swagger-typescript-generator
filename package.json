@@ -1,10 +1,11 @@
 {
   "name": "swagger-typescript-generator",
-  "version": "1.1.68",
+  "version": "1.1.72",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "start": "nodemon --exec babel-node --extensions \\\".tsx\\\" src/node-app/demo.tsx",
+    "start": "babel-node --extensions \\\".tsx\\\" src/node-app/demo.tsx",
+    "start:dev": "nodemon --exec babel-node --extensions \\\".tsx\\\" src/node-app/demo.tsx",
     "start:react-app": "cd src/react-app && npm run start",
     "build:publish": "npm run build && npm run git-version && npm publish",
     "build": "npm run delete:dist && npm run build:react-app && npm run build:tsc",

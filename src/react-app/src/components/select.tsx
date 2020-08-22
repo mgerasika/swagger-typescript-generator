@@ -15,7 +15,8 @@ interface Props {
 export const Select = (props: Props) => {
     const ref = useRef<any>();
     const renderOptions = () => {
-        const items = props.options.map((item,idx) => <option key={`${item.value}${idx}`} value={item.value}>{item.label}</option>)
+        const items = props.options.map((item, idx) => <option key={`${item.value}${idx}`}
+                                                               value={item.value}>{item.label}</option>)
         return <>{items}</>
     }
 

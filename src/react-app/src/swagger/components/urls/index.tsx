@@ -3,7 +3,7 @@ import {SwaggerClass, SwaggerDoc, SwaggerMethod} from '../../models';
 import {IUrlInfo} from '../../models/url-info';
 
 interface IProps {
-    doc:SwaggerDoc;
+    doc: SwaggerDoc;
     classes: SwaggerClass[];
 }
 
@@ -29,7 +29,7 @@ export const SwaggerAllUrlsComponent = (props: IProps) => {
 
 
 export interface ISwaggerAllUrlsProps extends IProps {
-    urls : IUrlInfo[];
+    urls: IUrlInfo[];
 }
 
 const Component: React.FC<ISwaggerAllUrlsProps> = (props) => {

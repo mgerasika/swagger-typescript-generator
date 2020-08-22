@@ -1,8 +1,9 @@
 import React from 'react';
 
 interface IProps {
-    commment:string;
+    commment: string;
 }
-export const Comment = (props:IProps) =>{
+
+export const Comment = (props: IProps) => {
     return <>{'/* '}{props.commment}{'*/\n'}</>;
 }
