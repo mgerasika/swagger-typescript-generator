@@ -4,7 +4,7 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "start": "babel-node --extensions \\\".tsx\\\" src/node-app/demo.tsx",
+    "start": "npx babel-node --extensions \\\".tsx\\\" src/node-app/demo.tsx",
     "start:dev": "nodemon --exec babel-node --extensions \\\".tsx\\\" src/node-app/demo.tsx",
     "start:react-app": "cd src/react-app && npm run start",
     "build:publish": "npm run build && npm run git-version && npm publish",
@@ -36,8 +36,8 @@
   },
   "devDependencies": {
     "@babel/cli": "^7.6.0",
-    "@babel/core": "^7.6.0",
-    "@babel/node": "^7.6.1",
+    "@babel/core": "^7.11.4",
+    "@babel/node": "^7.10.5",
     "@babel/plugin-proposal-class-properties": "^7.4.0",
     "@babel/plugin-proposal-decorators": "^7.1.0",
     "@babel/plugin-proposal-numeric-separator": "^7.2.0",
