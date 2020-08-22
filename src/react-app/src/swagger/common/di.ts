@@ -1,5 +1,5 @@
-import {IRequestService} from "./request-service";
-import {dependencyInjection} from "./dependency-injection";
+import {IRequestService} from "../common-client-only/request-service";
+import {dependencyInjection} from "../common-client-only/dependency-injection";
 import {IUtilsService} from "./utils-service";
 
 export class DependencyInjectionHelper {

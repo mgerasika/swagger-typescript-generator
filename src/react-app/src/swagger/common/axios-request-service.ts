@@ -1,5 +1,5 @@
 import axios, {AxiosError} from "axios";
-import {IRequestService} from "./request-service";
+import {IRequestService} from "../common-client-only/request-service";
 
 export class RequestService implements IRequestService {
     get<T>(url: string): Promise<T> {

@@ -6,6 +6,7 @@ import {getIsEnumForDefinition, getIsJsType, getResponseIsArray} from "../common
 export class SwaggerModelProperty extends SwaggerBase<SwaggerModel> {
     public name: string = '';
     public type: string = '';
+    public arrayItemType?: string;
     public isArray?: boolean;
     public isEnum?: boolean;
     public required?: boolean;
@@ -46,17 +47,28 @@ export class SwaggerModelProperty extends SwaggerBase<SwaggerModel> {
                 }
             }
 
-            if (!enumRef) {
+            if (enumRef) {
+                if(this.isArray) {
+                    this.arrayItemType = this.type;
+                    this.type = `Array<${this.type}>`;
+                }
+            }
+            else {
                 console.error('Enum not found [model property] = ' +this.name + ' [model name] = ' + this.parent.name);
             }
         }
         if (!this.isEnum && !this.isJsType) {
-            const modelRef = this.doc.definitions.find(f => f.name === this.type);
+            const modelRef = this.doc.definitions.find(f => f.name === this.type || f.name === this.arrayItemType);
             if (modelRef) {
                 this.subModelRef = modelRef;
                 this.type = modelRef.name;
+
+                if(this.isArray) {
+                    this.arrayItemType = this.type;
+                    this.type = `Array<${this.type}>`;
+                }
             } else {
-                console.error('Model not found into swagger-def-model', this);
+                console.error('Model not found into swagger-def-model ' + this.type, this);
             }
         }
     }
