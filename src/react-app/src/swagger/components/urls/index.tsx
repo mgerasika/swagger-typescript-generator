@@ -7,7 +7,7 @@ interface IProps {
     classes: SwaggerClass[];
 }
 
-export const SwaggerAllUrlsComponent = (props: IProps) => {
+export const SwaggerAllUrlsComponent2 = (props: IProps) => {
     const urls: IUrlInfo[] = [];
     props.classes.forEach((def: SwaggerClass) => {
         def.methods.forEach((method: SwaggerMethod) => {

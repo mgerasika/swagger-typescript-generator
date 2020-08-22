@@ -4,7 +4,7 @@ import {DemoAllClassesComponent} from './demo-all-classes';
 import {SwaggerDoc} from '../swagger/models/swagger-doc';
 import {defaultComponents, ISwaggerComponents} from '../swagger/common/default-components';
 import {SwaggerAllClassesExportAdapter} from "../swagger/components/api-class";
-import {SwaggerAllUrlsComponent} from "../swagger/components/urls";
+import {SwaggerAllUrlsComponent2} from "../swagger/components/urls";
 import {DemoAllEnumsComponent} from "./demo-all-enums";
 import {DemoAllPathComponent} from "./demo-all-path";
 import {ISwaggerDocConfig} from "../swagger/models";
@@ -143,7 +143,7 @@ export const SwaggerDemoComponent: React.FC<IProps> = (props) => {
     const renderAllClassesExport = state.root ?
         <SwaggerAllClassesExportAdapter doc={state.root} swaggerClasses={state.root.classes}/> : null;
     const renderAllUrlsExport = state.root ?
-        <SwaggerAllUrlsComponent doc={state.root} classes={state.root.classes}/> : null;
+        <SwaggerAllUrlsComponent2 doc={state.root} classes={state.root.classes}/> : null;
     const renderAllModelsExport = state.root ?
         <SwaggerAllModelsExportAdapter doc={state.root} models={state.root.definitions}/> : null;
     const renderAllEnumsExport = state.root ?

@@ -69,7 +69,7 @@ export class SwaggerMethodParameter extends SwaggerBase<SwaggerMethod> {
                 this.enumRef = enumRef;
                 this.type = enumRef.fullName;
             } else {
-                console.error("Model for enum not found", this);
+                console.error("Model for enum not found (method parameter)" + this.name);
             }
         }
     }

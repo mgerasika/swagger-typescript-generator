@@ -47,7 +47,7 @@ export class SwaggerModelProperty extends SwaggerBase<SwaggerModel> {
             }
 
             if (!enumRef) {
-                console.error('Enum not found', this);
+                console.error('Enum not found [model property] = ' +this.name + ' [model name] = ' + this.parent.name);
             }
         }
         if (!this.isEnum && !this.isJsType) {

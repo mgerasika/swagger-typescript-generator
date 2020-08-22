@@ -4,7 +4,8 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "start": "npx babel-node --extensions \\\".tsx\\\" src/node-app/demo.tsx",
+    "start:tsc": "npx tsc src/node-app/demo.tsx",
+    "start": "npx babel-node-ts src/node-app/demo.tsx",
     "start:dev": "nodemon --exec babel-node --extensions \\\".tsx\\\" src/node-app/demo.tsx",
     "start:react-app": "cd src/react-app && npm run start",
     "build:publish": "npm run build && npm run git-version && npm publish",
@@ -59,6 +60,7 @@
     "babel-eslint": "10.1.0",
     "babel-jest": "^24.8.0",
     "babel-loader": "8.1.0",
+    "babel-node-ts": "^1.0.3",
     "create-react-app": "^3.4.1",
     "del-cli": "^3.0.1",
     "http-server": "^0.12.3",
