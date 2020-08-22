@@ -8,7 +8,6 @@
     "declaration": true,
     "esModuleInterop": true,
     "baseUrl": ".",
-    "composite": true,
     "moduleResolution": "node",
     "strict": true,
     "lib": [
@@ -28,12 +27,15 @@
     "src/**/*",
     "src/react-app/src/**/*"
   ],
+  "references": [
+    {
+      "path": "./src/react-app"
+    }
+  ],
   "exclude": [
     "node_modules",
     "**/*.spec.ts",
     "tmp",
-    "dist",
-    "react-app",
-    "**/react-app"
+    "dist"
   ]
 }

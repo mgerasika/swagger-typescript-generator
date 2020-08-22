@@ -26,33 +26,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ce26be8b-bbf5-4618-81ac-984eef411fea" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/__tests__/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/__tests__/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/node-app/demo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/node-app/demo.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/node-app/node-swagger-generator-base.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/node-app/node-swagger-generator-base.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/node-app/node-swagger-generator-for-multi-file.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/node-app/node-swagger-generator-for-multi-file.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/node-app/node-swagger-generator-for-single-file.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/node-app/node-swagger-generator-for-single-file.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/components/select.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/components/select.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/demo/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/demo/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/demo/swagger-demo-component.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/demo/swagger-demo-component.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/common/assert.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/common/assert.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/common/axios-request-service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/common/axios-request-service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/common/default-utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/common/default-utils.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/common/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/common/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/common/request-service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/common/request-service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/common/swagger-utils.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/common/utils-service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/common/utils-service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/components/api-class/comment.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/components/api-class/comment.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/components/api-method/swagger-api-method-name.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/components/api-method/swagger-api-method-name.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/components/enum/swagger-enum-content.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/components/enum/swagger-enum-content.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/components/model/swagger-model-content.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/components/model/swagger-model-content.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/components/swagger-all-in-one-file.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/components/swagger-all-in-one-file.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/components/urls/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/components/urls/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/models/swagger-class.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/models/swagger-class.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/namespace.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/namespace.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -258,11 +234,46 @@
       <workItem from="1598038614027" duration="40000" />
       <workItem from="1598038685050" duration="6000" />
       <workItem from="1598039433019" duration="2556000" />
+      <workItem from="1598107950021" duration="650000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/src/node-app/demo.js" />
+        <option value="$PROJECT_DIR$/src/node-app/node-swagger-config.js" />
+        <option value="$PROJECT_DIR$/src/react-app/src/main.js" />
+        <option value="$PROJECT_DIR$/src/react-app/src/swagger/utils.js" />
+        <option value="$PROJECT_DIR$/src/react-app/src/swagger/index.js" />
+        <option value="$PROJECT_DIR$/src/react-app/src/swagger/common/axios-request-service.js" />
+        <option value="$PROJECT_DIR$/src/react-app/src/swagger/common/index.js" />
+        <option value="$PROJECT_DIR$/src/react-app/src/swagger/common/di.js" />
+        <option value="$PROJECT_DIR$/src/react-app/src/swagger/common/utils-service.js" />
+        <option value="$PROJECT_DIR$/src/react-app/src/swagger/common/swagger-plugins.js" />
+        <option value="$PROJECT_DIR$/src/react-app/src/swagger/common/request-service.js" />
+        <option value="$PROJECT_DIR$/src/react-app/src/swagger/common/assert.js" />
+        <option value="$PROJECT_DIR$/src/react-app/src/swagger/common/dependency-injection.js" />
+        <option value="$PROJECT_DIR$/src/react-app/src/swagger/common/default-utils.js" />
+        <option value="$PROJECT_DIR$/src/react-app/src/swagger/models/url-info.js" />
+        <option value="$PROJECT_DIR$/src/react-app/src/swagger/models/swagger-method.js" />
+        <option value="$PROJECT_DIR$/src/react-app/src/swagger/models/swagger-model-property.js" />
+        <option value="$PROJECT_DIR$/src/react-app/src/swagger/models/swagger-method-parameter.js" />
+        <option value="$PROJECT_DIR$/src/react-app/src/swagger/models/swagger-model.js" />
+        <option value="$PROJECT_DIR$/src/react-app/src/swagger/models/swagger-doc-config.js" />
+        <option value="$PROJECT_DIR$/src/react-app/src/swagger/models/swagger-class.js" />
+        <option value="$PROJECT_DIR$/src/react-app/src/swagger/models/swagger-doc.js" />
+        <option value="$PROJECT_DIR$/src/react-app/src/swagger/models/swagger-path.js" />
+        <option value="$PROJECT_DIR$/src/react-app/src/swagger/models/swagger-base.js" />
+        <option value="$PROJECT_DIR$/src/react-app/src/swagger/models/swagger-enum.js" />
+        <option value="$PROJECT_DIR$/src/react-app/src/swagger/models/index.js" />
+        <option value="$PROJECT_DIR$/src/react-app/src/swagger/components/index.js" />
+        <option value="$PROJECT_DIR$/src/react-app/src/swagger/components/model/index.js" />
+        <option value="$PROJECT_DIR$/src/react-app/src/swagger/components/api-class/index.js" />
+        <option value="$PROJECT_DIR$/src/react-app/src/swagger/components/api-method/index.js" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.History.Properties">
     <option name="COLUMN_ORDER">
