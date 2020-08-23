@@ -26,19 +26,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ce26be8b-bbf5-4618-81ac-984eef411fea" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/node.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/react.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/common/axios-request-service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/common/axios-request-service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/common/dependency-injection.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/common-client-only/dependency-injection.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/common/di.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/common/di.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/common/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/common/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/common/request-service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/common-client-only/request-service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/components/api-class/swagger-api-class-constructor.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/components/api-class/swagger-api-class-constructor.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/models/swagger-model-property.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/models/swagger-model-property.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/models/swagger-class.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/models/swagger-class.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/models/swagger-doc.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/models/swagger-doc.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/models/swagger-path.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/models/swagger-path.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -244,7 +235,7 @@
       <workItem from="1598038614027" duration="40000" />
       <workItem from="1598038685050" duration="6000" />
       <workItem from="1598039433019" duration="2556000" />
-      <workItem from="1598107950021" duration="6848000" />
+      <workItem from="1598107950021" duration="11229000" />
     </task>
     <servers />
   </component>
@@ -416,11 +407,11 @@
       <screen x="0" y="23" width="2560" height="1339" />
     </state>
     <state x="983" y="402" key="RollbackChangesDialog/0.23.2560.1339/2560.62.2560.1417@0.23.2560.1339" timestamp="1596085463831" />
-    <state x="729" y="367" width="988" height="564" key="find.popup" timestamp="1598129664639">
+    <state x="729" y="367" width="988" height="564" key="find.popup" timestamp="1598158078933">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state x="972" y="447" width="615" height="490" key="find.popup/0.23.2560.1339/2560.62.2560.1417@0.23.2560.1339" timestamp="1596094936341" />
-    <state x="729" y="367" width="988" height="564" key="find.popup/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@0.0.1920.1160" timestamp="1598129664639" />
+    <state x="729" y="367" width="988" height="564" key="find.popup/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@0.0.1920.1160" timestamp="1598158078933" />
     <state x="-1211" y="262" key="run.anything.popup" timestamp="1597671076968">
       <screen x="-1920" y="0" width="1920" height="1160" />
     </state>

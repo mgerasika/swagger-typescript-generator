@@ -18,9 +18,11 @@ export class SwaggerClass extends SwaggerBase<SwaggerDoc> {
         this.name = this.utils.getClassName(this, name);
         this.fileName = this.utils.getClassFileName(this, this.name);
 
-        this.methods = paths.map(obj2 => {
-            return new SwaggerMethod(this, obj2.httpMethod, obj2, obj2.source[obj2.httpMethod]);
-        });
+        this.methods = (paths.map(path => {
+            return path.httpMethods.map(httpMethod => {
+                return new SwaggerMethod(this, httpMethod, path, path.source[httpMethod]);
+            })
+        }) as any).flat();
     }
 
     public init() {

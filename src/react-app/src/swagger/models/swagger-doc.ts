@@ -40,13 +40,14 @@ export class SwaggerDoc {
 
         if (source.tags) {
             this.classes = source.tags.map((tag: any) => {
-                const paths = this.paths.filter(f => f.tag === tag.name);
+                const paths = this.paths.filter(f => f.tags.includes(tag.name));
                 return new SwaggerClass(this, tag.name, tag, paths);
             }, []);
         } else {
-            const tags = uniqueItems(this.paths, (p) => p.tag).map(p => p.tag);
-            this.classes = tags.map((tag: string) => {
-                const paths = this.paths.filter(f => f.tag === tag);
+            const tags = (this.paths.map(p => p.tags) as any).flat();
+            const uniqueTags = uniqueItems(tags, (t) => t) as string[];
+            this.classes = uniqueTags.map((tag: string) => {
+                const paths = this.paths.filter(f => f.tags.includes(tag));
                 const source = paths.map(p => p.source);
                 return new SwaggerClass(this, tag, source, paths);
             }, []);

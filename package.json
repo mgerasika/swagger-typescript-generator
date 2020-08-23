@@ -64,6 +64,7 @@
     "create-react-app": "^3.4.1",
     "del-cli": "^3.0.1",
     "http-server": "^0.12.3",
+    "husky": "^4.2.5",
     "jest": "^24.9.0",
     "react-scripts": "^3.3.0",
     "ts-jest": "^26.2.0",
@@ -74,6 +75,11 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mgerasika/swagger-typescript-generator.git"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "jest"
+    }
   },
   "browserslist": {
     "production": [
