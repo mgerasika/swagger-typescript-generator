@@ -2,6 +2,7 @@ import {capitalize, lowerlize} from "../utils";
 import {SwaggerClass, SwaggerMethod, SwaggerMethodParameter, SwaggerModel, SwaggerModelProperty} from "../models";
 import {SwaggerEnum} from "../models/swagger-enum";
 import {SwaggerPath} from "../models/swagger-path";
+const JS_TYPES = ['number', 'boolean', 'string', 'array', 'file','date', 'object'];
 
 const getModelName = (name: string) => {
     const newName = `${name}`.replace(/[\[\]\.]/g, '');
@@ -9,7 +10,7 @@ const getModelName = (name: string) => {
 };
 
 const getMethodName = (name: string) => {
-    return `${name}`.replace(/[\[\]\. ]/g, ' ').split(' ').map((x, idx) => idx == 0 ? lowerlize(x) : capitalize(x)).join('');
+    return `${name}`.replace(/[\[\]_\. ]/g, ' ').split(' ').map((x, idx) => idx == 0 ? lowerlize(x) : capitalize(x)).join('');
 };
 
 const getEnumName = (name: string) => {
@@ -17,27 +18,22 @@ const getEnumName = (name: string) => {
     return capitalize(`${newName}Enum`);
 };
 
-export const uniqueItems = <T>(items: T[], keyFn: (el: T) => any): T[] => {
-    const uniqueEnums = items.reduce((it: any, el: any) => {
-        const key = keyFn(el);
-        if (key) {
-            it[key] = el;
-        }
-        return it;
-    }, {});
-    return Object.values(uniqueEnums) as any;
+const getFileName = (name: string) => {
+    name = name.replace(/[\[\]\.]/g, '');
+    let words = name.split(/(?=[A-Z])/).map((i: string) => i.toLowerCase());
+    words = words.filter((f: string) => !['api', 'i'].includes(f));
+    return `${words.join('-')}.ts`;
 }
 
-const jsTypes = ['number', 'integer', 'boolean', 'string', 'array', 'file'];
-export const getIsJsType = (name: string) => {
-    return jsTypes.includes(name.toLowerCase()) || name.toLowerCase().indexOf('array<') == 0;
-}
-const getJsType = (type: string, schema: any) => {
+const getJsTypeInternal = (type: string, schema: any) => {
     if (type === 'integer') {
         return 'number';
     }
-    if (type === 'array') {
-        const itemType: string = schema && schema['items'] ? getJsType(schema['items'].type as string, schema['items']) : 'any';
+    if (type === 'string' && schema.format === 'date-time') {
+        return 'Date';
+    }
+    if (type === 'array' || schema?.type === 'array') {
+        const itemType: string = schema && schema['items'] ? getJsType(schema['items']) : 'any';
         return `Array<${itemType}>`;
     }
     if (type === 'file') {
@@ -50,56 +46,38 @@ const getJsType = (type: string, schema: any) => {
     return type;
 }
 
-const getResponseType = (schema: any) => {
+const getJsType = (schema: any) => {
     let res: string = '';
     if (schema.$ref) {
-        return getJsType(schema.$ref, schema)
+        return getJsTypeInternal(schema.$ref, schema)
     }
     if (schema['schema']) {
-        const res = getJsType(schema['schema'].$ref, schema['schema']);
+        const res = getJsTypeInternal(schema['schema'].$ref, schema['schema']);
         if (res) {
             return res;
         }
-        return getJsType(schema['schema'].type, schema['schema']);
+        return getJsTypeInternal(schema['schema'].type, schema['schema']);
     }
-    const responseType = schema.items ? schema.items['$ref'] : schema['$ref'];
-    if (responseType) {
-        res = getJsType(responseType, schema);
+    const itemsRef = schema.items ? schema.items['$ref'] : schema['$ref'];
+    if (itemsRef) {
+        res = getJsTypeInternal(itemsRef, schema);
     }
-    if (!responseType) {
+    if(!res) {
         const additionalProperties = schema.additionalProperties;
         if (additionalProperties && additionalProperties['type']) {
             if (additionalProperties['items']) {
-                res = getJsType(additionalProperties['items'].$ref, additionalProperties['items'])
+                res = getJsTypeInternal(additionalProperties['items'].$ref, additionalProperties['items'])
             } else {
-                res = getJsType(additionalProperties['type'], additionalProperties);
+                res = getJsTypeInternal(additionalProperties['type'], additionalProperties);
             }
         }
     }
     if (!res) {
-        res = getJsType(schema.type, schema);
+        res = getJsTypeInternal(schema.type, schema);
     }
     return res;
 };
 
-export const getResponseIsArray = (schema: any): boolean => {
-    return schema && schema.type === 'array';
-};
-
-export const getIsEnum = (schema: any): boolean => {
-    return schema && schema.items && schema.items.enum && schema.items.enum.length > 0 || schema && schema.enum ? true : false;
-};
-
-export const getIsEnumForDefinition = (schema: any): boolean => {
-    return schema && schema.items && schema.items.enum && schema.items.enum.length > 0 || schema && schema.enum ? true : false;
-};
-
-const getFileName = (name: string) => {
-    name = name.replace(/[\[\]\.]/g, '');
-    let words = name.split(/(?=[A-Z])/).map((i: string) => i.toLowerCase());
-    words = words.filter((f: string) => !['api', 'i'].includes(f));
-    return `${words.join('-')}.ts`;
-}
 
 export interface ISwaggerUtils {
     getClassName: (context: SwaggerClass, name: string) => string;
@@ -120,7 +98,12 @@ export interface ISwaggerUtils {
     getPathName: (context: SwaggerPath, name: string) => string;
 
     escapeMethodQueryParameterName: (name: string) => string;
+    isArray: (schema: any) => boolean;
+    isEnum: (schema: any) => boolean;
+    isJsType: (name: string) => boolean;
+    getEnumValues: (schema:any) => string[] | undefined;
 }
+
 
 export const defaultUtils: ISwaggerUtils = {
     getClassName: (context: SwaggerClass, key: string) => {
@@ -134,22 +117,38 @@ export const defaultUtils: ISwaggerUtils = {
     getClassFileName: (context: SwaggerClass, name: string) => getFileName(name),
     getMethodName: (context: SwaggerMethod, name: string) => getMethodName(name),
     getMethodParameterName: (context: SwaggerMethodParameter, name: string) => name,
-    getMethodResponseType: (context: SwaggerMethod, schema: any) => getResponseType(schema),
+    getMethodResponseType: (context: SwaggerMethod, schema: any) => getJsType(schema),
     getMethodParameterType: (context: SwaggerMethodParameter, schema: any) => {
-        return getResponseType(schema);
+        return getJsType(schema);
     },
 
     getModelName: (context: SwaggerModel, name: string) => getModelName(name),
     getModelFileName: (context: SwaggerModel, name: string) => getFileName(name),
-    getModelType: (context: SwaggerModel, schema: any) => {
-        return getResponseType(schema);
+    getModelType: (context: SwaggerModel, schema: any) => getJsType(schema),
 
-    },
-    getModelPropertyType: (context: SwaggerModelProperty, schema: any) => {
-        return getResponseType(schema);
-    },
+    getModelPropertyType: (context: SwaggerModelProperty, schema: any) => getJsType(schema),
     getWarningMessage: () => '/* This code generated with swagger-typescript-generator. Don\'t modify this file because it will be rewriten. */\n',
     getEnumName: (context: SwaggerEnum, name: string) => getEnumName(name),
     getEnumFileName: (context: SwaggerEnum, name: string) => getFileName(name),
-    escapeMethodQueryParameterName: (name: string) => `${name}`.replace(/[\[\]\.]/g, '')
+    escapeMethodQueryParameterName: (name: string) => `${name}`.replace(/[\[\]\.]/g, ''),
+
+    isArray : (schema: any): boolean => {
+        return schema && schema.type === 'array' || schema?.schema?.type === 'array';
+    },
+
+    isEnum : (schema: any): boolean => {
+        return schema?.items?.enum?.length > 0 || schema?.enum ? true : false;
+    },
+
+    isJsType : (name: string) => {
+        return JS_TYPES.includes(name.toLowerCase()) || name.toLowerCase().indexOf('array<') == 0;
+    },
+
+    getEnumValues: (schema:any) => {
+        if (schema.enum) {
+            return schema.enum;
+        } else if (schema.items?.enum) {
+            return schema.items.enum;
+        }
+    }
 }

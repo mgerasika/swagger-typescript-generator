@@ -20,13 +20,11 @@ export class SwaggerModel extends SwaggerBase<SwaggerDoc> {
         this.type = this.utils.getModelType(this, source);
 
         const requiredArray = source.required || [];
-        this.properties = Object.keys(source.properties).reduce((accum2: any, key2) => {
-            const obj2 = source.properties[key2];
-            const prop = new SwaggerModelProperty(this, key2, obj2);
-            prop.required = requiredArray.some((x: string) => x === prop.name) ? true : undefined;
-            accum2.push(prop);
-            return accum2;
-        }, [])
+        this.properties = Object.keys(source.properties).map(( propertyName) => {
+            const property = source.properties[propertyName];
+            const required = requiredArray.some((x: string) => x === propertyName) ? true : undefined;;
+            return new SwaggerModelProperty(this, propertyName, property, required);
+        })
     }
 
     public init() {

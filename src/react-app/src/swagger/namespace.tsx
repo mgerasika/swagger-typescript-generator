@@ -11,7 +11,7 @@ export const renderTabSymbol = (count: number) => {
 }
 export const Namespace = (props: IProps) => {
     return <>
-        export declare namespace {props.name}
+        export namespace {props.name}
         {' {'} {'\n\t'}{props.children}
         {'}\n'}</>
 }

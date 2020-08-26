@@ -6,8 +6,21 @@ import {defaultComponents, defaultUtils} from "../react-app/src/swagger/common";
 import {SwaggerDoc} from "../react-app/src/swagger/models";
 import {renderToString} from "react-dom/server";
 import {html2text} from "../react-app/src/swagger";
+import {execSync} from "child_process";
 
 const Path = require('path');
+const tscArgs = [
+    '--module commonjs',
+    '--noImplicitAny false',
+    '--suppressImplicitAnyIndexErrors true',
+    '--target ES5',
+    '--moduleResolution node',
+    '--removeComments true',
+    '--lib es5,es6',
+    '--sourceMap',
+    '--declaration true',
+    '--skipLibCheck'
+];
 
 export abstract class NodeSwaggerGeneratorBase {
     public deleteDirectory(urlToDir: string) {
@@ -67,5 +80,15 @@ export abstract class NodeSwaggerGeneratorBase {
             encoding: 'utf8'
         });
         console.log('write to file success ' + fullPath);
+    }
+
+    public compileTsc(inputFile:string){
+        const cmd = `npx tsc ${inputFile} ${tscArgs.join(" ")}`;
+        try {
+            execSync(cmd);
+        }
+        catch (ex) {
+            console.error('execSync error ' + cmd + ' error = ' + ex);
+        }
     }
 }

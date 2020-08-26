@@ -1,16 +1,32 @@
 import React from "react";
 import {SwaggerMethod} from "../../models/swagger-method";
-import {SwaggerMethodParameter} from "../../models";
+import {EParameterType, SwaggerMethodParameter} from "../../models";
 
 interface IProps {
     swaggerMethod: SwaggerMethod;
 }
 
 export const SwaggerApiMethodBodyAdapter = (props: IProps) => {
+    const getRequestServiceParams = ():string[] => {
+        const result = props.swaggerMethod.parameters
+            .filter((parameter: SwaggerMethodParameter) => parameter.parameterType === EParameterType.body)
+            .map((parameter: SwaggerMethodParameter) => {
+                return parameter.name;
+            });
+
+        if (props.swaggerMethod.isFileUpload) {
+            result.push('formData');
+        }
+        result.unshift('url');
+        result.push('options')
+        return result;
+    }
+
     return (
         <>
             {props.swaggerMethod.components.renderApiMethodBody(
                 Component, {
+                    requestServiceParams: getRequestServiceParams(),
                     swaggerMethod: props.swaggerMethod,
                 })}
         </>
@@ -18,25 +34,13 @@ export const SwaggerApiMethodBodyAdapter = (props: IProps) => {
 }
 
 export interface ISwaggerApiMethodBodyProps extends IProps {
+    requestServiceParams:string[];
 }
 
-const Component: React.FC<IProps> = (props) => {
-    const getHttpBodyArguments = () => {
-        const bodyParameters = props.swaggerMethod.parameters
-            .filter((parameter: SwaggerMethodParameter) => parameter.isBodyParameter)
-            .map((parameter: SwaggerMethodParameter) => {
-                return parameter.name;
-            });
-
-        if (props.swaggerMethod.isFileUpload) {
-            bodyParameters.push('formData')
-        }
-        return bodyParameters.join(',');
-    }
-
+const Component: React.FC<ISwaggerApiMethodBodyProps> = (props) => {
     const getFormDataScript = () => {
         const formDataParameters = props.swaggerMethod.parameters
-            .filter((parameter: SwaggerMethodParameter) => parameter.isFormDataParameter)
+            .filter((parameter: SwaggerMethodParameter) => parameter.parameterType === EParameterType.formData)
             .map((parameter: SwaggerMethodParameter) => parameter);
 
         if (formDataParameters.length) {
@@ -55,25 +59,20 @@ const Component: React.FC<IProps> = (props) => {
         return '${this._apiUrl}' + `${result}`;
     }
     const getQueryBody = () => {
-        const queryArguments = props.swaggerMethod.parameters.filter(p => p.isQueryParameter);
+        const queryArguments = props.swaggerMethod.parameters.filter(p => p.parameterType === EParameterType.query);
         const query = queryArguments.map(query => `'${query.name}':${props.swaggerMethod.utils.escapeMethodQueryParameterName(query.name)}Query`).join(',');
         return `di.utilsService.toQueryString({${query}})`;
     }
 
-    const getParams = () => {
-        const postArguments = getHttpBodyArguments();
-        return postArguments && postArguments.length ? `${postArguments}` : ``;
-    }
-
     const methodName = props.swaggerMethod.isFileUpload ? 'upload' : props.swaggerMethod.httpMethod;
-    const params = getParams() ? ' ,' + getParams() : '';
-    const hasQueryParameters = props.swaggerMethod.parameters.some(p => p.isQueryParameter);
+    const hasQueryParameters = props.swaggerMethod.parameters.some(p => p.parameterType === EParameterType.query);
+
     return (<>
         {hasQueryParameters && <> {'\t\t'}const queryStr = {getQueryBody()};{'\n'}</>}
-        {'\t\t'}const url = `{getUrlBody()}`;{'\n'}
+        {hasQueryParameters ?
+        <>{'\t\t'}const url = di.utilsService.combineUrlAndQuery(`{getUrlBody()}`,queryStr);{'\n'}</> :
+        <>{'\t\t'}const url = `{getUrlBody()}`;{'\n'}</>}
         {getFormDataScript()}
-        {hasQueryParameters ? <>
-            {'\t\t'}return di.requestService.{methodName}(di.utilsService.combineUrlAndQuery(url,queryStr){params});
-        </> : <>{'\t\t'}return di.requestService.{methodName}(url{params});</>}
+        {<>{'\t\t'}return di.requestService.{methodName}({props.requestServiceParams.join(',')});</>}
     </>);
 }

@@ -22,6 +22,7 @@ export class NodeSwaggerGeneratorForSingleFile extends NodeSwaggerGeneratorBase 
         }
 
         const text = this.component2string(<SwaggerAllInOneFileAdapter doc={swaggerDoc}/>);
-        this.writeToFile(`${this._config.outDir}/index.ts`, text);
+        const fileUrl = `${this._config.outDir}/index.ts`;
+        this.writeToFile(fileUrl, text);
     }
 }

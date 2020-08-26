@@ -12,17 +12,14 @@ interface Props {
     options: ISelectOption[];
 }
 
-export const Select = (props: Props) => {
-    const ref = useRef<any>();
+export const BootstrapSelect = (props: Props) => {
     const renderOptions = () => {
-        const items = props.options.map((item, idx) => <option key={`${item.value}${idx}`}
-                                                               value={item.value}>{item.label}</option>)
+        const items = props.options.map((item, idx) =>
+            <option key={`${item.value}${idx}`}
+                    value={item.value}>{item.label}</option>)
         return <>{items}</>
     }
 
-    useEffect(() => {
-        ref.current.value = props.value;
-    }, [props.value]);
     return <>
         <div className="row">
             {props.label ?
@@ -32,7 +29,7 @@ export const Select = (props: Props) => {
                     </label>
                     <div className="col-lg-8 col-md-12">
 
-                        <select ref={ref} className="form-control form-control-sm"
+                        <select className="form-control form-control-sm"
                                 value={props.value} onChange={(ev) => {
                             props.onChange(ev as any);
                         }}>
@@ -40,7 +37,7 @@ export const Select = (props: Props) => {
                         </select>
                     </div>
                 </>
-                : <select ref={ref} className="form-control form-control-sm"
+                : <select className="form-control form-control-sm"
                           value={props.value} onChange={(ev) => {
                     props.onChange(ev as any);
                 }}>

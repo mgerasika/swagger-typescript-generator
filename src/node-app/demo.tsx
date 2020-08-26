@@ -17,7 +17,6 @@ const generate = (json: any) => {
     const parentDir = path.resolve(__dirname, '..');
     console.log('parentDir=' + parentDir);
 
-
     const config: INodeSwaggerConfigForOneFile = {
         outDir: `${parentDir}/../gen`,
         createComponentsFactory: (baseComponents) => baseComponents,

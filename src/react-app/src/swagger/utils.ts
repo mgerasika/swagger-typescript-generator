@@ -16,3 +16,13 @@ export const html2text = (html: string) => {
 };
 
 export const privateSymbol = Symbol('parent');
+export const uniqueItems = <T>(items: T[], keyFn: (el: T) => any): T[] => {
+    const uniqueEnums = items.reduce((it: any, el: any) => {
+        const key = keyFn(el);
+        if (key) {
+            it[key] = el;
+        }
+        return it;
+    }, {});
+    return Object.values(uniqueEnums) as any;
+}

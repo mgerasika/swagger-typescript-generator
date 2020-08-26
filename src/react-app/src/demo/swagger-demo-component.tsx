@@ -8,14 +8,15 @@ import {SwaggerAllUrlsComponent2} from "../swagger/components/urls";
 import {DemoAllEnumsComponent} from "./demo-all-enums";
 import {DemoAllPathComponent} from "./demo-all-path";
 import {ISwaggerDocConfig} from "../swagger/models";
-import {SwaggerPanelComponent} from "../components/swagger-panel";
-import {Select} from "../components/select";
+import {BootstrapPanel} from "../components/bootstrap-panel";
+import {BootstrapSelect} from "../components/bootstrap-select";
 import {dictionary} from "../components/dictionary";
 import {SwaggerAllEnumsExportAdapter} from "../swagger/components/enum";
 import {defaultUtils, ISwaggerUtils} from "../swagger/common";
 import {DiffSingle} from "./diff-single";
 import {SwaggerAllModelsExportAdapter} from "../swagger/components/model";
 import {SwaggerAllInOneFileAdapter} from "../swagger/components";
+import {verify} from "crypto";
 
 const axios = require('axios');
 
@@ -81,28 +82,28 @@ export const SwaggerDemoComponent: React.FC<IProps> = (props) => {
         loadSwagger();
     }, [state.url]);
 
-    const selectedApiObjects = useMemo(() => {
+    const selectedApiObject = useMemo(() => {
         if (state.root && state.selectedApi === 'ALL') {
             return state.root.classes;
         }
         return state.root ? state.root.classes.filter(c => c.name === state.selectedApi) : [];
     }, [state.root, state.selectedApi])
 
-    const selectedDefinitionObjects = useMemo(() => {
+    const selectedDefinitionObject = useMemo(() => {
         if (state.root && state.selectedDefinition === 'ALL') {
             return state.root.definitions;
         }
         return state.root ? state.root.definitions.filter(c => c.name === state.selectedDefinition) : [];
     }, [state.root, state.selectedDefinition])
 
-    const selectedEnumObjects = useMemo(() => {
+    const selectedEnumObject = useMemo(() => {
         if (state.root && state.selectedEnum === 'ALL') {
             return state.root.enums;
         }
         return state.root ? state.root.enums.filter(c => c.fullName === state.selectedEnum) : [];
     }, [state.root, state.selectedEnum])
 
-    const selectedPathsObjects = useMemo(() => {
+    const selectedPathsObject = useMemo(() => {
         if (state.root && state.selectedPath === 'ALL') {
             return state.root.paths;
         }
@@ -125,7 +126,7 @@ export const SwaggerDemoComponent: React.FC<IProps> = (props) => {
                     </pre>
             </div>
             <div className="col-sm-12 col-md-6 col-lg-8 ml-3">
-                <Select value={state.url} onChange={(ev) => {
+                <BootstrapSelect value={state.url} onChange={(ev) => {
                     window.localStorage.setItem('url', ev.target.value);
                     setState({
                         ...state,
@@ -137,28 +138,22 @@ export const SwaggerDemoComponent: React.FC<IProps> = (props) => {
         </div>
     }
 
-    const renderAllInOneFile = state.root ?
-        <SwaggerAllInOneFileAdapter doc={state.root}/> : null;
 
-    const renderAllClassesExport = state.root ?
-        <SwaggerAllClassesExportAdapter doc={state.root} swaggerClasses={state.root.classes}/> : null;
-    const renderAllUrlsExport = state.root ?
-        <SwaggerAllUrlsComponent2 doc={state.root} classes={state.root.classes}/> : null;
-    const renderAllModelsExport = state.root ?
-        <SwaggerAllModelsExportAdapter doc={state.root} models={state.root.definitions}/> : null;
-    const renderAllEnumsExport = state.root ?
-        <SwaggerAllEnumsExportAdapter doc={state.root} enums={state.root.enums}/> : null;
     const renderSwagger = () => {
-        return state.root && state.root.definitions ? (
+        const {root} = state;
+        return root ? (
             <>
-                <SwaggerPanelComponent
+                <BootstrapPanel
                     title="Api"
                     activeTitle={state.selectedPanelTitle}
                     onClick={handleSelectedPanelTitleChange}
                     renderSettings={() =>
                         <div className="row">
                             <div className="col-md-4 col-sm-12">
-                                <Select label="Api class" value={state.selectedApi} onChange={(ev) => {
+                                <BootstrapSelect
+                                    label="Api class"
+                                    value={state.selectedApi}
+                                    onChange={(ev) => {
                                     window.localStorage.setItem('selectedApi', ev.target.value);
                                     setState({
                                         ...state,
@@ -168,46 +163,44 @@ export const SwaggerDemoComponent: React.FC<IProps> = (props) => {
                             </div>
                         </div>
                     }
-                    renderContent={() =>
-                        <>
-                            <DemoAllClassesComponent classes={selectedApiObjects}/>
-                        </>}
+                    renderContent={() => <DemoAllClassesComponent classes={selectedApiObject}/>}
                 />
 
-                <SwaggerPanelComponent
+                <BootstrapPanel
                     title="Model"
                     activeTitle={state.selectedPanelTitle}
                     onClick={handleSelectedPanelTitleChange}
                     renderSettings={() =>
                         <div className="row">
                             <div className="col-md-4 col-sm-12">
-                                <Select label="Definition" value={state.selectedDefinition}
-                                        onChange={(ev) => {
-                                            window.localStorage.setItem('selectedDefinition', ev.target.value);
-                                            setState({
-                                                ...state,
-                                                selectedDefinition: ev.target.value
-                                            })
-                                        }} options={dictionary.getApiDefinitionsOptions(state.root)}/>
+                                <BootstrapSelect
+                                    label="Definition"
+                                    value={state.selectedDefinition}
+                                    onChange={(ev) => {
+                                        window.localStorage.setItem('selectedDefinition', ev.target.value);
+                                        setState({
+                                            ...state,
+                                            selectedDefinition: ev.target.value
+                                        })
+                                    }} options={dictionary.getModelOptions(state.root)}/>
 
                             </div>
                         </div>
                     }
-                    renderContent={() =>
-                        <>
-                            <DemoAllModelsComponent
-                                definitions={selectedDefinitionObjects}/>
-                        </>}
+                    renderContent={() =>  <DemoAllModelsComponent  definitions={selectedDefinitionObject}/>}
                 />
 
-                <SwaggerPanelComponent
+                <BootstrapPanel
                     title="Enums"
                     activeTitle={state.selectedPanelTitle}
                     onClick={handleSelectedPanelTitleChange}
                     renderSettings={() =>
                         <div className="row">
                             <div className="col-md-4 col-sm-12">
-                                <Select label="Enum" value={state.selectedEnum} onChange={(ev) => {
+                                <BootstrapSelect
+                                    label="Enum"
+                                    value={state.selectedEnum}
+                                    onChange={(ev) => {
                                     window.localStorage.setItem('selectedEnum', ev.target.value);
                                     setState({
                                         ...state,
@@ -216,21 +209,17 @@ export const SwaggerDemoComponent: React.FC<IProps> = (props) => {
                                 }} options={dictionary.getEnumOptions(state.root)}/>
                             </div>
                         </div>}
-                    renderContent={() =>
-                        <>
-                            <DemoAllEnumsComponent
-                                enums={selectedEnumObjects}/>
-                        </>}
+                    renderContent={() => <DemoAllEnumsComponent enums={selectedEnumObject}/>}
                 />
 
-                <SwaggerPanelComponent
+                <BootstrapPanel
                     title="Path"
                     activeTitle={state.selectedPanelTitle}
                     onClick={handleSelectedPanelTitleChange}
                     renderSettings={() =>
                         <div className="row">
                             <div className="col-md-4 col-sm-12">
-                                <Select label="Path" value={state.selectedPath} onChange={(ev) => {
+                                <BootstrapSelect label="Path" value={state.selectedPath} onChange={(ev) => {
                                     window.localStorage.setItem('selectedPath', ev.target.value);
                                     setState({
                                         ...state,
@@ -240,40 +229,43 @@ export const SwaggerDemoComponent: React.FC<IProps> = (props) => {
                             </div>
                         </div>}
 
-                    renderContent={() =>
-                        <>
-                            <DemoAllPathComponent
-                                paths={selectedPathsObjects}/>
-                        </>}
+                    renderContent={() => <DemoAllPathComponent  paths={selectedPathsObject}/>}
                 />
 
-                <SwaggerPanelComponent
+                <BootstrapPanel
                     title="All in one file"
-                    renderContent={() => <DiffSingle key={'index.ts'} obj={renderAllInOneFile}/>}
+                    renderContent={() => <DiffSingle key={'index.ts'}
+                                                     obj={<SwaggerAllInOneFileAdapter doc={root}/>}/>}
                     activeTitle={state.selectedPanelTitle} onClick={handleSelectedPanelTitleChange}/>
 
-                <SwaggerPanelComponent
+                <BootstrapPanel
                     title="All APIs exports"
-                    renderContent={() => <DiffSingle key={'index.ts'} obj={renderAllClassesExport}/>}
+                    renderContent={() => <DiffSingle key={'index.ts'}
+                                                     obj={<SwaggerAllClassesExportAdapter doc={root}
+                                                                                          swaggerClasses={root.classes}/>}/>}
                     activeTitle={state.selectedPanelTitle} onClick={handleSelectedPanelTitleChange}/>
 
-                <SwaggerPanelComponent
+                <BootstrapPanel
                     title="All models exports"
-                    renderContent={() => <DiffSingle obj={renderAllModelsExport}/>}
+                    renderContent={() => <DiffSingle
+                        obj={<SwaggerAllModelsExportAdapter doc={root} models={root.definitions}/>}/>}
                     activeTitle={state.selectedPanelTitle} onClick={handleSelectedPanelTitleChange}/>
 
-                <SwaggerPanelComponent
+                <BootstrapPanel
                     title="All enums exports"
-                    renderContent={() => <DiffSingle obj={renderAllEnumsExport}/>}
+                    renderContent={() => <DiffSingle
+                        obj={<SwaggerAllEnumsExportAdapter doc={root} enums={root.enums}/>}/>}
                     activeTitle={state.selectedPanelTitle} onClick={handleSelectedPanelTitleChange}/>
 
-                <SwaggerPanelComponent
+                <BootstrapPanel
                     title="Urls"
-                    renderContent={() => <DiffSingle obj={renderAllUrlsExport}/>}
+                    renderContent={() => <DiffSingle
+                        obj={<SwaggerAllUrlsComponent2 doc={root} classes={root.classes}/>}/>}
                     activeTitle={state.selectedPanelTitle} onClick={handleSelectedPanelTitleChange}/>
             </>
         ) : null;
     };
+
 
     const renderLoader = () => {
         return <div className="spinner-border text-secondary position-absolute" role="status"

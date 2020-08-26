@@ -1,6 +1,5 @@
 import {SwaggerClass} from './swagger-class';
 import {IUrlInfo} from './url-info';
-import {getResponseIsArray} from "../common";
 import {SwaggerModel} from "./swagger-model";
 import {SwaggerBase} from "./swagger-base";
 import {SwaggerMethodParameter} from "./swagger-method-parameter";
@@ -12,9 +11,14 @@ export class SwaggerMethod extends SwaggerBase<SwaggerClass> {
     public tags: string = '';
     public url: string = '';
     public parameters: SwaggerMethodParameter[] = [];
+
+    // TODO combine to one type
     public responseIsVoid?: boolean;
     public responseIsArray?: boolean;
     public responseType?: string;
+    public responseIsEnum?: boolean;
+    public responseIsJsType?: boolean;
+
     public isFileUpload?: boolean;
     public description?: string;
 
@@ -48,10 +52,15 @@ export class SwaggerMethod extends SwaggerBase<SwaggerClass> {
             this.responseIsVoid = false;
             const schema = source.responses['200'].schema;
             if (schema) {
-                this.responseIsArray = getResponseIsArray(schema);
+                this.responseIsArray = this.utils.isArray(schema);
                 this.responseType = this.utils.getMethodResponseType(this, schema);
             }
         }
+        if(this.responseType) {
+            this.responseIsJsType = this.utils.isJsType(this.responseType);
+        }
+        this.responseIsEnum = this.utils.isEnum(source) ? true : undefined;
+
         this.isFileUpload = this.parameters.some(s => s.type === 'File');
         if (source.summary) {
             this.description = source.summary;
@@ -61,10 +70,15 @@ export class SwaggerMethod extends SwaggerBase<SwaggerClass> {
     public init() {
         this.parameters.forEach(p => p.init());
 
-        const responseModel = this.doc.definitions.find(f => f.name === this.responseType);
-        if (responseModel) {
-            this.responseModelRef = responseModel;
-            this.responseType = responseModel.name;
+        if (!this.responseIsJsType && !this.responseIsEnum && this.responseType) {
+            const responseModel = this.doc.definitions.find(f => f.name === this.responseType);
+            if (responseModel) {
+                this.responseModelRef = responseModel;
+                this.responseType = responseModel.name;
+            }
+            else {
+                console.error('ResponseModelRef not found ' + this.name, this);
+            }
         }
     }
 

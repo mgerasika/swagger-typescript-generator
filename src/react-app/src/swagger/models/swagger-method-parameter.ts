@@ -1,21 +1,35 @@
-import {getIsEnum, getIsJsType} from "../common";
 import {SwaggerModel} from "./swagger-model";
 import {SwaggerEnum} from "./swagger-enum";
 import {SwaggerBase} from "./swagger-base";
 import {SwaggerMethod} from "./swagger-method";
 
-export class SwaggerMethodParameter extends SwaggerBase<SwaggerMethod> {
+export enum EParameterType {
+    query = 'query',
+    body = 'body',
+    path = 'path',
+    formData = 'formData'
+}
+
+export interface ISwaggerMethodParameter {
+    name: string;
+    type: string;
+    required?: boolean;
+    parameterType?:EParameterType;
+}
+
+export class SwaggerMethodParameter extends SwaggerBase<SwaggerMethod> implements ISwaggerMethodParameter {
     public name: string = '';
     public type: string = '';
-    public isBodyParameter?: boolean;
-    public isPathParameter?: boolean;
-    public isQueryParameter?: boolean;
-    public isFormDataParameter?: boolean;
+    public parameterType?: EParameterType;
+
     public required?: boolean;
     public isEnum?: boolean;
     public isJsType?: boolean;
+    public isArray?: boolean;
+    public arrayItemType?: string;
+
     public description?: string;
-    public enumValues?: [];
+    public enumValues?: string[];
 
     public get enumRef(): SwaggerEnum {
         return this.getPrivateValue('enumRef') as SwaggerEnum;
@@ -41,33 +55,44 @@ export class SwaggerMethodParameter extends SwaggerBase<SwaggerMethod> {
 
         this.name = this.utils.getMethodParameterName(this, source.name);
         this.type = this.utils.getMethodParameterType(this, source);
-        this.isJsType = getIsJsType(this.type);
-        this.isBodyParameter = source.in === 'body' ? true : undefined;
-        this.isPathParameter = source.in === 'path' ? true : undefined;
-        this.isQueryParameter = source.in === 'query' ? true : undefined;
-        this.isFormDataParameter = source.in === 'formData' ? true : undefined;
+        this.isJsType = this.utils.isJsType(this.type);
+        this.isArray = this.utils.isArray(source) ? true : undefined;
+
+        this.parameterType = source.in ? source.in as EParameterType : undefined;
         this.required = source.required ? true : undefined;
-        this.isEnum = getIsEnum(source) ? true : undefined;
+        this.isEnum = this.utils.isEnum(source) ? true : undefined;
         this.description = source.description ? source.description : undefined;
-        this.enumValues = source.enum ? source.enum : undefined;
+        if (this.isEnum) {
+            this.enumValues = this.utils.getEnumValues(source);
+        }
     }
 
     public init() {
         if (!this.isJsType && !this.isEnum) {
-            const modelRef = this.doc.definitions.find(df => df.name === this.type);
+            const modelRef = this.doc.definitions.find(modelItem => modelItem.name === this.type);
             if (modelRef) {
                 this.modelRef = modelRef;
                 this.type = modelRef.name;
+
+                if (this.isArray) {
+                    this.arrayItemType = modelRef.name;
+                    this.type = `Array<${this.arrayItemType}>`;
+                }
             } else {
                 console.error("Model not found", this);
             }
         }
 
         if (this.isEnum) {
-            const enumRef = this.doc.enums.find(df => df.keys.includes(this.name));
+            const enumRef = this.doc.enums.find(enumItem => enumItem.keys.includes(this.name));
             if (enumRef) {
                 this.enumRef = enumRef;
                 this.type = enumRef.fullName;
+
+                if (this.isArray) {
+                    this.arrayItemType = enumRef.fullName;
+                    this.type = `Array<${this.arrayItemType}>`;
+                }
             } else {
                 console.error("Model for enum not found (method parameter)" + this.name);
             }

@@ -2,7 +2,6 @@ import React, {ReactNode} from 'react';
 import {SwaggerDemoComponent} from '.';
 import {ISwaggerComponents} from "../swagger/common";
 
-export * from './custom-plugins';
 export * from './demo-all-classes';
 export * from './demo-all-path';
 export * from './demo-all-enums';
@@ -10,7 +9,7 @@ export * from './demo-all-models';
 export * from '../demo/diff';
 export * from '../demo/diff-single';
 export * from './swagger-demo-component';
-export * from '../components/swagger-panel';
+export * from '../components/bootstrap-panel';
 
 const apiUrls = [
     'https://petstore.swagger.io/v2/swagger.json',

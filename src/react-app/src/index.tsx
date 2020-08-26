@@ -4,7 +4,10 @@ import './index.css';
 import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.css';
 import {App} from "./App";
-import {dependencyInjection, IRequestService, IUtilsService, RequestService, UtilsService} from "./swagger/common";
+import {dependencyInjection} from "./common-client-only/dependency-injection";
+import {IRequestService} from "./common-client-only/request-service";
+import {IUtilsService, UtilsService} from "./common-client-only/utils-service";
+import {RequestService} from "./swagger/common";
 
 dependencyInjection.use<IRequestService>('IRequestService', () => new RequestService())
 dependencyInjection.use<IUtilsService>('IUtilsService', () => new UtilsService())

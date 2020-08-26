@@ -4,30 +4,27 @@ import {Namespace, renderTabSymbol} from "../../namespace";
 
 interface IProps {
     swaggerEnum: SwaggerEnum;
+    tabCount?:number;
 }
 
 export const SwaggerEnumContent: React.FC<IProps> = (props) => {
     const {swaggerEnum} = props;
 
-    const renderFields = (tabCount: number) => (props.swaggerEnum.values || []).map((p: string, idx) => {
-        const separator = (props.swaggerEnum.values || []).length > idx + 1 ? ',' : null;
-        return (<span key={p}>{renderTabSymbol(tabCount)}{p} = {idx}{separator}{'\n'}</span>);
+    const renderFields = (tabCount: number) => (props.swaggerEnum.enumValues || []).map((enumKey: string, idx) => {
+        const separator = (props.swaggerEnum.enumValues || []).length > idx + 1 ? ',' : null;
+        return (<span key={enumKey}>{renderTabSymbol(tabCount)}{enumKey} = {'<any>'}'{enumKey}'{separator}{'\n'}</span>);
     });
 
-    const renderEnum = (isExport: boolean, tabCount: number) => <>
-        {isExport ? 'export ' : ''}enum {swaggerEnum.name} {' {'} {'\n'}
+    const renderEnum = (tabCount: number) => <>
+        {renderTabSymbol(tabCount)}export enum {swaggerEnum.name} {' {'} {'\n'}
         {renderFields(tabCount + 1)}
         {renderTabSymbol(tabCount)}{'}\n'}</>
 
-    const renderEnumIntoNamespaces = () => {
-        return <Namespace name={swaggerEnum.namespace as string}>
-            {renderEnum(false, 1)}
-        </Namespace>
-    }
+
     return (
         <>
             {/*<Comment commment={'This enum used into:' + swaggerEnum.duplicateNamespaces?.join(',')} />*/}
-            {swaggerEnum.namespace ? renderEnumIntoNamespaces() : renderEnum(true, 0)}
+            {renderEnum( props.tabCount || 0)}
         </>
     );
 };

@@ -57,7 +57,7 @@ export class SwaggerDoc {
         this.init();
     }
 
-    public initEnums() {
+    public addEnums() {
         // enums
         this.definitions.forEach(def => {
             def.properties.forEach(defProp => {
@@ -97,7 +97,7 @@ export class SwaggerDoc {
     }
 
     public init() {
-        this.initEnums();
+        this.addEnums();
 
         this.paths.forEach(cl => cl.init());
         this.enums.forEach(cl => cl.init());
