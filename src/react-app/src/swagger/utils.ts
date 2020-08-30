@@ -15,7 +15,8 @@ export const html2text = (html: string) => {
         .replace(/&#x27;/gm, '\'');
 };
 
-export const privateSymbol = Symbol('parent');
+export const privateSymbol = Symbol('private');
+export const nameof = <T>(name: keyof T) => name;
 export const uniqueItems = <T>(items: T[], keyFn: (el: T) => any): T[] => {
     const uniqueEnums = items.reduce((it: any, el: any) => {
         const key = keyFn(el);

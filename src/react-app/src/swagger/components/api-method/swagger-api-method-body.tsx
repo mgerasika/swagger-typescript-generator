@@ -1,6 +1,6 @@
 import React from "react";
 import {SwaggerMethod} from "../../models/swagger-method";
-import {EParameterType, SwaggerMethodParameter} from "../../models";
+import {EParameterIn, SwaggerMethodParameter} from "../../models";
 
 interface IProps {
     swaggerMethod: SwaggerMethod;
@@ -9,7 +9,7 @@ interface IProps {
 export const SwaggerApiMethodBodyAdapter = (props: IProps) => {
     const getRequestServiceParams = ():string[] => {
         const result = props.swaggerMethod.parameters
-            .filter((parameter: SwaggerMethodParameter) => parameter.parameterType === EParameterType.body)
+            .filter((parameter: SwaggerMethodParameter) => parameter.in === EParameterIn.body)
             .map((parameter: SwaggerMethodParameter) => {
                 return parameter.name;
             });
@@ -40,7 +40,7 @@ export interface ISwaggerApiMethodBodyProps extends IProps {
 const Component: React.FC<ISwaggerApiMethodBodyProps> = (props) => {
     const getFormDataScript = () => {
         const formDataParameters = props.swaggerMethod.parameters
-            .filter((parameter: SwaggerMethodParameter) => parameter.parameterType === EParameterType.formData)
+            .filter((parameter: SwaggerMethodParameter) => parameter.in === EParameterIn.formData)
             .map((parameter: SwaggerMethodParameter) => parameter);
 
         if (formDataParameters.length) {
@@ -59,13 +59,13 @@ const Component: React.FC<ISwaggerApiMethodBodyProps> = (props) => {
         return '${this._apiUrl}' + `${result}`;
     }
     const getQueryBody = () => {
-        const queryArguments = props.swaggerMethod.parameters.filter(p => p.parameterType === EParameterType.query);
+        const queryArguments = props.swaggerMethod.parameters.filter(p => p.in === EParameterIn.query);
         const query = queryArguments.map(query => `'${query.name}':${props.swaggerMethod.utils.escapeMethodQueryParameterName(query.name)}Query`).join(',');
         return `di.utilsService.toQueryString({${query}})`;
     }
 
     const methodName = props.swaggerMethod.isFileUpload ? 'upload' : props.swaggerMethod.httpMethod;
-    const hasQueryParameters = props.swaggerMethod.parameters.some(p => p.parameterType === EParameterType.query);
+    const hasQueryParameters = props.swaggerMethod.parameters.some(p => p.in === EParameterIn.query);
 
     return (<>
         {hasQueryParameters && <> {'\t\t'}const queryStr = {getQueryBody()};{'\n'}</>}

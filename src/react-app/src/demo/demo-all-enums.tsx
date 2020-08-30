@@ -12,7 +12,7 @@ export const DemoAllEnumsComponent: React.FC<IProps> = (props) => {
         return (<SwaggerEnumAdapter swaggerEnum={swaggerEnum}></SwaggerEnumAdapter>)
     };
     const result = props.enums.map((def: SwaggerEnum, idx: number) => {
-        return <DiffComponent key={`${def.name}_${idx}`} obj1={def.source} obj2={def} obj3={renderCodegen(def)}/>
+        return <DiffComponent key={def.getUniqueId()} obj1={def.source} obj2={def} obj3={renderCodegen(def)}/>
     })
 
     return props.enums.length ? (

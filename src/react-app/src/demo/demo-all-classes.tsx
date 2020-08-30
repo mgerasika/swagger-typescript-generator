@@ -12,11 +12,12 @@ export const DemoAllClassesComponent: React.FC<IProps> = (props) => {
         return (<SwaggerApiClassAdapter swaggerClass={swaggerClass}></SwaggerApiClassAdapter>)
     };
     const result = props.classes.map((def: SwaggerClass) => {
-        return <DiffComponent key={def.fileName} obj1={def.source} obj2={def} obj3={renderCodegen(def)}/>
+        return <DiffComponent key={def.getUniqueId()} obj1={def.source} obj2={def} obj3={renderCodegen(def)}/>
     })
 
     return props.classes.length ? (
         <>
+
             {result}
         </>
     ) : null;

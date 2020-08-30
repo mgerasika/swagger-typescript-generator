@@ -28,6 +28,7 @@
     "node_modules",
     "**/*.spec.ts",
     "tmp",
+    "__tests__",
     "dist",
     "react-app",
     "**/react-app"

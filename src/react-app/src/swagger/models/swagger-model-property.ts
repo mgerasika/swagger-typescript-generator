@@ -1,8 +1,15 @@
 import {SwaggerBase} from "./swagger-base";
 import {SwaggerModel} from "./swagger-model";
 import {SwaggerEnum} from "./swagger-enum";
+import {SwaggerDoc} from "./swagger-doc";
+import {SwaggerBasePrivateProps} from "./swagger-base-private-props";
 
-export class SwaggerModelProperty extends SwaggerBase<SwaggerModel> {
+interface PrivateProps extends SwaggerBasePrivateProps<SwaggerModel> {
+    enumModelRef:SwaggerEnum;
+    subModelRef:SwaggerModel;
+    originalName:string;
+}
+export class SwaggerModelProperty extends SwaggerBase<SwaggerModel,PrivateProps> {
     public name: string = '';
     public type: string = '';
     public arrayItemType?: string;
@@ -16,19 +23,19 @@ export class SwaggerModelProperty extends SwaggerBase<SwaggerModel> {
     public description?: string;
 
     public get enumModelRef(): SwaggerEnum {
-        return this.getPrivateValue('enumModelRef') as SwaggerEnum;
+        return this.getPrivate('enumModelRef') as SwaggerEnum;
     }
 
     public set enumModelRef(val: SwaggerEnum) {
-        this.setPrivateValue('enumModelRef', val);
+        this.setPrivate('enumModelRef', val);
     }
 
     public get subModelRef(): SwaggerModel {
-        return this.getPrivateValue('subModelRef') as SwaggerModel;
+        return this.getPrivate('subModelRef') as SwaggerModel;
     }
 
     public set subModelRef(val: SwaggerModel) {
-        this.setPrivateValue('subModelRef', val);
+        this.setPrivate('subModelRef', val);
     }
 
     public constructor(parent: SwaggerModel, name: string, source: any, required?:boolean) {
@@ -37,6 +44,7 @@ export class SwaggerModelProperty extends SwaggerBase<SwaggerModel> {
         this.source = source;
         this.parent = parent;
 
+        this.setPrivate('originalName',name)
         this.name = name;
         this.maxNumber = source.maximum !== undefined ? source.maximum : undefined;
         this.minNumber = source.minimum !== undefined ? source.minimum : undefined;
@@ -49,6 +57,16 @@ export class SwaggerModelProperty extends SwaggerBase<SwaggerModel> {
         if (this.isEnum) {
             this.enumValues = this.utils.getEnumValues(source);
         }
+        if(this.isArray) {
+            const type = this.utils.getArrayItemType(source);
+            this.arrayItemType = type || undefined;
+        }
+    }
+
+    public clone(){
+        const res = new SwaggerModelProperty(this.parent,this.getPrivate('originalName'),this.source,this.required);
+        this.copyTo(res);
+        return res;
     }
 
     public init() {

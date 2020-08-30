@@ -2,7 +2,7 @@ import React from 'react';
 import {SwaggerClass} from '../../models/swagger-class';
 import {SwaggerApiClassFieldsAdapter} from './swagger-api-class-fields';
 import {SwaggerApiClassConstructorAdapter} from './swagger-api-class-constructor';
-import {SwaggerApiClassMethodAdapter} from './swagger-api-class-methods';
+import {SwaggerApiClassMethodsAdapter} from './swagger-api-class-methods';
 import {SwaggerApiClassNameAdapter} from './swagger-api-class-name';
 import {SwaggerApiClassInstanceAdapter} from './swagger-api-class-instance';
 
@@ -19,7 +19,7 @@ export const SwaggerApiClassContent: React.FC<IProps> = (props) => {
             {'{\n'}
             <SwaggerApiClassFieldsAdapter swaggerClass={props.swaggerClass}/>
             <SwaggerApiClassConstructorAdapter swaggerClass={props.swaggerClass}/>
-            <SwaggerApiClassMethodAdapter swaggerClass={props.swaggerClass}/>
+            <SwaggerApiClassMethodsAdapter swaggerClass={props.swaggerClass}/>
             {'}\n'}
             <SwaggerApiClassInstanceAdapter swaggerClass={props.swaggerClass}/>
         </>

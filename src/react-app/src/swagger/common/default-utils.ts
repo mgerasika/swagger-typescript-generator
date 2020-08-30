@@ -102,6 +102,7 @@ export interface ISwaggerUtils {
     isEnum: (schema: any) => boolean;
     isJsType: (name: string) => boolean;
     getEnumValues: (schema:any) => string[] | undefined;
+    getArrayItemType: (schema: any) => string;
 }
 
 
@@ -143,7 +144,13 @@ export const defaultUtils: ISwaggerUtils = {
     isJsType : (name: string) => {
         return JS_TYPES.includes(name.toLowerCase()) || name.toLowerCase().indexOf('array<') == 0;
     },
-
+    getArrayItemType: (schema: any) => {
+        const type = getJsType(schema);
+        if(type && type.indexOf('Array') === 0) {
+            return type.replace(/Array/g,'').replace(/[\<\>]/g,'');
+        }
+        return '';
+    },
     getEnumValues: (schema:any) => {
         if (schema.enum) {
             return schema.enum;

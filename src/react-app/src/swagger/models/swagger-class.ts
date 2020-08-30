@@ -1,9 +1,20 @@
-import {SwaggerMethod} from './swagger-method';
+import {ISwaggerMethod, SwaggerMethod} from './swagger-method';
 import {SwaggerDoc as SwaggerDoc} from './swagger-doc';
 import {SwaggerPath} from "./swagger-path";
 import {SwaggerBase} from "./swagger-base";
+import {SwaggerBasePrivateProps} from "./swagger-base-private-props";
 
-export class SwaggerClass extends SwaggerBase<SwaggerDoc> {
+export interface ISwaggerClass {
+    name: string;
+    fileName: string;
+    tag: string;
+    methods: ISwaggerMethod[];
+}
+interface PrivateProps extends SwaggerBasePrivateProps<SwaggerDoc> {
+    originalName:string;
+    paths:SwaggerPath;
+}
+export class SwaggerClass extends SwaggerBase<SwaggerDoc,PrivateProps> {
     public name: string = '';
     public fileName: string;
     public tag: string = "";
@@ -14,6 +25,8 @@ export class SwaggerClass extends SwaggerBase<SwaggerDoc> {
 
         this.parent = parent;
         this.source = source;
+        this.setPrivate('originalName',name);
+        this.setPrivate('paths',paths);
         this.tag = name;
         this.name = this.utils.getClassName(this, name);
         this.fileName = this.utils.getClassFileName(this, this.name);
@@ -25,7 +38,14 @@ export class SwaggerClass extends SwaggerBase<SwaggerDoc> {
         }) as any).flat();
     }
 
+
     public init() {
         this.methods.forEach(m => m.init());
+    }
+
+    clone(): SwaggerBase<SwaggerDoc,PrivateProps> {
+        const res = new SwaggerClass(this.parent,this.getPrivate('originalName'),this.source,this.getPrivate('paths'));
+        this.copyTo(res);
+        return res;
     }
 }

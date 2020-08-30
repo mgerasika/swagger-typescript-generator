@@ -1,20 +1,11 @@
 import {privateSymbol} from "../utils";
 import {SwaggerDoc} from "./swagger-doc";
 import {ISwaggerDocConfig} from "./swagger-doc-config";
+import {SwaggerBasePrivateProps} from "./swagger-base-private-props";
+import {ObjectEx} from "./object-ex";
 
-export class SwaggerBase<T> {
-    constructor() {
-        (this as any)[privateSymbol] = {};
-    }
-
-    toJSON() {
-        if (this.doc.config.showPrivateFieldsForDebug) {
-            return {
-                PRIVATE: (this as any)[privateSymbol],
-                ...this
-            }
-        }
-        return this;
+export abstract class SwaggerBase<TParent,TPrivateProps extends SwaggerBasePrivateProps<TParent>> extends ObjectEx<TPrivateProps>{
+    init(){
     }
 
     public get utils() {
@@ -34,26 +25,18 @@ export class SwaggerBase<T> {
     }
 
     public get source() {
-        return this.getPrivateValue('source');
+        return this.getPrivate('_source');
     }
 
     public set source(val) {
-        this.setPrivateValue("source", val);
+        this.setPrivate("_source", val);
     }
 
-    public get parent(): T {
-        return this.getPrivateValue('parent');
+    public get parent(): TParent {
+        return this.getPrivate('_parent');
     }
 
     public set parent(val) {
-        this.setPrivateValue("parent", val);
-    }
-
-    public getPrivateValue(name: string): any {
-        return (this as any)[privateSymbol][name];
-    }
-
-    public setPrivateValue(name: string, val: any) {
-        (this as any)[privateSymbol][name] = val;
+        this.setPrivate("_parent", val);
     }
 }

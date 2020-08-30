@@ -1,5 +1,6 @@
 import {ISelectOption} from "./bootstrap-select";
 import {SwaggerDoc} from "../swagger/models";
+import {customizationArray} from "../demo/customisation";
 
 const compareFn = (a: string, b: string) => (a < b ? -1 : a > b ? 1 : 0)
 
@@ -17,6 +18,11 @@ export const dictionary = {
 
     getUrlOptions: (urls: string[]): ISelectOption[] => {
         return urls.map(item => ({label: item, value: item}));
+    },
+
+    getCustomizationOptions: (): ISelectOption[] => {
+        const items = customizationArray.map(item => ({label: item.methodName, value: item.methodName}));
+        return [EMPTY_OPTION,...items];
     },
 
     getModelOptions: (root: SwaggerDoc | undefined): ISelectOption[] => {
@@ -45,4 +51,4 @@ export const dictionary = {
             .map(item => ({label: item.name, value: item.name})) as ISelectOption[];
         return [ EMPTY_OPTION, ALL_OPTION, ...items];
     }
-    };
+};

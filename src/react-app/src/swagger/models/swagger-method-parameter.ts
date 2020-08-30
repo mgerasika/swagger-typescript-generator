@@ -2,8 +2,11 @@ import {SwaggerModel} from "./swagger-model";
 import {SwaggerEnum} from "./swagger-enum";
 import {SwaggerBase} from "./swagger-base";
 import {SwaggerMethod} from "./swagger-method";
+import {SwaggerDoc} from "./swagger-doc";
+import {SwaggerPath} from "./swagger-path";
+import {SwaggerBasePrivateProps} from "./swagger-base-private-props";
 
-export enum EParameterType {
+export enum EParameterIn {
     query = 'query',
     body = 'body',
     path = 'path',
@@ -11,17 +14,21 @@ export enum EParameterType {
 }
 
 export interface ISwaggerMethodParameter {
-    name: string;
+    name:string;
+    label:string;
     type: string;
     required?: boolean;
-    parameterType?:EParameterType;
+    in?:EParameterIn;
 }
-
-export class SwaggerMethodParameter extends SwaggerBase<SwaggerMethod> implements ISwaggerMethodParameter {
-    public name: string = '';
+interface PrivateProps extends SwaggerBasePrivateProps<SwaggerMethod> {
+    enumRef:SwaggerEnum;
+    modelRef:SwaggerModel;
+}
+export class SwaggerMethodParameter extends SwaggerBase<SwaggerMethod,PrivateProps> implements ISwaggerMethodParameter {
+    public label: string = '';
     public type: string = '';
-    public parameterType?: EParameterType;
-
+    public in?: EParameterIn;
+    public name:string = '';
     public required?: boolean;
     public isEnum?: boolean;
     public isJsType?: boolean;
@@ -32,19 +39,19 @@ export class SwaggerMethodParameter extends SwaggerBase<SwaggerMethod> implement
     public enumValues?: string[];
 
     public get enumRef(): SwaggerEnum {
-        return this.getPrivateValue('enumRef') as SwaggerEnum;
+        return this.getPrivate('enumRef') as SwaggerEnum;
     }
 
     public set enumRef(val: SwaggerEnum) {
-        this.setPrivateValue('enumRef', val);
+        this.setPrivate('enumRef', val);
     }
 
     public get modelRef(): SwaggerModel {
-        return this.getPrivateValue('modelRef') as SwaggerModel;
+        return this.getPrivate('modelRef') as SwaggerModel;
     }
 
     public set modelRef(val: SwaggerModel) {
-        this.setPrivateValue('modelRef', val);
+        this.setPrivate('modelRef', val);
     }
 
     public constructor(parent: SwaggerMethod, source: any) {
@@ -53,21 +60,35 @@ export class SwaggerMethodParameter extends SwaggerBase<SwaggerMethod> implement
         this.parent = parent;
         this.source = source;
 
-        this.name = this.utils.getMethodParameterName(this, source.name);
+        const name = this.utils.getMethodParameterName(this, source.name);
+        this.name = name;
+        this.label = name;
+
         this.type = this.utils.getMethodParameterType(this, source);
         this.isJsType = this.utils.isJsType(this.type);
-        this.isArray = this.utils.isArray(source) ? true : undefined;
-
-        this.parameterType = source.in ? source.in as EParameterType : undefined;
-        this.required = source.required ? true : undefined;
-        this.isEnum = this.utils.isEnum(source) ? true : undefined;
-        this.description = source.description ? source.description : undefined;
+        this.isArray = this.utils.isArray(source) || undefined;
+        if(this.isArray) {
+            const type = this.utils.getArrayItemType(source);
+            this.arrayItemType = type || undefined;
+        }
+        this.in = source.in ? source.in as EParameterIn : undefined;
+        this.required = source.required || undefined;
+        this.isEnum = this.utils.isEnum(source) || undefined;
+        this.description = source.description || undefined;
         if (this.isEnum) {
             this.enumValues = this.utils.getEnumValues(source);
         }
     }
 
+    public clone(){
+        const res = new SwaggerMethodParameter(this.parent,this.source);
+        this.copyTo(res);
+        return res;
+    }
+
     public init() {
+        super.init();
+
         if (!this.isJsType && !this.isEnum) {
             const modelRef = this.doc.definitions.find(modelItem => modelItem.name === this.type);
             if (modelRef) {

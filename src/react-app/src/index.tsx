@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
-import 'bootstrap/dist/css/bootstrap.css';
 import {App} from "./App";
 import {dependencyInjection} from "./common-client-only/dependency-injection";
 import {IRequestService} from "./common-client-only/request-service";

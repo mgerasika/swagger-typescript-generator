@@ -7,10 +7,10 @@ interface IProps {
     swaggerClass: SwaggerClass;
 }
 
-export const SwaggerApiClassMethodAdapter = (props: IProps) => {
+export const SwaggerApiClassMethodsAdapter = (props: IProps) => {
     return (
         <>
-            {props.swaggerClass.components.renderApiClassMethod(
+            {props.swaggerClass.components.renderApiClassMethods(
                 Component, {
                     swaggerClass: props.swaggerClass,
                 })}

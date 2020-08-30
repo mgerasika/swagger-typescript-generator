@@ -23,12 +23,13 @@ import {ISwaggerApiClassInstanceProps} from '../components/api-class/swagger-api
 import {ISwaggerApiMethodNameProps} from "../components/api-method/swagger-api-method-name";
 
 export interface ISwaggerComponents {
+    DEBUG_CUSTOMIZATION_NAME:string;
     renderAllClassesExport: SwaggerPluginAction<ISwaggerAllClassesExportProps>;
     renderApiClass: SwaggerPluginAction<ISwaggerApiClassProps>;
     renderApiClassConstructor: SwaggerPluginAction<ISwaggerApiClassConstructorProps>;
     renderApiClassImport: SwaggerPluginAction<ISwaggerApiClassImportComponentProps>;
     renderApiClassFields: SwaggerPluginAction<ISwaggerApiClassFieldsProps>;
-    renderApiClassMethod: SwaggerPluginAction<ISwaggerApiClassMethodProps>;
+    renderApiClassMethods: SwaggerPluginAction<ISwaggerApiClassMethodProps>;
     renderApiClassName: SwaggerPluginAction<ISwaggerApiClassNameProps>;
     renderApiClassInstance: SwaggerPluginAction<ISwaggerApiClassInstanceProps>;
 
@@ -50,6 +51,7 @@ export interface ISwaggerComponents {
 }
 
 export const defaultComponents: ISwaggerComponents = {
+    DEBUG_CUSTOMIZATION_NAME:'',
     renderApiClassImport: (Component: React.FC<any>, props: ISwaggerApiClassImportComponentProps) => {
         return (<Component {...props} />);
     },
@@ -65,7 +67,7 @@ export const defaultComponents: ISwaggerComponents = {
     renderApiClassFields: (Component: React.FC<any>, props: ISwaggerApiClassFieldsProps) => {
         return (<Component {...props} />);
     },
-    renderApiClassMethod: (Component: React.FC<any>, props: ISwaggerApiClassMethodProps) => {
+    renderApiClassMethods: (Component: React.FC<any>, props: ISwaggerApiClassMethodProps) => {
         return (<Component {...props} />);
     },
     renderApiClassName: (Component: React.FC<any>, props: ISwaggerApiClassNameProps) => {

@@ -8,3 +8,5 @@ export * from './swagger-path';
 export * from './swagger-method-parameter';
 export * from './swagger-model-property';
 export * from './swagger-doc-config';
+export * from './object-ex';
+export * from "./swagger-base-private-props";

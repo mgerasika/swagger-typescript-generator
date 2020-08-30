@@ -4,8 +4,24 @@ import {SwaggerModel} from "./swagger-model";
 import {SwaggerBase} from "./swagger-base";
 import {SwaggerMethodParameter} from "./swagger-method-parameter";
 import {SwaggerPath} from "./swagger-path";
+import {SwaggerDoc} from "./swagger-doc";
+import {SwaggerBasePrivateProps} from "./swagger-base-private-props";
 
-export class SwaggerMethod extends SwaggerBase<SwaggerClass> {
+export interface ISwaggerMethod{
+    httpMethod: string;
+    name: string;
+    tags: string;
+    url: string;
+    parameters: SwaggerMethodParameter[];
+
+}
+
+interface PrivateProps extends SwaggerBasePrivateProps<SwaggerClass> {
+    responseModelRef:SwaggerModel;
+    path:SwaggerPath;
+}
+
+export class SwaggerMethod extends SwaggerBase<SwaggerClass,PrivateProps> {
     public httpMethod: string = '';
     public name: string = '';
     public tags: string = '';
@@ -18,16 +34,17 @@ export class SwaggerMethod extends SwaggerBase<SwaggerClass> {
     public responseType?: string;
     public responseIsEnum?: boolean;
     public responseIsJsType?: boolean;
+    public responseArrayItemType?:string;
 
     public isFileUpload?: boolean;
     public description?: string;
 
     public get responseModelRef(): SwaggerModel {
-        return this.getPrivateValue('responseModelRef') as SwaggerModel;
+        return this.getPrivate('responseModelRef') as SwaggerModel;
     }
 
     public set responseModelRef(val: SwaggerModel) {
-        this.setPrivateValue('responseModelRef', val);
+        this.setPrivate('responseModelRef', val);
     }
 
     public constructor(parent: SwaggerClass, httpMethod: string, path: SwaggerPath, source: any) {
@@ -36,7 +53,7 @@ export class SwaggerMethod extends SwaggerBase<SwaggerClass> {
         this.parent = parent;
         this.source = source;
         this.url = path.url;
-
+        this.setPrivate('path',path);
         this.httpMethod = httpMethod;
         [this.tags] = this.source.tags;
         this.name = this.utils.getMethodName(this, this.source.operationId);
@@ -65,6 +82,12 @@ export class SwaggerMethod extends SwaggerBase<SwaggerClass> {
         if (source.summary) {
             this.description = source.summary;
         }
+    }
+
+    public clone(){
+        const res = new SwaggerMethod(this.parent,this.httpMethod,this.getPrivate('path'),this.source);
+        this.copyTo(res);
+        return res;
     }
 
     public init() {

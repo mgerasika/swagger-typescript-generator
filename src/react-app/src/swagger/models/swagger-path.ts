@@ -1,8 +1,17 @@
 import {SwaggerDoc} from './swagger-doc';
 import {SwaggerBase} from "./swagger-base";
 import {uniqueItems} from "../common";
+import {SwaggerEnum} from "./swagger-enum";
+import {SwaggerModel} from "./swagger-model";
+import {SwaggerBasePrivateProps} from "./swagger-base-private-props";
 
-export class SwaggerPath extends SwaggerBase<SwaggerDoc> {
+export interface ISwaggerPath{
+
+}
+interface PrivateProps extends SwaggerBasePrivateProps<SwaggerDoc> {
+    key:string;
+}
+export class SwaggerPath extends SwaggerBase<SwaggerDoc,PrivateProps> implements ISwaggerPath{
     public name: string = '';
     public url: string;
     public tags: string[] = [];
@@ -11,6 +20,7 @@ export class SwaggerPath extends SwaggerBase<SwaggerDoc> {
     public constructor(parent: SwaggerDoc, key: string, source: any) {
         super();
 
+        this.setPrivate('key',key)
         this.parent = parent;
         this.source = source;
 
@@ -24,6 +34,12 @@ export class SwaggerPath extends SwaggerBase<SwaggerDoc> {
             this.tags.push(el.tags);
         })
         this.tags = uniqueItems((this.tags as any).flat(), it => it );
+    }
+
+    public clone(){
+        const res = new SwaggerPath(this.parent,this.getPrivate('key'),this.source);
+        this.copyTo(res);
+        return res;
     }
 
     public init() {

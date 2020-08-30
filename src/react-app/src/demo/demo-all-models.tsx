@@ -12,7 +12,7 @@ export const DemoAllModelsComponent: React.FC<IProps> = (props) => {
         return (<SwaggerModelAdapter swaggerModel={def}></SwaggerModelAdapter>)
     };
     const result = props.definitions.map((def: SwaggerModel) => {
-        return <DiffComponent key={def.name} obj1={def.source} obj2={def} obj3={renderCodegen(def)}/>
+        return <DiffComponent key={def.getUniqueId()} obj1={def.source} obj2={def} obj3={renderCodegen(def)}/>
     })
 
 

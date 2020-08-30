@@ -1,13 +1,23 @@
-import {SwaggerModel} from './swagger-model';
-import {SwaggerClass} from './swagger-class';
+import {ISwaggerModel, SwaggerModel} from './swagger-model';
+import {ISwaggerClass, SwaggerClass} from './swagger-class';
 import {defaultComponents, defaultUtils, ISwaggerComponents, ISwaggerUtils, uniqueItems} from "../common";
-import {SwaggerEnum} from "./swagger-enum";
-import {SwaggerPath} from "./swagger-path";
+import {ISwaggerEnum, SwaggerEnum} from "./swagger-enum";
+import {ISwaggerPath, SwaggerPath} from "./swagger-path";
 import {ISwaggerDocConfig} from "./swagger-doc-config";
+import {SwaggerBase} from "./swagger-base";
+import {SwaggerBasePrivateProps} from "./swagger-base-private-props";
+import {ObjectEx} from "./object-ex";
 
-const sourceSymbol = Symbol('source');
-
-export class SwaggerDoc {
+export interface ISwaggerDoc {
+    definitions: ISwaggerModel[];
+    classes: ISwaggerClass[];
+    paths: ISwaggerPath[];
+    enums: ISwaggerEnum[];
+}
+interface PrivateProps extends SwaggerBasePrivateProps<null>{
+    config:ISwaggerDocConfig;
+}
+export class SwaggerDoc extends ObjectEx<PrivateProps> implements ISwaggerDoc {
     public definitions: SwaggerModel[] = [];
     public classes: SwaggerClass[] = [];
     public paths: SwaggerPath[] = [];
@@ -16,6 +26,8 @@ export class SwaggerDoc {
     public components: ISwaggerComponents = defaultComponents;
 
     public constructor(config: ISwaggerDocConfig, utils: ISwaggerUtils, components: ISwaggerComponents) {
+        super();
+
         this.config = config;
         this.utils = utils;
         this.components = components;
@@ -55,6 +67,12 @@ export class SwaggerDoc {
 
 
         this.init();
+    }
+
+    public clone() {
+        const res = new SwaggerDoc(this.config,this.utils,this.components);
+        this.copyTo(res);
+        return res;
     }
 
     public addEnums() {
@@ -112,11 +130,11 @@ export class SwaggerDoc {
     }
 
     public get config(): ISwaggerDocConfig {
-        return (this as any)[sourceSymbol];
+        return this.getPrivate('config')
     }
 
-    public set config(val: ISwaggerDocConfig) {
-        (this as any)[sourceSymbol] = val;
+    public set config(value: ISwaggerDocConfig) {
+        this.setPrivate('config',value);
     }
 }
 

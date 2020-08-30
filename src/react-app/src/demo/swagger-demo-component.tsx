@@ -16,9 +16,12 @@ import {defaultUtils, ISwaggerUtils} from "../swagger/common";
 import {DiffSingle} from "./diff-single";
 import {SwaggerAllModelsExportAdapter} from "../swagger/components/model";
 import {SwaggerAllInOneFileAdapter} from "../swagger/components";
-import {verify} from "crypto";
+import {customComponentsFactory, customizationArray, ICustomizationItem} from "./customisation";
 
 const axios = require('axios');
+if (typeof window !== "undefined" && typeof window.document !== "undefined") {
+    require('bootstrap/dist/css/bootstrap.css');
+}
 
 interface IProps {
     apiUrls: string[];
@@ -33,11 +36,13 @@ interface IState {
     selectedPath: string;
     selectedDefinition: string;
     selectedEnum: string;
-    root?: SwaggerDoc;
     selectedPanelTitle: string;
+    selectedCustomizationMethodName: string;
+    editorValue: string;
 }
 
 export const SwaggerDemoComponent: React.FC<IProps> = (props) => {
+    const [root, setRoot] = useState<SwaggerDoc>();
     const [state, setState] = useState<IState>({
         url: window.localStorage.getItem('url') ? window.localStorage.getItem('url') as string : props.apiUrls.length ? props.apiUrls[0] : 'https://petstore.swagger.io/v2/swagger.json',
         selectedApi: window.localStorage.getItem('selectedApi') || '',
@@ -45,6 +50,8 @@ export const SwaggerDemoComponent: React.FC<IProps> = (props) => {
         selectedDefinition: window.localStorage.getItem('selectedDefinition') || '',
         selectedEnum: window.localStorage.getItem('selectedEnum') || '',
         selectedPanelTitle: window.localStorage.getItem('selectedPanelTitle') || 'Api',
+        selectedCustomizationMethodName: window.localStorage.getItem('selectedCustomizationMethodName') || '',
+        editorValue: ''
     });
 
     const loadSwagger = () => {
@@ -58,65 +65,80 @@ export const SwaggerDemoComponent: React.FC<IProps> = (props) => {
                     enumImportPath: '../api-enum',
                     showPrivateFieldsForDebug: false,
                 };
-                const plugin = props.createComponentsFactory ? props.createComponentsFactory(defaultComponents) : defaultComponents;
-                let doc = new SwaggerDoc(config, utils, plugin);
+                let doc = new SwaggerDoc(config, utils, createCustomComponentsFactory(state.selectedCustomizationMethodName));
                 if (props.createDocumentFactory) {
                     doc = props.createDocumentFactory(doc);
                     doc.init();
                 }
-                setState({
-                    ...state,
-                    root: doc
-                });
+                setRoot(doc);
             })
     };
 
+    const getEditorValue = () => {
+        const item = customizationArray.find(f => f.methodName === state.selectedCustomizationMethodName);
+        const newVal = item ? JSON.stringify(item.getProps(), null, 2) : '';
+        return newVal;
+    }
 
-    useEffect(() => {
-        if (!state.root) {
-            loadSwagger();
+    const createCustomComponentsFactory = (name: string) => {
+        const callback = (item: ICustomizationItem) => {
+            if (item.methodName === name) {
+                // TODO refactor! Bugs!!!
+                setTimeout(() => {
+                    const el = document.getElementById('textArea') as HTMLTextAreaElement;
+                    if (el) {
+                        el.value = JSON.stringify(item.getProps(), null, 2);
+                    }
+                }, 0);
+            }
         }
-    });
+
+        const result = props.createComponentsFactory ?
+            customComponentsFactory(props.createComponentsFactory(defaultComponents), name, callback) :
+            customComponentsFactory(defaultComponents, name, callback);
+        return result;
+    }
 
     useEffect(() => {
         loadSwagger();
     }, [state.url]);
 
+
     const selectedApiObject = useMemo(() => {
-        if (state.root && state.selectedApi === 'ALL') {
-            return state.root.classes;
+        if (root && state.selectedApi === 'ALL') {
+            return root.classes;
         }
-        return state.root ? state.root.classes.filter(c => c.name === state.selectedApi) : [];
-    }, [state.root, state.selectedApi])
+        return root ? root.classes.filter(c => c.name === state.selectedApi) : [];
+    }, [root, state.selectedApi])
 
     const selectedDefinitionObject = useMemo(() => {
-        if (state.root && state.selectedDefinition === 'ALL') {
-            return state.root.definitions;
+        if (root && state.selectedDefinition === 'ALL') {
+            return root.definitions;
         }
-        return state.root ? state.root.definitions.filter(c => c.name === state.selectedDefinition) : [];
-    }, [state.root, state.selectedDefinition])
+        return root ? root.definitions.filter(c => c.name === state.selectedDefinition) : [];
+    }, [root, state.selectedDefinition])
 
     const selectedEnumObject = useMemo(() => {
-        if (state.root && state.selectedEnum === 'ALL') {
-            return state.root.enums;
+        if (root && state.selectedEnum === 'ALL') {
+            return root.enums;
         }
-        return state.root ? state.root.enums.filter(c => c.fullName === state.selectedEnum) : [];
-    }, [state.root, state.selectedEnum])
+        return root ? root.enums.filter(c => c.fullName === state.selectedEnum) : [];
+    }, [root, state.selectedEnum])
 
     const selectedPathsObject = useMemo(() => {
-        if (state.root && state.selectedPath === 'ALL') {
-            return state.root.paths;
+        if (root && state.selectedPath === 'ALL') {
+            return root.paths;
         }
-        return state.root ? state.root.paths.filter(c => c.name === state.selectedPath) : [];
-    }, [state.root, state.selectedPath])
+        return root ? root.paths.filter(c => c.name === state.selectedPath) : [];
+    }, [root, state.selectedPath])
 
 
     const handleSelectedPanelTitleChange = (t: string) => {
         window.localStorage.setItem('selectedPanelTitle', t);
-        setState({
-            ...state,
+        setState(prev => ({
+            ...prev,
             selectedPanelTitle: t
-        })
+        }))
     }
     const renderHeader = () => {
         return <div className="row mb-2" style={{width: '99%'}}>
@@ -130,17 +152,50 @@ export const SwaggerDemoComponent: React.FC<IProps> = (props) => {
                     window.localStorage.setItem('url', ev.target.value);
                     setState({
                         ...state,
-                        root: undefined,
                         url: ev.target.value
-                    })
+                    });
+                    setRoot(undefined);
                 }} options={dictionary.getUrlOptions(props.apiUrls)}/>
             </div>
         </div>
     }
 
+    const renderCustomization = () => {
+        return <>
+            <code>Customization:</code>
+            <div style={{paddingLeft : '14px', paddingRight: '14px', paddingBottom: '4px'}}>
+            <BootstrapSelect
+            value={state.selectedCustomizationMethodName}
+            onChange={(ev) => {
+                window.localStorage.setItem('selectedCustomizationMethodName', ev.target.value);
+                if (root) {
+                    const newRoot = new SwaggerDoc(root.config, root.utils, createCustomComponentsFactory(ev.target.value));
+                    setState({
+                        ...state,
+                        selectedCustomizationMethodName: ev.target.value,
+                    })
+                    setRoot(newRoot);
+                }
+            }} options={dictionary.getCustomizationOptions()}/>
+                </div>
+            <textarea id="textArea" style={{width: '100%', height: '200px', fontSize: '12px',border:'1px solid #ccc'}}
+                      value={state.editorValue} onChange={(ev) => {
+                const customizationOption = customizationArray.find(f => f.methodName === state.selectedCustomizationMethodName);
+                if (customizationOption) {
+                    try {
+                        customizationOption.customProps = JSON.parse(ev.target.value)
+                    } catch (ex) {
+                    }
+                }
+                setState({
+                    ...state,
+                    editorValue: ev.target.value
+                });
+            }}/>
+        </>
+    }
 
     const renderSwagger = () => {
-        const {root} = state;
         return root ? (
             <>
                 <BootstrapPanel
@@ -154,12 +209,15 @@ export const SwaggerDemoComponent: React.FC<IProps> = (props) => {
                                     label="Api class"
                                     value={state.selectedApi}
                                     onChange={(ev) => {
-                                    window.localStorage.setItem('selectedApi', ev.target.value);
-                                    setState({
-                                        ...state,
-                                        selectedApi: ev.target.value
-                                    })
-                                }} options={dictionary.getClassesOptions(state.root)}/>
+                                        window.localStorage.setItem('selectedApi', ev.target.value);
+                                        setState({
+                                            ...state,
+                                            selectedApi: ev.target.value
+                                        })
+                                    }} options={dictionary.getClassesOptions(root)}/>
+                            </div>
+                            <div className="col-md-4 col-sm-12">
+                                {renderCustomization()}
                             </div>
                         </div>
                     }
@@ -182,12 +240,15 @@ export const SwaggerDemoComponent: React.FC<IProps> = (props) => {
                                             ...state,
                                             selectedDefinition: ev.target.value
                                         })
-                                    }} options={dictionary.getModelOptions(state.root)}/>
+                                    }} options={dictionary.getModelOptions(root)}/>
 
+                            </div>
+                            <div className="col-md-4 col-sm-12">
+                                {renderCustomization()}
                             </div>
                         </div>
                     }
-                    renderContent={() =>  <DemoAllModelsComponent  definitions={selectedDefinitionObject}/>}
+                    renderContent={() => <DemoAllModelsComponent definitions={selectedDefinitionObject}/>}
                 />
 
                 <BootstrapPanel
@@ -201,12 +262,15 @@ export const SwaggerDemoComponent: React.FC<IProps> = (props) => {
                                     label="Enum"
                                     value={state.selectedEnum}
                                     onChange={(ev) => {
-                                    window.localStorage.setItem('selectedEnum', ev.target.value);
-                                    setState({
-                                        ...state,
-                                        selectedEnum: ev.target.value
-                                    })
-                                }} options={dictionary.getEnumOptions(state.root)}/>
+                                        window.localStorage.setItem('selectedEnum', ev.target.value);
+                                        setState({
+                                            ...state,
+                                            selectedEnum: ev.target.value
+                                        })
+                                    }} options={dictionary.getEnumOptions(root)}/>
+                            </div>
+                            <div className="col-md-4 col-sm-12">
+                                {renderCustomization()}
                             </div>
                         </div>}
                     renderContent={() => <DemoAllEnumsComponent enums={selectedEnumObject}/>}
@@ -225,21 +289,36 @@ export const SwaggerDemoComponent: React.FC<IProps> = (props) => {
                                         ...state,
                                         selectedPath: ev.target.value
                                     })
-                                }} options={dictionary.getPathOptions(state.root)}/>
+                                }} options={dictionary.getPathOptions(root)}/>
+                            </div>
+                            <div className="col-md-4 col-sm-12">
+                                {renderCustomization()}
                             </div>
                         </div>}
 
-                    renderContent={() => <DemoAllPathComponent  paths={selectedPathsObject}/>}
+                    renderContent={() => <DemoAllPathComponent paths={selectedPathsObject}/>}
                 />
 
                 <BootstrapPanel
                     title="All in one file"
+                    renderSettings={() =>
+                        <div className="row">
+                            <div className="col-md-4 col-sm-12">
+                                {renderCustomization()}
+                            </div>
+                        </div>}
                     renderContent={() => <DiffSingle key={'index.ts'}
                                                      obj={<SwaggerAllInOneFileAdapter doc={root}/>}/>}
                     activeTitle={state.selectedPanelTitle} onClick={handleSelectedPanelTitleChange}/>
 
                 <BootstrapPanel
                     title="All APIs exports"
+                    renderSettings={() =>
+                        <div className="row">
+                            <div className="col-md-4 col-sm-12">
+                                {renderCustomization()}
+                            </div>
+                        </div>}
                     renderContent={() => <DiffSingle key={'index.ts'}
                                                      obj={<SwaggerAllClassesExportAdapter doc={root}
                                                                                           swaggerClasses={root.classes}/>}/>}
@@ -247,18 +326,36 @@ export const SwaggerDemoComponent: React.FC<IProps> = (props) => {
 
                 <BootstrapPanel
                     title="All models exports"
+                    renderSettings={() =>
+                        <div className="row">
+                            <div className="col-md-4 col-sm-12">
+                                {renderCustomization()}
+                            </div>
+                        </div>}
                     renderContent={() => <DiffSingle
                         obj={<SwaggerAllModelsExportAdapter doc={root} models={root.definitions}/>}/>}
                     activeTitle={state.selectedPanelTitle} onClick={handleSelectedPanelTitleChange}/>
 
                 <BootstrapPanel
                     title="All enums exports"
+                    renderSettings={() =>
+                        <div className="row">
+                            <div className="col-md-4 col-sm-12">
+                                {renderCustomization()}
+                            </div>
+                        </div>}
                     renderContent={() => <DiffSingle
                         obj={<SwaggerAllEnumsExportAdapter doc={root} enums={root.enums}/>}/>}
                     activeTitle={state.selectedPanelTitle} onClick={handleSelectedPanelTitleChange}/>
 
                 <BootstrapPanel
                     title="Urls"
+                    renderSettings={() =>
+                        <div className="row">
+                            <div className="col-md-4 col-sm-12">
+                                {renderCustomization()}
+                            </div>
+                        </div>}
                     renderContent={() => <DiffSingle
                         obj={<SwaggerAllUrlsComponent2 doc={root} classes={root.classes}/>}/>}
                     activeTitle={state.selectedPanelTitle} onClick={handleSelectedPanelTitleChange}/>
@@ -276,7 +373,7 @@ export const SwaggerDemoComponent: React.FC<IProps> = (props) => {
 
     return (
         <div className={'p-2'}>
-            {!state.root && renderLoader()}
+            {!root && renderLoader()}
 
             {renderHeader()}
 
