@@ -26,43 +26,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ce26be8b-bbf5-4618-81ac-984eef411fea" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/react-app/src/demo/customisation.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/react-app/src/swagger/models/object-ex.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/react-app/src/swagger/models/swagger-base-private-props.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/common-client-only/di.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/common-client-only/di.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/components/dictionary.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/components/dictionary.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/demo/demo-all-classes.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/demo/demo-all-classes.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/demo/demo-all-enums.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/demo/demo-all-enums.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/demo/demo-all-models.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/demo/demo-all-models.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/demo/demo-all-path.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/demo/demo-all-path.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/demo/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/demo/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/demo/swagger-demo-component.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/demo/swagger-demo-component.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/common/default-components.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/common/default-components.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/common/default-utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/common/default-utils.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/components/api-class/swagger-api-class-content.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/components/api-class/swagger-api-class-content.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/components/api-class/swagger-api-class-methods.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/components/api-class/swagger-api-class-methods.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/components/api-method/swagger-api-method-arguments.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/components/api-method/swagger-api-method-arguments.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/components/api-method/swagger-api-method-body.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/components/api-method/swagger-api-method-body.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/models/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/models/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/models/swagger-base.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/models/swagger-base.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/models/swagger-class.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/models/swagger-class.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/models/swagger-doc.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/models/swagger-doc.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/models/swagger-enum.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/models/swagger-enum.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/models/swagger-method-parameter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/models/swagger-method-parameter.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/models/swagger-method.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/models/swagger-method.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/models/swagger-model-property.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/models/swagger-model-property.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/models/swagger-model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/models/swagger-model.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/models/swagger-path.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/models/swagger-path.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/utils.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig-build.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig-build.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/node-app/node-swagger-generator-base.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/node-app/node-swagger-generator-base.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/index.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +60,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/react-app/src/swagger/models" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -285,7 +253,8 @@
       <workItem from="1598592394297" duration="4379000" />
       <workItem from="1598597207029" duration="616000" />
       <workItem from="1598600787881" duration="188000" />
-      <workItem from="1598648944376" duration="29553000" />
+      <workItem from="1598648944376" duration="29644000" />
+      <workItem from="1598762962932" duration="390000" />
     </task>
     <servers />
   </component>
@@ -340,10 +309,10 @@
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state x="765" y="296" key="#com.intellij.ide.util.MemberChooser/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@0.0.1920.1160" timestamp="1598744491716" />
-    <state x="740" y="335" key="FileChooserDialogImpl" timestamp="1598754272444">
+    <state x="740" y="335" key="FileChooserDialogImpl" timestamp="1598762112416">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state x="740" y="335" key="FileChooserDialogImpl/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@0.0.1920.1160" timestamp="1598754272444" />
+    <state x="740" y="335" key="FileChooserDialogImpl/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@0.0.1920.1160" timestamp="1598762112416" />
     <state x="2413" y="284" key="FileChooserDialogImpl/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@1920.0.1280.984" timestamp="1598482081274" />
     <state width="1899" height="491" key="GridCell.Tab.0.bottom" timestamp="1598037984581">
       <screen x="1920" y="0" width="1280" height="984" />

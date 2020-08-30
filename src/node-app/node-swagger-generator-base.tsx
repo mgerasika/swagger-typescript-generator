@@ -5,7 +5,7 @@ import {INodeSwaggerConfigBase} from "./node-swagger-config";
 import {defaultComponents, defaultUtils} from "../react-app/src/swagger/common";
 import {SwaggerDoc} from "../react-app/src/swagger/models";
 import {renderToString} from "react-dom/server";
-import {html2text} from "../react-app/src/swagger";
+import {html2text} from "../react-app/src/swagger/utils";
 import {execSync} from "child_process";
 
 const Path = require('path');
