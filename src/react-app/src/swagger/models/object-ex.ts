@@ -1,7 +1,5 @@
 import {privateSymbol} from "../utils";
-import {SwaggerDoc} from "./swagger-doc";
-import {ISwaggerDocConfig} from "./swagger-doc-config";
-import {ObjectPrivateProps, SwaggerBasePrivateProps} from "./swagger-base-private-props";
+import {ObjectPrivateProps} from "./swagger-base-private-props";
 
 let UNIQUE_IDX = 0;
 export abstract class ObjectEx<TPrivateProps extends ObjectPrivateProps> {

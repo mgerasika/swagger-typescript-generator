@@ -1,4 +1,3 @@
-import {privateSymbol} from "../utils";
 import {SwaggerDoc} from "./swagger-doc";
 import {ISwaggerDocConfig} from "./swagger-doc-config";
 import {SwaggerBasePrivateProps} from "./swagger-base-private-props";

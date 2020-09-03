@@ -162,9 +162,9 @@ export const SwaggerDemoComponent: React.FC<IProps> = (props) => {
 
     const renderCustomization = () => {
         return <>
-            <code>Customization:</code>
-            <div style={{paddingLeft : '14px', paddingRight: '14px', paddingBottom: '4px'}}>
+
             <BootstrapSelect
+                label="Customization"
             value={state.selectedCustomizationMethodName}
             onChange={(ev) => {
                 window.localStorage.setItem('selectedCustomizationMethodName', ev.target.value);
@@ -177,8 +177,8 @@ export const SwaggerDemoComponent: React.FC<IProps> = (props) => {
                     setRoot(newRoot);
                 }
             }} options={dictionary.getCustomizationOptions()}/>
-                </div>
-            <textarea id="textArea" style={{width: '100%', height: '200px', fontSize: '12px',border:'1px solid #ccc'}}
+
+            {state.selectedCustomizationMethodName && <textarea id="textArea" style={{width: '100%', height: '200px', fontSize: '12px',border:'1px solid #ccc'}}
                       value={state.editorValue} onChange={(ev) => {
                 const customizationOption = customizationArray.find(f => f.methodName === state.selectedCustomizationMethodName);
                 if (customizationOption) {
@@ -191,7 +191,7 @@ export const SwaggerDemoComponent: React.FC<IProps> = (props) => {
                     ...state,
                     editorValue: ev.target.value
                 });
-            }}/>
+            }}/>}
         </>
     }
 

@@ -47,10 +47,10 @@ export class SwaggerEnum extends SwaggerBase<SwaggerDoc,PrivateProps> implements
         this.enumValues = this.utils.getEnumValues(source);
 
         if (!this.enumValues && model.methodPropertyDef) {
-            this.enumValues = model.methodPropertyDef.enumValues ? model.methodPropertyDef.enumValues : [];
+            this.enumValues = model.methodPropertyDef.modelType.enumValues ? model.methodPropertyDef.modelType.enumValues : [];
         }
         if (!this.enumValues && model.modelPropDef) {
-            this.enumValues = model.modelPropDef.enumValues ? model.modelPropDef.enumValues : [];
+            this.enumValues = model.modelPropDef.modelType.enumValues ? model.modelPropDef.modelType.enumValues : [];
         }
         this.description = source.description;
         this.type = source.type;

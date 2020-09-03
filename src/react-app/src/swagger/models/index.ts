@@ -10,3 +10,4 @@ export * from './swagger-model-property';
 export * from './swagger-doc-config';
 export * from './object-ex';
 export * from "./swagger-base-private-props";
+export * from "./model-type";

@@ -1,7 +1,6 @@
 import {SwaggerDoc} from './swagger-doc';
 import {SwaggerBase} from "./swagger-base";
 import {SwaggerModelProperty} from "./swagger-model-property";
-import {SwaggerEnum} from "./swagger-enum";
 import {SwaggerBasePrivateProps} from "./swagger-base-private-props";
 
 export interface ISwaggerModel{

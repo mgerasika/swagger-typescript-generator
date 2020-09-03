@@ -11,9 +11,9 @@ export const SwaggerApiMethodArgumentsAdapter = (props: IProps) => {
     const allArgs: ISwaggerMethodParameter[] = [...requiredArguments, ...notRequiredArguments, {
         required: false,
         name: 'options',
-        type: 'any',
-        label: 'options'
-    }].map((p:ISwaggerMethodParameter) => {
+        modelType: {type: 'any'},
+        label: 'options',
+    } as ISwaggerMethodParameter].map((p: ISwaggerMethodParameter) => {
         const label = p.in === EParameterIn.query ? p.name + 'Query' : p.name;
         return {
             ...p,
@@ -43,7 +43,7 @@ const Component: React.FC<ISwaggerApiMethodArgumentsProps> = (props) => {
         const requiredSymbol = parameter.required ? '' : '?';
 
         return (<span key={`${parameter.name}${index}`}>
-            {parameter.label}{requiredSymbol}:{parameter.type}{separator}
+            {parameter.label}{requiredSymbol}:{parameter.modelType.type}{separator}
         </span>)
     });
 

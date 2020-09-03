@@ -10,8 +10,8 @@ export const SwaggerApiMethodReturnTypeAdapter = (props: IProps) => {
         if (props.swaggerMethod.responseIsVoid) {
             return 'Promise<void>';
         }
-        const arraySymbol = props.swaggerMethod.responseIsArray ? '[]' : '';
-        return `Promise<${props.swaggerMethod.responseType}${arraySymbol}>`
+        const arraySymbol = props.swaggerMethod.responseModelType.isArray ? '[]' : '';
+        return `Promise<${props.swaggerMethod.responseModelType?.type}${arraySymbol}>`
     }
 
     return (

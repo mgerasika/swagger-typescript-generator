@@ -1,4 +1,4 @@
-import React, {useEffect, useRef} from "react";
+import React from "react";
 
 export interface ISelectOption {
     label: string;
@@ -21,12 +21,11 @@ export const BootstrapSelect = (props: Props) => {
     }
 
     return <>
+        <code>{props.label}</code>
+        <div style={{paddingBottom: '4px'}}>
         <div className="row">
             {props.label ?
                 <>
-                    <label
-                        className="col-lg-4 col-md-12 col-form-label form-control-sm">{props.label}
-                    </label>
                     <div className="col-lg-8 col-md-12">
 
                         <select className="form-control form-control-sm"
@@ -43,6 +42,7 @@ export const BootstrapSelect = (props: Props) => {
                 }}>
                     {renderOptions()}
                 </select>}
+        </div>
         </div>
     </>
 }

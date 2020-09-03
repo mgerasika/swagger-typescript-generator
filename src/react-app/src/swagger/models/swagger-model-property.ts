@@ -1,8 +1,8 @@
 import {SwaggerBase} from "./swagger-base";
 import {SwaggerModel} from "./swagger-model";
 import {SwaggerEnum} from "./swagger-enum";
-import {SwaggerDoc} from "./swagger-doc";
 import {SwaggerBasePrivateProps} from "./swagger-base-private-props";
+import {IModelType} from "./model-type";
 
 interface PrivateProps extends SwaggerBasePrivateProps<SwaggerModel> {
     enumModelRef:SwaggerEnum;
@@ -11,13 +11,9 @@ interface PrivateProps extends SwaggerBasePrivateProps<SwaggerModel> {
 }
 export class SwaggerModelProperty extends SwaggerBase<SwaggerModel,PrivateProps> {
     public name: string = '';
-    public type: string = '';
-    public arrayItemType?: string;
-    public isArray?: boolean;
-    public isEnum?: boolean;
+
+    public modelType:IModelType;
     public required?: boolean;
-    public isJsType: boolean;
-    public enumValues?: string[];
     public maxNumber?: number;
     public minNumber?: number;
     public description?: string;
@@ -41,6 +37,7 @@ export class SwaggerModelProperty extends SwaggerBase<SwaggerModel,PrivateProps>
     public constructor(parent: SwaggerModel, name: string, source: any, required?:boolean) {
         super();
 
+        this.modelType = {};
         this.source = source;
         this.parent = parent;
 
@@ -49,17 +46,17 @@ export class SwaggerModelProperty extends SwaggerBase<SwaggerModel,PrivateProps>
         this.maxNumber = source.maximum !== undefined ? source.maximum : undefined;
         this.minNumber = source.minimum !== undefined ? source.minimum : undefined;
         this.description = source.description !== undefined ? source.description : undefined;
-        this.isEnum = this.utils.isEnum(source) ? true : undefined;
-        this.type = this.utils.getModelPropertyType(this, source);
-        this.isJsType = this.utils.isJsType(this.type);
-        this.isArray = this.utils.isArray(source) ? true : undefined;
+        this.modelType.isEnum = this.utils.isEnum(source) ? true : undefined;
+        this.modelType.type = this.utils.getModelPropertyType(this, source);
+        this.modelType.isJsType = this.utils.isJsType(this.modelType.type);
+        this.modelType.isArray = this.utils.isArray(source) ? true : undefined;
         this.required = required;
-        if (this.isEnum) {
-            this.enumValues = this.utils.getEnumValues(source);
+        if (this.modelType.isEnum) {
+            this.modelType.enumValues = this.utils.getEnumValues(source);
         }
-        if(this.isArray) {
+        if(this.modelType.isArray) {
             const type = this.utils.getArrayItemType(source);
-            this.arrayItemType = type || undefined;
+            this.modelType.arrayItemType = type || undefined;
         }
     }
 
@@ -70,10 +67,10 @@ export class SwaggerModelProperty extends SwaggerBase<SwaggerModel,PrivateProps>
     }
 
     public init() {
-        if (this.isEnum) {
+        if (this.modelType.isEnum) {
             this.initEnumRef();
         }
-        if (!this.isEnum && !this.isJsType) {
+        if (!this.modelType.isEnum && !this.modelType.isJsType) {
             this.initModelRef();
         }
     }
@@ -83,19 +80,19 @@ export class SwaggerModelProperty extends SwaggerBase<SwaggerModel,PrivateProps>
         let enumRef = this.doc.enums.find(f => f.fullName === fullName);
         if (enumRef) {
             this.enumModelRef = enumRef;
-            this.type = enumRef.fullName;
+            this.modelType.type = enumRef.fullName;
         } else {
             enumRef = this.doc.enums.find(f => f.fullName === this.name);
             if (enumRef) {
                 this.enumModelRef = enumRef;
-                this.type = enumRef.fullName;
+                this.modelType.type = enumRef.fullName;
             }
         }
 
         if (enumRef) {
-            if(this.isArray) {
-                this.arrayItemType = enumRef.fullName;
-                this.type = `Array<${this.arrayItemType}>`;
+            if(this.modelType.isArray) {
+                this.modelType.arrayItemType = enumRef.fullName;
+                this.modelType.type = `Array<${this.modelType.arrayItemType}>`;
             }
         }
         else {
@@ -104,17 +101,17 @@ export class SwaggerModelProperty extends SwaggerBase<SwaggerModel,PrivateProps>
     }
 
     private initModelRef(){
-        const modelRef = this.doc.definitions.find(f => f.name === this.type || f.name === this.arrayItemType);
+        const modelRef = this.doc.definitions.find(f => f.name === this.modelType.type || f.name === this.modelType.arrayItemType);
         if (modelRef) {
             this.subModelRef = modelRef;
-            this.type = modelRef.name;
+            this.modelType.type = modelRef.name;
 
-            if(this.isArray) {
-                this.arrayItemType = modelRef.name;
-                this.type = `Array<${this.arrayItemType}>`;
+            if(this.modelType.isArray) {
+                this.modelType.arrayItemType = modelRef.name;
+                this.modelType.type = `Array<${this.modelType.arrayItemType}>`;
             }
         } else {
-            console.error('Model not found into swagger-def-model ' + this.type, this);
+            console.error('Model not found into swagger-def-model ' + this.modelType.type, this);
         }
     }
 }

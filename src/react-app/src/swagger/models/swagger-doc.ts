@@ -4,7 +4,6 @@ import {defaultComponents, defaultUtils, ISwaggerComponents, ISwaggerUtils, uniq
 import {ISwaggerEnum, SwaggerEnum} from "./swagger-enum";
 import {ISwaggerPath, SwaggerPath} from "./swagger-path";
 import {ISwaggerDocConfig} from "./swagger-doc-config";
-import {SwaggerBase} from "./swagger-base";
 import {SwaggerBasePrivateProps} from "./swagger-base-private-props";
 import {ObjectEx} from "./object-ex";
 
@@ -79,7 +78,7 @@ export class SwaggerDoc extends ObjectEx<PrivateProps> implements ISwaggerDoc {
         // enums
         this.definitions.forEach(def => {
             def.properties.forEach(defProp => {
-                if (defProp.isEnum) {
+                if (defProp.modelType.isEnum) {
                     const enumModel = new SwaggerEnum(this, defProp.name, {
                         modelDef: def,
                         modelPropDef: defProp
@@ -92,7 +91,7 @@ export class SwaggerDoc extends ObjectEx<PrivateProps> implements ISwaggerDoc {
         this.classes.forEach(cl => {
             cl.methods.forEach(meth => {
                 meth.parameters.forEach(par => {
-                    if (par.isEnum) {
+                    if (par.modelType.isEnum) {
                         const enumModel = new SwaggerEnum(this, par.name, {methodPropertyDef: par}, meth.source);
                         this.enums.push(enumModel);
                     }

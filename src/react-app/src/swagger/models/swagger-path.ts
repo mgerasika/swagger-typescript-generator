@@ -1,8 +1,6 @@
 import {SwaggerDoc} from './swagger-doc';
 import {SwaggerBase} from "./swagger-base";
 import {uniqueItems} from "../common";
-import {SwaggerEnum} from "./swagger-enum";
-import {SwaggerModel} from "./swagger-model";
 import {SwaggerBasePrivateProps} from "./swagger-base-private-props";
 
 export interface ISwaggerPath{

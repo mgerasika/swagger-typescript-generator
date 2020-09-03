@@ -1,6 +1,6 @@
 import React from 'react';
 import {SwaggerEnum} from "../../models/swagger-enum";
-import {Namespace, renderTabSymbol} from "../../namespace";
+import {renderTabSymbol} from "../../namespace";
 
 interface IProps {
     swaggerEnum: SwaggerEnum;

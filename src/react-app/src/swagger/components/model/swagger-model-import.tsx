@@ -37,7 +37,7 @@ const Component: React.FC<IProps> = (props) => {
     // });
     const imports = [];
 
-    const enums = props.swaggerModel.properties.filter(f => f.isEnum);
+    const enums = props.swaggerModel.properties.filter(f => f.modelType.isEnum);
     const uniqueEnums = uniqueItems(enums, el => el.enumModelRef && el.enumModelRef.name || '').map(e => {
         return e.enumModelRef.namespace ? e.enumModelRef.namespace : e.enumModelRef.name;
     });

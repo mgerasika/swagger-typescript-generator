@@ -1,7 +1,15 @@
 import {capitalize, lowerlize} from "../utils";
-import {SwaggerClass, SwaggerMethod, SwaggerMethodParameter, SwaggerModel, SwaggerModelProperty} from "../models";
+import {
+    IModelType,
+    SwaggerClass,
+    SwaggerMethod,
+    SwaggerMethodParameter,
+    SwaggerModel,
+    SwaggerModelProperty
+} from "../models";
 import {SwaggerEnum} from "../models/swagger-enum";
 import {SwaggerPath} from "../models/swagger-path";
+
 const JS_TYPES = ['number', 'boolean', 'string', 'array', 'file','date', 'object'];
 
 const getModelName = (name: string) => {
@@ -103,6 +111,8 @@ export interface ISwaggerUtils {
     isJsType: (name: string) => boolean;
     getEnumValues: (schema:any) => string[] | undefined;
     getArrayItemType: (schema: any) => string;
+    getModelType2:(schema:any) => IModelType;
+
 }
 
 
@@ -157,5 +167,8 @@ export const defaultUtils: ISwaggerUtils = {
         } else if (schema.items?.enum) {
             return schema.items.enum;
         }
+    },
+    getModelType2:(schema:any) : IModelType => {
+        return null as any;
     }
 }

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import axios from 'axios';
-import { INodeSwaggerConfigForOneFile} from './node-swagger-config';
+import {INodeSwaggerConfigForOneFile} from './node-swagger-config';
 import * as path from 'path';
 import {NodeSwaggerGeneratorForSingleFile} from "./node-swagger-generator-for-single-file";
 

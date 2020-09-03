@@ -13,7 +13,7 @@ export const SwaggerModelContent: React.FC<IProps> = (props) => {
         return (<React.Fragment key={parameter.name}>
             {props.swaggerModel.doc.config.showComments && parameter.description && parameter.description !== parameter.name &&
             <span>{'\t'}<Comment commment={parameter.description}/>{'\n'}</span>}
-            <span>{'\t'}'{parameter.name}'{required}:{parameter.type};{'\n'}</span>
+            <span>{'\t'}'{parameter.name}'{required}:{parameter.modelType.type};{'\n'}</span>
         </React.Fragment>);
     });
 

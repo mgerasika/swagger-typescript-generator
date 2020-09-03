@@ -1,5 +1,6 @@
 import React, {ReactNode} from "react";
 import {ISwaggerComponents} from "../swagger/common";
+
 const _ = require('lodash');
 
 interface IProps {
@@ -64,7 +65,7 @@ export const customComponentsFactory = (baseComponents: ISwaggerComponents, cust
     customizationArray.forEach(customization=>customization.clear());
 
     const init = (name: keyof ISwaggerComponents, props: any, callback?: (item: ICustomizationItem) => void) => {
-        console.log(`customComponentsFactory.init name=${name} customizationName=${customizationName}`)
+        //console.log(`customComponentsFactory.init name=${name} customizationName=${customizationName}`)
         const customizationItem = customizationArray.find(f => f.methodName === name) as ICustomizationItem;
         customizationItem.init(props);
         if(callback) {
