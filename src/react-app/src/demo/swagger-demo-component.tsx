@@ -18,6 +18,7 @@ import {SwaggerAllModelsExportAdapter} from "../swagger/components/model";
 import {SwaggerAllInOneFileAdapter} from "../swagger/components";
 import {customComponentsFactory, customizationArray, ICustomizationItem} from "./customisation";
 
+const _ = require('lodash');
 const axios = require('axios');
 if (typeof window !== "undefined" && typeof window.document !== "undefined") {
     require('bootstrap/dist/css/bootstrap.css');
@@ -26,7 +27,7 @@ if (typeof window !== "undefined" && typeof window.document !== "undefined") {
 interface IProps {
     apiUrls: string[];
     createComponentsFactory?: (baseComponents: ISwaggerComponents) => ISwaggerComponents;
-    createDocumentFactory?: (baseDoc: SwaggerDoc) => SwaggerDoc;
+    initDocument?: (baseDoc: SwaggerDoc) => SwaggerDoc;
     createUtilsFactory?: (baseUtils: ISwaggerUtils) => ISwaggerUtils;
 }
 
@@ -66,9 +67,8 @@ export const SwaggerDemoComponent: React.FC<IProps> = (props) => {
                     showPrivateFieldsForDebug: false,
                 };
                 let doc = new SwaggerDoc(config, utils, createCustomComponentsFactory(state.selectedCustomizationMethodName));
-                if (props.createDocumentFactory) {
-                    doc = props.createDocumentFactory(doc);
-                    doc.init();
+                if (props.initDocument) {
+                    doc = _.clone(props.initDocument(doc), true);
                 }
                 setRoot(doc);
             })
@@ -162,23 +162,25 @@ export const SwaggerDemoComponent: React.FC<IProps> = (props) => {
 
     const renderCustomization = () => {
         return <>
-
             <BootstrapSelect
                 label="Customization"
-            value={state.selectedCustomizationMethodName}
-            onChange={(ev) => {
-                window.localStorage.setItem('selectedCustomizationMethodName', ev.target.value);
-                if (root) {
-                    const newRoot = new SwaggerDoc(root.config, root.utils, createCustomComponentsFactory(ev.target.value));
-                    setState({
-                        ...state,
-                        selectedCustomizationMethodName: ev.target.value,
-                    })
-                    setRoot(newRoot);
-                }
-            }} options={dictionary.getCustomizationOptions()}/>
-
-            {state.selectedCustomizationMethodName && <textarea id="textArea" style={{width: '100%', height: '200px', fontSize: '12px',border:'1px solid #ccc'}}
+                value={state.selectedCustomizationMethodName}
+                onChange={(ev) => {
+                    window.localStorage.setItem('selectedCustomizationMethodName', ev.target.value);
+                    if (root) {
+                        let newRoot = new SwaggerDoc(root.config, root.utils, createCustomComponentsFactory(ev.target.value));
+                        if (props.initDocument) {
+                            newRoot = _.clone(props.initDocument(newRoot), true);
+                        }
+                        setState({
+                            ...state,
+                            selectedCustomizationMethodName: ev.target.value,
+                        })
+                        setRoot(newRoot);
+                    }
+                }} options={dictionary.getCustomizationOptions()}/>
+            {state.selectedCustomizationMethodName &&
+            <textarea id="textArea" style={{width: '100%', height: '200px', fontSize: '12px', border: '1px solid #ccc'}}
                       value={state.editorValue} onChange={(ev) => {
                 const customizationOption = customizationArray.find(f => f.methodName === state.selectedCustomizationMethodName);
                 if (customizationOption) {

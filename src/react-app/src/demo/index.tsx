@@ -24,7 +24,7 @@ export const ExampleComponent: React.FC = () => {
             <SwaggerDemoComponent
                 apiUrls={apiUrls}
                 createUtilsFactory={(baseUtils) => baseUtils}
-                createDocumentFactory={(baseDocument) => baseDocument}/>
+                />
         </div>
     );
 }

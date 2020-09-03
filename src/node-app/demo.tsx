@@ -21,7 +21,6 @@ const generate = (json: any) => {
         outDir: `${parentDir}/../gen`,
         createComponentsFactory: (baseComponents) => baseComponents,
         createUtilsFactory: (baseUtils) => baseUtils,
-        createDocumentFactory: (baseDocument) => baseDocument,
         swaggerDocConfig: {
             apiUrl: url,
             source: json,

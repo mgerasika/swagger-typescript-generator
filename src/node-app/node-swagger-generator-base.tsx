@@ -8,6 +8,7 @@ import {renderToString} from "react-dom/server";
 import {html2text} from "../react-app/src/swagger/utils";
 import {execSync} from "child_process";
 
+const _ = require('lodash');
 const Path = require('path');
 const tscArgs = [
     '--module commonjs',
@@ -38,9 +39,8 @@ export abstract class NodeSwaggerGeneratorBase {
         const utils = config.createUtilsFactory ? config.createUtilsFactory(defaultUtils) : defaultUtils;
         const components = config.createComponentsFactory ? config.createComponentsFactory(defaultComponents) : defaultComponents;
         let swaggerDoc = new SwaggerDoc(config.swaggerDocConfig, utils, components);
-        if (config.createDocumentFactory) {
-            swaggerDoc = config.createDocumentFactory(swaggerDoc);
-            swaggerDoc.init();
+        if (config.initDocumentFactory) {
+            swaggerDoc = _.clone(config.initDocumentFactory(swaggerDoc),true);
         }
         return swaggerDoc;
     }

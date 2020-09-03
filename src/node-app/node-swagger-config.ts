@@ -4,7 +4,7 @@ export interface INodeSwaggerConfigBase {
     swaggerDocConfig: ISwaggerDocConfig;
     createComponentsFactory?: (baseComponents: ISwaggerComponents) => ISwaggerComponents;
     createUtilsFactory?: (baseUtils: ISwaggerUtils) => ISwaggerUtils;
-    createDocumentFactory?: (baceDocument: SwaggerDoc) => SwaggerDoc;
+    initDocumentFactory?: (baceDocument: SwaggerDoc) => SwaggerDoc;
 }
 
 export interface INodeSwaggerConfigForMultiFile extends INodeSwaggerConfigBase {
