@@ -1,10 +1,10 @@
 import React from 'react';
 import {SwaggerClass, SwaggerDoc, SwaggerEnum, SwaggerModel} from "../models";
-import {SwaggerEnumContent} from "./enum";
 import {SwaggerModelContent} from "./model";
 import {SwaggerApiClassContent} from "./api-class";
 import {uniqueItems} from "../utils";
 import {Namespace} from "../namespace";
+import {SwaggerEnumContentAdapter} from "./enum";
 
 interface IProps {
     doc: SwaggerDoc;
@@ -31,7 +31,7 @@ export interface ISwaggerAllInOneFileProps extends IProps {
 
 const renderEnums = (tabCount:number,enums:SwaggerEnum[]) => {
     return enums.map((swaggerEnum: SwaggerEnum, idx) => {
-        return <React.Fragment key={swaggerEnum.fullName}><SwaggerEnumContent tabCount={tabCount} swaggerEnum={swaggerEnum}/>{'\n'}
+        return <React.Fragment key={swaggerEnum.fullName}><SwaggerEnumContentAdapter tabCount={tabCount} swaggerEnum={swaggerEnum}/>{'\n'}
         </React.Fragment>;
     })
 }

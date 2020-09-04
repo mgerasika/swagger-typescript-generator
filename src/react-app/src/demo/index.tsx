@@ -13,8 +13,12 @@ export * from '../components/bootstrap-panel';
 
 const apiUrls = [
     'https://petstore.swagger.io/v2/swagger.json',
-    'https://flipdish-yellow-team-qa.azurewebsites.net/swagger/docs/private-v1.0',
-    'https://flipdish-yellow-team-qa.azurewebsites.net/swagger/docs/v1.0'
+    'https://flipdish-yellow-team.azurewebsites.net/swagger/docs/private-v1.0',
+    'https://flipdish-yellow-team.azurewebsites.net/swagger/docs/v1.0',
+    'https://flipdish-green-team.azurewebsites.net/swagger/docs/private-v1.0',
+    'https://flipdish-green-team.azurewebsites.net/swagger/docs/v1.0',
+    'https://flipdish-blue-team.azurewebsites.net/swagger/docs/private-v1.0',
+    'https://flipdish-blue-team.azurewebsites.net/swagger/docs/v1.0'
 ];
 
 
@@ -23,7 +27,7 @@ export const ExampleComponent: React.FC = () => {
         <div>
             <SwaggerDemoComponent
                 apiUrls={apiUrls}
-                createUtilsFactory={(baseUtils) => baseUtils}
+                initUtilsFactory={(baseUtils) => baseUtils}
                 />
         </div>
     );

@@ -53,6 +53,8 @@ export const customizationArray: ICustomizationItem[] = [
 
     new ICustomizationItem('renderAllEnumsExport'),
     new ICustomizationItem('renderEnum'),
+    new ICustomizationItem('renderEnumContent'),
+    new ICustomizationItem('renderEnumField'),
 
     new ICustomizationItem('renderAllUrls'),
     new ICustomizationItem('renderAllInOneFile'),
@@ -241,7 +243,25 @@ export const customComponentsFactory = (baseComponents: ISwaggerComponents, cust
             const methodName = 'renderEnum';
             const newProps = init(methodName, props, callback);
             if (customizationName === methodName) {
-                return <Customization>{baseComponents[methodName](BaseComponent,newProps)}</Customization>
+                return <Customization style={{display: 'block'}}>{baseComponents[methodName](BaseComponent,newProps)}</Customization>
+            } else {
+                return baseComponents[methodName](BaseComponent,newProps)
+            }
+        },
+        renderEnumContent: (BaseComponent, props) => {
+            const methodName = 'renderEnumContent';
+            const newProps = init(methodName, props, callback);
+            if (customizationName === methodName) {
+                return <Customization style={{display: 'block'}}>{baseComponents[methodName](BaseComponent,newProps)}</Customization>
+            } else {
+                return baseComponents[methodName](BaseComponent,newProps)
+            }
+        },
+        renderEnumField: (BaseComponent, props) => {
+            const methodName = 'renderEnumField';
+            const newProps = init(methodName, props, callback);
+            if (customizationName === methodName) {
+                return <Customization style={{display: 'block'}}>{baseComponents[methodName](BaseComponent,newProps)}</Customization>
             } else {
                 return baseComponents[methodName](BaseComponent,newProps)
             }

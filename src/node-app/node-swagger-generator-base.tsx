@@ -36,8 +36,8 @@ export abstract class NodeSwaggerGeneratorBase {
     }
 
     public createSwaggerDoc(config: INodeSwaggerConfigBase) {
-        const utils = config.createUtilsFactory ? config.createUtilsFactory(defaultUtils) : defaultUtils;
-        const components = config.createComponentsFactory ? config.createComponentsFactory(defaultComponents) : defaultComponents;
+        const utils = config.initUtilsFactory ? config.initUtilsFactory(defaultUtils) : defaultUtils;
+        const components = config.initComponentsFactory ? config.initComponentsFactory(defaultComponents) : defaultComponents;
         let swaggerDoc = new SwaggerDoc(config.swaggerDocConfig, utils, components);
         if (config.initDocumentFactory) {
             swaggerDoc = _.clone(config.initDocumentFactory(swaggerDoc),true);

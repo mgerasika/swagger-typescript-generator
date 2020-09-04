@@ -1,6 +1,6 @@
 import React from 'react';
 import {SwaggerEnum} from "../../models/swagger-enum";
-import {SwaggerEnumContent} from "./swagger-enum-content";
+import {SwaggerEnumContentAdapter} from "./swagger-enum-content";
 
 interface IProps {
     swaggerEnum: SwaggerEnum;
@@ -20,14 +20,14 @@ export const SwaggerEnumAdapter = (props: IProps) => {
 export interface ISwaggerEnumProps extends IProps {
 }
 
-const Component: React.FC<IProps> = (props) => {
+const Component: React.FC<ISwaggerEnumProps> = (props) => {
     const {swaggerEnum} = props;
 
     return (
         <>
             {swaggerEnum.utils.getWarningMessage()}
 
-            <SwaggerEnumContent swaggerEnum={swaggerEnum}/>
+            <SwaggerEnumContentAdapter swaggerEnum={swaggerEnum}/>
         </>
     );
 };

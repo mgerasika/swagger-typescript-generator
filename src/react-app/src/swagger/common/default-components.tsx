@@ -16,12 +16,13 @@ import {
     ISwaggerApiMethodArgumentsProps,
     ISwaggerApiMethodBodyProps,
     ISwaggerApiMethodProps,
-    ISwaggerApiMethodReturnTypeProps,
+    ISwaggerApiMethodReturnTypeProps, ISwaggerEnumContentProps,
     ISwaggerEnumProps
 } from '../components';
 import {ISwaggerApiClassInstanceProps} from '../components/api-class/swagger-api-class-instance';
 import {ISwaggerApiMethodNameProps} from "../components/api-method/swagger-api-method-name";
 import {SwaggerDoc} from "../models";
+import {ISwaggerEnumFieldProps} from "../components/enum/swagger-enum-field";
 
 export interface ISwaggerComponents {
     DEBUG_CUSTOMIZATION_NAME: string;
@@ -46,6 +47,8 @@ export interface ISwaggerComponents {
 
     renderAllEnumsExport: SwaggerPluginAction<ISwaggerAllEnumsExportProps>;
     renderEnum: SwaggerPluginAction<ISwaggerEnumProps>;
+    renderEnumContent: SwaggerPluginAction<ISwaggerEnumContentProps>;
+    renderEnumField: SwaggerPluginAction<ISwaggerEnumFieldProps>;
 
     renderAllUrls: SwaggerPluginAction<ISwaggerAllUrlsProps>;
     renderAllInOneFile: SwaggerPluginAction<ISwaggerAllInOneFileProps>;
@@ -108,6 +111,12 @@ export const defaultComponents: ISwaggerComponents = {
         return (<Component {...props} />);
     },
     renderEnum: (Component: React.FC<any>, props: ISwaggerEnumProps) => {
+        return (<Component {...props} />);
+    },
+    renderEnumContent: (Component: React.FC<any>, props: ISwaggerEnumContentProps) => {
+        return (<Component {...props} />);
+    },
+    renderEnumField: (Component: React.FC<any>, props: ISwaggerEnumFieldProps) => {
         return (<Component {...props} />);
     },
 
