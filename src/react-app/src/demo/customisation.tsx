@@ -32,6 +32,7 @@ export class ICustomizationItem {
 }
 
 export const customizationArray: ICustomizationItem[] = [
+    new ICustomizationItem('renderWarningMessage'),
     new ICustomizationItem('renderApiClass'),
     new ICustomizationItem('renderApiClassName'),
     new ICustomizationItem('renderAllClassesExport'),

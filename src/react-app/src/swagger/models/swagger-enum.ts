@@ -7,6 +7,7 @@ import {SwaggerBasePrivateProps} from "./swagger-base-private-props";
 
 export interface ISwaggerEnum {
     name: string;
+    label: string;
     fullName: string;
     description?: string;
     type?: string;
@@ -20,16 +21,42 @@ interface IModelProp {
 interface PrivateProps extends SwaggerBasePrivateProps<SwaggerDoc>{
     key:string;
     model:IModelProp;
+    name:string;
+    namespace:string;
 }
 export class SwaggerEnum extends SwaggerBase<SwaggerDoc,PrivateProps> implements ISwaggerEnum{
     public keys: string[] = [];
-    public name: string = '';
-    public fullName: string = '';
+    public label: string = '';
     public description?: string;
     public type?: string;
     public enumValues?: string[];
-    public namespace?: string;
     public fileName: string;
+
+    public get name() {
+        return this.getPrivate('name')
+    }
+
+    public get namespace() {
+        return this.getPrivate('namespace')
+    }
+
+    public get fullName() {
+        if(this.namespace) {
+            return `${this.namespace}.${this.name}`
+        }
+        else {
+            return this.name;
+        }
+    }
+
+    toJSON() {
+        return {
+            ...this,
+            name: this.name,
+            fullName: this.fullName,
+            namespace: this.namespace
+        }
+    }
 
     public constructor(parent: SwaggerDoc, key: string, model: IModelProp, source: any) {
         super();
@@ -41,8 +68,8 @@ export class SwaggerEnum extends SwaggerBase<SwaggerDoc,PrivateProps> implements
         this.setPrivate('model',model);
 
         this.keys.push(key);
-        this.name = this.utils.getEnumName(this, key);
-        this.fullName = this.name;
+        this.setPrivate('name',this.utils.getEnumName(this, key))
+        this.label = this.name;
         this.fileName = this.utils.getEnumFileName(this, key);
         this.enumValues = this.utils.getEnumValues(source);
 
@@ -55,8 +82,7 @@ export class SwaggerEnum extends SwaggerBase<SwaggerDoc,PrivateProps> implements
         this.description = source.description;
         this.type = source.type;
         if (model.modelDef) {
-            this.namespace = model.modelDef.name;
-            this.fullName = `${this.namespace}.${this.name}`;
+            this.setPrivate('namespace', model.modelDef.name);
         }
     }
 

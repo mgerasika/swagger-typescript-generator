@@ -54,7 +54,6 @@ export abstract class ObjectEx<TPrivateProps extends ObjectPrivateProps> {
         let result = this;
         if (this.doc.config.showPrivateFieldsForDebug) {
             result = {
-                PRIVATE: (this as any)[privateSymbol],
                 ...result
             }
         }

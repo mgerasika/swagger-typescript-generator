@@ -5,6 +5,7 @@ import {SwaggerApiClassContent} from "./api-class";
 import {uniqueItems} from "../utils";
 import {Namespace} from "../namespace";
 import {SwaggerEnumContentAdapter} from "./enum";
+import {SwaggerWarningMessageAdapter} from "./swagger-warning-message";
 
 interface IProps {
     doc: SwaggerDoc;
@@ -37,8 +38,6 @@ const renderEnums = (tabCount:number,enums:SwaggerEnum[]) => {
 }
 
 const Component: React.FC<ISwaggerAllInOneFileProps> = (props) => {
-    const warning = props.doc ? props.doc.utils.getWarningMessage() : ''
-
     const enumNamespaces = uniqueItems(props.doc.enums.map(e => e.namespace).filter(f=>f),x=>x);
 
     const allEnumsWithNamespace = enumNamespaces.map((namespace, idx) => {
@@ -68,7 +67,7 @@ const Component: React.FC<ISwaggerAllInOneFileProps> = (props) => {
     });
     return (
         <>
-            {warning}
+            <SwaggerWarningMessageAdapter doc={props.doc} />
             {result}
             {'\n'}
             {allClassesContent}

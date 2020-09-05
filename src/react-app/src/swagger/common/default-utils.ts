@@ -23,7 +23,7 @@ const getMethodName = (name: string) => {
 
 const getEnumName = (name: string) => {
     const newName = `${name}`.replace(/[\[\]\.]/g, '');
-    return capitalize(`${newName}Enum`);
+    return capitalize(`E${newName}`);
 };
 
 const getFileName = (name: string) => {
@@ -94,7 +94,6 @@ export interface ISwaggerUtils {
     getMethodParameterName: (context: SwaggerMethodParameter, name: string) => string;
     getMethodResponseType: (context: SwaggerMethod, shema: any) => string;
     getMethodParameterType: (context: SwaggerMethodParameter, shema: any) => string;
-    getWarningMessage: () => string;
 
     getModelName: (context: SwaggerModel, name: string) => string;
     getModelFileName: (context: SwaggerModel, name: string) => string;
@@ -138,7 +137,6 @@ export const defaultUtils: ISwaggerUtils = {
     getModelType: (context: SwaggerModel, schema: any) => getJsType(schema),
 
     getModelPropertyType: (context: SwaggerModelProperty, schema: any) => getJsType(schema),
-    getWarningMessage: () => '/* This code generated with swagger-typescript-generator. Don\'t modify this file because it will be rewriten. */\n',
     getEnumName: (context: SwaggerEnum, name: string) => getEnumName(name),
     getEnumFileName: (context: SwaggerEnum, name: string) => getFileName(name),
     escapeMethodQueryParameterName: (name: string) => `${name}`.replace(/[\[\]\.]/g, ''),

@@ -1,6 +1,7 @@
 import React from 'react';
 import {SwaggerClass, SwaggerDoc, SwaggerMethod} from '../../models';
 import {IUrlInfo} from '../../models/url-info';
+import {SwaggerWarningMessageAdapter} from "../swagger-warning-message";
 
 interface IProps {
     doc: SwaggerDoc;
@@ -33,9 +34,6 @@ export interface ISwaggerAllUrlsProps extends IProps {
 }
 
 const Component: React.FC<ISwaggerAllUrlsProps> = (props) => {
-    const warning = props.classes.length ? props.classes[0].utils.getWarningMessage() : "";
-
-
     const result = props.urls.map((def: IUrlInfo, index: number) => {
         const isLast = index === props.urls.length - 1;
         const renderComa = !isLast && ',';
@@ -43,7 +41,7 @@ const Component: React.FC<ISwaggerAllUrlsProps> = (props) => {
     });
     return (
         <>
-            {warning}
+            <SwaggerWarningMessageAdapter doc={props.doc} />
             export const API_URLS = {'{\n'} {result}
             {'};\n'}
         </>

@@ -1,6 +1,7 @@
 import React from 'react';
 import {SwaggerModel} from '../../models/swagger-model';
 import {SwaggerDoc} from "../../models";
+import {SwaggerWarningMessageAdapter} from "../swagger-warning-message";
 
 interface IProps {
     doc: SwaggerDoc;
@@ -23,7 +24,6 @@ export interface ISwaggerAllModelsExportProps extends IProps {
 }
 
 const Component: React.FC<IProps> = (props) => {
-    const warning = props.models.length ? props.models[0].utils.getWarningMessage() : ''
     const exports = props.models.map((def: SwaggerModel, index) => {
         const idx = def.fileName.lastIndexOf('.');
         const name = def.fileName.substr(0, idx);
@@ -31,7 +31,7 @@ const Component: React.FC<IProps> = (props) => {
     });
     return (
         <>
-            {warning}
+            <SwaggerWarningMessageAdapter doc={props.doc} />
             {exports}
         </>
     );

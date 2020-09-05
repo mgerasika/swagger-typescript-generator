@@ -19,8 +19,8 @@ const generate = (json: any) => {
 
     const config: INodeSwaggerConfigForOneFile = {
         outDir: `${parentDir}/../gen`,
-        initComponentsFactory: (baseComponents) => baseComponents,
-        initUtilsFactory: (baseUtils) => baseUtils,
+        createComponentsFactory: (baseComponents) => baseComponents,
+        createUtilsFactory: (baseUtils) => baseUtils,
         swaggerDocConfig: {
             apiUrl: url,
             source: json,

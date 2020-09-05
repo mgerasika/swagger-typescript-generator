@@ -2,9 +2,9 @@ import {ISwaggerComponents, ISwaggerDocConfig, ISwaggerUtils, SwaggerDoc} from "
 
 export interface INodeSwaggerConfigBase {
     swaggerDocConfig: ISwaggerDocConfig;
-    initComponentsFactory?: (baseComponents: ISwaggerComponents) => ISwaggerComponents;
-    initUtilsFactory?: (baseUtils: ISwaggerUtils) => ISwaggerUtils;
-    initDocumentFactory?: (baseDocument: SwaggerDoc) => SwaggerDoc;
+    createComponentsFactory?: (baseComponents: ISwaggerComponents) => ISwaggerComponents;
+    createUtilsFactory?: (baseUtils: ISwaggerUtils) => ISwaggerUtils;
+    createDocumentFactory?: (baseDocument: SwaggerDoc) => SwaggerDoc;
 }
 
 export interface INodeSwaggerConfigForMultiFile extends INodeSwaggerConfigBase {

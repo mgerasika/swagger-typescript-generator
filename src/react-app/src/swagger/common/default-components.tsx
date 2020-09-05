@@ -17,7 +17,7 @@ import {
     ISwaggerApiMethodBodyProps,
     ISwaggerApiMethodProps,
     ISwaggerApiMethodReturnTypeProps, ISwaggerEnumContentProps,
-    ISwaggerEnumProps
+    ISwaggerEnumProps, ISwaggerWarningMessageProps,
 } from '../components';
 import {ISwaggerApiClassInstanceProps} from '../components/api-class/swagger-api-class-instance';
 import {ISwaggerApiMethodNameProps} from "../components/api-method/swagger-api-method-name";
@@ -26,6 +26,7 @@ import {ISwaggerEnumFieldProps} from "../components/enum/swagger-enum-field";
 
 export interface ISwaggerComponents {
     DEBUG_CUSTOMIZATION_NAME: string;
+    renderWarningMessage:SwaggerPluginAction<ISwaggerWarningMessageProps>;
     renderAllClassesExport: SwaggerPluginAction<ISwaggerAllClassesExportProps>;
     renderApiClass: SwaggerPluginAction<ISwaggerApiClassProps>;
     renderApiClassConstructor: SwaggerPluginAction<ISwaggerApiClassConstructorProps>;
@@ -56,6 +57,9 @@ export interface ISwaggerComponents {
 
 export const defaultComponents: ISwaggerComponents = {
     DEBUG_CUSTOMIZATION_NAME: '',
+    renderWarningMessage: (Component: React.FC<any>, props: ISwaggerWarningMessageProps) => {
+        return (<Component {...props} />);
+    },
     renderApiClassImport: (Component: React.FC<any>, props: ISwaggerApiClassImportComponentProps) => {
         return (<Component {...props} />);
     },

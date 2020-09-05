@@ -1,6 +1,7 @@
 import React from 'react';
 import {SwaggerEnum} from "../../models/swagger-enum";
 import {SwaggerEnumContentAdapter} from "./swagger-enum-content";
+import {SwaggerWarningMessageAdapter} from "../swagger-warning-message";
 
 interface IProps {
     swaggerEnum: SwaggerEnum;
@@ -25,7 +26,7 @@ const Component: React.FC<ISwaggerEnumProps> = (props) => {
 
     return (
         <>
-            {swaggerEnum.utils.getWarningMessage()}
+            <SwaggerWarningMessageAdapter doc={props.swaggerEnum.doc} />
 
             <SwaggerEnumContentAdapter swaggerEnum={swaggerEnum}/>
         </>

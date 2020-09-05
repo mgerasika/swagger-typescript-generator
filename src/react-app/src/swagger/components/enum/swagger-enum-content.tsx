@@ -47,7 +47,7 @@ const Component: React.FC<ISwaggerEnumContentProps> = (props) => {
     });
 
     const renderEnum = (tabCount: number) => <>
-        {renderTabSymbol(tabCount)}export enum {swaggerEnum.name} {' {'} {'\n'}
+        {renderTabSymbol(tabCount)}export enum {swaggerEnum.label} {' {'} {'\n'}
         {renderFields(tabCount + 1)}
         {renderTabSymbol(tabCount)}{'}\n'}</>
 
