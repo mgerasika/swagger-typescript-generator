@@ -57,12 +57,14 @@ export class SwaggerMethod extends SwaggerBase<SwaggerClass, PrivateProps> {
                 this.responseModelType.arrayItemType = this.utils.getArrayItemType(schema);
                 this.responseModelType.type = this.utils.getMethodResponseType(this, schema);
             }
+        } else {
+            this.responseModelType.type = 'void';
         }
         if (this.responseModelType.type) {
             this.responseModelType.isJsType = this.utils.isJsType(this.responseModelType.type);
         }
         this.responseModelType.isEnum = this.utils.isEnum(source) ? true : undefined;
-        if(this.responseModelType.isEnum) {
+        if (this.responseModelType.isEnum) {
             this.responseModelType.enumValues = this.utils.getEnumValues(source);
         }
 
@@ -75,11 +77,11 @@ export class SwaggerMethod extends SwaggerBase<SwaggerClass, PrivateProps> {
     public init() {
         this.parameters.forEach(p => p.init());
 
-        if(!this.responseIsVoid) {
-            if (!this.responseModelType.isJsType && !this.responseModelType.isEnum ) {
+        if (!this.responseIsVoid) {
+            if (!this.responseModelType.isJsType && !this.responseModelType.isEnum) {
                 const modelRef = this.doc.models.find(modelItem => modelItem.name === this.responseModelType.type);
                 if (modelRef) {
-                   this.responseModelType.modelRef = modelRef;
+                    this.responseModelType.modelRef = modelRef;
                 } else {
                     console.error("Model not found response method", this);
                 }
@@ -88,7 +90,7 @@ export class SwaggerMethod extends SwaggerBase<SwaggerClass, PrivateProps> {
             if (this.responseModelType.isEnum) {
                 const enumRef = this.doc.enums.find(enumItem => enumItem.keys.includes(this.name));
                 if (enumRef) {
-                   this.responseModelType.enumRef = enumRef;
+                    this.responseModelType.enumRef = enumRef;
                 } else {
                     console.error("Model for enum not found (response method)" + this.name);
                 }

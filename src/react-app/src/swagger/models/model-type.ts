@@ -60,7 +60,7 @@ export class ModelType extends ObjectEx<PrivateProps> implements IModelType {
         if (this.modelRef && this.isArray) {
             return this.modelRef.name;
         }
-        return '';
+        return undefined;
     }
 
     set arrayItemType(val: string | undefined) {

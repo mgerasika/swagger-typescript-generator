@@ -10,7 +10,7 @@ import {
 import {SwaggerEnum} from "../models/swagger-enum";
 import {SwaggerPath} from "../models/swagger-path";
 
-const JS_TYPES = ['number', 'boolean', 'string', 'array', 'file','date', 'object'];
+const JS_TYPES = ['number', 'boolean', 'string', 'array', 'file','date', 'object','void'];
 
 const getModelName = (name: string) => {
     const newName = `${name}`.replace(/[\[\]\.]/g, '');
