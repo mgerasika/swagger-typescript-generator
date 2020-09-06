@@ -16,7 +16,7 @@ import {defaultUtils, ISwaggerUtils} from "../swagger/common";
 import {DiffSingle} from "./diff-single";
 import {SwaggerAllModelsExportAdapter} from "../swagger/components/model";
 import {SwaggerAllInOneFileAdapter} from "../swagger/components";
-import {customComponentsFactory, customizationArray, ICustomizationItem} from "./customisation";
+import {createCustomizationComponentsFactory, customizationArray, ICustomizationItem} from "./customisation";
 
 const _ = require('lodash');
 const axios = require('axios');
@@ -27,7 +27,7 @@ if (typeof window !== "undefined" && typeof window.document !== "undefined") {
 interface IProps {
     apiUrls: string[];
     createComponentsFactory?: (baseComponents: ISwaggerComponents) => ISwaggerComponents;
-    createDocument?: (baseDoc: SwaggerDoc) => SwaggerDoc;
+    createDocumentFactory?: (baseDoc: SwaggerDoc) => SwaggerDoc;
     createUtilsFactory?: (baseUtils: ISwaggerUtils) => ISwaggerUtils;
 }
 
@@ -66,9 +66,9 @@ export const SwaggerDemoComponent: React.FC<IProps> = (props) => {
                     enumImportPath: '../api-enum',
                     showPrivateFieldsForDebug: false,
                 };
-                let doc = new SwaggerDoc(config, utils, createCustomComponentsFactory(state.selectedCustomizationMethodName));
-                if (props.createDocument) {
-                    doc = props.createDocument(doc);
+                let doc = new SwaggerDoc(config, utils, createComponentsFactory(state.selectedCustomizationMethodName));
+                if (props.createDocumentFactory) {
+                    doc = props.createDocumentFactory(doc);
                 }
                 setRoot(doc);
             })
@@ -80,7 +80,7 @@ export const SwaggerDemoComponent: React.FC<IProps> = (props) => {
         return newVal;
     }
 
-    const createCustomComponentsFactory = (name: string) => {
+    const createComponentsFactory = (name: string) => {
         const callback = (item: ICustomizationItem) => {
             if (item.methodName === name) {
                 // TODO refactor! Bugs!!!
@@ -94,8 +94,8 @@ export const SwaggerDemoComponent: React.FC<IProps> = (props) => {
         }
 
         const result = props.createComponentsFactory ?
-            customComponentsFactory(props.createComponentsFactory(defaultComponents), name, callback) :
-            customComponentsFactory(defaultComponents, name, callback);
+            createCustomizationComponentsFactory(props.createComponentsFactory(defaultComponents), name, callback) :
+            createCustomizationComponentsFactory(defaultComponents, name, callback);
         return result;
     }
 
@@ -168,9 +168,9 @@ export const SwaggerDemoComponent: React.FC<IProps> = (props) => {
                 onChange={(ev) => {
                     window.localStorage.setItem('selectedCustomizationMethodName', ev.target.value);
                     if (root) {
-                        let newRoot = new SwaggerDoc(root.config, root.utils, createCustomComponentsFactory(ev.target.value));
-                        if (props.createDocument) {
-                            newRoot = props.createDocument(newRoot);
+                        let newRoot = new SwaggerDoc(root.config, root.utils, createComponentsFactory(ev.target.value));
+                        if (props.createDocumentFactory) {
+                            newRoot = props.createDocumentFactory(newRoot);
                         }
                         setState({
                             ...state,

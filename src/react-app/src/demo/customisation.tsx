@@ -63,7 +63,7 @@ export const customizationArray: ICustomizationItem[] = [
 const Customization = ({children, style}: IProps) => {
     return <span style={{border: '1px solid red', ...style}}>{children}</span>
 }
-export const customComponentsFactory = (baseComponents: ISwaggerComponents, customizationName: string, callback?: (item: ICustomizationItem) => void): ISwaggerComponents => {
+export const createCustomizationComponentsFactory = (baseComponents: ISwaggerComponents, customizationName: string, callback?: (item: ICustomizationItem) => void): ISwaggerComponents => {
 
     customizationArray.forEach(customization=>customization.clear());
 

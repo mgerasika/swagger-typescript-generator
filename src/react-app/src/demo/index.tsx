@@ -1,6 +1,7 @@
 import React from 'react';
 import {SwaggerDemoComponent} from '.';
-import {customDocumentFactory} from "./custom-documents-factory";
+import {exampleDocumentFactory} from "./example-documents-factory";
+import {exampleComponentsFactory} from "./example-components-factory";
 
 
 export * from './demo-all-classes';
@@ -22,15 +23,15 @@ const apiUrls = [
     'https://flipdish-blue-team.azurewebsites.net/swagger/docs/v1.0'
 ];
 
-
 export const ExampleComponent: React.FC = () => {
     return (
         <div>
             <SwaggerDemoComponent
                 apiUrls={apiUrls}
-                createDocument={customDocumentFactory}
+                createComponentsFactory={exampleComponentsFactory}
+                createDocumentFactory={exampleDocumentFactory}
                 createUtilsFactory={(baseUtils) => baseUtils}
-                />
+            />
         </div>
     );
 }

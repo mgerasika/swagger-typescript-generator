@@ -3,7 +3,7 @@ import {SwaggerEnum} from "./swagger-enum";
 import {SwaggerBase} from "./swagger-base";
 import {SwaggerMethod} from "./swagger-method";
 import {SwaggerBasePrivateProps} from "./swagger-base-private-props";
-import {ModelType} from "./model-type";
+import {IModelType, ModelType} from "./model-type";
 
 export enum EParameterIn {
     query = 'query',
@@ -15,7 +15,7 @@ export enum EParameterIn {
 export interface ISwaggerMethodParameter {
     name:string;
     label:string;
-    modelType: ModelType;
+    modelType: IModelType;
     required?: boolean;
     in?:EParameterIn;
 }
