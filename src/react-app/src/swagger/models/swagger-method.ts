@@ -57,8 +57,6 @@ export class SwaggerMethod extends SwaggerBase<SwaggerClass, PrivateProps> {
                 this.responseModelType.arrayItemType = this.utils.getArrayItemType(schema);
                 this.responseModelType.type = this.utils.getMethodResponseType(this, schema);
             }
-        } else {
-            this.responseModelType.type = 'void';
         }
         if (this.responseModelType.type) {
             this.responseModelType.isJsType = this.utils.isJsType(this.responseModelType.type);
