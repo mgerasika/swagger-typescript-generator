@@ -11,8 +11,6 @@ export interface ISwaggerClass {
     methods: ISwaggerMethod[];
 }
 interface PrivateProps extends SwaggerBasePrivateProps<SwaggerDoc> {
-    originalName:string;
-    paths:SwaggerPath;
 }
 export class SwaggerClass extends SwaggerBase<SwaggerDoc,PrivateProps> {
     public name: string = '';
@@ -25,8 +23,6 @@ export class SwaggerClass extends SwaggerBase<SwaggerDoc,PrivateProps> {
 
         this.parent = parent;
         this.source = source;
-        this.setPrivate('originalName',name);
-        this.setPrivate('paths',paths);
         this.tag = name;
         this.name = this.utils.getClassName(this, name);
         this.fileName = this.utils.getClassFileName(this, this.name);
@@ -41,11 +37,5 @@ export class SwaggerClass extends SwaggerBase<SwaggerDoc,PrivateProps> {
 
     public init() {
         this.methods.forEach(m => m.init());
-    }
-
-    clone(): SwaggerBase<SwaggerDoc,PrivateProps> {
-        const res = new SwaggerClass(this.parent,this.getPrivate('originalName'),this.source,this.getPrivate('paths'));
-        this.copyTo(res);
-        return res;
     }
 }

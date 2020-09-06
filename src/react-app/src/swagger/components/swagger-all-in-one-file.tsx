@@ -32,13 +32,13 @@ export interface ISwaggerAllInOneFileProps extends IProps {
 
 const renderEnums = (tabCount:number,enums:SwaggerEnum[]) => {
     return enums.map((swaggerEnum: SwaggerEnum, idx) => {
-        return <React.Fragment key={swaggerEnum.fullName}><SwaggerEnumContentAdapter tabCount={tabCount} swaggerEnum={swaggerEnum}/>{'\n'}
+        return <React.Fragment key={swaggerEnum.getFullName}><SwaggerEnumContentAdapter tabCount={tabCount} swaggerEnum={swaggerEnum}/>{'\n'}
         </React.Fragment>;
     })
 }
 
 const Component: React.FC<ISwaggerAllInOneFileProps> = (props) => {
-    const enumNamespaces = uniqueItems(props.doc.enums.map(e => e.namespace).filter(f=>f),x=>x);
+    const enumNamespaces = uniqueItems(props.doc.enums.map(e => e.namespace).filter(f=>f), x=>x);
 
     const allEnumsWithNamespace = enumNamespaces.map((namespace, idx) => {
         const enums = props.doc.enums.filter(en=>en.namespace === namespace);
@@ -52,7 +52,7 @@ const Component: React.FC<ISwaggerAllInOneFileProps> = (props) => {
     const allEnumsWithoutNamespace = renderEnums(0,props.doc.enums.filter(f=>!f.namespace));
 
 
-    const allModelsContent = props.doc.definitions.map((swaggerDefinition: SwaggerModel, dix) => {
+    const allModelsContent = props.doc.models.map((swaggerDefinition: SwaggerModel, dix) => {
         return <React.Fragment key={swaggerDefinition.name}><SwaggerModelContent
             swaggerModel={swaggerDefinition}/>{'\n'}</React.Fragment>;
     });

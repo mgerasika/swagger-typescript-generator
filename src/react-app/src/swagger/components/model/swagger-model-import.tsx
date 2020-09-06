@@ -38,8 +38,8 @@ const Component: React.FC<IProps> = (props) => {
     const imports = [];
 
     const enums = props.swaggerModel.properties.filter(f => f.modelType.isEnum);
-    const uniqueEnums = uniqueItems(enums, el => el.enumModelRef && el.enumModelRef.name || '').map(e => {
-        return e.enumModelRef.namespace ? e.enumModelRef.namespace : e.enumModelRef.name;
+    const uniqueEnums = uniqueItems(enums, el => el.modelType.enumRef && el.modelType.enumRef.name || '').map(e => {
+        return e.modelType.enumRef?.namespace ? e.modelType.enumRef.namespace : e.modelType.enumRef?.name;
     });
 
     if (uniqueEnums.length) {
@@ -47,8 +47,8 @@ const Component: React.FC<IProps> = (props) => {
         imports.push(`import {${uniqueEnums.join(',')}} from \'${props.swaggerModel.parent.config.enumImportPath}\'`);
     }
 
-    const models = props.swaggerModel.properties.filter(f => f.subModelRef);
-    const uniqueModels = uniqueItems(models, el => el.subModelRef && el.subModelRef.name || '').map(e => e.subModelRef.name);
+    const models = props.swaggerModel.properties.filter(f => f.modelType.modelRef);
+    const uniqueModels = uniqueItems(models, el => el.modelType.modelRef && el.modelType.modelRef.name || '').map(e => e.modelType.modelRef?.name);
 
     if (uniqueModels.length) {
         assert(props.swaggerModel.config.modelImportPath, "Model import path can't be empty. Add to config")

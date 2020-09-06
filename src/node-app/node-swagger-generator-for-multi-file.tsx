@@ -39,7 +39,7 @@ export class NodeSwaggerGeneratorForMultiFile extends NodeSwaggerGeneratorBase {
             this.createDirectory(this._config.enumFilesOutDir);
         }
 
-        swaggerDoc.definitions.forEach((swaggerDefinition: SwaggerModel) => {
+        swaggerDoc.models.forEach((swaggerDefinition: SwaggerModel) => {
             const filePath = `${this._config.modelFilesOutDir}/${swaggerDefinition.fileName}`;
             const text = this.component2string(<SwaggerModelAdapter swaggerModel={swaggerDefinition}/>);
             this.writeToFile(filePath, text);
@@ -66,7 +66,7 @@ export class NodeSwaggerGeneratorForMultiFile extends NodeSwaggerGeneratorBase {
 
         {
             const text = this.component2string(<SwaggerAllModelsExportAdapter doc={swaggerDoc}
-                                                                              models={swaggerDoc.definitions}/>);
+                                                                              models={swaggerDoc.models}/>);
             const filePath = `${this._config.modelFilesOutDir}/index.ts`;
             this.writeToFile(filePath, text);
         }

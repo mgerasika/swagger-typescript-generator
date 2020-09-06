@@ -29,7 +29,7 @@ export const dictionary = {
         if (!root) {
             return [];
         }
-        const items = root.definitions.sort((a, b) => compareFn(a.name, b.name))
+        const items = root.models.sort((a, b) => compareFn(a.name, b.name))
             .map(item => ({label: item.name, value: item.name})) as ISelectOption[];
         return [EMPTY_OPTION, ALL_OPTION, ...items];
     },
@@ -38,8 +38,8 @@ export const dictionary = {
         if (!root) {
             return [];
         }
-        const items = root.enums.sort((a, b) => compareFn(a.fullName, b.fullName))
-            .map(item => ({label: item.fullName, value: item.fullName})) as ISelectOption[];
+        const items = root.enums.sort((a, b) => compareFn(a.getFullName, b.getFullName))
+            .map(item => ({label: item.getFullName, value: item.getFullName})) as ISelectOption[];
         return [EMPTY_OPTION, ALL_OPTION, ...items];
     },
 

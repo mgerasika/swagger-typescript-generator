@@ -1,6 +1,6 @@
 import {capitalize, lowerlize} from "../utils";
 import {
-    IModelType,
+    ModelType,
     SwaggerClass,
     SwaggerMethod,
     SwaggerMethodParameter,
@@ -100,7 +100,7 @@ export interface ISwaggerUtils {
     getModelType: (context: SwaggerModel, schema: any) => string;
     getModelPropertyType: (context: SwaggerModelProperty, schema: any) => string;
 
-    getEnumName: (context: SwaggerEnum, name: string) => string;
+    getEnumName: (name: string) => string;
     getEnumFileName: (context: SwaggerEnum, name: string) => string;
     getPathName: (context: SwaggerPath, name: string) => string;
 
@@ -110,7 +110,7 @@ export interface ISwaggerUtils {
     isJsType: (name: string) => boolean;
     getEnumValues: (schema:any) => string[] | undefined;
     getArrayItemType: (schema: any) => string;
-    getModelType2:(schema:any) => IModelType;
+    getModelType2:(schema:any) => ModelType;
 
 }
 
@@ -137,7 +137,7 @@ export const defaultUtils: ISwaggerUtils = {
     getModelType: (context: SwaggerModel, schema: any) => getJsType(schema),
 
     getModelPropertyType: (context: SwaggerModelProperty, schema: any) => getJsType(schema),
-    getEnumName: (context: SwaggerEnum, name: string) => getEnumName(name),
+    getEnumName: ( name: string) => getEnumName(name),
     getEnumFileName: (context: SwaggerEnum, name: string) => getFileName(name),
     escapeMethodQueryParameterName: (name: string) => `${name}`.replace(/[\[\]\.]/g, ''),
 
@@ -166,7 +166,7 @@ export const defaultUtils: ISwaggerUtils = {
             return schema.items.enum;
         }
     },
-    getModelType2:(schema:any) : IModelType => {
+    getModelType2:(schema:any) : ModelType => {
         return null as any;
     }
 }

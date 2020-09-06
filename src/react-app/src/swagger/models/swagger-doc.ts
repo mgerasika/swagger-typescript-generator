@@ -8,7 +8,7 @@ import {SwaggerBasePrivateProps} from "./swagger-base-private-props";
 import {ObjectEx} from "./object-ex";
 
 export interface ISwaggerDoc {
-    definitions: ISwaggerModel[];
+    models: ISwaggerModel[];
     classes: ISwaggerClass[];
     paths: ISwaggerPath[];
     enums: ISwaggerEnum[];
@@ -17,7 +17,7 @@ interface PrivateProps extends SwaggerBasePrivateProps<null>{
     config:ISwaggerDocConfig;
 }
 export class SwaggerDoc extends ObjectEx<PrivateProps> implements ISwaggerDoc {
-    public definitions: SwaggerModel[] = [];
+    public models: SwaggerModel[] = [];
     public classes: SwaggerClass[] = [];
     public paths: SwaggerPath[] = [];
     public enums: SwaggerEnum[] = [];
@@ -42,7 +42,7 @@ export class SwaggerDoc extends ObjectEx<PrivateProps> implements ISwaggerDoc {
         }
 
         if (source.definitions) {
-            this.definitions = Object.keys(source.definitions).reduce((accum: SwaggerModel[], key) => {
+            this.models = Object.keys(source.definitions).reduce((accum: SwaggerModel[], key) => {
                 const obj = source.definitions[key];
                 accum.push(new SwaggerModel(this, key, obj));
                 return accum;
@@ -68,15 +68,9 @@ export class SwaggerDoc extends ObjectEx<PrivateProps> implements ISwaggerDoc {
         this.init();
     }
 
-    public clone() {
-        const res = new SwaggerDoc(this.config,this.utils,this.components);
-        this.copyTo(res);
-        return res;
-    }
-
     public addEnums() {
         // enums
-        this.definitions.forEach(def => {
+        this.models.forEach(def => {
             def.properties.forEach(defProp => {
                 if (defProp.modelType.isEnum) {
                     const enumModel = new SwaggerEnum(this, defProp.name, {
@@ -115,13 +109,12 @@ export class SwaggerDoc extends ObjectEx<PrivateProps> implements ISwaggerDoc {
 
     public init() {
         this.addEnums();
+        this.enums = uniqueItems(this.enums, (e) => e.getFullName);
 
         this.paths.forEach(cl => cl.init());
         this.enums.forEach(cl => cl.init());
-        this.definitions.forEach(def => def.init());
+        this.models.forEach(def => def.init());
         this.classes.forEach(cl => cl.init());
-
-        this.enums = uniqueItems(this.enums, (e) => e.fullName);
     }
 
     public get doc(): SwaggerDoc {

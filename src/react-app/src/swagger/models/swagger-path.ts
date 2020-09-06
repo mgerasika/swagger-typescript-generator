@@ -7,7 +7,6 @@ export interface ISwaggerPath{
 
 }
 interface PrivateProps extends SwaggerBasePrivateProps<SwaggerDoc> {
-    key:string;
 }
 export class SwaggerPath extends SwaggerBase<SwaggerDoc,PrivateProps> implements ISwaggerPath{
     public name: string = '';
@@ -18,7 +17,6 @@ export class SwaggerPath extends SwaggerBase<SwaggerDoc,PrivateProps> implements
     public constructor(parent: SwaggerDoc, key: string, source: any) {
         super();
 
-        this.setPrivate('key',key)
         this.parent = parent;
         this.source = source;
 
@@ -32,12 +30,6 @@ export class SwaggerPath extends SwaggerBase<SwaggerDoc,PrivateProps> implements
             this.tags.push(el.tags);
         })
         this.tags = uniqueItems((this.tags as any).flat(), it => it );
-    }
-
-    public clone(){
-        const res = new SwaggerPath(this.parent,this.getPrivate('key'),this.source);
-        this.copyTo(res);
-        return res;
     }
 
     public init() {

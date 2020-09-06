@@ -26,7 +26,7 @@ const Component: React.FC<IProps> = (props) => {
     const exports = props.enums.map((def: SwaggerEnum, index) => {
         const idx = def.fileName.lastIndexOf('.');
         const name = def.fileName.substr(0, idx);
-        return (<span key={`${def.name}${index}`}>export * from './{name}'{'\n'}</span>);
+        return (<span key={`${def.getFullName}${index}`}>export * from './{name}'{'\n'}</span>);
     });
     return (
         <>

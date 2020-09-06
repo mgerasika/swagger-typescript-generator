@@ -9,14 +9,14 @@ interface IProps {
 
 export const SwaggerApiClassImportAdapter: React.FC<IProps> = (props) => {
     const responseTypes = props.swaggerClass.methods.map((method: SwaggerMethod) => {
-        return method.responseModelType?.type && method.responseModelRef ? method.responseModelType.type : undefined;
+        return method.responseModelType?.type && method.responseModelType.modelRef ? method.responseModelType.type : undefined;
     });
 
     let parameterTypes: string [] = [];
     props.swaggerClass.methods.forEach((method: SwaggerMethod) => {
         method.parameters.forEach((parameter: SwaggerMethodParameter) => {
-            if (parameter.modelType.type && parameter.modelRef) {
-                parameterTypes.push(parameter.modelRef.name);
+            if (parameter.modelType.type && parameter.modelType.modelRef) {
+                parameterTypes.push(parameter.modelType.modelRef.name);
             }
         });
     });
@@ -37,8 +37,8 @@ export const SwaggerApiClassImportAdapter: React.FC<IProps> = (props) => {
     let enumTypes: string [] = [];
     props.swaggerClass.methods.forEach((method: SwaggerMethod) => {
         method.parameters.forEach((parameter: SwaggerMethodParameter) => {
-            if (parameter.modelType.type && parameter.enumRef) {
-                enumTypes.push(parameter.enumRef.namespace ? parameter.enumRef.namespace : parameter.enumRef.name);
+            if (parameter.modelType.type && parameter.modelType.enumRef) { 
+                enumTypes.push(parameter.modelType.enumRef.namespace ? parameter.modelType.enumRef.namespace : parameter.modelType.enumRef.name);
             }
         });
     });

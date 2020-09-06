@@ -1,5 +1,6 @@
 import React from 'react';
 import {SwaggerDemoComponent} from '.';
+import {customDocumentFactory} from "./custom-documents-factory";
 
 
 export * from './demo-all-classes';
@@ -27,6 +28,7 @@ export const ExampleComponent: React.FC = () => {
         <div>
             <SwaggerDemoComponent
                 apiUrls={apiUrls}
+                createDocument={customDocumentFactory}
                 createUtilsFactory={(baseUtils) => baseUtils}
                 />
         </div>

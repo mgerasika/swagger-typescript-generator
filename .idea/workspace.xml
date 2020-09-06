@@ -26,31 +26,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ce26be8b-bbf5-4618-81ac-984eef411fea" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/react-app/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/react-app/src/swagger/components/swagger-warning-message.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/react-app/src/demo/custom-documents-factory.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/node-app/demo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/node-app/demo.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/node-app/node-swagger-config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/node-app/node-swagger-config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/node-app/node-swagger-generator-base.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/node-app/node-swagger-generator-base.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/node-app/node-swagger-generator-for-multi-file.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/node-app/node-swagger-generator-for-multi-file.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app/src/components/dictionary.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/components/dictionary.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/react-app/src/demo/customisation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/demo/customisation.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/react-app/src/demo/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/demo/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/react-app/src/demo/swagger-demo-component.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/demo/swagger-demo-component.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/common/default-components.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/common/default-components.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/common/default-utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/common/default-utils.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/components/api-class/swagger-all-class-export.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/components/api-class/swagger-all-class-export.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/components/api-class/swagger-api-class.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/components/api-class/swagger-api-class.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/components/api-class/swagger-api-class-import.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/components/api-class/swagger-api-class-import.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/components/enum/swagger-all-enums-export.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/components/enum/swagger-all-enums-export.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/components/enum/swagger-enum-content.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/components/enum/swagger-enum-content.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/components/enum/swagger-enum.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/components/enum/swagger-enum.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/components/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/components/model/swagger-all-models-export.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/components/model/swagger-all-models-export.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/components/model/swagger-model.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/components/model/swagger-model.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/components/model/swagger-model-import.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/components/model/swagger-model-import.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/components/swagger-all-in-one-file.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/components/swagger-all-in-one-file.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/components/urls/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/components/urls/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/models/model-type.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/models/model-type.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/models/object-ex.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/models/object-ex.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/models/swagger-class.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/models/swagger-class.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/models/swagger-doc.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/models/swagger-doc.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/models/swagger-enum.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/models/swagger-enum.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/models/swagger-method-parameter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/models/swagger-method-parameter.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/models/swagger-method.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/models/swagger-method.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/models/swagger-model-property.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/models/swagger-model-property.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/models/swagger-model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/models/swagger-model.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/models/swagger-path.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/models/swagger-path.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/models/url-info.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/models/url-info.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -281,7 +282,7 @@
       <workItem from="1599141792832" duration="2239000" />
       <workItem from="1599145254410" duration="44000" />
       <workItem from="1599146010877" duration="9000" />
-      <workItem from="1599249294383" duration="7805000" />
+      <workItem from="1599249294383" duration="21548000" />
     </task>
     <servers />
   </component>
@@ -332,10 +333,14 @@
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state x="708" y="382" key="#com.intellij.fileTypes.FileTypeChooser/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@0.0.1920.1160" timestamp="1597702068865" />
-    <state x="765" y="296" key="#com.intellij.ide.util.MemberChooser" timestamp="1598744491716">
+    <state x="765" y="296" key="#com.intellij.ide.util.MemberChooser" timestamp="1599280159814">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state x="765" y="296" key="#com.intellij.ide.util.MemberChooser/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@0.0.1920.1160" timestamp="1598744491716" />
+    <state x="765" y="296" key="#com.intellij.ide.util.MemberChooser/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@0.0.1920.1160" timestamp="1599280159814" />
+    <state x="690" y="327" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1599329443208">
+      <screen x="0" y="0" width="1920" height="1160" />
+    </state>
+    <state x="690" y="327" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@0.0.1920.1160" timestamp="1599329443208" />
     <state x="740" y="335" key="FileChooserDialogImpl" timestamp="1599275184010">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
@@ -425,12 +430,16 @@
       <screen x="0" y="23" width="2560" height="1339" />
     </state>
     <state x="983" y="402" key="RollbackChangesDialog/0.23.2560.1339/2560.62.2560.1417@0.23.2560.1339" timestamp="1596085463831" />
-    <state x="577" y="53" width="988" height="801" key="find.popup" timestamp="1599276424427">
+    <state x="577" y="53" width="988" height="801" key="find.popup" timestamp="1599352441301">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state x="972" y="447" width="615" height="490" key="find.popup/0.23.2560.1339/2560.62.2560.1417@0.23.2560.1339" timestamp="1596094936341" />
     <state x="-1191" y="367" width="988" height="564" key="find.popup/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@-1920.0.1920.1160" timestamp="1598373958360" />
-    <state x="577" y="53" width="988" height="801" key="find.popup/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@0.0.1920.1160" timestamp="1599276424427" />
+    <state x="577" y="53" width="988" height="801" key="find.popup/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@0.0.1920.1160" timestamp="1599352441301" />
+    <state x="736" y="352" key="refactoring.ChangeSignatureDialog" timestamp="1599282138773">
+      <screen x="0" y="0" width="1920" height="1160" />
+    </state>
+    <state x="736" y="352" key="refactoring.ChangeSignatureDialog/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@0.0.1920.1160" timestamp="1599282138773" />
     <state x="709" y="262" key="run.anything.popup" timestamp="1598745231762">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>

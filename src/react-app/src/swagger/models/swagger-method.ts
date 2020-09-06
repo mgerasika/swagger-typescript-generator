@@ -5,7 +5,7 @@ import {SwaggerBase} from "./swagger-base";
 import {SwaggerMethodParameter} from "./swagger-method-parameter";
 import {SwaggerPath} from "./swagger-path";
 import {SwaggerBasePrivateProps} from "./swagger-base-private-props";
-import {IModelType} from "./model-type";
+import {ModelType} from "./model-type";
 import {SwaggerEnum} from "./swagger-enum";
 
 export interface ISwaggerMethod {
@@ -14,13 +14,9 @@ export interface ISwaggerMethod {
     tags: string;
     url: string;
     parameters: SwaggerMethodParameter[];
-
 }
 
 interface PrivateProps extends SwaggerBasePrivateProps<SwaggerClass> {
-    responseModelRef: SwaggerModel;
-    responseEnumRef: SwaggerEnum;
-    path: SwaggerPath;
 }
 
 export class SwaggerMethod extends SwaggerBase<SwaggerClass, PrivateProps> {
@@ -30,28 +26,10 @@ export class SwaggerMethod extends SwaggerBase<SwaggerClass, PrivateProps> {
     public url: string = '';
     public parameters: SwaggerMethodParameter[] = [];
 
-    // TODO combine to one type
     public responseIsVoid?: boolean;
-
     public isFileUpload?: boolean;
     public description?: string;
-    public responseModelType: IModelType;
-
-    public get responseModelRef(): SwaggerModel {
-        return this.getPrivate('responseModelRef') as SwaggerModel;
-    }
-
-    public set responseModelRef(val: SwaggerModel) {
-        this.setPrivate('responseModelRef', val);
-    }
-
-    public get responseEnumRef(): SwaggerEnum {
-        return this.getPrivate('responseEnumRef') as SwaggerEnum;
-    }
-
-    public set responseEnumRef(val: SwaggerEnum) {
-        this.setPrivate('responseEnumRef', val);
-    }
+    public responseModelType: ModelType;
 
     public constructor(parent: SwaggerClass, httpMethod: string, path: SwaggerPath, source: any) {
         super();
@@ -59,7 +37,6 @@ export class SwaggerMethod extends SwaggerBase<SwaggerClass, PrivateProps> {
         this.parent = parent;
         this.source = source;
         this.url = path.url;
-        this.setPrivate('path', path);
         this.httpMethod = httpMethod;
         [this.tags] = this.source.tags;
         this.name = this.utils.getMethodName(this, this.source.operationId);
@@ -71,7 +48,7 @@ export class SwaggerMethod extends SwaggerBase<SwaggerClass, PrivateProps> {
         }
 
         this.responseIsVoid = true;
-        this.responseModelType = {};
+        this.responseModelType = new ModelType(this.config);
         if (source.responses && source.responses['200']) {
             const schema = source.responses['200'].schema;
             if (schema) {
@@ -95,26 +72,14 @@ export class SwaggerMethod extends SwaggerBase<SwaggerClass, PrivateProps> {
         }
     }
 
-    public clone() {
-        const res = new SwaggerMethod(this.parent, this.httpMethod, this.getPrivate('path'), this.source);
-        this.copyTo(res);
-        return res;
-    }
-
     public init() {
         this.parameters.forEach(p => p.init());
 
         if(!this.responseIsVoid) {
             if (!this.responseModelType.isJsType && !this.responseModelType.isEnum ) {
-                const modelRef = this.doc.definitions.find(modelItem => modelItem.name === this.responseModelType.type);
+                const modelRef = this.doc.models.find(modelItem => modelItem.name === this.responseModelType.type);
                 if (modelRef) {
-                    this.responseModelRef = modelRef;
-                    this.responseModelType.type = modelRef.name;
-
-                    if (this.responseModelType.isArray) {
-                        this.responseModelType.arrayItemType = modelRef.name;
-                        this.responseModelType.type = `Array<${this.responseModelType.arrayItemType}>`;
-                    }
+                   this.responseModelType.modelRef = modelRef;
                 } else {
                     console.error("Model not found response method", this);
                 }
@@ -123,13 +88,7 @@ export class SwaggerMethod extends SwaggerBase<SwaggerClass, PrivateProps> {
             if (this.responseModelType.isEnum) {
                 const enumRef = this.doc.enums.find(enumItem => enumItem.keys.includes(this.name));
                 if (enumRef) {
-                    this.responseEnumRef = enumRef;
-                    this.responseModelType.type = enumRef.fullName;
-
-                    if (this.responseModelType.isArray) {
-                        this.responseModelType.arrayItemType = enumRef.fullName;
-                        this.responseModelType.type = `Array<${this.responseModelType.arrayItemType}>`;
-                    }
+                   this.responseModelType.enumRef = enumRef;
                 } else {
                     console.error("Model for enum not found (response method)" + this.name);
                 }

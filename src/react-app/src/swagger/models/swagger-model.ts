@@ -11,7 +11,6 @@ export interface ISwaggerModel{
 }
 
 interface PrivateProps extends SwaggerBasePrivateProps<SwaggerDoc> {
-    originalName:string;
 }
 
 export class SwaggerModel extends SwaggerBase<SwaggerDoc,PrivateProps> implements ISwaggerModel{
@@ -26,7 +25,6 @@ export class SwaggerModel extends SwaggerBase<SwaggerDoc,PrivateProps> implement
         this.parent = parent;
         this.source = source;
 
-        this.setPrivate('originalName',name)
         this.name = this.utils.getModelName(this, name);
         this.fileName = this.utils.getModelFileName(this, name);
         this.type = this.utils.getModelType(this, source);
@@ -37,12 +35,6 @@ export class SwaggerModel extends SwaggerBase<SwaggerDoc,PrivateProps> implement
             const required = requiredArray.some((x: string) => x === propertyName) ? true : undefined;;
             return new SwaggerModelProperty(this, propertyName, property, required);
         })
-    }
-
-    public clone(){
-        const res = new SwaggerModel(this.parent,this.getPrivate('originalName'),this.source);
-        this.copyTo(res);
-        return res;
     }
 
     public init() {

@@ -1,4 +1,4 @@
-export interface IUrlInfo {
+ export interface IUrlInfo {
     name: string;
     httpMethod: string;
     url: string;

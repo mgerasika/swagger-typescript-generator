@@ -68,7 +68,7 @@ export const SwaggerDemoComponent: React.FC<IProps> = (props) => {
                 };
                 let doc = new SwaggerDoc(config, utils, createCustomComponentsFactory(state.selectedCustomizationMethodName));
                 if (props.createDocument) {
-                    doc = _.clone(props.createDocument(doc), true);
+                    doc = props.createDocument(doc);
                 }
                 setRoot(doc);
             })
@@ -113,16 +113,16 @@ export const SwaggerDemoComponent: React.FC<IProps> = (props) => {
 
     const selectedDefinitionObject = useMemo(() => {
         if (root && state.selectedDefinition === 'ALL') {
-            return root.definitions;
+            return root.models;
         }
-        return root ? root.definitions.filter(c => c.name === state.selectedDefinition) : [];
+        return root ? root.models.filter(c => c.name === state.selectedDefinition) : [];
     }, [root, state.selectedDefinition])
 
     const selectedEnumObject = useMemo(() => {
         if (root && state.selectedEnum === 'ALL') {
             return root.enums;
         }
-        return root ? root.enums.filter(c => c.fullName === state.selectedEnum) : [];
+        return root ? root.enums.filter(c => c.getFullName === state.selectedEnum) : [];
     }, [root, state.selectedEnum])
 
     const selectedPathsObject = useMemo(() => {
@@ -170,7 +170,7 @@ export const SwaggerDemoComponent: React.FC<IProps> = (props) => {
                     if (root) {
                         let newRoot = new SwaggerDoc(root.config, root.utils, createCustomComponentsFactory(ev.target.value));
                         if (props.createDocument) {
-                            newRoot = _.clone(props.createDocument(newRoot), true);
+                            newRoot = props.createDocument(newRoot);
                         }
                         setState({
                             ...state,
@@ -335,7 +335,7 @@ export const SwaggerDemoComponent: React.FC<IProps> = (props) => {
                             </div>
                         </div>}
                     renderContent={() => <DiffSingle
-                        obj={<SwaggerAllModelsExportAdapter doc={root} models={root.definitions}/>}/>}
+                        obj={<SwaggerAllModelsExportAdapter doc={root} models={root?.models}/>}/>}
                     activeTitle={state.selectedPanelTitle} onClick={handleSelectedPanelTitleChange}/>
 
                 <BootstrapPanel

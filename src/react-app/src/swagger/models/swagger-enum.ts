@@ -4,58 +4,38 @@ import {SwaggerBase as SwaggerBase} from "./swagger-base";
 import {SwaggerMethodParameter} from "./swagger-method-parameter";
 import {SwaggerModelProperty} from "./swagger-model-property";
 import {SwaggerBasePrivateProps} from "./swagger-base-private-props";
+import {nameof} from "../utils";
 
 export interface ISwaggerEnum {
     name: string;
-    label: string;
-    fullName: string;
+    getFullName: string;
     description?: string;
     type?: string;
     enumValues?: string[];
     namespace?: string;
     fileName: string;
 }
+
 interface IModelProp {
-    modelDef?: SwaggerModel, modelPropDef?: SwaggerModelProperty, methodPropertyDef?: SwaggerMethodParameter
+    modelDef?: SwaggerModel,
+    modelPropDef?: SwaggerModelProperty,
+    methodPropertyDef?: SwaggerMethodParameter
 }
-interface PrivateProps extends SwaggerBasePrivateProps<SwaggerDoc>{
-    key:string;
-    model:IModelProp;
-    name:string;
-    namespace:string;
+
+interface PrivateProps extends SwaggerBasePrivateProps<SwaggerDoc> {
 }
-export class SwaggerEnum extends SwaggerBase<SwaggerDoc,PrivateProps> implements ISwaggerEnum{
-    public keys: string[] = [];
-    public label: string = '';
+
+export class SwaggerEnum extends SwaggerBase<SwaggerDoc, PrivateProps> implements ISwaggerEnum {
+    public name: string = '';
     public description?: string;
     public type?: string;
+    public namespace?: string;
     public enumValues?: string[];
     public fileName: string;
+    public keys: string[];
 
-    public get name() {
-        return this.getPrivate('name')
-    }
-
-    public get namespace() {
-        return this.getPrivate('namespace')
-    }
-
-    public get fullName() {
-        if(this.namespace) {
-            return `${this.namespace}.${this.name}`
-        }
-        else {
-            return this.name;
-        }
-    }
-
-    toJSON() {
-        return {
-            ...this,
-            name: this.name,
-            fullName: this.fullName,
-            namespace: this.namespace
-        }
+    get getFullName() {
+        return this.namespace ? `${this.namespace}.${this.name}` : this.name;
     }
 
     public constructor(parent: SwaggerDoc, key: string, model: IModelProp, source: any) {
@@ -64,12 +44,11 @@ export class SwaggerEnum extends SwaggerBase<SwaggerDoc,PrivateProps> implements
         this.parent = parent;
         this.source = source;
 
-        this.setPrivate('key',key);
-        this.setPrivate('model',model);
+        this.keys = [];
 
         this.keys.push(key);
-        this.setPrivate('name',this.utils.getEnumName(this, key))
-        this.label = this.name;
+        const name = this.utils.getEnumName(key);
+        this.name = name;
         this.fileName = this.utils.getEnumFileName(this, key);
         this.enumValues = this.utils.getEnumValues(source);
 
@@ -82,14 +61,15 @@ export class SwaggerEnum extends SwaggerBase<SwaggerDoc,PrivateProps> implements
         this.description = source.description;
         this.type = source.type;
         if (model.modelDef) {
-            this.setPrivate('namespace', model.modelDef.name);
+            this.namespace = model.modelDef.name;
         }
     }
 
-    public clone(){
-        const res = new SwaggerEnum(this.parent,this.getPrivate('key'),this.getPrivate('model'),this.source);
-        this.copyTo(res);
-        return res;
+    toJSON() {
+        return {
+            ...this,
+            [nameof<this>('getFullName')]: this.getFullName
+        }
     }
 
     public init() {

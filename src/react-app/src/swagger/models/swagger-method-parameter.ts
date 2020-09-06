@@ -3,7 +3,7 @@ import {SwaggerEnum} from "./swagger-enum";
 import {SwaggerBase} from "./swagger-base";
 import {SwaggerMethod} from "./swagger-method";
 import {SwaggerBasePrivateProps} from "./swagger-base-private-props";
-import {IModelType} from "./model-type";
+import {ModelType} from "./model-type";
 
 export enum EParameterIn {
     query = 'query',
@@ -15,37 +15,19 @@ export enum EParameterIn {
 export interface ISwaggerMethodParameter {
     name:string;
     label:string;
-    modelType: IModelType;
+    modelType: ModelType;
     required?: boolean;
     in?:EParameterIn;
 }
 interface PrivateProps extends SwaggerBasePrivateProps<SwaggerMethod> {
-    enumRef:SwaggerEnum;
-    modelRef:SwaggerModel;
 }
 export class SwaggerMethodParameter extends SwaggerBase<SwaggerMethod,PrivateProps> implements ISwaggerMethodParameter {
     public label: string = '';
     public in?: EParameterIn;
     public name:string = '';
     public required?: boolean;
-    public modelType: IModelType;
+    public modelType: ModelType;
     public description?: string;
-
-    public get enumRef(): SwaggerEnum {
-        return this.getPrivate('enumRef') as SwaggerEnum;
-    }
-
-    public set enumRef(val: SwaggerEnum) {
-        this.setPrivate('enumRef', val);
-    }
-
-    public get modelRef(): SwaggerModel {
-        return this.getPrivate('modelRef') as SwaggerModel;
-    }
-
-    public set modelRef(val: SwaggerModel) {
-        this.setPrivate('modelRef', val);
-    }
 
     public constructor(parent: SwaggerMethod, source: any) {
         super();
@@ -53,7 +35,7 @@ export class SwaggerMethodParameter extends SwaggerBase<SwaggerMethod,PrivatePro
         this.parent = parent;
         this.source = source;
 
-        this.modelType = {};
+        this.modelType = new ModelType(this.config);
         const name = this.utils.getMethodParameterName(this, source.name);
         this.name = name;
         this.label = name;
@@ -74,25 +56,14 @@ export class SwaggerMethodParameter extends SwaggerBase<SwaggerMethod,PrivatePro
         }
     }
 
-    public clone(){
-        const res = new SwaggerMethodParameter(this.parent,this.source);
-        this.copyTo(res);
-        return res;
-    }
-
     public init() {
         super.init();
 
         if (!this.modelType.isJsType && !this.modelType.isEnum) {
-            const modelRef = this.doc.definitions.find(modelItem => modelItem.name === this.modelType.type);
+            const modelRef = this.doc.models.find(modelItem => modelItem.name === this.modelType.type);
             if (modelRef) {
-                this.modelRef = modelRef;
-                this.modelType.type = modelRef.name;
+                this.modelType.modelRef = modelRef;
 
-                if (this.modelType.isArray) {
-                    this.modelType.arrayItemType = modelRef.name;
-                    this.modelType.type = `Array<${this.modelType.arrayItemType}>`;
-                }
             } else {
                 console.error("Model not found", this);
             }
@@ -101,13 +72,7 @@ export class SwaggerMethodParameter extends SwaggerBase<SwaggerMethod,PrivatePro
         if (this.modelType.isEnum) {
             const enumRef = this.doc.enums.find(enumItem => enumItem.keys.includes(this.name));
             if (enumRef) {
-                this.enumRef = enumRef;
-                this.modelType.type = enumRef.fullName;
-
-                if (this.modelType.isArray) {
-                    this.modelType.arrayItemType = enumRef.fullName;
-                    this.modelType.type = `Array<${this.modelType.arrayItemType}>`;
-                }
+                this.modelType.enumRef = enumRef;
             } else {
                 console.error("Model for enum not found (method parameter)" + this.name);
             }

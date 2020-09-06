@@ -10,8 +10,8 @@ interface IProps {
 
 export class ICustomizationItem {
     methodName: string = '';
-    defaultProps?: any = undefined;
-    customProps?: any = undefined;
+    defaultProps?: any = {};
+    customProps?: any = {};
 
     constructor(name: keyof ISwaggerComponents) {
         this.methodName = name;
@@ -80,6 +80,16 @@ export const customComponentsFactory = (baseComponents: ISwaggerComponents, cust
     return ({
         ...baseComponents,
         DEBUG_CUSTOMIZATION_NAME:customizationName,
+        renderWarningMessage: (BaseComponent, props) => {
+            const methodName = 'renderWarningMessage';
+            const newProps = init(methodName, props, callback);
+            if (customizationName === methodName) {
+                return <Customization>
+                    {baseComponents[methodName](BaseComponent,newProps)}</Customization>
+            } else {
+                return baseComponents[methodName](BaseComponent,newProps)
+            }
+        },
         renderApiMethod: (BaseComponent, props) => {
             const methodName = 'renderApiMethod';
             const newProps = init(methodName, props, callback);
