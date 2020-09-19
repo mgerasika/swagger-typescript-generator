@@ -27,9 +27,13 @@
   <component name="ChangeListManager">
     <list default="true" id="ce26be8b-bbf5-4618-81ac-984eef411fea" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app/src/swagger/models/model-type.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/swagger/models/model-type.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/node-app/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/node-app/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/node-app/log-service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/node-app/node-swagger-generator-base.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/node-app/node-swagger-generator-utils.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/node-app/node-swagger-generator-for-multi-file.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/node-app/node-swagger-generator-for-multi-file.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/node-app/node-swagger-generator-for-single-file.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/node-app/node-swagger-generator-for-single-file.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app/src/components/bootstrap-select.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/components/bootstrap-select.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app/src/demo/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app/src/demo/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +63,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../FLIPDISH/web-portal" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -262,7 +266,8 @@
       <workItem from="1599145254410" duration="44000" />
       <workItem from="1599146010877" duration="9000" />
       <workItem from="1599249294383" duration="24130000" />
-      <workItem from="1599358957836" duration="886000" />
+      <workItem from="1599358957836" duration="1346000" />
+      <workItem from="1600538931718" duration="630000" />
     </task>
     <servers />
   </component>
@@ -317,9 +322,10 @@
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state x="765" y="296" key="#com.intellij.ide.util.MemberChooser/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@0.0.1920.1160" timestamp="1599280159814" />
-    <state x="690" y="327" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1599329443208">
-      <screen x="0" y="0" width="1920" height="1160" />
+    <state x="690" y="367" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1600539054439">
+      <screen x="0" y="40" width="1920" height="1160" />
     </state>
+    <state x="690" y="367" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1920.40.1920.1160/0.40.1920.1160/1920.40.2048.1112@0.40.1920.1160" timestamp="1600539054439" />
     <state x="690" y="327" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@0.0.1920.1160" timestamp="1599329443208" />
     <state x="740" y="335" key="FileChooserDialogImpl" timestamp="1599359020771">
       <screen x="0" y="0" width="1920" height="1160" />

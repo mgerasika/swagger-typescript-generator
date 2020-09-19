@@ -3,7 +3,6 @@ import {SwaggerDemoComponent} from '.';
 import {exampleDocumentFactory} from "./example-documents-factory";
 import {exampleComponentsFactory} from "./example-components-factory";
 
-
 export * from './demo-all-classes';
 export * from './demo-all-path';
 export * from './demo-all-enums';

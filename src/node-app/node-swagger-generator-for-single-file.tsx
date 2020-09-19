@@ -1,28 +1,27 @@
 import {INodeSwaggerConfigForOneFile} from './node-swagger-config';
 import * as React from 'react';
 import {SwaggerAllInOneFileAdapter,} from "../react-app/src/main";
-import {NodeSwaggerGeneratorBase} from "./node-swagger-generator-base";
+import { nodeSwaggerGeneratorUtils} from "./node-swagger-generator-utils";
 
 const Path = require('path');
 
-export class NodeSwaggerGeneratorForSingleFile extends NodeSwaggerGeneratorBase {
+export class NodeSwaggerGeneratorForSingleFile {
     private _config: INodeSwaggerConfigForOneFile;
 
     constructor(config: INodeSwaggerConfigForOneFile) {
-        super();
         this._config = config;
     }
 
     generate() {
-        const swaggerDoc = this.createSwaggerDoc(this._config);
+        const swaggerDoc = nodeSwaggerGeneratorUtils.createSwaggerDoc(this._config);
 
         if (this._config.outDir) {
-            this.deleteDirectory(this._config.outDir);
-            this.createDirectory(this._config.outDir);
+            nodeSwaggerGeneratorUtils.deleteDirectory(this._config.outDir);
+            nodeSwaggerGeneratorUtils.createDirectory(this._config.outDir);
         }
 
-        const text = this.component2string(<SwaggerAllInOneFileAdapter doc={swaggerDoc}/>);
+        const text = nodeSwaggerGeneratorUtils.component2string(<SwaggerAllInOneFileAdapter doc={swaggerDoc}/>);
         const fileUrl = `${this._config.outDir}/index.ts`;
-        this.writeToFile(fileUrl, text);
+        nodeSwaggerGeneratorUtils.writeToFile(fileUrl, text);
     }
 }

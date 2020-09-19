@@ -23,7 +23,7 @@ const tscArgs = [
     '--skipLibCheck'
 ];
 
-export abstract class NodeSwaggerGeneratorBase {
+class NodeSwaggerGeneratorUtils {
     public deleteDirectory(urlToDir: string) {
         this.deleteDirectoryRecursive(urlToDir);
         console.log('delete directory success ' + urlToDir)
@@ -92,3 +92,4 @@ export abstract class NodeSwaggerGeneratorBase {
         }
     }
 }
+export const nodeSwaggerGeneratorUtils = new NodeSwaggerGeneratorUtils();

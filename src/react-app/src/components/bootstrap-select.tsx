@@ -23,26 +23,26 @@ export const BootstrapSelect = (props: Props) => {
     return <>
         <code>{props.label}</code>
         <div style={{paddingBottom: '4px'}}>
-        <div className="row">
-            {props.label ?
-                <>
-                    <div className="col-lg-8 col-md-12">
-
-                        <select className="form-control form-control-sm"
-                                value={props.value} onChange={(ev) => {
-                            props.onChange(ev as any);
-                        }}>
-                            {renderOptions()}
-                        </select>
-                    </div>
-                </>
-                : <select className="form-control form-control-sm"
-                          value={props.value} onChange={(ev) => {
-                    props.onChange(ev as any);
-                }}>
-                    {renderOptions()}
-                </select>}
-        </div>
+            <div className="row">
+                {props.label ?
+                    <>
+                        <div className="col-lg-8 col-md-12">
+                            <select className="form-control form-control-sm"
+                                    value={props.value}
+                                    onChange={(ev) => {
+                                        props.onChange(ev as any);
+                                    }}>
+                                {renderOptions()}
+                            </select>
+                        </div>
+                    </>
+                    : <select className="form-control form-control-sm"
+                              value={props.value} onChange={(ev) => {
+                        props.onChange(ev as any);
+                    }}>
+                        {renderOptions()}
+                    </select>}
+            </div>
         </div>
     </>
 }
