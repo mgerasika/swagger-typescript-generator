@@ -19,7 +19,9 @@ const apiUrls = [
     'https://flipdish-green-team.azurewebsites.net/swagger/docs/private-v1.0',
     'https://flipdish-green-team.azurewebsites.net/swagger/docs/v1.0',
     'https://flipdish-blue-team.azurewebsites.net/swagger/docs/private-v1.0',
-    'https://flipdish-blue-team.azurewebsites.net/swagger/docs/v1.0'
+    'https://flipdish-blue-team.azurewebsites.net/swagger/docs/v1.0',
+    'https://flipdish-orange-team.azurewebsites.net/swagger/docs/private-v1.0',
+    'https://flipdish-orange-team.azurewebsites.net/swagger/docs/v1.0'
 ];
 
 export const ExampleComponent: React.FC = () => {

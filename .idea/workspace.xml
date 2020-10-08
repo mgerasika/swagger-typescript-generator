@@ -25,9 +25,7 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ce26be8b-bbf5-4618-81ac-984eef411fea" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="ce26be8b-bbf5-4618-81ac-984eef411fea" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -56,7 +54,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../OLD/arduino-plotter" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../OLD/react-swagger-app-generator" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -72,11 +70,11 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\git\swagger-typescript-generator\src\react-app\src" />
-      <recent name="D:\git\swagger-typescript-generator\src\react-app\src\swagger\common-client-only" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\git\swagger-typescript-generator\src\react-app\src\swagger\components" />
+      <recent name="D:\git\swagger-typescript-generator\src\react-app\src\swagger\components\enum" />
       <recent name="D:\git\swagger-typescript-generator\src\react-app\src\swagger\models" />
-      <recent name="D:\git\swagger-typescript-generator\src\react-app\src\swagger" />
+      <recent name="D:\git\swagger-typescript-generator\src\react-app\src\swagger\common-client-only" />
       <recent name="D:\git\swagger-typescript-generator\src" />
     </key>
     <key name="es6.move.members.recent.items">
@@ -85,12 +83,12 @@
       <recent name="D:\git\swagger-typescript-generator\src\react-app\src\swagger\utils.ts" />
       <recent name="D:\git\swagger-typescript-generator\src\react-app\src\swagger\common\axios-request-service.ts" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\git\swagger-typescript-generator\src\react-app\src\swagger\components" />
-      <recent name="D:\git\swagger-typescript-generator\src\react-app\src\swagger\components\enum" />
-      <recent name="D:\git\swagger-typescript-generator\src\react-app\src\swagger\models" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\git\swagger-typescript-generator\src\react-app\public" />
+      <recent name="D:\git\swagger-typescript-generator\src\react-app" />
+      <recent name="D:\git\swagger-typescript-generator\src\react-app\src" />
       <recent name="D:\git\swagger-typescript-generator\src\react-app\src\swagger\common-client-only" />
-      <recent name="D:\git\swagger-typescript-generator\src" />
+      <recent name="D:\git\swagger-typescript-generator\src\react-app\src\swagger\models" />
     </key>
   </component>
   <component name="RunManager" selected="Jest.example">
@@ -261,6 +259,7 @@
       <workItem from="1599249294383" duration="24130000" />
       <workItem from="1599358957836" duration="1346000" />
       <workItem from="1600538931718" duration="1353000" />
+      <workItem from="1600591224978" duration="127000" />
     </task>
     <servers />
   </component>
@@ -320,10 +319,10 @@
     </state>
     <state x="690" y="367" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1920.40.1920.1160/0.40.1920.1160/1920.40.2048.1112@0.40.1920.1160" timestamp="1600539054439" />
     <state x="690" y="327" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@0.0.1920.1160" timestamp="1599329443208" />
-    <state x="740" y="375" key="FileChooserDialogImpl" timestamp="1600583943760">
+    <state x="740" y="375" key="FileChooserDialogImpl" timestamp="1600591351621">
       <screen x="0" y="40" width="1920" height="1160" />
     </state>
-    <state x="740" y="375" key="FileChooserDialogImpl/-1920.40.1920.1160/0.40.1920.1160/1920.40.2048.1112@0.40.1920.1160" timestamp="1600583943760" />
+    <state x="740" y="375" key="FileChooserDialogImpl/-1920.40.1920.1160/0.40.1920.1160/1920.40.2048.1112@0.40.1920.1160" timestamp="1600591351621" />
     <state x="740" y="335" key="FileChooserDialogImpl/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@0.0.1920.1160" timestamp="1599359020771" />
     <state x="2413" y="284" key="FileChooserDialogImpl/1920.0.1280.984/-1920.0.1920.1160/0.0.1920.1160@1920.0.1280.984" timestamp="1598482081274" />
     <state width="1899" height="491" key="GridCell.Tab.0.bottom" timestamp="1598037984581">
