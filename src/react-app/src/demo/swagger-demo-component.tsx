@@ -46,7 +46,7 @@ export const SwaggerDemoComponent: React.FC<IProps> = (props) => {
     const [root, setRoot] = useState<SwaggerDoc>();
     const [state, setState] = useState<IState>({
         url: window.localStorage.getItem('url') ? window.localStorage.getItem('url') as string : props.apiUrls.length ? props.apiUrls[0] : 'https://petstore.swagger.io/v2/swagger.json',
-        selectedApi: window.localStorage.getItem('selectedApi') || '',
+        selectedApi: window.localStorage.getItem('selectedApi') || 'ALL',
         selectedPath: window.localStorage.getItem('selectedPath') || '',
         selectedDefinition: window.localStorage.getItem('selectedDefinition') || '',
         selectedEnum: window.localStorage.getItem('selectedEnum') || '',
