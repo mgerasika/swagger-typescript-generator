@@ -29,3 +29,4 @@ Example of config file
   const swaggerGenerator = new SwaggerGenerator(config);
   swaggerGenerator.generate();
 ```
+  
