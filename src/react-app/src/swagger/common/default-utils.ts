@@ -111,18 +111,19 @@ export interface ISwaggerUtils {
     getEnumValues: (schema:any) => string[] | undefined;
     getArrayItemType: (schema: any) => string;
     getModelType2:(schema:any) => ModelType;
-
 }
 
 
 export const defaultUtils: ISwaggerUtils = {
     getClassName: (context: SwaggerClass, key: string) => {
         const parts = key.replace(/[\{\}]/g, '').replace(/[-_]/g, '/').split('/');
-        return parts.filter(f => f != 'api').map(s => capitalize(s)).join('') + 'Api';
+		const tmpName = parts.filter(f => f != 'api').map(s => capitalize(s)).join('');
+		return tmpName.endsWith('Api') ? tmpName : tmpName + 'Api';
     },
     getPathName: (context: SwaggerPath, key: string) => {
         const parts = key.replace(/[\{\}]/g, '').replace(/[-_]/g, '/').split('/');
-        return parts.filter(f => f != 'api').map(s => capitalize(s)).join('') + 'Api';
+			const tmpName = parts.filter(f => f !== 'api').map(s => capitalize(s)).join('');
+			return tmpName.endsWith('Api') ? tmpName : tmpName + 'Api';
     },
     getClassFileName: (context: SwaggerClass, name: string) => getFileName(name),
     getMethodName: (context: SwaggerMethod, name: string) => getMethodName(name),
