@@ -20,7 +20,6 @@ export class SwaggerClass extends SwaggerBase<SwaggerDoc,PrivateProps> {
 
     public constructor(parent: SwaggerDoc, name: string, source: any, paths: SwaggerPath[]) {
         super();
-
         this.parent = parent;
         this.source = source;
         this.tag = name;

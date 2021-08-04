@@ -55,9 +55,9 @@ export const SwaggerDemoComponent: React.FC<IProps> = (props) => {
         editorValue: ''
     });
 
-    const loadSwagger = () => {
+	const loadSwagger = () => {
         axios.get(state.url)
-            .then((response: any) => {
+					.then((response: any) => {
                 const utils = props.createUtilsFactory ? props.createUtilsFactory(defaultUtils) : defaultUtils;
                 const config: ISwaggerDocConfig = {
                     apiUrl: state.url,

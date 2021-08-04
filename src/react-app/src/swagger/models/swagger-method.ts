@@ -1,12 +1,10 @@
 import {SwaggerClass} from './swagger-class';
 import {IUrlInfo} from './url-info';
-import {SwaggerModel} from "./swagger-model";
 import {SwaggerBase} from "./swagger-base";
 import {SwaggerMethodParameter} from "./swagger-method-parameter";
 import {SwaggerPath} from "./swagger-path";
 import {SwaggerBasePrivateProps} from "./swagger-base-private-props";
 import {ModelType} from "./model-type";
-import {SwaggerEnum} from "./swagger-enum";
 
 export interface ISwaggerMethod {
     httpMethod: string;
@@ -38,7 +36,7 @@ export class SwaggerMethod extends SwaggerBase<SwaggerClass, PrivateProps> {
         this.source = source;
         this.url = path.url;
         this.httpMethod = httpMethod;
-        [this.tags] = this.source.tags;
+        this.tags = this.source.tags?.lenght ? this.source.tags[0] : '';
         this.name = this.utils.getMethodName(this, this.source.operationId);
 
         if (source.parameters) {

@@ -49,7 +49,7 @@ export class SwaggerDoc extends ObjectEx<PrivateProps> implements ISwaggerDoc {
             }, []);
         }
 
-        if (source.tags) {
+        if (source.tags && source.tags.length) {
             this.classes = source.tags.map((tag: any) => {
                 const paths = this.paths.filter(f => f.tags.includes(tag.name));
                 return new SwaggerClass(this, tag.name, tag, paths);
@@ -59,10 +59,16 @@ export class SwaggerDoc extends ObjectEx<PrivateProps> implements ISwaggerDoc {
             const uniqueTags = uniqueItems(tags, (t) => t) as string[];
             this.classes = uniqueTags.map((tag: string) => {
                 const paths = this.paths.filter(f => f.tags.includes(tag));
-                const source = paths.map(p => p.source);
+							const source = paths.map(p => p.source);
                 return new SwaggerClass(this, tag, source, paths);
             }, []);
-        }
+				}
+			
+			const newClasses: SwaggerClass[] = this.paths.map(p => {
+				return new SwaggerClass(this, p.name, p.source, [p])
+			}).filter(f=>f);
+
+			// this.classes = uniqueItems([...newClasses, ...this.classes], i => i.name) ;
 
 
         this.init();
