@@ -13,6 +13,7 @@ export * from "./swagger-demo-component";
 export * from "../components/bootstrap-panel";
 
 const apiUrls = [
+	"http://localhost:8081/v2/api-docs",
   "http://localhost:3000/api/doc",
   "https://petstore.swagger.io/v2/swagger.json",
   "https://flipdish-yellow-team.azurewebsites.net/swagger/docs/private-v1.0",
