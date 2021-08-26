@@ -48,6 +48,13 @@ export class SwaggerDoc extends ObjectEx<PrivateProps> implements ISwaggerDoc {
 				return accum;
 			}, []);
 		}
+		if (source.components?.schemas) {
+			this.models = Object.keys(source.components?.schemas).reduce((accum: SwaggerModel[], key) => {
+				const obj = source.components?.schemas[key];
+				accum.push(new SwaggerModel(this, key, obj));
+				return accum;
+			}, []);
+		}
 
 		if (source.tags && source.tags.length) {
 			this.classes = source.tags.map((tag: any) => {

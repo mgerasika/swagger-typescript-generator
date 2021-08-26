@@ -48,7 +48,7 @@ export class SwaggerMethod extends SwaggerBase<SwaggerClass, PrivateProps> {
         this.responseIsVoid = true;
         this.responseModelType = new ModelType(this.config);
         if (source.responses && source.responses['200']) {
-            const schema = source.responses['200'].schema;
+            const schema = source.responses['200'].schema || source.responses['200'].content['application/json'];
             if (schema) {
                 this.responseIsVoid = false;
                 this.responseModelType.isArray = this.utils.isArray(schema);
