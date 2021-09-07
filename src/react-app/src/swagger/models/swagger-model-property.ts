@@ -1,6 +1,5 @@
 import {SwaggerBase} from "./swagger-base";
 import {SwaggerModel} from "./swagger-model";
-import {SwaggerEnum} from "./swagger-enum";
 import {SwaggerBasePrivateProps} from "./swagger-base-private-props";
 import {ModelType} from "./model-type";
 
