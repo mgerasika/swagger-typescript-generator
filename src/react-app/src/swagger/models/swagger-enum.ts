@@ -35,6 +35,7 @@ export class SwaggerEnum
   public enumValues?: string[];
   public fileName: string;
   public keys: string[];
+  public duplicateNamespaces: string[] = [];
 
   get getFullName() {
     return this.namespace ? `${this.namespace}.${this.name}` : this.name;

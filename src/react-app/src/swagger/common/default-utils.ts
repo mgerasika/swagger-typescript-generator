@@ -35,8 +35,12 @@ const getMethodName = (name: string) => {
 };
 
 const getEnumName = (name: string) => {
-  const newName = `${name}`.replace(/[\[\]\.]/g, "");
-  return capitalize(`E${newName}`);
+  let newName = `${name}`.replace(/[\[\]\.]/g, "");
+  newName = newName
+    .split("_")
+    .map((s) => capitalize(s))
+    .join("");
+  return "E" + newName;
 };
 
 const getFileName = (name: string) => {

@@ -105,19 +105,19 @@ export class SwaggerDoc extends ObjectEx<PrivateProps> implements ISwaggerDoc {
 				})
 			})
 		})
-		// // TODO optimize
-		// const uniqueEnums = uniqueItems(this.enums, (e) => e.name + JSON.stringify(e.values));
-		// uniqueEnums.forEach(uniqueEnum => {
-		//     const similarEnums = this.enums.filter(f => JSON.stringify(f.values) === JSON.stringify(uniqueEnum.values));
-		//     const newNamespace = similarEnums.map(m => m.namespace).filter(f=>f);
-		//     uniqueEnum.duplicateNamespaces.push(...((newNamespace as any).flat()));
-		//     uniqueEnum.duplicateNamespaces = uniqueItems(uniqueEnum.duplicateNamespaces, k => k);
-		//
-		//     const newKeys = similarEnums.map(m => m.keys).filter(f=>f);
-		//     uniqueEnum.keys.push(...((newKeys as any).flat()));
-		//     uniqueEnum.keys = uniqueItems(uniqueEnum.keys, k => k);
-		// })
-		// this.enums = uniqueEnums;
+		// TODO optimize
+		const uniqueEnums = uniqueItems(this.enums, (e) => e.name + JSON.stringify(e.enumValues));
+		uniqueEnums.forEach(uniqueEnum => {
+		    const similarEnums = this.enums.filter(f => JSON.stringify(f.enumValues) === JSON.stringify(uniqueEnum.enumValues));
+		    const newNamespace = similarEnums.map(m => m.namespace).filter(f=>f);
+		    uniqueEnum.duplicateNamespaces.push(...((newNamespace as any).flat()));
+		    uniqueEnum.duplicateNamespaces = uniqueItems(uniqueEnum.duplicateNamespaces, k => k);
+		
+		    const newKeys = similarEnums.map(m => m.keys).filter(f=>f);
+		    uniqueEnum.keys.push(...((newKeys as any).flat()));
+		    uniqueEnum.keys = uniqueItems(uniqueEnum.keys, k => k);
+		})
+		this.enums = uniqueEnums;
 	}
 
 	public init() {
