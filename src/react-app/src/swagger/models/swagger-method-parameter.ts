@@ -63,7 +63,7 @@ export class SwaggerMethodParameter extends SwaggerBase<SwaggerMethod,PrivatePro
                 this.modelType.modelRef = modelRef;
 
             } else {
-                console.error("Model not found", this);
+                console.error("Model not found", this.name);
             }
         }
 

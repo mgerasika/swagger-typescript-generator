@@ -1,7 +1,7 @@
 import React from 'react';
-import {SwaggerClass} from '../../models/swagger-class';
-import {SwaggerMethod, SwaggerMethodParameter} from '../../models';
-import {assert, uniqueItems} from "../../common";
+import { SwaggerClass } from '../../models/swagger-class';
+import { SwaggerMethod, SwaggerMethodParameter } from '../../models';
+import { assert, uniqueItems } from '../../common';
 
 interface IProps {
     swaggerClass: SwaggerClass;
@@ -9,10 +9,12 @@ interface IProps {
 
 export const SwaggerApiClassImportAdapter: React.FC<IProps> = (props) => {
     const responseTypes = props.swaggerClass.methods.map((method: SwaggerMethod) => {
-        return method.responseModelType?.type && method.responseModelType.modelRef ? method.responseModelType.type : undefined;
+        return method.responseModelType?.type && method.responseModelType.modelRef
+            ? method.responseModelType.type
+            : undefined;
     });
 
-    let parameterTypes: string [] = [];
+    let parameterTypes: string[] = [];
     props.swaggerClass.methods.forEach((method: SwaggerMethod) => {
         method.parameters.forEach((parameter: SwaggerMethodParameter) => {
             if (parameter.modelType.type && parameter.modelType.modelRef) {
@@ -21,41 +23,53 @@ export const SwaggerApiClassImportAdapter: React.FC<IProps> = (props) => {
         });
     });
 
-
     const uniqueMethodParameters = uniqueItems([...responseTypes, ...parameterTypes], (el) => el);
 
-    const imports = [
-        'import {di} from \'swagger-typescript-generator\''];
+    const imports = ["import {di} from 'swagger-typescript-generator'"];
 
     const modelNames = uniqueMethodParameters.filter((filter: string | any) => !!filter).join(',');
     if (modelNames.length) {
-        assert(props.swaggerClass.config.modelImportPath, "Model import path can't be empty. Add to config")
-        imports.push(`import {${modelNames}} from \'${props.swaggerClass.parent.config.modelImportPath}\'`);
+        assert(
+            props.swaggerClass.config.modelImportPath,
+            "Model import path can't be empty. Add to config",
+        );
+        imports.push(
+            `import {${modelNames}} from \'${props.swaggerClass.parent.config.modelImportPath}\'`,
+        );
     }
 
-
-    let enumTypes: string [] = [];
+    let enumTypes: string[] = [];
     props.swaggerClass.methods.forEach((method: SwaggerMethod) => {
         method.parameters.forEach((parameter: SwaggerMethodParameter) => {
-            if (parameter.modelType.type && parameter.modelType.enumRef) { 
-                enumTypes.push(parameter.modelType.enumRef.namespace ? parameter.modelType.enumRef.namespace : parameter.modelType.enumRef.name);
+            if (parameter.modelType.type && parameter.modelType.enumRef) {
+                enumTypes.push(
+                    parameter.modelType.enumRef.namespace
+                        ? parameter.modelType.enumRef.namespace
+                        : parameter.modelType.enumRef.name,
+                );
             }
         });
     });
 
-    const enumNames = uniqueItems(enumTypes, x => x).filter((filter: string | any) => !!filter).join(',');
+    const enumNames = uniqueItems(enumTypes, (x) => x)
+        .filter((filter: string | any) => !!filter)
+        .join(',');
     if (enumNames.length) {
-        assert(props.swaggerClass.config.enumImportPath, "Enum import path can't be empty. Add to config")
-        imports.push(`import {${enumNames}} from \'${props.swaggerClass.parent.config.enumImportPath}\'`);
+        assert(
+            props.swaggerClass.config.enumImportPath,
+            "Enum import path can't be empty. Add to config",
+        );
+        imports.push(
+            `import {${enumNames}} from \'${props.swaggerClass.parent.config.enumImportPath}\'`,
+        );
     }
 
     return (
         <>
-            {props.swaggerClass.components.renderApiClassImport(
-                Component, {
-                    swaggerClass: props.swaggerClass,
-                    imports
-                })}
+            {props.swaggerClass.components.renderApiClassImport(Component, {
+                swaggerClass: props.swaggerClass,
+                imports,
+            })}
         </>
     );
 };
@@ -66,7 +80,11 @@ export interface ISwaggerApiClassImportComponentProps extends IProps {
 
 const Component: React.FC<ISwaggerApiClassImportComponentProps> = (props) => {
     const result = props.imports.map((val: string) => {
-        return (<div key={val}>{val};{'\n'}</div>);
+        return (
+            <div key={val}>
+                {val};{'\n'}
+            </div>
+        );
     });
 
     return (

@@ -114,7 +114,7 @@ export class SwaggerMethod extends SwaggerBase<SwaggerClass, PrivateProps> {
         if (modelRef) {
           this.responseModelType.modelRef = modelRef;
         } else {
-          console.error("Model not found response method", this);
+          console.error("Model not found response method", this.name);
         }
       }
 

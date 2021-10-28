@@ -90,7 +90,6 @@ export const SwaggerDemoComponent: React.FC<IProps> = (props) => {
       if (props.createDocumentFactory) {
         doc = props.createDocumentFactory(doc);
       }
-      console.log("document", doc);
       setRoot(doc);
     });
   };

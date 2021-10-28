@@ -33,7 +33,7 @@ export class SwaggerModelProperty extends SwaggerBase<
     this.minNumber = source.minimum !== undefined ? source.minimum : undefined;
     this.description =
       source.description !== undefined ? source.description : undefined;
-		this.modelType.isEnum = this.utils.isEnum(source) ? true : undefined;
+    this.modelType.isEnum = this.utils.isEnum(source) ? true : undefined;
     this.modelType.type = this.utils.getModelPropertyType(this, source);
     this.modelType.isJsType = this.utils.isJsType(this.modelType.type);
     this.modelType.isArray = this.utils.isArray(source) ? true : undefined;
@@ -74,9 +74,7 @@ export class SwaggerModelProperty extends SwaggerBase<
           ", [fullName=]" +
           fullName +
           " [model name] = " +
-          this.parent.name,
-        this,
-        this.doc.enums
+          this.parent.name
       );
     }
   }
@@ -91,8 +89,7 @@ export class SwaggerModelProperty extends SwaggerBase<
       this.modelType.modelRef = modelRef;
     } else {
       console.error(
-        "Model not found into swagger-def-model " + this.modelType.type,
-        this.doc.models
+        "Model not found into swagger-def-model " + this.modelType.type
       );
     }
   }
