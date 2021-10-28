@@ -1,6 +1,6 @@
 {
   "name": "swagger-typescript-generator",
-  "version": "1.2.14",
+  "version": "1.2.18",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -8,7 +8,7 @@
     "start": "npx babel-node-ts src/node-app/demo.tsx",
     "start:dev": "nodemon --exec babel-node --extensions \\\".tsx\\\" src/node-app/demo.tsx",
     "start:react-app": "cd src/react-app && npm run start",
-    "build:publish": "npm run build && npm run git-version && npm publish",
+    "build:publish": "npm login && npm run build && npm run git-version && npm publish",
     "build": "npm run delete:dist && npm run build:react-app && npm run build:tsc",
     "build:tsc": "tsc --p tsconfig-build.json",
     "build:react-app": "cd src/react-app && npm run build:tsc",

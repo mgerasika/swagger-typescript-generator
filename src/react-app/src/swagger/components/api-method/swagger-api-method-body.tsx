@@ -64,8 +64,8 @@ const Component: React.FC<ISwaggerApiMethodBodyProps> = (props) => {
   };
 
   const getUrlBody = () => {
-    const swaggerClass = props.swaggerMethod.parent;
     const result = props.swaggerMethod.url.replace(/{/g, "${");
+    // eslint-disable-next-line no-template-curly-in-string
     return "${this._apiUrl}" + `${result}`;
   };
   const getQueryBody = () => {

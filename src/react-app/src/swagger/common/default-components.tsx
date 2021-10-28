@@ -21,7 +21,6 @@ import {
 } from '../components';
 import {ISwaggerApiClassInstanceProps} from '../components/api-class/swagger-api-class-instance';
 import {ISwaggerApiMethodNameProps} from "../components/api-method/swagger-api-method-name";
-import {SwaggerDoc} from "../models";
 import {ISwaggerEnumFieldProps} from "../components/enum/swagger-enum-field";
 
 export interface ISwaggerComponents {

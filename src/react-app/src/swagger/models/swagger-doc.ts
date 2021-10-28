@@ -82,6 +82,17 @@ export class SwaggerDoc extends ObjectEx<PrivateProps> implements ISwaggerDoc {
 	}
 
 	public addEnums() {
+		this.models.forEach(def => {
+		
+				if (def.isEnum) {
+					const enumModel = new SwaggerEnum(this, def.name, {
+						modelDef: def,
+					}, def.source);
+					this.enums.push(enumModel);
+				}
+		})
+		this.models = this.models.filter(f => !f.isEnum);
+
 		// enums
 		this.models.forEach(def => {
 			def.properties.forEach(defProp => {

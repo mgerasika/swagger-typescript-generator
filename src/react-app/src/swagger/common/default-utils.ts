@@ -30,7 +30,7 @@ const getMethodName = (name: string) => {
   return `${name}`
     .replace(/[\[\]_\. ]/g, " ")
     .split(" ")
-    .map((x, idx) => (idx == 0 ? lowerlize(x) : capitalize(x)))
+    .map((x, idx) => (idx === 0 ? lowerlize(x) : capitalize(x)))
     .join("");
 };
 
@@ -40,7 +40,7 @@ const getEnumName = (name: string) => {
     .split("_")
     .map((s) => capitalize(s))
     .join("");
-  return "E" + newName;
+  return newName;
 };
 
 const getFileName = (name: string) => {
@@ -149,7 +149,7 @@ export const defaultUtils: ISwaggerUtils = {
       .replace(/[-_]/g, "/")
       .split("/");
     const tmpName = parts
-      .filter((f) => f != "api")
+      .filter((f) => f !== "api")
       .map((s) => capitalize(s))
       .join("");
     return tmpName.endsWith("Api") ? tmpName : tmpName + "Api";
@@ -199,7 +199,7 @@ export const defaultUtils: ISwaggerUtils = {
   isJsType: (name: string) => {
     return (
       JS_TYPES.includes(name.toLowerCase()) ||
-      name.toLowerCase().indexOf("array<") == 0
+      name.toLowerCase().indexOf("array<") === 0
     );
   },
   getArrayItemType: (schema: any) => {

@@ -234,7 +234,6 @@ export const createCustomizationComponentsFactory = (baseComponents: ISwaggerCom
         renderApiClassMethods: (BaseComponent, props) => {
             const methodName = 'renderApiClassMethods';
             const newProps = init(methodName, props, callback);
-            const it = customizationArray.find(f=>f.methodName === methodName)
             if (customizationName === methodName) {
                 return <Customization style={{display: 'block'}}>{baseComponents[methodName](BaseComponent,newProps)}</Customization>
             } else {
