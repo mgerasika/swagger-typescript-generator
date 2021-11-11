@@ -7,7 +7,11 @@ interface IProps {
     swaggerClass: SwaggerClass;
 }
 
-export const SwaggerApiClassImportAdapter: React.FC<IProps> = (props) => {
+export interface ISwaggerApiClassImportComponentProps extends IProps {}
+
+export const SwaggerApiClassImportAdapter: React.FC<ISwaggerApiClassImportComponentProps> = (
+    props,
+) => {
     const responseTypes = props.swaggerClass.methods.map((method: SwaggerMethod) => {
         return method.responseModelType?.type && method.responseModelType.modelRef
             ? method.responseModelType.type
@@ -64,22 +68,7 @@ export const SwaggerApiClassImportAdapter: React.FC<IProps> = (props) => {
         );
     }
 
-    return (
-        <>
-            {props.swaggerClass.components.renderApiClassImport(Component, {
-                swaggerClass: props.swaggerClass,
-                imports,
-            })}
-        </>
-    );
-};
-
-export interface ISwaggerApiClassImportComponentProps extends IProps {
-    imports: string[];
-}
-
-const Component: React.FC<ISwaggerApiClassImportComponentProps> = (props) => {
-    const result = props.imports.map((val: string) => {
+    const result = imports.map((val: string) => {
         return (
             <div key={val}>
                 {val};{'\n'}

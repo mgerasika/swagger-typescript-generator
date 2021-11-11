@@ -6,19 +6,9 @@ interface IProps {
     swaggerModel: SwaggerModel;
 }
 
-export const SwaggerModelImportAdapter = (props: IProps) => {
-    return (
-        <>
-            {props.swaggerModel.components.renderModelImport(Component, {
-                swaggerModel: props.swaggerModel,
-            })}
-        </>
-    );
-};
-
 export interface ISwaggerModelImportProps extends IProps {}
 
-const Component: React.FC<IProps> = (props) => {
+export const SwaggerModelImportAdapter: React.FC<IProps> = (props) => {
     // const types = props.definition.properties.map((parameter: SwaggerDefinitionProperty) => {
     //     return parameter.enumModelRef ? parameter.type : undefined;
     // }).filter((filter: string | any) => !!filter && filter != props.definition.name).join(',');

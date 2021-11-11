@@ -1,28 +1,18 @@
-import React from "react";
-import {SwaggerMethod} from "../../models/swagger-method";
+import React from 'react';
+import { SwaggerMethod } from '../../models/swagger-method';
 
 interface IProps {
     swaggerMethod: SwaggerMethod;
 }
 
-export const SwaggerApiMethodNameAdapter = (props: IProps) => {
+export interface ISwaggerApiMethodNameProps extends IProps {}
+
+export const SwaggerApiMethodNameAdapter: React.FC<ISwaggerApiMethodNameProps> = (props) => {
+    const accessor = 'public';
+    const methodName = props.swaggerMethod.name;
     return (
         <>
-            {props.swaggerMethod.components.renderApiMethodName(
-                Component, {
-                    accessor: "public",
-                    methodName: props.swaggerMethod.name,
-                    swaggerMethod: props.swaggerMethod,
-                })}
+            {accessor} {methodName}
         </>
     );
-}
-
-export interface ISwaggerApiMethodNameProps extends IProps {
-    accessor: string;
-    methodName: string;
-}
-
-const Component: React.FC<ISwaggerApiMethodNameProps> = (props) => {
-    return <>{props.accessor} {props.methodName}</>
-}
+};

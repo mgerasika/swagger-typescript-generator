@@ -1,34 +1,22 @@
-import React from "react";
-import {SwaggerMethod} from "../../models/swagger-method";
+import React from 'react';
+import { SwaggerMethod } from '../../models/swagger-method';
 
 interface IProps {
     swaggerMethod: SwaggerMethod;
 }
 
-export const SwaggerApiMethodReturnTypeAdapter = (props: IProps) => {
+export interface ISwaggerApiMethodReturnTypeProps extends IProps {}
+
+export const SwaggerApiMethodReturnTypeAdapter: React.FC<ISwaggerApiMethodReturnTypeProps> = (
+    props,
+) => {
     const getReturnType = () => {
         if (props.swaggerMethod.responseIsVoid) {
             return 'Promise<void>';
         }
         const arraySymbol = props.swaggerMethod.responseModelType.isArray ? '[]' : '';
-        return `Promise<${props.swaggerMethod.responseModelType?.type}${arraySymbol}>`
-    }
-
-    return (
-        <>
-            {props.swaggerMethod.components.renderApiMethodReturnType(
-                Component, {
-                    returnType: getReturnType(),
-                    swaggerMethod: props.swaggerMethod,
-                })}
-        </>
-    );
-}
-
-export interface ISwaggerApiMethodReturnTypeProps extends IProps {
-    returnType: string;
-}
-
-const Component: React.FC<ISwaggerApiMethodReturnTypeProps> = (props) => {
-    return props.returnType ? (<>:{props.returnType}</>) : null;
-}
+        return `Promise<${props.swaggerMethod.responseModelType?.type}${arraySymbol}>`;
+    };
+    const returnType = getReturnType();
+    return returnType ? <>:{returnType}</> : null;
+};

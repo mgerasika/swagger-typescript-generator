@@ -6,7 +6,9 @@ interface IProps {
     swaggerMethod: SwaggerMethod;
 }
 
-export const SwaggerApiMethodBodyAdapter = (props: IProps) => {
+export interface ISwaggerApiMethodBodyProps extends IProps {}
+
+export const SwaggerApiMethodBodyAdapter: React.FC<ISwaggerApiMethodBodyProps> = (props) => {
     const getRequestServiceParams = (): string[] => {
         const result = props.swaggerMethod.parameters
             .filter((parameter: SwaggerMethodParameter) => parameter.in === EParameterIn.body)
@@ -21,22 +23,8 @@ export const SwaggerApiMethodBodyAdapter = (props: IProps) => {
         result.push('options');
         return result;
     };
+    const requestServiceParams = getRequestServiceParams();
 
-    return (
-        <>
-            {props.swaggerMethod.components.renderApiMethodBody(Component, {
-                requestServiceParams: getRequestServiceParams(),
-                swaggerMethod: props.swaggerMethod,
-            })}
-        </>
-    );
-};
-
-export interface ISwaggerApiMethodBodyProps extends IProps {
-    requestServiceParams: string[];
-}
-
-const Component: React.FC<ISwaggerApiMethodBodyProps> = (props) => {
     const getFormDataScript = () => {
         const formDataParameters = props.swaggerMethod.parameters
             .filter((parameter: SwaggerMethodParameter) => parameter.in === EParameterIn.formData)
@@ -103,8 +91,7 @@ const Component: React.FC<ISwaggerApiMethodBodyProps> = (props) => {
             {getFormDataScript()}
             {
                 <>
-                    {'\t\t'}return di.requestService.{methodName}(
-                    {props.requestServiceParams.join(',')});
+                    {'\t\t'}return di.requestService.{methodName}({requestServiceParams.join(',')});
                 </>
             }
         </>

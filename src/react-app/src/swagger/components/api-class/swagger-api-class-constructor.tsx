@@ -1,35 +1,30 @@
-import React from "react";
-import {SwaggerClass} from "../../models/swagger-class";
+import React from 'react';
+import { SwaggerClass } from '../../models/swagger-class';
 
 interface IProps {
     swaggerClass: SwaggerClass;
 }
 
-export const SwaggerApiClassConstructorAdapter = (props: IProps) => {
+export interface ISwaggerApiClassConstructorProps extends IProps {}
+
+export const SwaggerApiClassConstructorAdapter: React.FC<ISwaggerApiClassConstructorProps> = (
+    props,
+) => {
     const lines = ['this._apiUrl = apiUrl'];
     const constructorArguments = ['apiUrl:string'];
+
+    const bodyLines = lines.map((bl) => (
+        <React.Fragment key={bl}>
+            {'\t\t'}
+            {bl}
+            {';\n'}
+        </React.Fragment>
+    ));
     return (
         <>
-            {props.swaggerClass.components.renderApiClassConstructor(
-                Component, {
-                    bodyLines: lines,
-                    constructorArguments:constructorArguments,
-                    swaggerClass: props.swaggerClass,
-                })}
+            {'\t'}public constructor(<>{constructorArguments.join(',')}</>) {'{\n'}
+            {bodyLines}
+            {'\t}\n'}
         </>
     );
-}
-
-export interface ISwaggerApiClassConstructorProps extends IProps {
-    bodyLines:string[];
-    constructorArguments:string[];
-}
-
-const Component: React.FC<ISwaggerApiClassConstructorProps> = (props) => {
-    const bodyLines = props.bodyLines.map(bl => <React.Fragment key={bl}>{'\t\t'}{bl}{';\n'}</React.Fragment>)
-    return <>
-        {'\t'}public constructor(<>{props.constructorArguments.join(',')}</>) {'{\n'}
-        {bodyLines}
-        {'\t}\n'}
-    </>
-}
+};
