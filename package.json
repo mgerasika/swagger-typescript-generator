@@ -1,6 +1,6 @@
 {
     "name": "swagger-typescript-generator",
-    "version": "1.2.19",
+    "version": "1.2.20",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
     "scripts": {
@@ -8,7 +8,8 @@
         "start": "npx babel-node-ts src/node-app/demo.tsx",
         "start:dev": "nodemon --exec babel-node --extensions \\\".tsx\\\" src/node-app/demo.tsx",
         "start:react-app": "cd src/react-app && npm run start",
-        "build:publish": "npm login && npm run build && npm run git-version && npm publish",
+        "build:publish": "npm run build && npm run git-version && npm publish",
+        "build:publish:login": "npm login && npm run build && npm run git-version && npm publish",
         "build": "npm run delete:dist && npm run build:react-app && npm run build:tsc",
         "build:tsc": "tsc --p tsconfig-build.json",
         "build:react-app": "cd src/react-app && npm run build:tsc",
@@ -42,7 +43,6 @@
         "@babel/plugin-proposal-decorators": "^7.1.0",
         "@babel/plugin-proposal-numeric-separator": "^7.2.0",
         "@babel/plugin-proposal-object-rest-spread": "^7.4.0",
-        "eslint": "7.32.0",
         "eslint-config-prettier": "^6.15.0",
         "eslint-plugin-cypress": "^2.11.3",
         "eslint-plugin-import": "^2.22.1",
