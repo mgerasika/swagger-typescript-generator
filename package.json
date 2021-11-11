@@ -1,20 +1,16 @@
 {
     "name": "swagger-typescript-generator",
-    "version": "1.2.20",
+    "version": "1.2.22",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
     "scripts": {
-        "start:tsc": "npx tsc src/node-app/demo.tsx",
-        "start": "npx babel-node-ts src/node-app/demo.tsx",
-        "start:dev": "nodemon --exec babel-node --extensions \\\".tsx\\\" src/node-app/demo.tsx",
-        "start:react-app": "cd src/react-app && npm run start",
+        "start:tsc": "npx tsc src/index.ts",
+        "start": "npx babel-node-ts src/index.ts",
+        "start:dev": "nodemon --exec babel-node --extensions \\\".tsx\\\" src/index.ts",
         "build:publish": "npm run build && npm run git-version && npm publish",
         "build:publish:login": "npm login && npm run build && npm run git-version && npm publish",
-        "build": "npm run delete:dist && npm run build:react-app && npm run build:tsc",
+        "build": "npm run delete:dist && npm run build:tsc",
         "build:tsc": "tsc --p tsconfig-build.json",
-        "build:react-app": "cd src/react-app && npm run build:tsc",
-        "build-react-prod": "cd src/react-app && npm run build:react",
-        "open-react-prod": "http-server src/react-app/build",
         "git-version": "npm --no-git-tag-version version patch",
         "delete:dist": "del-cli --force dist",
         "test": "jest",
@@ -83,11 +79,6 @@
     "repository": {
         "type": "git",
         "url": "git+https://github.com/mgerasika/swagger-typescript-generator.git"
-    },
-    "husky": {
-        "hooks": {
-            "pre-commit": "npm test"
-        }
     },
     "browserslist": {
         "production": [
