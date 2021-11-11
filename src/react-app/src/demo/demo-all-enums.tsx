@@ -1,7 +1,7 @@
 import React from 'react';
 import {DiffComponent} from "./diff";
 import {SwaggerEnum} from "../swagger/models/swagger-enum";
-import {SwaggerEnumAdapter} from "../swagger/components/enum/swagger-enum";
+import { SwaggerEnumAdapter } from '../components';
 
 interface IProps {
     enums: SwaggerEnum[];

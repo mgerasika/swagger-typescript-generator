@@ -1,10 +1,11 @@
-import {ISwaggerComponents, ISwaggerDocConfig, ISwaggerUtils, SwaggerDoc} from "../react-app/src/main";
+import {
+    ISwaggerDocConfig,
+    ISwaggerUtils,
+    SwaggerDoc,
+} from '../react-app/src/main';
 
 export interface INodeSwaggerConfigBase {
     swaggerDocConfig: ISwaggerDocConfig;
-    createComponentsFactory?: (baseComponents: ISwaggerComponents) => ISwaggerComponents;
-    createUtilsFactory?: (baseUtils: ISwaggerUtils) => ISwaggerUtils;
-    createDocumentFactory?: (baseDocument: SwaggerDoc) => SwaggerDoc;
 }
 
 export interface INodeSwaggerConfigForMultiFile extends INodeSwaggerConfigBase {

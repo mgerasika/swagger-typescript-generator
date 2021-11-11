@@ -1,18 +1,16 @@
-import {SwaggerDoc} from "./swagger-doc";
-import {ISwaggerDocConfig} from "./swagger-doc-config";
-import {SwaggerBasePrivateProps} from "./swagger-base-private-props";
-import {ObjectEx} from "./object-ex";
+import { SwaggerDoc } from './swagger-doc';
+import { ISwaggerDocConfig } from './swagger-doc-config';
+import { SwaggerBasePrivateProps } from './swagger-base-private-props';
+import { ObjectEx } from './object-ex';
 
-export abstract class SwaggerBase<TParent,TPrivateProps extends SwaggerBasePrivateProps<TParent>> extends ObjectEx<TPrivateProps>{
-    init(){
-    }
+export abstract class SwaggerBase<
+    TParent,
+    TPrivateProps extends SwaggerBasePrivateProps<TParent>,
+> extends ObjectEx<TPrivateProps> {
+    init() {}
 
     public get utils() {
         return this.doc.utils;
-    }
-
-    public get components() {
-        return this.doc.components;
     }
 
     public get doc(): SwaggerDoc {
@@ -20,7 +18,7 @@ export abstract class SwaggerBase<TParent,TPrivateProps extends SwaggerBasePriva
     }
 
     public get config(): ISwaggerDocConfig {
-        return this.doc.config
+        return this.doc.config;
     }
 
     public get source() {
@@ -28,7 +26,7 @@ export abstract class SwaggerBase<TParent,TPrivateProps extends SwaggerBasePriva
     }
 
     public set source(val) {
-        this.setPrivate("_source", val);
+        this.setPrivate('_source', val);
     }
 
     public get parent(): TParent {
@@ -36,6 +34,6 @@ export abstract class SwaggerBase<TParent,TPrivateProps extends SwaggerBasePriva
     }
 
     public set parent(val) {
-        this.setPrivate("_parent", val);
+        this.setPrivate('_parent', val);
     }
 }

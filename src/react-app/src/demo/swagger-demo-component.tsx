@@ -2,24 +2,15 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { DemoAllModelsComponent } from './demo-all-models';
 import { DemoAllClassesComponent } from './demo-all-classes';
 import { SwaggerDoc } from '../swagger/models/swagger-doc';
-import { defaultComponents, ISwaggerComponents } from '../swagger/common/default-components';
-import { SwaggerAllClassesExportAdapter } from '../swagger/components/api-class';
-import { SwaggerAllUrlsComponent2 } from '../swagger/components/urls';
 import { DemoAllEnumsComponent } from './demo-all-enums';
 import { DemoAllPathComponent } from './demo-all-path';
 import { ISwaggerDocConfig } from '../swagger/models';
-import { BootstrapPanel } from '../components/bootstrap-panel';
-import { BootstrapSelect } from '../components/bootstrap-select';
-import { dictionary } from '../components/dictionary';
-import { SwaggerAllEnumsExportAdapter } from '../swagger/components/enum';
+import { BootstrapPanel } from './bootstrap-panel';
+import { BootstrapSelect } from './bootstrap-select';
+import { dictionary } from './dictionary';
 import { defaultUtils, ISwaggerUtils } from '../swagger/common';
 import { DiffSingle } from './diff-single';
-import { SwaggerAllModelsExportAdapter } from '../swagger/components/model';
-import { SwaggerAllInOneFileAdapter } from '../swagger/components';
-import {
-    createCustomizationComponentsFactory,
-    ICustomizationItem,
-} from './customisation';
+import { SwaggerAllInOneFileAdapter } from '../components';
 
 const _ = require('lodash');
 const axios = require('axios');
@@ -29,9 +20,6 @@ if (typeof window !== 'undefined' && typeof window.document !== 'undefined') {
 
 interface IProps {
     apiUrls: string[];
-    createComponentsFactory?: (baseComponents: ISwaggerComponents) => ISwaggerComponents;
-    createDocumentFactory?: (baseDoc: SwaggerDoc) => SwaggerDoc;
-    createUtilsFactory?: (baseUtils: ISwaggerUtils) => ISwaggerUtils;
 }
 
 interface IState {
@@ -65,9 +53,7 @@ export const SwaggerDemoComponent: React.FC<IProps> = (props) => {
 
     const loadSwagger = () => {
         axios.get(state.url).then((response: any) => {
-            const utils = props.createUtilsFactory
-                ? props.createUtilsFactory(defaultUtils)
-                : defaultUtils;
+            const utils = defaultUtils;
             const config: ISwaggerDocConfig = {
                 apiUrl: state.url,
                 source: response.data,
@@ -75,33 +61,10 @@ export const SwaggerDemoComponent: React.FC<IProps> = (props) => {
                 enumImportPath: '../api-enum',
                 showPrivateFieldsForDebug: false,
             };
-            let doc = new SwaggerDoc(
-                config,
-                utils,
-                createComponentsFactory(state.selectedCustomizationMethodName),
-            );
-            if (props.createDocumentFactory) {
-                doc = props.createDocumentFactory(doc);
-            }
+            let doc = new SwaggerDoc(config, utils);
+
             setRoot(doc);
         });
-    };
-
-    const createComponentsFactory = (name: string) => {
-        const callback = (item: ICustomizationItem) => {
-            if (item.methodName === name) {
-                // TODO refactor! Bugs!!!
-                setTimeout(() => {
-                    const el = document.getElementById('textArea') as HTMLTextAreaElement;
-                    if (el) {
-                        el.value = JSON.stringify(item.getProps(), null, 2);
-                    }
-                }, 0);
-            }
-        };
-
-        const result = createCustomizationComponentsFactory(defaultComponents, name, callback);
-        return result;
     };
 
     useEffect(() => {
@@ -293,60 +256,6 @@ export const SwaggerDemoComponent: React.FC<IProps> = (props) => {
                         <DiffSingle
                             key={'index.ts'}
                             obj={<SwaggerAllInOneFileAdapter doc={root} />}
-                        />
-                    )}
-                    activeTitle={state.selectedPanelTitle}
-                    onClick={handleSelectedPanelTitleChange}
-                />
-
-                <BootstrapPanel
-                    title="All APIs exports"
-                    renderSettings={() => <div className="row"></div>}
-                    renderContent={() => (
-                        <DiffSingle
-                            key={'index.ts'}
-                            obj={
-                                <SwaggerAllClassesExportAdapter
-                                    doc={root}
-                                    swaggerClasses={root.classes}
-                                />
-                            }
-                        />
-                    )}
-                    activeTitle={state.selectedPanelTitle}
-                    onClick={handleSelectedPanelTitleChange}
-                />
-
-                <BootstrapPanel
-                    title="All models exports"
-                    renderSettings={() => <div className="row"></div>}
-                    renderContent={() => (
-                        <DiffSingle
-                            obj={<SwaggerAllModelsExportAdapter doc={root} models={root?.models} />}
-                        />
-                    )}
-                    activeTitle={state.selectedPanelTitle}
-                    onClick={handleSelectedPanelTitleChange}
-                />
-
-                <BootstrapPanel
-                    title="All enums exports"
-                    renderSettings={() => <div className="row"></div>}
-                    renderContent={() => (
-                        <DiffSingle
-                            obj={<SwaggerAllEnumsExportAdapter doc={root} enums={root.enums} />}
-                        />
-                    )}
-                    activeTitle={state.selectedPanelTitle}
-                    onClick={handleSelectedPanelTitleChange}
-                />
-
-                <BootstrapPanel
-                    title="Urls"
-                    renderSettings={() => <div className="row"></div>}
-                    renderContent={() => (
-                        <DiffSingle
-                            obj={<SwaggerAllUrlsComponent2 doc={root} classes={root.classes} />}
                         />
                     )}
                     activeTitle={state.selectedPanelTitle}

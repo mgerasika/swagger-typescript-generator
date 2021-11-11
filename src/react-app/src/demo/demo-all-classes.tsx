@@ -1,7 +1,7 @@
 import React from 'react';
 import {DiffComponent} from "./diff";
 import {SwaggerClass} from "../swagger/models/swagger-class";
-import {SwaggerApiClassAdapter} from "../swagger/components/api-class";
+import { SwaggerApiClassAdapter } from '../components';
 
 interface IProps {
     classes: SwaggerClass[];
