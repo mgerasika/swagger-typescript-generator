@@ -1,1 +1,2 @@
-export * from './react-app/src/common-client-only';
+export * from './react-app/index';
+export * from './node-app/index';

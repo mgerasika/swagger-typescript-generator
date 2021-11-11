@@ -1,5 +1,5 @@
+import { SwaggerDoc } from '../swagger/models/swagger-doc';
 import { ISelectOption } from './bootstrap-select';
-import { SwaggerDoc } from '../swagger/models';
 
 const compareFn = (a: string, b: string) => (a < b ? -1 : a > b ? 1 : 0);
 

@@ -3,14 +3,8 @@ import { SwaggerModelContent } from './model';
 import { SwaggerApiClassContent } from './api-class';
 import { SwaggerEnumContentAdapter } from './enum';
 import { SwaggerWarningMessageAdapter } from './swagger-warning-message';
-import {
-    SwaggerDoc,
-    SwaggerEnum,
-    uniqueItems,
-    Namespace,
-    SwaggerModel,
-    SwaggerClass,
-} from '../swagger';
+import { SwaggerClass, SwaggerDoc, SwaggerEnum, SwaggerModel, uniqueItems } from '../swagger';
+import { Namespace } from './namespace';
 
 interface IProps {
     doc: SwaggerDoc;

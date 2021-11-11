@@ -1,16 +1,14 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { DemoAllModelsComponent } from './demo-all-models';
 import { DemoAllClassesComponent } from './demo-all-classes';
-import { SwaggerDoc } from '../swagger/models/swagger-doc';
 import { DemoAllEnumsComponent } from './demo-all-enums';
 import { DemoAllPathComponent } from './demo-all-path';
-import { ISwaggerDocConfig } from '../swagger/models';
 import { BootstrapPanel } from './bootstrap-panel';
 import { BootstrapSelect } from './bootstrap-select';
 import { dictionary } from './dictionary';
-import { defaultUtils, ISwaggerUtils } from '../swagger/common';
 import { DiffSingle } from './diff-single';
 import { SwaggerAllInOneFileAdapter } from '../components';
+import { SwaggerDoc, defaultUtils, ISwaggerDocConfig } from '../swagger';
 
 const _ = require('lodash');
 const axios = require('axios');

@@ -2,10 +2,10 @@ import * as fs from 'fs';
 import * as React from 'react';
 import { ReactElement } from 'react';
 import { INodeSwaggerConfigBase } from './node-swagger-config';
-import { defaultComponents, defaultUtils } from '../react-app/src/swagger/common';
-import { SwaggerDoc } from '../react-app/src/swagger/models';
+import { defaultComponents, defaultUtils } from '../swagger/common';
+import { SwaggerDoc } from '../swagger/models';
 import { renderToString } from 'react-dom/server';
-import { html2text } from '../react-app/src/swagger/utils';
+import { html2text } from '../swagger/utils';
 import { execSync } from 'child_process';
 
 const _ = require('lodash');

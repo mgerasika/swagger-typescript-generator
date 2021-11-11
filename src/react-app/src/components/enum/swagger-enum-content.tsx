@@ -1,5 +1,6 @@
 import React from 'react';
-import { SwaggerEnum, renderTabSymbol } from '../../swagger';
+import { SwaggerEnum } from '../../swagger';
+import { renderTabSymbol } from '../namespace';
 import { SwaggerEnumFieldAdapter } from './swagger-enum-field';
 
 interface IProps {
